@@ -161,6 +161,31 @@ for (const route of ['privacy', 'terms', 'legal'])
       assert.ok($(`a[href="${target}"]`).length, `${route} ne renvoie pas vers ${target}`);
   });
 
+test('l’intro est servie dans le HTML de l’accueil, pas montée par le JavaScript', () => {
+  const home = read('');
+  const $ = load(home);
+  // Elle doit être là avant toute exécution de script : c'est ce qui la rend
+  // indépendante de la vitesse d'hydratation, donc fiable à la première visite.
+  assert.equal($('.intro').length, 1, 'l’accueil doit servir l’intro');
+  assert.equal($('.intro').attr('aria-hidden'), 'true');
+  assert.equal($('.intro a, .intro button').length, 0, 'rien de focalisable dans l’intro');
+  // Le garde de session s'exécute avant peinture, donc dans <head>.
+  const head = home.slice(0, home.indexOf('</head>'));
+  assert.match(head, /sessionStorage/, 'le garde de session doit précéder la peinture');
+  assert.match(head, /intro-seen/);
+  // L'intro appartient à l'entrée du site, pas à chaque route.
+  for (const route of routes.filter(Boolean))
+    assert.equal(load(read(route))('.intro').length, 0, `/${route}/ ne doit pas rejouer l’intro`);
+  assert.equal(load(readFileSync('dist/404.html', 'utf8'))('.intro').length, 0);
+  // Aucun emplacement de gabarit oublié dans les pages livrées.
+  for (const route of routes)
+    assert.doesNotMatch(
+      read(route),
+      /<!--\s*(intro|app|head)\s*-->/,
+      `gabarit non rempli : /${route}/`,
+    );
+});
+
 test('l’animation d’apparition ne cache jamais le contenu servi', () => {
   for (const route of routes) {
     const html = read(route);

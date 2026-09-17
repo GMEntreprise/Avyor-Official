@@ -96,6 +96,49 @@ test('reduced motion, absence de vidéo auto et intro non bloquante', async ({ p
     .click();
   await expect(page).toHaveURL(/\/download\/$/);
 });
+test('l’intro joue dès la première arrivée, même à froid', async ({ page }) => {
+  // La régression : elle ne jouait qu'au rechargement, parce qu'elle attendait
+  // l'hydratation — le moment le plus lent de la toute première visite.
+  const client = await page.context().newCDPSession(page);
+  await client.send('Network.clearBrowserCache');
+  await client.send('Network.emulateNetworkConditions', {
+    offline: false,
+    latency: 150,
+    downloadThroughput: (700 * 1024) / 8,
+    uploadThroughput: (300 * 1024) / 8,
+  });
+  await page.goto('/', { waitUntil: 'commit' });
+  const intro = page.locator('.intro');
+  // Visible dès que la feuille de style s'applique, sans attendre le bundle.
+  await expect(intro).toBeVisible({ timeout: 15000 });
+  // Puis elle s'efface d'elle-même et rend la main.
+  await expect(intro).toBeHidden({ timeout: 6000 });
+  expect(
+    await page.evaluate(() => document.elementFromPoint(50, 300)?.closest('.intro') === null),
+  ).toBe(true);
+});
+
+test('l’intro ne se rejoue pas pendant la session', async ({ page }) => {
+  await page.goto('/');
+  await expect(page.locator('.intro')).toHaveCount(1);
+  await page.goto('/creators/');
+  await expect(page.locator('.intro')).toHaveCount(0);
+  await page.goto('/');
+  // Servie dans le HTML, mais neutralisée avant peinture par le garde de session.
+  await expect(page.locator('.intro')).toBeHidden();
+  expect(await page.evaluate(() => document.documentElement.classList.contains('intro-seen'))).toBe(
+    true,
+  );
+});
+
+test('l’intro est absente en reduced motion', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.goto('/');
+  expect(
+    await page.evaluate(() => getComputedStyle(document.querySelector('.intro')!).display),
+  ).toBe('none');
+});
+
 test('l’apparition au scroll : rien ne clignote, rien ne reste caché', async ({ page }) => {
   await page.goto('/creators/');
   // Whatever is on screen at load must never have been hidden, whatever the viewport.

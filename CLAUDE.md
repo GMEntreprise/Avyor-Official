@@ -49,6 +49,9 @@ Pièges connus, protégés par des tests :
 - **Reduced motion** : toute animation respecte `prefers-reduced-motion`.
 - **Pas d'état React piloté par le scroll.** Utilisez IntersectionObserver, MotionValue ou des variables CSS. Aucun `setState` par pixel scrollé.
 - **Pas d'animation permanente** hors interaction : pas de `setInterval` qui redessine en continu.
+- **L'intro est rendue par le serveur** (`src/components/Intro.tsx`, monté par `App` quand `!slug`). Elle ne doit contenir **ni état, ni effet, ni timer** : son rendu serveur et son rendu client doivent être identiques, sinon l'hydratation casse. Tout ce qui varie est en CSS — l'animation et sa fin (`visibility: hidden` sur la dernière image, qui sert aussi de filet de sécurité), `prefers-reduced-motion`, et la règle « une fois par session » via la classe `.intro-seen`.
+  Elle a déjà été cassée une fois en la conditionnant à `performance.now()` après hydratation : à froid le bundle arrivait trop tard, l'intro était sautée et ne jouait qu'au rechargement. **Ne la faites pas dépendre du JavaScript.**
+- **Le garde de session (`src/components/intro-session.ts`) s'injecte dans `<head>` avant peinture**, depuis `scripts/prerender.mjs` en production **et** depuis le plugin de `vite.config.ts` en développement. Le pré-rendu ne tourne pas sous `vite dev` : tout ce qui n'est injecté que par lui devient invisible en développement.
 - **Une animation ne masque jamais du contenu servi.** L'état masqué de `Reveal` est porté par `.motion-ready`, posée par le client après reprise : sans JavaScript, tout reste lisible. Un test le vérifie sur le CSS construit.
 - Numérotez avec `ordinal()` : `0{i + 1}` donne « 010 » à partir de la dixième.
 - `motion` est chargé via `LazyMotion` + `domAnimation` : importez `m`, jamais `motion`.

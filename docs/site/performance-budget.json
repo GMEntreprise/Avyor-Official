@@ -1,13 +1,13 @@
 {
-  "measuredAt": "2026-09-17T21:34:19.235Z",
+  "measuredAt": "2026-09-17T22:50:49.186Z",
   "initial": [
-    "assets/index-DIqpHqIy.js",
+    "assets/index-c6RwAQzP.js",
     "assets/motion-DDGmUNfW.js"
   ],
   "metrics": {
-    "jsGzip": 141026,
-    "jsGzipTotal": 153272,
-    "cssGzip": 10687,
+    "jsGzip": 140823,
+    "jsGzipTotal": 153069,
+    "cssGzip": 10818,
     "poster": 125272,
     "desktopVideo": 174251,
     "mobileVideo": 129343

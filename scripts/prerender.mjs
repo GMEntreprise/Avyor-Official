@@ -1,5 +1,5 @@
 import { readFile, writeFile, mkdir, readdir } from 'node:fs/promises';
-import { render, pages, faqs, config, facts } from '../.ssr/entry-server.js';
+import { render, pages, faqs, config, facts, introScript } from '../.ssr/entry-server.js';
 const template = await readFile('dist/index.html', 'utf8');
 const origin = config.origin;
 const indexable = config.indexable;
@@ -80,7 +80,7 @@ for (const page of pages) {
     template
       .replace(
         '<!--head-->',
-        `${font ? `<link rel="preload" href="/assets/${font}" as="font" type="font/woff2" crossorigin>` : ''}${head(page)}`,
+        `${font ? `<link rel="preload" href="/assets/${font}" as="font" type="font/woff2" crossorigin>` : ''}${head(page)}${page.slug === '' ? `<script>${introScript}</script>` : ''}`,
       )
       .replace('<!--app-->', render(`/${page.slug ? page.slug + '/' : ''}`)),
   );

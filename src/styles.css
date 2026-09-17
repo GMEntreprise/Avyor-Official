@@ -719,25 +719,60 @@ h3 {
   font-size: 0.67rem;
   min-height: 44px;
 }
+/* The intro plays from the prerendered HTML, so it never waits for React and
+   never depends on how fast the bundle arrives. `visibility: hidden` on the
+   last frame is also the failsafe: even if nothing else runs, it goes away. */
 .intro {
   position: fixed;
   inset: 0;
   z-index: 90;
   pointer-events: none;
-  animation: intro-failsafe 1.7s forwards;
+  animation: intro-exit 1.6s var(--ease) forwards;
+}
+@keyframes intro-exit {
+  0%,
+  72% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+.intro-aperture {
+  transform-box: view-box;
+  transform-origin: 500px 500px;
+  animation: intro-aperture 1.45s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+}
+@keyframes intro-aperture {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(16);
+  }
 }
 .intro-mark {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  animation: intro-mark-out 0.35s 0.25s var(--ease) forwards;
 }
-@keyframes intro-failsafe {
-  99% {
-    visibility: visible;
+@keyframes intro-mark-out {
+  to {
+    opacity: 0;
   }
-  100% {
-    visibility: hidden;
+}
+/* Already seen this session, or motion is unwelcome: no intro at all. */
+.intro-seen .intro,
+.intro-seen .intro-mark {
+  display: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .intro {
+    display: none;
   }
 }
 .manifesto {

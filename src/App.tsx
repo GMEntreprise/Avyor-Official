@@ -10,8 +10,8 @@ import {
 } from 'lucide-react';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
-import { Hero } from './components/Hero';
 import { Intro } from './components/Intro';
+import { Hero } from './components/Hero';
 import { Story } from './components/Story';
 import { Workflow } from './components/Workflow';
 import { Gallery } from './components/Gallery';
