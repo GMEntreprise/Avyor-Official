@@ -1,0 +1,23 @@
+{
+  "measuredAt": "2026-09-17T21:34:19.235Z",
+  "initial": [
+    "assets/index-DIqpHqIy.js",
+    "assets/motion-DDGmUNfW.js"
+  ],
+  "metrics": {
+    "jsGzip": 141026,
+    "jsGzipTotal": 153272,
+    "cssGzip": 10687,
+    "poster": 125272,
+    "desktopVideo": 174251,
+    "mobileVideo": 129343
+  },
+  "budgets": {
+    "jsGzip": 143360,
+    "jsGzipTotal": 168960,
+    "cssGzip": 25600,
+    "poster": 225280,
+    "desktopVideo": 3145728,
+    "mobileVideo": 1572864
+  }
+}

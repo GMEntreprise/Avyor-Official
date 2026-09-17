@@ -1,0 +1,11 @@
+node_modules
+dist
+.ssr
+SEO_BOOSTER
+scripts/upstream
+docs/seo/*.txt
+docs/site/lighthouse*.json
+brand/manifest.json
+test-results
+playwright-report
+bun.lock

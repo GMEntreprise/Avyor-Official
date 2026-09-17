@@ -1,0 +1,195 @@
+{
+  "master": {
+    "width": 1024,
+    "height": 1024,
+    "alpha": true
+  },
+  "files": [
+    {
+      "file": "favicon-16.png",
+      "source": "brand/masters/avyor-logo.png",
+      "bytes": 584,
+      "sha256": "ee000528c4789212435342833db8cc3c10cdd993a749cf8339a01ac17b106a5c"
+    },
+    {
+      "file": "favicon-32.png",
+      "source": "brand/masters/avyor-logo.png",
+      "bytes": 1400,
+      "sha256": "c4bdbf30b0ef5dc42f81d19ed4d356b1ea9bb401865395127dab511ad2f007a7"
+    },
+    {
+      "file": "apple-touch-icon.png",
+      "source": "brand/masters/avyor-logo.png",
+      "bytes": 23123,
+      "sha256": "c5de2ada0ac46b454a6d2180d1474fe50a1a1a00e2dd810f1fbc027bdb71e281"
+    },
+    {
+      "file": "icon-192.png",
+      "source": "brand/masters/avyor-logo.png",
+      "bytes": 25995,
+      "sha256": "b0f99cb1177e5688d7d46df730cff9c6d87d90b8f87ebd40eecb037a556b4a90"
+    },
+    {
+      "file": "icon-512.png",
+      "source": "brand/masters/avyor-logo.png",
+      "bytes": 146170,
+      "sha256": "b6ae5762a2bd8e36e5c840f67e2de6d6e3f7d0aa1bcaacd64fb27ffde0fc4df9"
+    },
+    {
+      "file": "assets/brand/logo.webp",
+      "source": "brand/masters/avyor-logo.png",
+      "bytes": 29842,
+      "sha256": "528434ce5b2bfffedf296977e308aa97209e026d49e6e07c57b3253ab7532690"
+    },
+    {
+      "file": "assets/brand/logo.png",
+      "source": "brand/masters/avyor-logo.png",
+      "bytes": 446639,
+      "sha256": "bc2e629bee0dc66ebf0d687c57009ca422282b73955b9fb8576ab79e8b7a7c3e"
+    },
+    {
+      "file": "assets/brand/logo-mask.webp",
+      "source": "brand/masters/avyor-logo.png",
+      "bytes": 44608,
+      "sha256": "6920876e9f77b16fd52f105cd329467feabb631c6f68ab64a8da5ae7d2bd06eb"
+    },
+    {
+      "file": "icon-maskable-512.png",
+      "source": "brand/masters/avyor-logo.png",
+      "bytes": 64624,
+      "sha256": "541dac0fcd8980589b20ce74e5a761ce6024932f931e618d2f9f8b38dfdfd481"
+    },
+    {
+      "file": "favicon.ico",
+      "source": "brand/masters/avyor-logo.png",
+      "bytes": 4543,
+      "sha256": "83858742a31882de8100192513fbd2bd211d62bd4bea262708f0211093c6c342"
+    },
+    {
+      "file": "assets/screens/02-matching-396.webp",
+      "source": "brand/sources/screens/02-matching.png",
+      "bytes": 20126,
+      "sha256": "9860dc430e8d27b4423351c72299368b32cd79662b37ae4433bc3658a56b1ff1"
+    },
+    {
+      "file": "assets/screens/02-matching-660.webp",
+      "source": "brand/sources/screens/02-matching.png",
+      "bytes": 39388,
+      "sha256": "f4c8c17775f6b8bc0a43222da6b133576695e0a4d332eeb29ac9074253fae230"
+    },
+    {
+      "file": "assets/screens/03-match-detail-396.webp",
+      "source": "brand/sources/screens/03-match-detail.png",
+      "bytes": 21784,
+      "sha256": "1850648862086131ac1e6efff225f58941e9c528178ed22f9e550cd1c8cd02da"
+    },
+    {
+      "file": "assets/screens/03-match-detail-660.webp",
+      "source": "brand/sources/screens/03-match-detail.png",
+      "bytes": 41802,
+      "sha256": "b6c24dbbbf6cb100c2f76203142ca9466fe632d492f1102301cf226073681255"
+    },
+    {
+      "file": "assets/screens/04-feed-396.webp",
+      "source": "brand/sources/screens/04-feed.png",
+      "bytes": 43340,
+      "sha256": "90c540d19d3c47cb169e183f6fbd1ffba299bd1d43d04801ec29703c1590d13d"
+    },
+    {
+      "file": "assets/screens/04-feed-660.webp",
+      "source": "brand/sources/screens/04-feed.png",
+      "bytes": 86460,
+      "sha256": "02c174116c5abdd31112ac2ef40cf5af206f281ae7aa61e4365bbe339cd69a2a"
+    },
+    {
+      "file": "assets/screens/05-campaign-396.webp",
+      "source": "brand/sources/screens/05-campaign.png",
+      "bytes": 35162,
+      "sha256": "84d6daff8351e344a37738ca4dae78108abb8fc087098428109600850adaf0eb"
+    },
+    {
+      "file": "assets/screens/05-campaign-660.webp",
+      "source": "brand/sources/screens/05-campaign.png",
+      "bytes": 66762,
+      "sha256": "be38279199615697d9dc150fe994eeffed57571ab42eeef8ec2a0fca24e50b42"
+    },
+    {
+      "file": "assets/screens/06-collaboration-396.webp",
+      "source": "brand/sources/screens/06-collaboration.png",
+      "bytes": 29662,
+      "sha256": "8d9594745dfe66c4ece0544310684de90a57b5b902a5896ef943fecb0edadfd5"
+    },
+    {
+      "file": "assets/screens/06-collaboration-660.webp",
+      "source": "brand/sources/screens/06-collaboration.png",
+      "bytes": 58198,
+      "sha256": "c6912748f8c06c686de60842fc3d0a45cde1d2f48d9dc8946026ff53cee6b13b"
+    },
+    {
+      "file": "assets/screens/07-payment-396.webp",
+      "source": "brand/sources/screens/07-payment.png",
+      "bytes": 17294,
+      "sha256": "8a45df5243d6f99eac6a7382bf4e96e893dcbc777113602aeed1ae89258be0d7"
+    },
+    {
+      "file": "assets/screens/07-payment-660.webp",
+      "source": "brand/sources/screens/07-payment.png",
+      "bytes": 32534,
+      "sha256": "298024a6e2df8bdce6cb9f2d3165c8c91c50f63c8fea3420cd9e2ff8282f43f6"
+    },
+    {
+      "file": "assets/screens/08-portfolio-396.webp",
+      "source": "brand/sources/screens/08-portfolio.png",
+      "bytes": 33624,
+      "sha256": "6f854344f990da99bf876d5cef12c2efbf4df997548cef4017a3b51f6459b6de"
+    },
+    {
+      "file": "assets/screens/08-portfolio-660.webp",
+      "source": "brand/sources/screens/08-portfolio.png",
+      "bytes": 65002,
+      "sha256": "4120ca33b85e329f02d1ae270122e8b81dc4dd711464f66208f500cbbafc7fd9"
+    },
+    {
+      "file": "assets/media/nomad-essentials.webp",
+      "source": "brand/sources/media/nomad-essentials.png",
+      "bytes": 114558,
+      "sha256": "e5183bc4618c15f45f478d63858e5751a9b67566460d63b59b7d7b3c0a89f2fb"
+    },
+    {
+      "file": "assets/media/morning-glow-routine.webp",
+      "source": "brand/sources/media/morning-glow-routine.png",
+      "bytes": 66112,
+      "sha256": "35f5bf96c3daf5afa32793b1a004d94ad969d24784c2e30b656e564e90ee106a"
+    },
+    {
+      "file": "assets/media/pulse-fitness-launch.webp",
+      "source": "brand/sources/media/pulse-fitness-launch.png",
+      "bytes": 69838,
+      "sha256": "5101c5e5c331728c2cab29401d29a35d97d57a38e9fdcda29a025dd5aff530bd"
+    },
+    {
+      "file": "assets/media/nova-tech-motion.webp",
+      "source": "brand/sources/media/nova-tech-motion.png",
+      "bytes": 50374,
+      "sha256": "01dda64a67360aed652ae3305ad470e63ee17a767bf6a13ad14c47d36668b518"
+    },
+    {
+      "file": "assets/hero-poster.webp",
+      "source": "Avyor/store-assets/demo-media",
+      "bytes": 125272,
+      "sha256": "82b0d9615f12395b9953513acb3b8ebdc44718c5888732688f71d4c3173211ec"
+    },
+    {
+      "file": "og.png",
+      "source": "Master AVYOR + vraie capture feed + texte éditorial",
+      "bytes": 351324,
+      "sha256": "8cc841e81f1c5af47cba1949603ee40f3b8c1fa850afb8859f9ebb918cf6b6b2"
+    },
+    {
+      "file": "site.webmanifest",
+      "source": "Configuration AVYOR",
+      "bytes": 510,
+      "sha256": "878a4615332c29e93955b3309ef53bd1cc2966a09bedaed0310dd2a53c6cecfd"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.ssr/
+.env
+.env.local
+test-results/
+playwright-report/
+.DS_Store
+
+# Artefacts régénérés par les scripts du projet
+tsconfig.tsbuildinfo
+docs/site/screenshots/

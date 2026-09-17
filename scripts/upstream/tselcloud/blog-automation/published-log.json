@@ -1,0 +1,4 @@
+{
+  "_comment": "Journal des générations du blog automatique. Une entrée par exécution publiée. Sert d'index anti-doublon (par topicId) et d'audit (sujet, slug, date, statut, modèle).",
+  "entries": []
+}

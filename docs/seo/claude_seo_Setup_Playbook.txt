@@ -1,0 +1,897 @@
+THE CLAUDE-SEO
+SETUP PLAYBOOK
+The complete step-by-step guide to installing, configuring, and running the most-starred
+Claude Code SEO skill on GitHub.
+ 10,000+
+GitHub Stars
+ 25
+Sub-Skills
+ 18
+Parallel Agents
+ 100%
+Free & MIT
+Offered by the Klaym AI team
+Klaym AI helps brands monitor, understand, and grow their visibility across AI search and answer engines — including ChatGPT,
+Claude, Gemini, Perplexity, and Google AI Overviews.
+Join the waitlist → klaym.ai
+This playbook is independent educational content created by Klaym AI. claude-seo is an open-source MIT-licensed project by AgriciDaniel on GitHub. This guide
+is not affiliated with or endorsed by Anthropic or AgriciDaniel. Claude is a product of Anthropic, referenced here for educational purposes only.
+
+Table of Contents
+ 1. What Is claude-seo and Why It Matters
+3
+2. Prerequisites Before You Install
+4
+3. Installation — The Right Way (10 Minutes)
+5
+4. The 4-Tier Credential System
+7
+5. Connecting Google Search Console and GA4
+8
+6. Running Your First Full Site Audit
+10
+7. Reading and Interpreting the Audit Output
+12
+8. Generating Client Reports (PDF and Excel)
+13
+9. Activating the GEO Sub-Skill for AI Search Visibility
+14
+10. Optional Extensions — DataForSEO and Firecrawl
+15
+11. Common Errors and Exactly How to Fix Them
+16
+12. Your Weekly SEO Operating Rhythm
+18
+13. Three Real Use Cases
+19
+    Freelance SEO consultant — Winning a new client
+19
+    In-house SEO lead — Pre-launch content check
+19
+    Agency SEO team — Monthly client audit at scale
+19
+14. Final Setup Checklist
+20
+About Klaym AI
+22
+Offered by Klaym AI — klaym.ai
+The claude-seo Setup Playbook  |  Page 2 of 22
+
+1.  What Is claude-seo and Why It Matters
+claude-seo is an open-source Claude Code skill built by AgriciDaniel. It turns Claude Code into a comprehensive SEO
+auditing system — running 25 sub-skills and 18 specialist agents in parallel across your site. It is MIT licensed, free to install,
+and does not send your data to external servers unless you choose to activate optional paid extensions.
+What it replaces
+ Paid tool
+What it does
+claude-seo equivalent
+Monthly cost saved
+Screaming Frog
+Full site crawl + technical
+audit
+seo-technical + seo-crawl
+sub-skills
+$259/year
+Semrush
+Keyword research +
+competitive intel
+seo-content + DataForSEO
+extension
+$119-449/month
+Ahrefs
+Backlink analysis + site audit
+seo-backlinks sub-skill
+$99-449/month
+Schema App
+Schema markup generation
+seo-schema sub-skill
+$125/month
+BrightLocal
+Local SEO + citations
+seo-local + seo-maps sub-skills
+$29-79/month
+Lumar
+Technical SEO monitoring
+seo-technical audit
+$200-1,500/month
+Agency audit
+Full SEO report
+Full claude-seo run
+$500-3,000 per audit
+What claude-seo covers
+ Technical SEO
+Crawlability, redirect chains, canonical conflicts, broken links, indexation status, robots.txt, sitemap validation, Core Web Vitals,
+IndexNow submission
+ Content quality (E-E-A-T)
+Experience, expertise, authoritativeness, and trustworthiness scoring per page. 80-item content checklist aligned to Google's
+quality guidelines.
+ Schema markup
+Detection of existing schema, validation against schema.org, generation of missing structured data (Article, FAQ, Product,
+LocalBusiness, BreadcrumbList, and more).
+ GEO / AEO optimization
+AI search visibility scoring. Passage citability (optimal 134–167 word answer blocks). Question-based headings. Attribution
+density. Entity presence tracking.
+ Backlinks
+Referring domain analysis, toxic link detection, anchor text distribution, competitor backlink gap identification (requires
+DataForSEO extension for live data).
+ Local SEO
+Google Business Profile audit, citation consistency, geo-modified content analysis, Maps intelligence, review signals.
+ Semantic clustering
+Topic cluster mapping, internal linking opportunities, content gap identification across the full site.
+ Reports
+PDF and Excel reports ready for client delivery. Filterable by severity (Critical/High/Medium/Low).
+PRIVACY NOTE: claude-seo runs entirely on your local machine through Claude Code. No data is sent to external servers unless
+you explicitly activate the DataForSEO or Firecrawl extensions. You can run full audits on client sites without any data leaving your
+environment.
+Offered by Klaym AI — klaym.ai
+The claude-seo Setup Playbook  |  Page 3 of 22
+
+2.  Prerequisites Before You Install
+Check every item below before starting. Skipping prerequisites is the #1 reason the setup fails.
+Requirement
+Version / details
+How to check
+Why it's needed
+Claude Code CLI
+Latest version
+claude --version in terminal
+Runs the skill; older versions may not support plugin
+marketplace
+Anthropic account
+Active subscription
+claude auth login
+Authentication for Claude Code
+Python
+3.10 or higher
+python3 --version
+Required for Google API scripts and report generation
+Node.js
+20 or higher
+node --version
+Required for Firecrawl extension (optional but
+recommended)
+Git
+Any recent version
+git --version
+Required for manual install method
+macOS / Linux /
+Windows
+All supported
+—
+WSL2 recommended on Windows
+Internet connection
+Active during install
+—
+Downloads skill files and dependencies
+Verify your Claude Code installation
+ TERMINAL — RUN THESE FIRST
+# Check Claude Code is installed and authenticated
+claude --version
+claude auth login
+# Verify Python 3.10+
+python3 --version
+# Verify Node.js 20+
+node --version
+# Verify Git
+git --version
+■ WARNING: Do not proceed if claude --version returns an error. Install or update Claude Code first: npm install -g
+@anthropic-ai/claude-code or follow docs.anthropic.com/claude-code
+Offered by Klaym AI — klaym.ai
+The claude-seo Setup Playbook  |  Page 4 of 22
+
+3.  Installation — The Right Way (10 Minutes)
+There are three installation methods. Method A is the fastest. Use Method C only if Methods A and B both fail.
+ STEP A
+Plugin Marketplace Install (Fastest — Recommended)
+Open Claude Code in your terminal and run these two commands:
+ CLAUDE CODE TERMINAL
+# Step 1 — Add to marketplace
+/plugin marketplace add AgriciDaniel/claude-seo
+# Step 2 — Install the plugin
+/plugin install claude-seo@agricidaniel-claude-seo
+✓ CONFIRMED WORKING: If you see 'Plugin installed successfully' — you're done. Skip to Section 4.
+ STEP B
+Install Script (If Marketplace Returns 404)
+Run the install script directly from GitHub:
+ TERMINAL
+# Download the install script
+curl -fsSL https://raw.githubusercontent.com/AgriciDaniel/claude-seo/main/install.sh > install
+.sh
+# Review it before running (recommended)
+cat install.sh
+# Run the installer
+bash install.sh
+# Clean up
+rm install.sh
+ STEP C
+Manual Git Clone (Fallback)
+TERMINAL
+# Clone the repository
+git clone --depth 1 https://github.com/AgriciDaniel/claude-seo.git
+# Run the installer from the cloned directory
+bash claude-seo/install.sh
+Verify the installation worked
+ VERIFICATION
+Offered by Klaym AI — klaym.ai
+The claude-seo Setup Playbook  |  Page 5 of 22
+
+# In Claude Code terminal, list installed plugins
+/plugin list
+# You should see: claude-seo@agricidaniel-claude-seo
+# Run a quick test on any URL
+/seo audit https://example.com
+✓ CONFIRMED WORKING: If the audit starts running and you see 'Analysing page...' or similar — installation is complete. The first
+run on a new URL takes 30-90 seconds as agents initialise.
+CHECKLIST
+ [  ]   claude --version returns a version number
+[  ]   Authentication is active (claude auth login completed)
+[  ]   /plugin marketplace add AgriciDaniel/claude-seo ran without errors
+[  ]   /plugin install claude-seo@agricidaniel-claude-seo succeeded
+[  ]   /plugin list shows claude-seo installed
+[  ]   First test audit runs without crashing
+Offered by Klaym AI — klaym.ai
+The claude-seo Setup Playbook  |  Page 6 of 22
+
+4.  The 4-Tier Credential System
+claude-seo uses a 4-tier credential system. You can start at Tier 0 with zero API keys and run full audits immediately. Each
+tier unlocks additional data sources. Most users get 90% of the value at Tier 1.
+Tier
+What you need
+What it unlocks
+Setup time
+Who should use it
+Tier 0 —
+Free
+Nothing
+Full site crawl, technical audit, content
+quality, schema detection, E-E-A-T
+scoring, GEO audit
+0 minutes
+Everyone — start
+here
+Tier 1 —
+API Key
+1 Google API key (free)
+PageSpeed Insights live data, Chrome
+UX Report (CrUX), YouTube signals, NLP
+analysis, Trends data, Custom Search
+5 minutes
+Freelancers,
+in-house SEO leads
+Tier 2 —
+OAuth
+read
+Google OAuth
+(read-only)
+Google Search Console performance
+data, GA4 reporting, real traffic and
+keyword data
+15 minutes
+Agencies with client
+access
+Tier 3 —
+OAuth
+write
+Google OAuth (write)
+IndexNow URL submission directly to
+Google, automated indexation
+20 minutes
+Power users,
+automation pipelines
+Tier 4 —
+Service
+Account
+Google service account
+Fully automated pipelines, CI/CD
+integration, no manual OAuth each run
+30 minutes
+Agencies running 5+
+sites at scale
+Setting up Tier 1 — Google API Key (Recommended Starting Point)
+1. Go to Google Cloud Console
+Visit console.cloud.google.com and sign in with your Google account.
+2. Create a new project
+Click 'Select a project' → 'New Project'. Name it 'claude-seo' for clarity.
+3. Enable required APIs
+Go to APIs & Services → Library. Enable these 6 free APIs:
+→ PageSpeed Insights API
+→ Chrome UX Report API
+→ YouTube Data API v3
+→ Cloud Natural Language API
+→ Custom Search API
+→ Trends (no explicit enable needed)
+4. Create an API key
+Go to APIs & Services → Credentials → Create Credentials → API Key.
+Restrict the key to the 5 APIs above for security.
+5. Add to claude-seo config
+Create or edit ~/.claude/skills/claude-seo/config.env:
+GOOGLE_API_KEY=your_api_key_here
+✓ CONFIRMED WORKING: Google's free tier for these APIs provides ~$300 credit per month. A full site audit typically costs less
+than $0.01 in API calls.
+Offered by Klaym AI — klaym.ai
+The claude-seo Setup Playbook  |  Page 7 of 22
+
+5.  Connecting Google Search Console and GA4
+This is Tier 2. Once configured, claude-seo can pull real traffic data, actual rankings, impression and click data from GSC,
+and conversion data from GA4 — and include it in your audit reports.
+Step 1 — Set up OAuth credentials in Google Cloud Console
+ GOOGLE CLOUD CONSOLE + TERMINAL
+# In Google Cloud Console:
+# 1. Go to APIs & Services → Credentials
+# 2. Create Credentials → OAuth 2.0 Client ID
+# 3. Application type: Desktop App
+# 4. Download the JSON file
+# 5. Rename it to google-oauth.json
+# 6. Move it to:
+mv google-oauth.json ~/.claude/skills/claude-seo/google-oauth.json
+Step 2 — Enable GSC and GA4 APIs
+ GOOGLE CLOUD CONSOLE
+# In Google Cloud Console → APIs & Services → Library:
+# Enable:
+# → Google Search Console API
+# → Google Analytics Data API (GA4)
+# → Google Analytics Reporting API
+# Both are free with standard quotas.
+Step 3 — Authenticate Claude Code with your Google account
+ CLAUDE CODE TERMINAL
+# In Claude Code terminal:
+/seo auth google
+# A browser window will open asking you to log in and grant permissions.
+# Accept the read-only scopes for GSC and GA4.
+# Tokens are stored locally in ~/.claude/skills/claude-seo/tokens/
+Step 4 — Verify the connection
+ VERIFICATION
+# Test GSC connection:
+/seo gsc verify https://yourdomain.com
+# Expected output:
+# ✓ GSC connected — site verified
+# ✓ Data available: 90 days of search performance
+# ✓ Top queries: [list of your actual queries]
+■ WARNING: GSC data is only available for sites you have verified access to in Google Search Console. For client sites, you need
+to be added as an authorized user in their GSC account, or ask them to export and paste the data directly into Claude Code.
+CHECKLIST
+Offered by Klaym AI — klaym.ai
+The claude-seo Setup Playbook  |  Page 8 of 22
+
+[  ]   Google Cloud project created
+[  ]   Required APIs enabled (GSC + GA4 + Analytics Reporting)
+[  ]   OAuth credentials JSON downloaded and placed in correct path
+[  ]   /seo auth google completed without errors
+[  ]   /seo gsc verify returns confirmed site data
+[  ]   Read-only scopes only — no write access granted at this stage
+Offered by Klaym AI — klaym.ai
+The claude-seo Setup Playbook  |  Page 9 of 22
+
+6.  Running Your First Full Site Audit
+There are two audit modes: single-page analysis and full site audit. Start with a single page to verify the skill is working
+before running a full site.
+Mode 1 — Single Page Deep Analysis
+ SINGLE PAGE COMMANDS
+# Basic single-page audit
+/seo page https://yourdomain.com/your-page
+# Single page with GSC data included (Tier 2 required)
+/seo page https://yourdomain.com/your-page --gsc
+# Single page with full GEO audit for AI search visibility
+/seo page https://yourdomain.com/your-page --geo
+Mode 2 — Full Site Audit (Up to 500 Pages)
+ FULL SITE AUDIT COMMANDS
+# Full site audit — Tier 0 (no API keys needed)
+/seo audit https://yourdomain.com
+# Full site audit with all Tier 1 data
+/seo audit https://yourdomain.com --deep
+# Full site audit with GSC + GA4 performance data
+/seo audit https://yourdomain.com --gsc --ga4
+# Full site audit with GEO optimization scoring
+/seo audit https://yourdomain.com --geo
+# Complete audit — all sub-skills + all data sources
+/seo audit https://yourdomain.com --all
+What happens during a full site audit
+ Phase
+What runs
+Agents active
+Typical duration
+1 —
+Discovery
+Sitemap crawl, URL mapping,
+robots.txt parsing
+1 orchestrator agent
+30-60 seconds
+2 —
+Technical
+Crawlability, redirects,
+canonicals, Core Web Vitals,
+IndexNow
+3-5 parallel agents
+2-4 minutes
+3 —
+Content
+E-E-A-T scoring, heading
+hierarchy, word count, duplicate
+content
+3-4 parallel agents
+3-6 minutes
+4 —
+Schema
+Markup detection, validation,
+missing schema identification
+2 agents
+1-2 minutes
+5 —
+GEO/AEO
+AI citability scoring, passage
+analysis, entity detection
+2 agents
+2-3 minutes
+6 —
+Backlinks
+Referring domain analysis,
+anchor text, toxic patterns
+2 agents (+ DataForSEO if
+enabled)
+1-3 minutes
+Offered by Klaym AI — klaym.ai
+The claude-seo Setup Playbook  |  Page 10 of 22
+
+Phase
+What runs
+Agents active
+Typical duration
+7 —
+Reporting
+Findings compilation, priority
+ranking, report generation
+1 orchestrator
+30-60 seconds
+Individual sub-skill commands
+ Command
+What it does
+/seo technical https://domain.com
+Technical SEO only — crawl issues, redirects, canonicals
+/seo content https://domain.com/page
+Content quality and E-E-A-T scoring for a single page
+/seo schema https://domain.com/page
+Schema markup detection and generation
+/seo geo https://domain.com/page
+GEO / AI search visibility scoring
+/seo backlinks https://domain.com
+Backlink analysis (DataForSEO recommended)
+/seo local https://domain.com
+Local SEO audit including GBP signals
+/seo keywords https://domain.com
+Semantic cluster mapping and keyword coverage
+/seo eeat https://domain.com/page
+Standalone E-E-A-T assessment
+Offered by Klaym AI — klaym.ai
+The claude-seo Setup Playbook  |  Page 11 of 22
+
+7.  Reading and Interpreting the Audit Output
+Every claude-seo audit returns a structured report with scored findings ranked by severity. Here is how to read it and what to
+do with each section.
+The overall score (0-100)
+ Score range
+Health status
+Typical situation
+Priority action
+85-100
+Excellent
+Well-optimised site with minor gaps
+Focus on GEO and AI visibility improvements
+70-84
+Good
+Solid foundation with specific issues
+Fix Critical and High findings within 30 days
+50-69
+Needs work
+Structural issues affecting rankings
+Dedicated sprint — address Critical items this
+week
+30-49
+Poor
+Multiple blocking issues
+Stop new content — fix technical foundation
+first
+0-29
+Critical
+Significant technical or content
+failures
+Immediate audit review with developer
+required
+Severity levels and how to act on them
+■ CRITICAL — Blocks crawling or indexation. Google cannot access or rank these pages. Fix within 48 hours.
+Examples: Noindex on key pages, broken canonical chain, disallow in robots.txt on priority URLs, missing sitemap, 5xx server errors on landing
+pages.
+■ HIGH — Directly impacts rankings or user experience. Fix within 2 weeks.
+Examples: Missing or duplicate H1 tags, title tags over 60 chars or missing keyword, Core Web Vitals failing, missing schema on high-traffic pages,
+thin content on BOFU pages.
+■ MEDIUM — Meaningful opportunity loss. Fix within 30-60 days.
+Examples: Missing meta descriptions, internal linking gaps, missing FAQ schema, suboptimal E-E-A-T signals, GEO passage citability score below
+threshold.
+■ LOW — Nice-to-have improvements. Add to backlog.
+Examples: Image alt text improvements, minor heading hierarchy issues, additional schema types, long-tail keyword coverage gaps.
+The GEO score — what it means
+The GEO (Generative Engine Optimization) score is specific to claude-seo. It measures how likely your content is to be cited or
+recommended by AI answer engines like ChatGPT, Perplexity, Gemini, and Google AI Overviews.
+ GEO metric
+What it measures
+Target value
+Passage citability score
+Self-contained answer blocks (optimal:
+134-167 words)
+Above 70/100
+Question-based headings
+H2/H3 phrased as questions the AI can
+answer directly
+60%+ of headings
+Attribution density
+Citable claims with sources per 1,000 words
+3-5 per 1,000 words
+Entity presence
+Brand/topic presence on Wikipedia, Reddit,
+LinkedIn, YouTube
+2+ authoritative sources
+Structured data coverage
+Schema types that increase extractability
+Article + FAQ minimum
+Offered by Klaym AI — klaym.ai
+The claude-seo Setup Playbook  |  Page 12 of 22
+
+8.  Generating Client Reports (PDF and Excel)
+claude-seo generates professional PDF and Excel reports ready to send to clients. This requires weasyprint (PDF) and
+openpyxl (Excel) to be installed — the installer handles this automatically.
+Report generation commands
+ REPORT COMMANDS
+# Generate a PDF report after a full audit
+/seo report pdf https://yourdomain.com
+# Generate an Excel report
+/seo report excel https://yourdomain.com
+# Generate both formats simultaneously
+/seo report all https://yourdomain.com
+# Generate a report with GSC data included (recommended for clients)
+/seo report pdf https://yourdomain.com --gsc
+# Custom output directory
+/seo report pdf https://yourdomain.com --output ~/Desktop/client-reports/
+What the PDF report includes
+ Report section
+What it contains
+Executive summary
+Overall SEO score, top 5 findings, estimated impact of fixes, priority action list — designed for the client to read
+in 3 minutes.
+Technical audit
+Crawl coverage, indexation status, Core Web Vitals scores, redirect chains, canonical analysis, robots.txt
+review.
+Content quality
+E-E-A-T assessment per key page, heading structure, word count distribution, duplicate content detection.
+Schema markup
+Detected schema types, validation issues, missing schema opportunities, generated schema code ready to
+implement.
+GEO/AEO scoring
+AI search visibility score, passage citability analysis, entity presence, structured data coverage.
+Backlinks
+Referring domain overview, anchor text distribution, high-risk patterns flagged (DataForSEO data if enabled).
+Priority action plan
+All findings ranked by: severity → estimated ranking impact → implementation effort. Each finding links to its
+evidence and fix recommendation.
+GSC performance data
+If enabled: top queries, impressions, clicks, CTR, average position, trending pages — 90-day view.
+✓ CONFIRMED WORKING: Reports are white-label ready. They do not include 'claude-seo' or 'AgriciDaniel' branding by default.
+Many agency users deliver these directly to clients as their own deliverables.
+Offered by Klaym AI — klaym.ai
+The claude-seo Setup Playbook  |  Page 13 of 22
+
+9.  Activating the GEO Sub-Skill for AI Search Visibility
+The GEO sub-skill is one of the most unique capabilities of claude-seo. It audits your content specifically for AI search
+engine citation — going beyond traditional SEO to assess whether ChatGPT, Perplexity, Gemini, and Google AI Overviews
+are likely to cite your content.
+What the GEO sub-skill audits
+ Passage citability
+Identifies 134-167 word self-contained answer blocks. This is the optimal length for AI systems to extract and cite as a direct
+answer.
+ Question-based heading hierarchy
+Audits whether your H2s and H3s are phrased as questions — AI systems use headings to identify answerable content.
+ Attribution density
+Counts citable, sourced claims per 1,000 words. AI systems prefer content that references primary sources.
+ Entity presence tracking
+Checks whether your brand and topic entities appear on authoritative third-party sources (Wikipedia, Reddit, YouTube, LinkedIn).
+ Structured data coverage
+Validates that FAQ, Article, and HowTo schema are present and correctly implemented for AI extractability.
+ llms.txt alignment
+Checks your llms.txt file (if present) for accuracy. Note: claude-seo's documentation correctly states that llms.txt is currently NOT
+a citation lever — this is included as evidence-based guidance.
+ AI Overviews eligibility
+Checks whether your pages meet the technical requirements to appear in Google AI Overviews (indexed, eligible for snippet
+display).
+GEO audit commands
+ GEO COMMANDS
+# Run GEO audit on a single page
+/seo geo https://yourdomain.com/your-page
+# Run GEO audit across the full site
+/seo audit https://yourdomain.com --geo
+# GEO + traditional SEO combined
+/seo audit https://yourdomain.com --geo --deep
+# Request GEO-specific recommendations only
+/seo geo https://yourdomain.com/page --recommend
+# Check AI Overviews eligibility for a page
+/seo geo https://yourdomain.com/page --overviews
+METHODOLOGY NOTE: The GEO sub-skill is aligned with Google's AI Optimization Guide and is evidence-based. It correctly
+debunks 3 popular myths: llms.txt is not a citation lever, content chunking is not required, and AI-specific keyword rewriting is
+unnecessary. Every recommendation includes the primary-source evidence it rests on.
+Offered by Klaym AI — klaym.ai
+The claude-seo Setup Playbook  |  Page 14 of 22
+
+10.  Optional Extensions — DataForSEO and Firecrawl
+Extensions add live market data (DataForSEO) and JavaScript rendering (Firecrawl) to your audits. Both are optional. The
+core tool runs perfectly without them.
+Extension
+What it adds
+Cost
+When to activate
+DataForSEO
+Live SERP data, keyword volumes,
+competitor rankings, backlink profiles
+From $50/month (pay per
+use)
+When you need market data — not just on-site
+analysis
+Firecrawl
+Real browser crawling for
+JavaScript-heavy sites (React, Vue,
+Next.js, SPAs)
+Free tier: 500
+credits/month
+When target site uses heavy JS or your audit
+misses pages
+Banana
+Additional AI model integrations for
+content analysis
+Community tier — free
+When you want extended content intelligence
+Installing the DataForSEO extension
+ DATAFORSEO SETUP
+# Get your DataForSEO credentials at dataforseo.com
+# Add to your config:
+echo 'DATAFORSEO_LOGIN=your_login' >> ~/.claude/skills/claude-seo/config.env
+echo 'DATAFORSEO_PASSWORD=your_password' >> ~/.claude/skills/claude-seo/config.env
+# Test the connection:
+/seo dataforseo test
+Installing the Firecrawl extension (for JavaScript-heavy sites)
+ FIRECRAWL SETUP
+# Requires Node.js 20+
+# Get your free API key at firecrawl.dev
+# Add to config:
+echo 'FIRECRAWL_API_KEY=your_key' >> ~/.claude/skills/claude-seo/config.env
+# Test on a JavaScript-heavy site:
+/seo audit https://yourdomain.com --firecrawl
+✓ CONFIRMED WORKING: Start with Tier 0 and add extensions only when you need the data they provide. Most audits are
+complete and actionable at Tier 0 or Tier 1.
+Offered by Klaym AI — klaym.ai
+The claude-seo Setup Playbook  |  Page 15 of 22
+
+11.  Common Errors and Exactly How to Fix Them
+These are the exact errors the community reports most frequently. Each one has a confirmed fix.
+■ WARNING: /plugin marketplace add returns 404
+Cause: Claude Code version is too old to support the
+plugin marketplace.
+Fix:
+npm install -g @anthropic-ai/claude-code@latest
+Then retry the marketplace add.
+■ WARNING: 'Plugin not found' after marketplace add
+Cause: The plugin needs to be installed after adding.
+Fix:
+/plugin install claude-seo@agricidaniel-claude-seo
+(The marketplace add and plugin install are two separate steps.)
+■ WARNING: Python not found or wrong version
+Cause: Python 3.10+ is required. System Python may
+be 2.x or 3.9.
+Fix:
+Install Python 3.10+: brew install python@3.10 (macOS) or
+apt install python3.10 (Ubuntu).
+Then: python3 --version to confirm.
+■ WARNING: weasyprint install fails (PDF reports not working)
+Cause: weasyprint has system dependencies that pip
+alone cannot install.
+Fix:
+macOS: brew install pango cairo
+Ubuntu: apt-get install libpango-1.0-0 libcairo2
+Then: pip3 install weasyprint
+■ WARNING: Google OAuth error: 'redirect_uri_mismatch'
+Cause: OAuth app not configured for desktop/local use.
+Fix:
+In Google Cloud Console → Credentials → Edit your OAuth client:
+Application type must be 'Desktop app', not 'Web application'.
+Recreate the credentials if needed.
+■ WARNING: GSC data not appearing in audit
+Cause: Site not verified in Search Console or OAuth
+scope missing.
+Fix:
+Offered by Klaym AI — klaym.ai
+The claude-seo Setup Playbook  |  Page 16 of 22
+
+1. Confirm site is verified in search.google.com/search-console
+2. Re-run /seo auth google and accept all requested scopes
+3. Wait 24-48h after initial GSC verification — data takes time to appear.
+■ WARNING: Audit stops at 'Analysing page 1 of X'
+Cause: Firecrawl not installed and site uses heavy
+JavaScript rendering.
+Fix:
+Option A: Install Firecrawl extension (Section 10)
+Option B: Run audit on individual pages instead of full site:
+/seo page https://domain.com/page-1
+■ WARNING: DataForSEO returns 401 Unauthorized
+Cause: Wrong credentials or account not activated.
+Fix:
+Confirm credentials at dataforseo.com/account
+Check config.env — no spaces around '='
+Confirm account has API access enabled (not just dashboard login)
+■ WARNING: Report generated but empty
+Cause: Audit did not complete before report was
+requested.
+Fix:
+Run /seo audit first, wait for 'Audit complete' confirmation.
+Then run /seo report pdf.
+■ WARNING: 'No skill matching this command' error
+Cause: Plugin installed but Claude Code session not
+restarted.
+Fix:
+Quit and restart Claude Code after plugin installation.
+New skills only load at session start.
+Offered by Klaym AI — klaym.ai
+The claude-seo Setup Playbook  |  Page 17 of 22
+
+12.  Your Weekly SEO Operating Rhythm
+Use this cadence to get consistent value from claude-seo without running full audits every day.
+Cadence
+Command
+What it does
+Time
+needed
+Daily
+---
+No daily run needed unless
+post-deployment check
+<5 min if
+needed
+Weekly
+/seo technical https://domain.com
+Catch new technical issues before they
+impact rankings
+15 min
+Weekly
+/seo geo https://domain.com/new-post
+GEO score any new content before it goes
+live
+10 min
+Weekly
+/seo content https://domain.com/page
+Content quality check on priority pages
+10 min
+Monthly
+/seo audit https://domain.com --all
+Full site audit with all sub-skills
+30-60 min
+Monthly
+/seo report pdf https://domain.com --gsc
+Generate client report with GSC data
+10 min
+Monthly
+/seo backlinks https://domain.com
+Backlink profile review
+15 min
+Quarterly
+/seo audit https://domain.com --schema
+Schema markup full review and refresh
+20 min
+On demand
+/seo page [URL] --deep
+Deep dive on any underperforming page
+15-20 min
+Post-publish
+/seo geo [new URL]
+GEO score every new piece of content
+5 min
+For agencies running multiple client sites
+ MULTI-CLIENT AGENCY SETUP
+# Create a client-specific config directory
+mkdir -p ~/.claude/skills/claude-seo/clients/client-name/
+# Client-specific config (separate GSC credentials per client)
+cp ~/.claude/skills/claude-seo/config.env \
+   ~/.claude/skills/claude-seo/clients/client-name/config.env
+# Run audit using client-specific config
+/seo audit https://clientdomain.com --config clients/client-name/
+# Generate client report
+/seo report pdf https://clientdomain.com --config clients/client-name/ \
+  --output ~/reports/client-name/
+Offered by Klaym AI — klaym.ai
+The claude-seo Setup Playbook  |  Page 18 of 22
+
+13.  Three Real Use Cases
+Freelance SEO consultant — Winning a new client
+Situation: You have a discovery call in 2 hours with a prospect who wants SEO services.
+ COMMANDS USED
+/seo audit https://prospectdomain.com
+/seo report pdf https://prospectdomain.com
+# 15-minute audit. 0-100 score. PDF report to present on the call.
+# Show concrete findings before even signing a contract.
+✓ CONFIRMED WORKING: Outcome: 15 minutes to a client-ready deliverable. Agencies charge $500-$1,000 for this report.
+In-house SEO lead — Pre-launch content check
+Situation: A new blog post is ready to publish. You want to ensure it's optimised for both Google and AI search before it goes live.
+ COMMANDS USED
+/seo page https://staging.yourdomain.com/new-post --geo
+/seo schema https://staging.yourdomain.com/new-post
+# Checks: E-E-A-T score, GEO citability, schema, heading structure,
+# meta tags, internal links. Full pre-publish checklist in 5 minutes.
+✓ CONFIRMED WORKING: Outcome: Content published with confidence. GEO score above threshold before going live — not
+after 3 months of underperformance.
+Agency SEO team — Monthly client audit at scale
+Situation: You manage 8 client sites. Monthly audits take 2-3 days per site with traditional tools.
+ COMMANDS USED
+# Run all 8 client audits in sequence:
+for domain in client1.com client2.com client3.com client4.com \
+              client5.com client6.com client7.com client8.com; do
+  /seo audit https://$domain --gsc --report pdf
+done
+# Or run them manually one by one — each takes 20-40 minutes.
+✓ CONFIRMED WORKING: Outcome: 8 full site audits with client-ready PDF reports in 1 day instead of 2 weeks. Same team
+capacity. 8x audit cadence.
+Offered by Klaym AI — klaym.ai
+The claude-seo Setup Playbook  |  Page 19 of 22
+
+14.  Final Setup Checklist
+Complete every item below to have claude-seo fully operational.
+PREREQUISITES
+ [  ]   Claude Code CLI installed and updated to latest version
+[  ]   Python 3.10+ confirmed (python3 --version)
+[  ]   Node.js 20+ confirmed (node --version)
+[  ]   Git installed (git --version)
+[  ]   Active Anthropic account and claude auth login completed
+INSTALLATION
+ [  ]   /plugin marketplace add AgriciDaniel/claude-seo completed
+[  ]   /plugin install claude-seo@agricidaniel-claude-seo completed
+[  ]   /plugin list shows claude-seo installed
+[  ]   First test audit run successfully (/seo audit https://example.com)
+[  ]   Claude Code restarted after installation
+TIER 1 — GOOGLE API KEY
+ [  ]   Google Cloud project created
+[  ]   6 free APIs enabled in Google Cloud Console
+[  ]   API key created and restricted to the correct APIs
+[  ]   GOOGLE_API_KEY added to config.env
+[  ]   PageSpeed Insights data appearing in audit output
+TIER 2 — GSC + GA4
+ [  ]   OAuth 2.0 credentials created (Desktop App type)
+[  ]   google-oauth.json placed in correct directory
+[  ]   GSC and GA4 APIs enabled in Google Cloud Console
+[  ]   /seo auth google completed (browser authentication done)
+[  ]   /seo gsc verify returning confirmed site data
+REPORTING
+ [  ]   weasyprint installed (PDF reports working)
+[  ]   openpyxl installed (Excel reports working)
+[  ]   /seo report pdf test run successful
+[  ]   Output directory confirmed and accessible
+GEO SUB-SKILL
+ [  ]   /seo geo test run on a priority page completed
+[  ]   GEO score reviewed and understood
+[  ]   Top 3 GEO improvements identified for first priority page
+WEEKLY RHYTHM
+ [  ]   Weekly technical audit scheduled
+[  ]   Monthly full audit scheduled
+[  ]   Post-publish GEO check added to content workflow
+[  ]   Client report template reviewed (if applicable)
+Offered by Klaym AI — klaym.ai
+The claude-seo Setup Playbook  |  Page 20 of 22
+
+Offered by Klaym AI — klaym.ai
+The claude-seo Setup Playbook  |  Page 21 of 22
+
+About Klaym AI
+Klaym AI helps brands monitor, understand, and grow their visibility across AI search and answer engines —
+including ChatGPT, Claude, Gemini, Perplexity, and Google AI Overviews. The goal is to help brands become the
+ones AI systems understand, trust, cite, and recommend.
+  Buyers no longer discover brands only through Google. They ask AI systems.
+  Klaym AI tracks whether your brand appears in those AI-generated answers — and how often.
+  We measure brand mentions, citations, sentiment, competitor share, and prompt performance.
+  We track Share of AI Voice — the metric that defines who wins in AI search.
+  We identify the source and content gaps preventing your brand from being cited.
+  The goal: make your brand more visible, more credible, and more recommended across all AI engines.
+Join the waitlist → klaym.ai
+klaym.ai
+Offered by Klaym AI — klaym.ai
+The claude-seo Setup Playbook  |  Page 22 of 22

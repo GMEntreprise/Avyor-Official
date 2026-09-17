@@ -1,0 +1,309 @@
+import { test, expect } from '@playwright/test';
+import AxeBuilder from '@axe-core/playwright';
+test('accueil, hydratation, FAQ, parcours et liens', async ({ page }, info) => {
+  const errors: string[] = [];
+  page.on('pageerror', (e) => errors.push(e.message));
+  page.on('console', (e) => {
+    if (e.type() === 'error') errors.push(e.text());
+  });
+  await page.goto('/');
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText(
+    'Le bon Creator.La bonne campagne.',
+  );
+  await page.getByRole('tab', { name: 'Je suis une marque' }).click();
+  await expect(page.getByRole('tabpanel')).toContainText('Posez votre brief.');
+  await page.getByRole('tab', { name: 'Je suis Creator' }).focus();
+  await page.keyboard.press('ArrowRight');
+  await expect(page.getByRole('tab', { name: 'Je suis une marque' })).toBeFocused();
+  await page.getByText('Comment fonctionne le matching ?', { exact: true }).click();
+  await expect(page.locator('details[open]')).toContainText('raisons de la compatibilité');
+  const gallery = page.getByRole('region', { name: /Captures de l’application/ });
+  await gallery.focus();
+  const before = await gallery.evaluate((el) => el.scrollLeft);
+  await page.keyboard.press('ArrowRight');
+  await expect.poll(() => gallery.evaluate((el) => el.scrollLeft)).toBeGreaterThan(before);
+  await page.getByRole('link', { name: 'Découvrir le parcours Creator' }).click();
+  await expect(page).toHaveURL(/\/creators\/$/);
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('Votre travail');
+  await page.goto('/brands/');
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('Le bon regard');
+  await page.goto('/download/');
+  await expect(page.locator('main')).toContainText('Bientôt disponible');
+  await expect(page.locator('a[href="#"]')).toHaveCount(0);
+  // Store identity comes from the official badges, never a generic device icon.
+  const cards = page.locator('main .store-card');
+  await expect(cards).toHaveCount(2);
+  await expect(cards.nth(0).locator('img')).toHaveAttribute('src', /app-store/);
+  await expect(cards.nth(1).locator('img')).toHaveAttribute('src', /google-play/);
+  // An unpublished store is not a link: there is nothing to click.
+  await expect(page.locator('main .store-card.is-pending a')).toHaveCount(0);
+  expect(errors).toEqual([]);
+  expect(info.project.name).toBeTruthy();
+});
+test('le CTA de téléchargement est distinct et mène à une vraie route', async ({ page }) => {
+  await page.goto('/');
+  const cta = page.locator('header .download-cta');
+  await expect(cta).toBeVisible();
+  await expect(cta).toHaveAttribute('href', '/download/');
+  // It must already read as the primary action before any hover.
+  const filled = await cta
+    .locator('.hbg-content')
+    .evaluate((el) => getComputedStyle(el).backgroundImage);
+  expect(filled).toContain('gradient');
+  await cta.focus();
+  await expect(cta).toBeFocused();
+  await page.keyboard.press('Enter');
+  await expect(page).toHaveURL(/\/download\/$/);
+});
+
+test('menu mobile accessible et restauration du focus', async ({ page }, info) => {
+  test.skip(info.project.name !== 'mobile');
+  await page.goto('/');
+  const trigger = page.getByRole('button', { name: 'Ouvrir le menu' });
+  await trigger.click();
+  await expect(page.getByRole('dialog')).toBeVisible();
+  await page.keyboard.press('Escape');
+  await expect(page.getByRole('dialog')).not.toBeVisible();
+  await expect(trigger).toBeFocused();
+  await trigger.click();
+  await page
+    .getByRole('navigation', { name: 'Navigation mobile' })
+    .getByRole('link', { name: /Marques/ })
+    .click();
+  await expect(page).toHaveURL(/\/brands\/$/);
+});
+
+test('le menu mobile met son CTA de téléchargement en évidence', async ({ page }, info) => {
+  test.skip(info.project.name !== 'mobile');
+  await page.goto('/');
+  await page.getByRole('button', { name: 'Ouvrir le menu' }).click();
+  const cta = page.getByRole('dialog').locator('.download-cta');
+  await expect(cta).toBeVisible();
+  await expect(cta).toHaveAttribute('href', '/download/');
+  const panel = await page.getByRole('dialog').boundingBox();
+  const box = await cta.boundingBox();
+  // Full width at the end of the panel, not one link lost among the others.
+  expect(box.width).toBeGreaterThan(panel.width * 0.8);
+});
+test('reduced motion, absence de vidéo auto et intro non bloquante', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.goto('/');
+  await expect(page.locator('.hero video')).not.toBeVisible();
+  await expect(page.locator('.hero video')).not.toHaveAttribute('src');
+  await page
+    .locator('.hero')
+    .getByRole('link', { name: /Télécharger l’app/ })
+    .click();
+  await expect(page).toHaveURL(/\/download\/$/);
+});
+test('l’apparition au scroll : rien ne clignote, rien ne reste caché', async ({ page }) => {
+  await page.goto('/creators/');
+  // Whatever is on screen at load must never have been hidden, whatever the viewport.
+  const hiddenInView = () =>
+    page.evaluate(
+      () =>
+        [...document.querySelectorAll('.reveal')].filter((el) => {
+          const box = el.getBoundingClientRect();
+          const onScreen = box.top < innerHeight && box.bottom > 0;
+          return onScreen && getComputedStyle(el).opacity !== '1';
+        }).length,
+    );
+  expect(await hiddenInView()).toBe(0);
+  // Blocks further down reveal as they are reached, and stay revealed.
+  const below = page.locator('.page-sections .reveal').nth(6);
+  await below.scrollIntoViewIfNeeded();
+  await expect(below).toBeVisible();
+  await expect.poll(() => below.evaluate((el) => getComputedStyle(el).opacity)).toBe('1');
+  // Every revealed block ends up visible, none is stranded.
+  await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+  await expect
+    .poll(() =>
+      page.evaluate(
+        () =>
+          [...document.querySelectorAll('.reveal')].filter(
+            (el) => getComputedStyle(el).opacity !== '1',
+          ).length,
+      ),
+    )
+    .toBe(0);
+});
+
+test('reduced motion : aucun bloc n’est masqué en attendant une animation', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.goto('/features/');
+  expect(
+    await page.evaluate(
+      () =>
+        [...document.querySelectorAll('.reveal')].filter(
+          (el) => getComputedStyle(el).opacity !== '1',
+        ).length,
+    ),
+  ).toBe(0);
+});
+
+test('HTML sans JavaScript et vraie réponse 404', async ({ browser, request }) => {
+  const context = await browser.newContext({ javaScriptEnabled: false });
+  const page = await context.newPage();
+  await page.goto('http://127.0.0.1:4173/creators/');
+  await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
+  await expect(page.locator('main')).toContainText('portfolio');
+  // Without JavaScript the reveal animation must leave everything readable.
+  expect(
+    await page.evaluate(
+      () =>
+        [...document.querySelectorAll('.reveal')].filter(
+          (el) => getComputedStyle(el).opacity !== '1',
+        ).length,
+    ),
+  ).toBe(0);
+  const missing = await request.get('/page-inexistante/');
+  expect(missing.status()).toBe(404);
+  await context.close();
+});
+test('pages légales : structure, sommaire et accessibilité', async ({ page }) => {
+  // The legal text loads as its own chunk: hydration must still line up exactly.
+  const errors: string[] = [];
+  page.on('pageerror', (e) => errors.push(e.message));
+  page.on('console', (e) => {
+    if (e.type() === 'error' || /hydrat/i.test(e.text())) errors.push(e.text());
+  });
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  for (const route of ['/privacy/', '/terms/', '/legal/']) {
+    await page.goto(route);
+    await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
+    await expect(page.locator('main')).toContainText('Dernière mise à jour');
+    const toc = page.getByRole('navigation', { name: 'Sur cette page' });
+    await expect(toc).toBeVisible();
+    const violations = (
+      await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze()
+    ).violations;
+    expect(violations).toEqual([]);
+    expect(
+      await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth),
+    ).toBe(true);
+    // The document is interactive, not just painted: the chunk resolved.
+    await expect(
+      page.locator('.legal-toc-desktop a[aria-current], .legal-toc-mobile'),
+    ).not.toHaveCount(0);
+  }
+  expect(errors).toEqual([]);
+});
+
+test('pages légales : ancres profondes et sommaire actif', async ({ page }, info) => {
+  test.skip(info.project.name !== 'desktop');
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  // A deep link still lands on its section after a full reload.
+  await page.goto('/privacy/#supprimer-mon-compte');
+  await expect
+    .poll(() =>
+      page.evaluate(() => {
+        const el = document.getElementById('supprimer-mon-compte');
+        return el ? Math.round(el.getBoundingClientRect().top) : -1;
+      }),
+    )
+    .toBeLessThan(200);
+  // The table of contents follows the reading position, and is reachable by keyboard.
+  await expect
+    .poll(() => page.locator('.legal-toc-desktop a[aria-current]').first().textContent())
+    .toContain('Supprimer mon compte');
+  const entry = page.locator('.legal-toc-desktop a').nth(3);
+  await entry.focus();
+  await expect(entry).toBeFocused();
+  await page.keyboard.press('Enter');
+  await expect(page).toHaveURL(/#donnees-fournies$/);
+});
+
+const allRoutes = [
+  '/',
+  '/creators/',
+  '/brands/',
+  '/features/',
+  '/how-it-works/',
+  '/security/',
+  '/faq/',
+  '/download/',
+  '/contact/',
+  '/privacy/',
+  '/terms/',
+  '/legal/',
+];
+
+test('accessibilité de toutes les routes', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  for (const route of allRoutes) {
+    await page.goto(route);
+    await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
+    const { violations } = await new AxeBuilder({ page })
+      .withTags(['wcag2a', 'wcag2aa', 'wcag21aa'])
+      .analyze();
+    expect(violations.map((v) => `${route} ${v.id}`)).toEqual([]);
+  }
+});
+
+test('aucun débordement horizontal, de l’iPhone SE au grand écran', async ({ page }, info) => {
+  test.skip(
+    info.project.name !== 'desktop',
+    'un seul passage suffit : les tailles sont pilotées ici',
+  );
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  for (const width of [320, 375, 390, 430, 768, 1024, 1280, 1440]) {
+    await page.setViewportSize({ width, height: 900 });
+    for (const route of allRoutes) {
+      await page.goto(route);
+      await page.evaluate(() => document.fonts.ready);
+      const overflow = await page.evaluate(
+        () => document.documentElement.scrollWidth - window.innerWidth,
+      );
+      expect(overflow, `${route} déborde de ${overflow}px à ${width}px`).toBeLessThanOrEqual(0);
+    }
+  }
+});
+
+test('les cibles tactiles du header restent atteignables sur petit écran', async ({
+  page,
+}, info) => {
+  test.skip(info.project.name !== 'mobile');
+  await page.goto('/');
+  for (const name of ['Ouvrir le menu']) {
+    const box = await page.getByRole('button', { name }).boundingBox();
+    expect(box.height).toBeGreaterThanOrEqual(40);
+    expect(box.width).toBeGreaterThanOrEqual(40);
+  }
+  const cta = await page.locator('header .download-cta .hbg-content').boundingBox();
+  expect(cta.height).toBeGreaterThanOrEqual(36);
+});
+
+for (const route of ['/', '/creators/', '/brands/'])
+  test(`accessibilité, débordement et capture ${route}`, async ({ page }, info) => {
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    await page.goto(route);
+    await page.evaluate(() => document.fonts.ready);
+    expect(
+      await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth),
+    ).toBe(true);
+    const result = await new AxeBuilder({ page })
+      .withTags(['wcag2a', 'wcag2aa', 'wcag21aa'])
+      .analyze();
+    expect(result.violations).toEqual([]);
+    for (const image of await page.locator('main img, footer img').all()) {
+      if (await image.isVisible()) {
+        await image.scrollIntoViewIfNeeded();
+        await expect
+          .poll(() =>
+            image.evaluate(
+              (el) =>
+                (el as HTMLImageElement).complete && (el as HTMLImageElement).naturalWidth > 0,
+            ),
+          )
+          .toBe(true);
+      }
+    }
+    await page.evaluate(() => window.scrollTo(0, 0));
+    await page.screenshot({
+      path: `docs/site/screenshots/${info.project.name}-${route.replaceAll('/', '') || 'home'}.png`,
+      fullPage: true,
+    });
+    await page.screenshot({
+      path: `docs/site/screenshots/${info.project.name}-${route.replaceAll('/', '') || 'home'}-viewport.png`,
+    });
+  });

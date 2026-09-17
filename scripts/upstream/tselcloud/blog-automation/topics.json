@@ -1,0 +1,333 @@
+{
+  "_comment": "Banque de sujets du blog automatique ConnectStar — orientés INTENTION DE RECHERCHE (on capte le trafic de gens qui ne connaissent pas encore ConnectStar), pas la marque. `id` unique et stable = clé anti-doublon (published-log.json). Rotation = premier sujet non encore publié ; l'ordre suit la séquence de piliers (foi_concrete → fonctionnalite → comparatif → foi_concrete → securite → foi_concrete → communaute → fonctionnalite …). Chaque sujet porte son `pillar` (structure éditoriale) et sa `category` (taxonomie du site).",
+  "_pillars": "foi_concrete=foi | fonctionnalite=fonctionnalites | comparatif=communaute | securite=securite | communaute=communaute",
+  "topics": [
+    {
+      "id": "prier-quand-on-y-arrive-plus",
+      "pillar": "foi_concrete",
+      "category": "foi",
+      "title": "Comment prier quand on n'y arrive plus",
+      "keyword_principal": "comment prier quand on n'y arrive plus",
+      "keywords_secondaires": [
+        "sécheresse spirituelle",
+        "prière difficile",
+        "retrouver la prière",
+        "prier sans motivation"
+      ],
+      "longue_traine": [
+        "je n'arrive plus à prier que faire",
+        "prière quand on se sent loin de dieu",
+        "comment reprendre la prière",
+        "prier quand on est fatigué spirituellement"
+      ],
+      "angle": "Pour celui qui se sent sec, coupable de ne plus prier. Retirer la culpabilité, montrer que la prière balbutiante compte, donner un exercice de 5 minutes ce soir. Ancre : Romains 8:26 (l'Esprit intercède par des soupirs)."
+    },
+    {
+      "id": "application-lire-bible-hors-ligne",
+      "pillar": "fonctionnalite",
+      "category": "fonctionnalites",
+      "feature": "Bible intégrée hors ligne",
+      "title": "Lire la Bible hors ligne : l'appli qui suit partout",
+      "keyword_principal": "application pour lire la Bible hors ligne",
+      "keywords_secondaires": [
+        "Bible hors ligne gratuite",
+        "lire la Bible sans internet",
+        "application Bible française",
+        "Bible téléchargeable"
+      ],
+      "longue_traine": [
+        "application pour lire la bible sans connexion",
+        "meilleure appli bible hors ligne gratuite",
+        "lire la bible dans l'avion",
+        "bible offline français"
+      ],
+      "angle": "Le problème concret : réseau absent (avion, métro, mission, retraite) et l'envie de lire coupée net. La Bible intégrée de ConnectStar (plus de 60 versions YouVersion, hors ligne). Étapes précises. Ancre : Psaume 119:105."
+    },
+    {
+      "id": "alternative-chretienne-messenger",
+      "pillar": "comparatif",
+      "category": "communaute",
+      "competitor": "Messenger",
+      "title": "Alternative chrétienne à Messenger : pourquoi migrer",
+      "keyword_principal": "alternative chrétienne à Messenger",
+      "keywords_secondaires": [
+        "remplacer Messenger",
+        "messagerie chrétienne privée",
+        "quitter Facebook Messenger",
+        "app de groupe pour église"
+      ],
+      "longue_traine": [
+        "application pour remplacer messenger dans une église",
+        "messagerie sans facebook pour groupe de prière",
+        "alternative privée à messenger gratuite",
+        "app de discussion chrétienne sans pub"
+      ],
+      "angle": "Respectueux de Messenger. Le point de friction réel : Meta, données, distraction du fil. Tableau comparatif. Migration en moins de 10 min. Ancre : Matthieu 6:21 (là où est ton trésor)."
+    },
+    {
+      "id": "verset-sur-la-solitude",
+      "pillar": "foi_concrete",
+      "category": "foi",
+      "title": "Un verset sur la solitude quand personne ne comprend",
+      "keyword_principal": "verset sur la solitude",
+      "keywords_secondaires": [
+        "se sentir seul chrétien",
+        "verset contre la solitude",
+        "Dieu et la solitude",
+        "isolement spirituel"
+      ],
+      "longue_traine": [
+        "verset biblique quand on se sent seul",
+        "que dit la bible sur la solitude",
+        "prière pour la solitude le soir",
+        "se sentir seul dans sa foi"
+      ],
+      "angle": "Pour celui qui se sent invisible, seul même à l'église. Distinguer solitude et abandon. Mot hébreu clé. Un pas concret ce soir. Ancre : Deutéronome 31:8 (il ne te délaissera point)."
+    },
+    {
+      "id": "proteger-ses-enfants-messageries",
+      "pillar": "securite",
+      "category": "securite",
+      "sujet": "protection des mineurs / modération",
+      "title": "Protéger ses enfants sur les messageries : le vrai risque",
+      "keyword_principal": "protéger ses enfants sur les messageries",
+      "keywords_secondaires": [
+        "sécurité enfants applications",
+        "messagerie sûre pour ados",
+        "contrôle parental messagerie",
+        "app de discussion sécurisée famille"
+      ],
+      "longue_traine": [
+        "application de messagerie sûre pour enfants chrétiens",
+        "comment protéger son ado sur les réseaux",
+        "messagerie sans inconnus pour groupe de jeunes",
+        "app de groupe d'église sécurisée pour mineurs"
+      ],
+      "angle": "Pour un parent, un responsable de groupe de jeunes. Le risque réel (inconnus, contenus, exposition). Ce que ConnectStar bloque en coulisses (anti-bot, invitations par lien, pas de découverte publique). Ancre : Marc 10:14 (laissez venir à moi les petits enfants)."
+    },
+    {
+      "id": "savoir-si-dieu-me-parle",
+      "pillar": "foi_concrete",
+      "category": "foi",
+      "title": "Comment savoir si Dieu me parle vraiment",
+      "keyword_principal": "comment savoir si Dieu me parle",
+      "keywords_secondaires": [
+        "entendre la voix de Dieu",
+        "discernement spirituel",
+        "Dieu me parle-t-il",
+        "reconnaître la voix de Dieu"
+      ],
+      "longue_traine": [
+        "comment reconnaître si c'est dieu qui parle",
+        "est-ce que dieu me parle à travers",
+        "discerner la voix de dieu de ses pensées",
+        "comment dieu parle aux chrétiens aujourd'hui"
+      ],
+      "angle": "Pour celui qui doute de chaque impression. Trois filtres bibliques concrets (Écriture, paix, fruit). Mot grec clé. Exercice d'écoute de 10 min. Ancre : Jean 10:27 (mes brebis entendent ma voix)."
+    },
+    {
+      "id": "groupe-priere-en-ligne-a-distance",
+      "pillar": "communaute",
+      "category": "communaute",
+      "title": "Créer un groupe de prière en ligne qui tient à distance",
+      "keyword_principal": "créer un groupe de prière en ligne",
+      "keywords_secondaires": [
+        "groupe de prière à distance",
+        "chaîne de prière application",
+        "prier ensemble en ligne",
+        "organiser une chaîne de prière"
+      ],
+      "longue_traine": [
+        "comment créer une chaîne de prière sur téléphone",
+        "application pour prier en groupe à distance",
+        "organiser un groupe de prière familial en ligne",
+        "prier ensemble malgré la distance"
+      ],
+      "angle": "Diaspora, famille éclatée, malades qu'on ne visite plus. Le besoin de porter les fardeaux ensemble. Chaînes de prière ConnectStar, pas à pas. Ancre : Galates 6:2 (portez les fardeaux les uns des autres)."
+    },
+    {
+      "id": "devotion-quotidienne-application",
+      "pillar": "fonctionnalite",
+      "category": "fonctionnalites",
+      "feature": "Passion du Jour",
+      "title": "Une dévotion quotidienne qui transforme, pas juste informe",
+      "keyword_principal": "application de dévotion quotidienne",
+      "keywords_secondaires": [
+        "méditation biblique quotidienne",
+        "verset du jour appli",
+        "habitude de dévotion",
+        "lire la Bible tous les jours"
+      ],
+      "longue_traine": [
+        "meilleure application de dévotion chrétienne en français",
+        "comment tenir une dévotion quotidienne",
+        "appli verset du jour avec méditation",
+        "dévotion du matin application gratuite"
+      ],
+      "angle": "La différence entre lire un verset et être transformé. La Passion du Jour (mot hébreu/grec cliquable, question de cœur, streak, journal). Angle nouveau : la régularité douce, pas la performance. Ancre : Josué 1:8."
+    },
+    {
+      "id": "priere-anxiete-avant-de-dormir",
+      "pillar": "foi_concrete",
+      "category": "foi",
+      "title": "Une prière pour l'anxiété, juste avant de dormir",
+      "keyword_principal": "prière pour l'anxiété avant de dormir",
+      "keywords_secondaires": [
+        "prière contre l'angoisse la nuit",
+        "verset anti-anxiété",
+        "calmer son cœur le soir",
+        "insomnie et foi"
+      ],
+      "longue_traine": [
+        "prière pour dormir quand on est angoissé",
+        "que faire quand l'anxiété m'empêche de dormir chrétien",
+        "verset à répéter la nuit contre la peur",
+        "comment confier son anxiété à dieu le soir"
+      ],
+      "angle": "Pour celui qui rumine à minuit. Pourquoi la Bible ne dit pas seulement « arrête de t'inquiéter ». Mot grec (merimna). Un rituel d'endormissement (Soaking & Présence, ambiance « Sommeil »). Ancre : Philippiens 4:6-7."
+    },
+    {
+      "id": "alternative-chretienne-telegram",
+      "pillar": "comparatif",
+      "category": "communaute",
+      "competitor": "Telegram",
+      "title": "Alternative chrétienne à Telegram : ce qui change",
+      "keyword_principal": "alternative chrétienne à Telegram",
+      "keywords_secondaires": [
+        "remplacer Telegram église",
+        "messagerie chrétienne sécurisée",
+        "quitter Telegram groupe",
+        "app de communauté chrétienne"
+      ],
+      "longue_traine": [
+        "application comme telegram mais chrétienne",
+        "alternative à telegram pour groupe de prière",
+        "messagerie privée pour église sans telegram",
+        "app de groupe chrétien plus sûre que telegram"
+      ],
+      "angle": "Respectueux de Telegram. Friction réelle : chiffrement non activé par défaut, canaux publics, dérive de contenu. Tableau comparatif. Migration simple. Ancre : Philippiens 4:8 (tout ce qui est pur)."
+    },
+    {
+      "id": "retrouver-la-foi-apres-une-epreuve",
+      "pillar": "foi_concrete",
+      "category": "foi",
+      "title": "Retrouver la foi après une épreuve qui a tout cassé",
+      "keyword_principal": "retrouver la foi après une épreuve",
+      "keywords_secondaires": [
+        "perte de foi",
+        "crise de foi chrétienne",
+        "revenir vers Dieu",
+        "foi et souffrance"
+      ],
+      "longue_traine": [
+        "comment retrouver la foi après un deuil",
+        "j'ai perdu la foi comment faire",
+        "revenir à dieu après s'être éloigné",
+        "reconstruire sa foi après une déception"
+      ],
+      "angle": "Pour celui qui n'ose plus croire après un deuil, une trahison. Ne pas minimiser la douleur. Le doute n'est pas l'ennemi de la foi. Un premier pas minuscule. Ancre : Marc 9:24 (je crois, viens au secours de mon incrédulité)."
+    },
+    {
+      "id": "messagerie-chiffree-pour-eglise",
+      "pillar": "securite",
+      "category": "securite",
+      "sujet": "chiffrement de bout en bout",
+      "title": "Messagerie chiffrée pour église : pourquoi ça compte",
+      "keyword_principal": "messagerie chiffrée pour église",
+      "keywords_secondaires": [
+        "chiffrement de bout en bout",
+        "confidentialité prière",
+        "app sécurisée communauté",
+        "protéger les données d'église"
+      ],
+      "longue_traine": [
+        "application chiffrée pour groupe d'église",
+        "comment protéger les conversations d'une église",
+        "messagerie e2e pour communauté chrétienne",
+        "confidentialité des prières partagées en ligne"
+      ],
+      "angle": "Pour un pasteur, un responsable. Ce que révèle une prière intime, et pourquoi elle ne doit pas nourrir un algorithme. Vulgariser le E2E sans mentir (pas de « 100% »). Ancre : Jean 10:11 (le bon berger)."
+    },
+    {
+      "id": "verset-pour-se-relever-apres-une-chute",
+      "pillar": "foi_concrete",
+      "category": "foi",
+      "title": "Un verset pour se relever après une chute",
+      "keyword_principal": "verset pour se relever après une chute",
+      "keywords_secondaires": [
+        "verset sur le pardon de Dieu",
+        "recommencer après un péché",
+        "culpabilité chrétienne",
+        "grâce et relèvement"
+      ],
+      "longue_traine": [
+        "verset biblique quand on a honte",
+        "que dit la bible quand on retombe dans le même péché",
+        "comment se pardonner à soi-même chrétien",
+        "verset sur la grâce après une faute"
+      ],
+      "angle": "Pour celui qui retombe et se croit fini. Distinguer condamnation et conviction. Mot hébreu de la grâce (hesed). Un acte de relèvement concret aujourd'hui. Ancre : Proverbes 24:16 (le juste tombe sept fois et se relève)."
+    },
+    {
+      "id": "animer-groupe-jeunes-chretiens-a-distance",
+      "pillar": "communaute",
+      "category": "communaute",
+      "title": "Animer un groupe de jeunes chrétiens à distance",
+      "keyword_principal": "animer un groupe de jeunes chrétiens",
+      "keywords_secondaires": [
+        "groupe de jeunes église",
+        "animation spirituelle ados",
+        "discipulat des jeunes",
+        "activités groupe de jeunes chrétien"
+      ],
+      "longue_traine": [
+        "comment garder un groupe de jeunes soudé à distance",
+        "idées pour animer un groupe de jeunes chrétien en ligne",
+        "application pour groupe de jeunes d'église",
+        "maintenir le lien avec les jeunes de l'église entre deux cultes"
+      ],
+      "angle": "Pour un responsable jeunesse dépassé par les groupes dispersés. Le besoin réel derrière l'agenda : l'appartenance. Groupes + partage de versets + chaînes de prière. Ancre : 1 Timothée 4:12 (que personne ne méprise ta jeunesse)."
+    },
+    {
+      "id": "entendre-la-voix-de-dieu-au-quotidien",
+      "pillar": "foi_concrete",
+      "category": "foi",
+      "title": "Entendre la voix de Dieu dans le bruit du quotidien",
+      "keyword_principal": "entendre la voix de Dieu",
+      "keywords_secondaires": [
+        "écouter Dieu",
+        "silence et prière",
+        "présence de Dieu au quotidien",
+        "faire silence devant Dieu"
+      ],
+      "longue_traine": [
+        "comment entendre dieu dans une vie surchargée",
+        "faire silence pour écouter dieu",
+        "trouver dieu dans le bruit du quotidien",
+        "comment se mettre à l'écoute de dieu chaque jour"
+      ],
+      "angle": "Pour celui qui court sans arrêt. Le silence n'est pas vide, il est plein. Mot hébreu (damam, se taire). Un créneau de 5 min protégé (Soaking & Présence). Ancre : 1 Rois 19:12 (un murmure doux et léger)."
+    },
+    {
+      "id": "musique-adoration-pour-prier",
+      "pillar": "fonctionnalite",
+      "category": "fonctionnalites",
+      "feature": "Soaking & Présence",
+      "title": "Adorer en musique pour entrer dans la présence de Dieu",
+      "keyword_principal": "musique d'adoration pour prier",
+      "keywords_secondaires": [
+        "soaking adoration",
+        "ambiance de prière",
+        "musique pour méditer la Bible",
+        "playlist adoration chrétienne"
+      ],
+      "longue_traine": [
+        "musique douce pour prier et méditer",
+        "comment adorer dieu chez soi en musique",
+        "application d'adoration pour se reposer en dieu",
+        "musique instrumentale chrétienne pour la prière"
+      ],
+      "angle": "Pour celui qui veut adorer mais ne sait pas comment commencer. Le soaking (s'imprégner). Ambiances par intention, écoute écran verrouillé. Choisir un état du cœur, pas une playlist. Ancre : Psaume 22:3 (tu sièges au milieu des louanges)."
+    }
+  ]
+}
