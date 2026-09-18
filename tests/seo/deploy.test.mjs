@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import { readFileSync, existsSync, readdirSync, statSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { load } from 'cheerio';
+import { LOCALES } from '../../src/i18n/locales.ts';
 
 const config = JSON.parse(readFileSync('vercel.json', 'utf8'));
 
@@ -222,17 +223,21 @@ test('un outil de mesure installé est déclaré dans la politique de confidenti
   const dependencies = Object.keys(
     JSON.parse(readFileSync('package.json', 'utf8')).dependencies ?? {},
   );
-  const legal = readFileSync('src/content/legal.json', 'utf8');
   const tools = [
     ['@vercel/analytics', /Vercel Web Analytics/],
     ['@vercel/speed-insights', /Speed Insights/],
   ];
   const installed = tools.filter(([pkg]) => dependencies.includes(pkg));
-  for (const [pkg, mention] of installed)
-    assert.match(legal, mention, `${pkg} est installé mais absent de la politique`);
-  if (installed.length)
-    // Et la phrase d'origine, qui niait toute mesure, ne doit pas subsister.
-    assert.doesNotMatch(legal, /ni mesure d’audience/, 'la politique nie une mesure qui existe');
+  // Le nom d'un outil ne se traduit pas : la politique doit le citer dans
+  // chaque langue, sans quoi une version dirait moins que les autres.
+  for (const locale of LOCALES) {
+    const legal = readFileSync(`src/content/legal/${locale}.json`, 'utf8');
+    for (const [pkg, mention] of installed)
+      assert.match(legal, mention, `${locale} : ${pkg} est installé mais absent de la politique`);
+    if (installed.length)
+      // Et la phrase d'origine, qui niait toute mesure, ne doit pas subsister.
+      assert.doesNotMatch(legal, /ni mesure d’audience|no audience measurement/i, locale);
+  }
 });
 
 test('la mesure d’audience ne part que depuis le déploiement de production', () => {

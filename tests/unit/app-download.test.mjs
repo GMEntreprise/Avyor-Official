@@ -1,7 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { buildStores, downloadHref } from '../../src/lib/app-download.ts';
+import { buildStores, DOWNLOAD_SLUG } from '../../src/lib/app-download.ts';
+import { LOCALES, routeFor } from '../../src/i18n/locales.ts';
 
 const APPLE = 'https://apps.apple.com/fr/app/avyor/id123';
 const PLAY = 'https://play.google.com/store/apps/details?id=app.avyor';
@@ -34,21 +35,33 @@ test('une URL vérifiée bascule la seule plateforme concernée', () => {
   assert.equal(both[1].url, PLAY);
 });
 
-test('chaque plateforme porte le badge officiel livré, avec ses dimensions réelles', () => {
+test('chaque plateforme est nommée comme son magasin la nomme', () => {
   const [ios, android] = buildStores();
-  for (const store of [ios, android]) {
-    assert.match(store.badge.src, /^\/assets\/badges\//);
-    readFileSync('public' + store.badge.src); // lève si l’asset officiel manque
-    assert.ok(store.badge.width > 0 && store.badge.height > 0);
-    assert.ok(store.badge.alt.length > 10);
-  }
-  assert.match(ios.badge.src, /app-store/);
-  assert.match(android.badge.src, /google-play/);
+  assert.equal(ios.store, 'App Store');
+  assert.equal(android.store, 'Google Play');
+  assert.equal(ios.os, 'iOS');
+  assert.equal(android.os, 'Android');
 });
 
-test('le CTA de repli pointe vers une vraie route, jamais vers « # »', () => {
-  assert.equal(downloadHref, '/download/');
-  assert.notEqual(downloadHref, '#');
+test('le CTA de repli pointe vers une vraie route, dans chaque langue', () => {
+  assert.equal(routeFor('fr', DOWNLOAD_SLUG), '/download/');
+  for (const locale of LOCALES) {
+    const href = routeFor(locale, DOWNLOAD_SLUG);
+    assert.match(href, /^\/[a-z/-]+\/$/, `${locale} : ${href}`);
+    assert.notEqual(href, '#');
+  }
+});
+
+test('chaque bouton de magasin est écrit dans la langue de la page', async () => {
+  for (const locale of LOCALES) {
+    const { [locale]: content } = await import(`../../src/content/locales/${locale}.ts`);
+    const { apple, google } = content.ui.store;
+    // Le nom du magasin ne se traduit pas ; ce qu'on y fait, si.
+    assert.equal(apple.name, 'App Store', locale);
+    assert.equal(google.name, 'Google Play', locale);
+    for (const lead of [apple.lead, google.lead])
+      assert.ok(lead.trim().length > 4, `${locale} : « ${lead} »`);
+  }
 });
 
 test('aucun composant store ne retombe sur une icône de téléphone générique', () => {

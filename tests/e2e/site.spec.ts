@@ -8,7 +8,7 @@ test('accueil, hydratation, FAQ, parcours et liens', async ({ page }, info) => {
   });
   await page.goto('/');
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(
-    'Le bon Creator.La bonne campagne.',
+    'Le bon Creator. La bonne campagne.',
   );
   await page.getByRole('tab', { name: 'Je suis une marque' }).click();
   await expect(page.getByRole('tabpanel')).toContainText('Posez votre brief.');
@@ -33,14 +33,20 @@ test('accueil, hydratation, FAQ, parcours et liens', async ({ page }, info) => {
   // Store identity comes from the official badges, never a generic device icon.
   const cards = page.locator('main .store-card');
   await expect(cards).toHaveCount(2);
-  await expect(cards.nth(0).locator('img')).toHaveAttribute('src', /app-store/);
-  await expect(cards.nth(1).locator('img')).toHaveAttribute('src', /google-play/);
+  await expect(cards.nth(0)).toHaveClass(/store-card-ios/);
+  await expect(cards.nth(1)).toHaveClass(/store-card-android/);
+  await expect(cards.nth(0).locator('.store-label strong')).toHaveText('App Store');
+  await expect(cards.nth(1).locator('.store-label strong')).toHaveText('Google Play');
   // An unpublished store is not a link: there is nothing to click.
   await expect(page.locator('main .store-card.is-pending a')).toHaveCount(0);
   expect(errors).toEqual([]);
   expect(info.project.name).toBeTruthy();
 });
-test('le CTA de téléchargement est distinct et mène à une vraie route', async ({ page }) => {
+test('le CTA de téléchargement est distinct et mène à une vraie route', async ({ page }, info) => {
+  test.skip(
+    info.project.name !== 'desktop',
+    'sur petit écran la barre porte le sélecteur de langue, et le menu porte les deux plateformes',
+  );
   await page.goto('/');
   const cta = page.locator('header .download-cta');
   await expect(cta).toBeVisible();
@@ -73,17 +79,37 @@ test('menu mobile accessible et restauration du focus', async ({ page }, info) =
   await expect(page).toHaveURL(/\/brands\/$/);
 });
 
-test('le menu mobile met son CTA de téléchargement en évidence', async ({ page }, info) => {
+test('la barre mobile porte la langue, le menu porte les deux plateformes', async ({
+  page,
+}, info) => {
   test.skip(info.project.name !== 'mobile');
   await page.goto('/');
-  await page.getByRole('button', { name: 'Ouvrir le menu' }).click();
-  const cta = page.getByRole('dialog').locator('.download-cta');
-  await expect(cta).toBeVisible();
-  await expect(cta).toHaveAttribute('href', '/download/');
-  const panel = await page.getByRole('dialog').boundingBox();
-  const box = await cta.boundingBox();
-  // Full width at the end of the panel, not one link lost among the others.
-  expect(box.width).toBeGreaterThan(panel.width * 0.8);
+  // À cette largeur, l'appel générique laisse la place à ce qui n'existe
+  // nulle part ailleurs dans la barre : le choix de la langue.
+  await expect(page.locator('header .download-cta')).toBeHidden();
+  await expect(page.locator('header .nav-language .language-trigger')).toBeVisible();
+  await page.locator('.menu-button').click();
+  const dialog = page.getByRole('dialog');
+  const cards = dialog.locator('.store-card');
+  await expect(cards).toHaveCount(2);
+  // Une plateforme non publiée reste inerte, jusque dans le menu.
+  await expect(dialog.locator('.store-card.is-pending a')).toHaveCount(0);
+  const panel = await dialog.boundingBox();
+  for (const card of await cards.all()) {
+    const box = await card.boundingBox();
+    expect(box.width).toBeGreaterThan(panel.width * 0.6);
+    expect(box.height).toBeGreaterThanOrEqual(44);
+  }
+  // Et le panneau défile : il porte maintenant la navigation, la langue et les
+  // deux plateformes.
+  const scrolls = await dialog.evaluate((n) => ({
+    overflow: getComputedStyle(n).overflowY,
+    reachesBottom: n.scrollHeight <= n.clientHeight || n.scrollHeight > n.clientHeight,
+  }));
+  expect(scrolls.overflow).toBe('auto');
+  await dialog.evaluate((n) => n.scrollTo(0, n.scrollHeight));
+  const scrolled = await dialog.evaluate((n) => n.scrollTop + n.clientHeight >= n.scrollHeight - 2);
+  expect(scrolled).toBe(true);
 });
 test('reduced motion, absence de vidéo auto et intro non bloquante', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
@@ -360,8 +386,9 @@ test('les cibles tactiles du header restent atteignables sur petit écran', asyn
     expect(box.height).toBeGreaterThanOrEqual(40);
     expect(box.width).toBeGreaterThanOrEqual(40);
   }
-  const cta = await page.locator('header .download-cta .hbg-content').boundingBox();
-  expect(cta.height).toBeGreaterThanOrEqual(36);
+  const language = await page.locator('header .nav-language .language-trigger').boundingBox();
+  expect(language.height).toBeGreaterThanOrEqual(40);
+  expect(language.width).toBeGreaterThanOrEqual(40);
 });
 
 for (const route of ['/', '/creators/', '/brands/'])

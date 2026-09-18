@@ -24,51 +24,45 @@ import { Faq } from './components/Faq';
 import { NotFound } from './components/NotFound';
 import { Device, DemoCaption } from './components/Device';
 import { StoreButtons } from './components/StoreButtons';
-import { LegalDocument, type LegalDoc } from './components/LegalDocument';
+import { LegalDocument } from './components/LegalDocument';
+import { Lines, Title } from './components/Lines';
 import { Reveal } from './components/motion/Reveal';
 import { track } from './lib/track';
 import { Button } from './components/ui/button';
 import { config } from './config';
-import { pages, relatedLinks, type Page, type Section } from './content/site';
-
-/**
- * The long-form content an inner page displays. The server has it at build
- * time; the client loads it only for the route it is actually on.
- */
-export interface DeepContent {
-  sectionsBySlug: Record<string, Section[]>;
-  legalDocs: Record<string, LegalDoc>;
-}
+import { SiteProvider, useHref, useSite, useUi } from './content/context';
+import type { DeepContent, Page, SiteContent } from './content/types';
+import { routeFor, splitPath, type Locale } from './i18n/locales';
 import { ordinal } from './lib/utils';
 
+export type { DeepContent };
+
 function Home() {
+  const ui = useUi();
+  const href = useHref();
+  const pillarIcons = [discoverIcon, createIcon, collaborateIcon];
+  const trustIcons = [contextIcon, paymentIcon, controlIcon];
   return (
     <>
       <Hero />
       <section className="manifesto container">
-        <p className="eyebrow">UNE APP. DEUX UNIVERS. LE MÊME ÉLAN.</p>
+        <p className="eyebrow">{ui.manifesto.eyebrow}</p>
         <h2>
-          Il y a des talents à découvrir.
-          <br />
-          Des histoires à raconter.
-          <br />
-          <span>Et tout ce qui peut naître entre les deux.</span>
+          <Title headline={ui.manifesto.title} />
         </h2>
         <div className="manifesto-bottom">
-          <p>
-            AVYOR réunit Creators et marques dans une application mobile : découvrez les créations,
-            trouvez les bons profils et donnez un cadre à vos collaborations.
-          </p>
+          <p>{ui.manifesto.body}</p>
           <ul className="manifesto-pillars">
-            {(
-              [
-                [discoverIcon, 'Découvrir', 'Le feed vidéo et les profils Creator.'],
-                [createIcon, 'Créer', 'Modèles guidés, studio et portfolio.'],
-                [collaborateIcon, 'Collaborer', 'Brief, messages et livrables.'],
-              ] as const
-            ).map(([icon, verb, detail]) => (
+            {ui.manifesto.pillars.map(([verb, detail], i) => (
               <li key={verb}>
-                <img src={icon} width="104" height="104" alt="" loading="lazy" decoding="async" />
+                <img
+                  src={pillarIcons[i]}
+                  width="104"
+                  height="104"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
                 <strong>{verb}</strong>
                 <span>{detail}</span>
               </li>
@@ -80,69 +74,59 @@ function Home() {
       <Story />
       <section className="audiences container" id="audiences">
         <div className="section-heading">
-          <p className="eyebrow">02 — CHACUN SON UNIVERS</p>
+          <p className="eyebrow">{ui.audiences.eyebrow}</p>
           <h2>
-            La création a deux côtés.
-            <br />
-            <span>AVYOR fait le lien.</span>
+            <Title headline={ui.audiences.title} />
           </h2>
         </div>
         <div className="audience-grid">
           <article className="audience creator">
             <img
               src="/assets/media/nomad-essentials.webp"
-              alt="Visuel de démonstration : création de contenu en extérieur"
+              alt={ui.audiences.creator.alt}
               width="800"
               height="1422"
               loading="lazy"
             />
             <div>
-              <p className="eyebrow">CREATORS</p>
+              <p className="eyebrow">{ui.audiences.creator.eyebrow}</p>
               <h3>
-                Faites parler
-                <br />
-                votre travail.
+                <Lines text={ui.audiences.creator.title} />
               </h3>
               <p>
-                Un portfolio pour votre univers.
-                <br />
-                Des campagnes pour la suite.
+                <Lines text={ui.audiences.creator.body} />
               </p>
               <a
-                href="/creators/"
+                href={href('creators')}
                 className="audience-link"
                 onClick={() => track('creator_learn_more')}
               >
-                Découvrir le parcours Creator <ArrowUpRight size={20} />
+                {ui.audiences.creator.link} <ArrowUpRight size={20} />
               </a>
             </div>
           </article>
           <article className="audience advertiser">
             <img
               src="/assets/media/morning-glow-routine.webp"
-              alt="Visuel de démonstration : contenu beauté pour une campagne"
+              alt={ui.audiences.brand.alt}
               width="800"
               height="1422"
               loading="lazy"
             />
             <div>
-              <p className="eyebrow">MARQUES</p>
+              <p className="eyebrow">{ui.audiences.brand.eyebrow}</p>
               <h3>
-                Votre histoire.
-                <br />
-                Le bon regard.
+                <Lines text={ui.audiences.brand.title} />
               </h3>
               <p>
-                Découvrez un style.
-                <br />
-                Construisez une collaboration.
+                <Lines text={ui.audiences.brand.body} />
               </p>
               <a
-                href="/brands/"
+                href={href('brands')}
                 className="audience-link"
                 onClick={() => track('advertiser_learn_more')}
               >
-                Découvrir le parcours marque <ArrowUpRight size={20} />
+                {ui.audiences.brand.link} <ArrowUpRight size={20} />
               </a>
             </div>
           </article>
@@ -162,19 +146,14 @@ function Home() {
             <Device scene="04-feed" />
           </div>
           <div className="feed-copy">
-            <p className="eyebrow">03 — VIDEO FIRST. TALENT FIRST.</p>
+            <p className="eyebrow">{ui.feed.eyebrow}</p>
             <h2>
-              Le talent se voit.
-              <br />
-              <span>Alors, regardez.</span>
+              <Title headline={ui.feed.title} />
             </h2>
-            <p>
-              Un regard, un montage, une façon de raconter. Découvrez ce que les Creators savent
-              faire, directement dans le feed vidéo.
-            </p>
-            <p>Les créations passent avant les présentations.</p>
-            <a className="text-link" href="/features/">
-              Découvrir le feed AVYOR <ArrowUpRight size={18} />
+            <p>{ui.feed.body}</p>
+            <p>{ui.feed.note}</p>
+            <a className="text-link" href={href('features')}>
+              {ui.feed.link} <ArrowUpRight size={18} />
             </a>
             <DemoCaption />
           </div>
@@ -184,45 +163,30 @@ function Home() {
       <Gallery />
       <section className="trust-section container">
         <div className="section-heading">
-          <p className="eyebrow">06 — LE PROJET A UN CADRE</p>
+          <p className="eyebrow">{ui.trust.eyebrow}</p>
           <h2>
-            Tout le projet.
-            <br />
-            <span>Un seul endroit.</span>
+            <Title headline={ui.trust.title} />
           </h2>
-          <p>
-            Les échanges font avancer les idées. Des étapes claires font avancer la collaboration.
-          </p>
+          <p>{ui.trust.lead}</p>
         </div>
         <div className="trust-grid">
-          {(
-            [
-              [
-                contextIcon,
-                'Le contexte reste.',
-                'Messages et étapes de collaboration sont réunis. Retrouvez les échanges lorsque le projet évolue.',
-              ],
-              [
-                paymentIcon,
-                'Le paiement se suit.',
-                'La marque finance la collaboration via Stripe. Le transfert au Creator suit la validation du livrable et les conditions du projet.',
-              ],
-              [
-                controlIcon,
-                'Vous gardez le contrôle.',
-                'Paramètres du compte, signalement, blocage et support : les actions utiles restent accessibles.',
-              ],
-            ] as const
-          ).map(([icon, title, body], i) => (
+          {ui.trust.cards.map(([title, body], i) => (
             <Reveal as="article" key={title} delay={i}>
-              <img src={icon} width="96" height="96" alt="" loading="lazy" decoding="async" />
+              <img
+                src={trustIcons[i]}
+                width="96"
+                height="96"
+                alt=""
+                loading="lazy"
+                decoding="async"
+              />
               <h3>{title}</h3>
               <p>{body}</p>
             </Reveal>
           ))}
         </div>
-        <a className="text-link" href="/security/">
-          Comprendre les paiements et la sécurité <ArrowUpRight size={17} />
+        <a className="text-link" href={href('security')}>
+          {ui.trust.link} <ArrowUpRight size={17} />
         </a>
       </section>
       <Faq />
@@ -231,13 +195,17 @@ function Home() {
 }
 
 function InnerPage({ page, deep }: { page: Page; deep?: DeepContent }) {
+  const { content } = useSite();
+  const ui = content.ui;
+  const href = useHref();
   const sections = deep?.sectionsBySlug[page.slug] ?? [];
+  const related = content.related[page.slug];
   return (
     <>
       <PageHero slug={page.slug} withDevice={Boolean(page.screen)}>
         <div>
-          <nav className="breadcrumb" aria-label="Fil d’Ariane">
-            <a href="/">Accueil</a>
+          <nav className="breadcrumb" aria-label={ui.page.breadcrumb}>
+            <a href={href('')}>{ui.page.home}</a>
             <span>/</span>
             <span aria-current="page">{page.label}</span>
           </nav>
@@ -249,15 +217,15 @@ function InnerPage({ page, deep }: { page: Page; deep?: DeepContent }) {
           ) : page.slug === 'contact' ? (
             <Button asChild>
               <a href={`mailto:${config.email}`}>
-                Écrire à {config.email}
+                {ui.page.writeTo} {config.email}
                 <ArrowUpRight size={18} />
               </a>
             </Button>
           ) : (
             !['privacy', 'terms', 'legal', 'faq'].includes(page.slug) && (
               <Button asChild>
-                <a href="/download/">
-                  Découvrir AVYOR <ArrowUpRight size={18} />
+                <a href={href('download')}>
+                  {ui.download.discover} <ArrowUpRight size={18} />
                 </a>
               </Button>
             )
@@ -296,11 +264,11 @@ function InnerPage({ page, deep }: { page: Page; deep?: DeepContent }) {
       )}
       {page.slug === 'how-it-works' && <Workflow />}
       {page.slug === 'features' && <Gallery />}
-      {relatedLinks[page.slug] && (
+      {related && (
         <div className="related-links container">
-          <p>{relatedLinks[page.slug].lead}</p>
-          {relatedLinks[page.slug].links.map(([label, href]) => (
-            <a key={href} href={href}>
+          <p>{related.lead}</p>
+          {related.links.map(([label, slug]) => (
+            <a key={slug} href={href(slug)}>
               {label} <ArrowUpRight size={16} />
             </a>
           ))}
@@ -309,21 +277,41 @@ function InnerPage({ page, deep }: { page: Page; deep?: DeepContent }) {
     </>
   );
 }
-export function App({ path, deep }: { path: string; deep?: DeepContent }) {
-  const slug = path.replace(/^\/|\/$/g, '');
-  const page = pages.find((p) => p.slug === slug);
+
+function Shell({ path, deep }: { path: string; deep?: DeepContent }) {
+  const { content, locale } = useSite();
+  const { slug } = splitPath(path);
+  const page = content.pages.find((p) => p.slug === slug);
   return (
     <LazyMotion features={domAnimation}>
       <a href="#main" className="skip-link">
-        Aller au contenu
+        {content.ui.skipToContent}
       </a>
       <div id="top" />
-      <Navbar path={path} />
+      <Navbar path={routeFor(locale, slug)} />
       <main id="main">
         {page ? slug ? <InnerPage page={page} deep={deep} /> : <Home /> : <NotFound />}
       </main>
       <Footer />
-      {!slug && <Intro />}
+      {!slug && page && <Intro />}
     </LazyMotion>
+  );
+}
+
+export function App({
+  locale,
+  content,
+  path,
+  deep,
+}: {
+  locale: Locale;
+  content: SiteContent;
+  path: string;
+  deep?: DeepContent;
+}) {
+  return (
+    <SiteProvider value={{ locale, content }}>
+      <Shell path={path} deep={deep} />
+    </SiteProvider>
   );
 }

@@ -27,7 +27,7 @@ test('l’intro passe par le rendu de l’app, pas par une injection de gabarit'
   // C'est ce qui la met dans le HTML servi tout en gardant un seul rendu,
   // identique côté serveur et côté client.
   assert.match(app, /<Intro \/>/, 'App doit rendre l’intro');
-  assert.match(app, /!slug && <Intro \/>/, 'et seulement à l’entrée du site');
+  assert.match(app, /!slug && page && <Intro \/>/, 'et seulement à l’entrée du site');
   assert.doesNotMatch(prerender, /class="intro"/, 'aucune copie du balisage dans le build');
   assert.doesNotMatch(viteConfig, /class="intro"/, 'aucune copie du balisage en dev');
 });

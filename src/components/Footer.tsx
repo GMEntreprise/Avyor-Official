@@ -3,21 +3,23 @@ import { ArrowUpRight } from 'lucide-react';
 import { Brand } from './Navbar';
 import { StoreButtons } from './StoreButtons';
 import { Device } from './Device';
+import { Title } from './Lines';
+import { useHref, useUi } from '../content/context';
 export function Footer() {
+  const ui = useUi().footer;
+  const href = useHref();
   const word = useRef<SVGSVGElement>(null);
   return (
     <footer>
       <section className="final-cta container">
         <div>
-          <p className="eyebrow">LE PROCHAIN PROJET COMMENCE PAR UNE RENCONTRE</p>
+          <p className="eyebrow">{ui.eyebrow}</p>
           <h2>
-            Et si c’était
-            <br />
-            <span>la bonne ?</span>
+            <Title headline={ui.title} />
           </h2>
           <StoreButtons />
-          <a className="text-link" href="/download/">
-            Retrouver AVYOR <ArrowUpRight size={16} />
+          <a className="text-link" href={href('download')}>
+            {ui.link} <ArrowUpRight size={16} />
           </a>
         </div>
         <div className="footer-device">
@@ -27,29 +29,19 @@ export function Footer() {
       <div className="footer-main container">
         <div className="footer-brand">
           <Brand />
-          <p>La création fait la rencontre.</p>
+          <p>{ui.tagline}</p>
         </div>
-        <nav aria-label="Liens du pied de page">
-          <div>
-            <span>Explorer</span>
-            <a href="/features/">Le produit</a>
-            <a href="/creators/">Pour les Creators</a>
-            <a href="/brands/">Pour les marques</a>
-            <a href="/how-it-works/">Comment ça marche</a>
-          </div>
-          <div>
-            <span>Échanger</span>
-            <a href="/security/">Sécurité & paiements</a>
-            <a href="/faq/">Questions fréquentes</a>
-            <a href="/contact/">Contact</a>
-            <a href="/download/">Télécharger</a>
-          </div>
-          <div>
-            <span>Les règles</span>
-            <a href="/privacy/">Confidentialité</a>
-            <a href="/terms/">Conditions d’utilisation</a>
-            <a href="/legal/">Mentions légales</a>
-          </div>
+        <nav aria-label={ui.navLabel}>
+          {ui.columns.map(([heading, links]) => (
+            <div key={heading}>
+              <span>{heading}</span>
+              {links.map(([label, slug]) => (
+                <a key={slug} href={href(slug)}>
+                  {label}
+                </a>
+              ))}
+            </div>
+          ))}
         </nav>
       </div>
       <div
@@ -74,9 +66,11 @@ export function Footer() {
         </svg>
       </div>
       <div className="footer-bottom container">
-        <span>© {new Date().getFullYear()} AVYOR · Un produit Shavod.</span>
-        <span>Creators × Marques</span>
-        <a href="/#top">Retour en haut ↑</a>
+        <span>
+          © {new Date().getFullYear()} AVYOR · {ui.product}
+        </span>
+        <span>{ui.audience}</span>
+        <a href={`${href('')}#top`}>{ui.top}</a>
       </div>
     </footer>
   );

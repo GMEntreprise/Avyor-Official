@@ -10,8 +10,6 @@ export interface StoreTarget {
   status: StoreStatus;
   /** Only ever set from a URL already validated by store-url.ts. */
   url?: string;
-  /** Official badge artwork, rendered unmodified in both states. */
-  badge: { src: string; width: number; height: number; alt: string };
   event: string;
 }
 
@@ -21,24 +19,12 @@ const catalogue = [
     os: 'iOS',
     store: 'App Store',
     event: 'download_app_store',
-    badge: {
-      src: '/assets/badges/app-store.svg',
-      width: 150,
-      height: 50,
-      alt: 'Télécharger dans l’App Store',
-    },
   },
   {
     platform: 'android',
     os: 'Android',
     store: 'Google Play',
     event: 'download_google_play',
-    badge: {
-      src: '/assets/badges/google-play.png',
-      width: 169,
-      height: 65,
-      alt: 'Disponible sur Google Play',
-    },
   },
 ] as const;
 
@@ -54,12 +40,11 @@ export function buildStores(apple?: string, google?: string): StoreTarget[] {
     const url = urls[entry.platform];
     return {
       ...entry,
-      badge: { ...entry.badge },
       status: url ? 'available' : 'coming-soon',
       url,
     };
   });
 }
 
-/** Where a download CTA can actually send someone, published or not. */
-export const downloadHref = '/download/';
+/** The page a download CTA sends to, named by its slug so every language can build its own address. */
+export const DOWNLOAD_SLUG = 'download';

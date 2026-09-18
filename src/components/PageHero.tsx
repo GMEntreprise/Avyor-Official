@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { Pause, Play } from 'lucide-react';
 import { pageHeroes, type PageHeroMedia } from '../config/page-heroes';
+import { useUi } from '../content/context';
 
 function CinematicHero({
   slug,
@@ -13,6 +14,7 @@ function CinematicHero({
   className: string;
   children: ReactNode;
 }) {
+  const ui = useUi();
   const root = useRef<HTMLElement>(null);
   const video = useRef<HTMLVideoElement>(null);
   const manualPause = useRef(false);
@@ -113,7 +115,7 @@ function CinematicHero({
       <div className="page-hero-controls container">
         <button
           className="video-control"
-          aria-label={playing ? 'Mettre l’arrière-plan en pause' : 'Lire l’arrière-plan'}
+          aria-label={playing ? ui.media.pauseBackground : ui.media.playBackground}
           onClick={() => {
             const element = video.current;
             if (!element) return;
@@ -123,7 +125,7 @@ function CinematicHero({
           }}
         >
           {playing ? <Pause size={14} aria-hidden="true" /> : <Play size={14} aria-hidden="true" />}
-          <span>{playing ? 'Pause' : 'Lire'}</span>
+          <span>{playing ? ui.media.pause : ui.media.play}</span>
         </button>
       </div>
     </section>

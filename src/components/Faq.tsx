@@ -1,19 +1,22 @@
 import { Plus, ArrowUpRight } from 'lucide-react';
-import { faqs } from '../content/site';
+import { useHref, useSite } from '../content/context';
 import { ordinal } from '../lib/utils';
 export function Faq() {
+  const { content } = useSite();
+  const ui = content.ui.faq;
+  const href = useHref();
   return (
     <section className="faq-section container">
       <div className="faq-intro">
-        <p className="eyebrow">LES QUESTIONS QUI COMPTENT</p>
-        <h2>On en parle ?</h2>
-        <p>Un projet commence aussi par les bonnes réponses.</p>
-        <a href="/contact/" className="text-link">
-          Contacter l’équipe <ArrowUpRight size={16} />
+        <p className="eyebrow">{ui.eyebrow}</p>
+        <h2>{ui.title}</h2>
+        <p>{ui.lead}</p>
+        <a href={href('contact')} className="text-link">
+          {ui.link} <ArrowUpRight size={16} />
         </a>
       </div>
       <div className="faq-list">
-        {faqs.map(({ q, a }, i) => (
+        {content.faqs.map(({ q, a }, i) => (
           <details key={q}>
             <summary>
               <span className="faq-index">{ordinal(i)}</span>

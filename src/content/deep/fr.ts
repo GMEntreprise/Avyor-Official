@@ -1,11 +1,13 @@
-import type { Section } from './site';
+import type { DeepContent, Section } from '../types';
+import legal from '../legal/fr.json';
 
 /**
- * Long-form page bodies. They live apart from `site.ts` because only one inner
- * page ever needs them, and their text is already in the prerendered HTML — so
- * the client fetches this on demand instead of shipping it to every visitor.
+ * Long-form page bodies. They live apart from the shell content because only
+ * one inner page ever needs them, and their text is already in the prerendered
+ * HTML — so the client fetches this on demand instead of shipping it to every
+ * visitor, in every language.
  */
-export const sectionsBySlug: Record<string, Section[]> = {
+const sectionsBySlug: Record<string, Section[]> = {
   creators: [
     {
       title: 'Un portfolio qui parle pour vous.',
@@ -258,4 +260,9 @@ export const sectionsBySlug: Record<string, Section[]> = {
       body: 'Un contenu ou un compte abusif se signale directement dans l’application, depuis la vidéo, la conversation ou le profil concerné : c’est la voie la plus rapide. Écrivez-nous si le signalement n’est pas possible.',
     },
   ],
+};
+
+export const deep: DeepContent = {
+  sectionsBySlug,
+  legalDocs: legal as unknown as DeepContent['legalDocs'],
 };

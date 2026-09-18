@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useUi } from '../content/context';
 
 export interface TocItem {
   id: string;
@@ -11,6 +12,7 @@ export interface TocItem {
  * page never runs a setState per pixel.
  */
 export function LegalTableOfContents({ items }: { items: TocItem[] }) {
+  const ui = useUi().legal;
   const [active, setActive] = useState(items[0]?.id ?? '');
   useEffect(() => {
     // The observer only says "something crossed the reading line"; the current
@@ -43,13 +45,13 @@ export function LegalTableOfContents({ items }: { items: TocItem[] }) {
     </ol>
   );
   return (
-    <nav className="legal-toc" aria-label="Sur cette page">
+    <nav className="legal-toc" aria-label={ui.tocLabel}>
       <details className="legal-toc-mobile">
-        <summary>Sur cette page</summary>
+        <summary>{ui.tocLabel}</summary>
         {list}
       </details>
       <div className="legal-toc-desktop">
-        <p className="eyebrow">SUR CETTE PAGE</p>
+        <p className="eyebrow">{ui.tocTitle}</p>
         {list}
       </div>
     </nav>

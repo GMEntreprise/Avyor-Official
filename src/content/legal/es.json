@@ -1,0 +1,392 @@
+{
+  "privacy": {
+    "title": "Política de privacidad",
+    "lastUpdated": "17 de septiembre de 2026",
+    "intro": "Esta política describe los datos tratados por la aplicación móvil AVYOR y por este sitio de presentación. Está redactada a partir del funcionamiento real del producto. Los datos identificativos del editor, los plazos de conservación exactos y las garantías de transferencia quedan pendientes antes de la puesta en producción: se señalan como tales en lugar de estimarse.",
+    "sections": [
+      {
+        "id": "qui-sommes-nous",
+        "title": "1. Quiénes somos",
+        "body": "AVYOR es una aplicación móvil que pone en contacto a Creators y marcas para descubrir perfiles, publicar campañas y llevar a cabo colaboraciones de contenido. El producto está operado por Shavod.",
+        "todo": "Razón social, forma jurídica, capital social, número de registro mercantil, número de IVA intracomunitario y domicilio social del editor."
+      },
+      {
+        "id": "champ-application",
+        "title": "2. Ámbito de aplicación",
+        "body": "Esta política cubre dos ámbitos distintos: la aplicación móvil AVYOR, que se basa en una cuenta de usuario, y el sitio de presentación que estás consultando, que no tiene ninguna. Los tratamientos aplicables a cada uno se describen por separado a continuación."
+      },
+      {
+        "id": "donnees-du-site",
+        "title": "3. Este sitio de presentación",
+        "body": "Este sitio está alojado por Vercel y no tiene formulario de cuenta ni herramienta publicitaria. Mide su audiencia con Vercel Web Analytics y Vercel Speed Insights, dos herramientas sin cookies: no se deposita ninguna cookie en tu dispositivo y no se te asigna ningún identificador duradero. Se registran la página consultada, la página que te llevó a ella, el país, el tipo de dispositivo, el sistema y el navegador, además de mediciones de la rapidez de visualización de la página. Estos datos solo sirven para entender la audiencia del sitio y corregir lo que es lento; no permiten seguirte de un sitio a otro y no se venden ni se cruzan con tu cuenta. Una preferencia guardada en la memoria de sesión de tu navegador permite reproducir la animación de introducción una sola vez; desaparece al cerrar la pestaña y nunca sale de tu dispositivo. Los mensajes que envías a la dirección de contacto se tratan para responder a tu solicitud.",
+        "todo": "Base jurídica de la medición de audiencia por decidir: exención de consentimiento por medición de audiencia o interés legítimo, según el análisis adoptado a la vista de los criterios de la autoridad de control. Razón social y dirección de Vercel, que deben tomarse de su propio aviso legal."
+      },
+      {
+        "id": "donnees-fournies",
+        "title": "4. Datos que nos facilitas",
+        "body": "En la aplicación, estos datos proceden directamente de ti:",
+        "items": [
+          "Cuenta: dirección de correo electrónico y contraseña, mediante la autenticación de Supabase.",
+          "Perfil: nombre, foto, biografía, enlaces a tus redes sociales.",
+          "Contenidos: vídeos, elementos del portafolio, candidaturas a campañas.",
+          "Campañas: briefing, contenidos esperados y condiciones, en una cuenta de marca.",
+          "Mensajes: conversaciones y solicitudes de colaboración."
+        ]
+      },
+      {
+        "id": "donnees-usage",
+        "title": "5. Datos generados por el uso",
+        "body": "El uso de la aplicación produce datos que no introduces: visualizaciones, me gusta e interacciones con los contenidos y las campañas, estado de avance de las colaboraciones y de los entregables, e información relacionada por el matching entre un perfil y una campaña."
+      },
+      {
+        "id": "donnees-techniques",
+        "title": "6. Datos técnicos",
+        "body": "El funcionamiento del servicio produce datos técnicos: registros de conexión y de seguridad vinculados a la autenticación, e informes de error enviados a Sentry cuando se produce una incidencia. La medición de uso de la aplicación pasa por PostHog.",
+        "todo": "Lista precisa de los eventos enviados a PostHog y plazo de conservación configurado en cada proveedor."
+      },
+      {
+        "id": "finalites",
+        "title": "7. Por qué usamos tus datos",
+        "body": "Estos datos sirven para ofrecer la puesta en contacto entre Creators y marcas, proteger tu cuenta, hacer funcionar las campañas, la mensajería y el seguimiento de las colaboraciones, tratar los pagos, enviar las notificaciones vinculadas a tu actividad y corregir los fallos técnicos."
+      },
+      {
+        "id": "bases-juridiques",
+        "title": "8. Bases jurídicas",
+        "body": "El tratamiento se basa en la ejecución del contrato que te vincula a AVYOR para la prestación del servicio, en el interés legítimo de AVYOR para la seguridad y la mejora del producto, en una obligación legal en lo relativo a la facturación y la lucha contra el fraude, y en tu consentimiento cuando se recoge, en particular para las notificaciones no esenciales."
+      },
+      {
+        "id": "profils",
+        "title": "9. Perfiles y visibilidad",
+        "body": "Tu perfil, tus vídeos y tu portafolio están destinados a ser vistos por los demás usuarios de AVYOR: es la función misma del producto. Los elementos que publicas deben elegirse en consecuencia. Tus mensajes, en cambio, solo son visibles para sus destinatarios."
+      },
+      {
+        "id": "campagnes",
+        "title": "10. Campañas y colaboraciones",
+        "body": "Cuando se inicia una colaboración, la información necesaria para llevarla a cabo se comparte entre el Creator y la marca implicados: identidad del perfil, contenido de la campaña, intercambios y entregables. El matching relaciona la información del perfil con la de la campaña para proponer perfiles pertinentes; la decisión final corresponde siempre a la marca."
+      },
+      {
+        "id": "messagerie",
+        "title": "11. Mensajería",
+        "body": "Las conversaciones se conservan para que el contexto de un proyecto siga disponible durante y después de la colaboración. Nuestros equipos pueden consultarlas en el marco de la tramitación de una denuncia o de un litigio, y solo por ese motivo."
+      },
+      {
+        "id": "paiements",
+        "title": "12. Pagos",
+        "body": "Los pagos entre marcas y Creators pasan por Stripe. AVYOR no almacena ningún dato de tarjeta bancaria. La información de facturación y de cuenta de pago la trata Stripe como responsable del tratamiento en lo relativo a sus obligaciones reglamentarias."
+      },
+      {
+        "id": "notifications",
+        "title": "13. Notificaciones",
+        "body": "Las notificaciones te informan de la actividad que te afecta: nuevo mensaje, cambio en una candidatura, etapa de una colaboración. Se configuran desde los ajustes de la aplicación."
+      },
+      {
+        "id": "cookies",
+        "title": "14. Cookies y tecnologías similares",
+        "body": "Este sitio no utiliza ninguna cookie, tampoco para la medición de audiencia: Vercel Web Analytics y Speed Insights funcionan sin depositar ninguna. La aplicación móvil se apoya en un almacenamiento local necesario para mantener tu sesión y tus preferencias; no se usa para publicidad."
+      },
+      {
+        "id": "prestataires",
+        "title": "15. Proveedores y encargados del tratamiento",
+        "body": "AVYOR se apoya en un número limitado de proveedores técnicos:",
+        "items": [
+          "Vercel — alojamiento de este sitio, medición de audiencia y de rapidez.",
+          "Supabase — alojamiento de los datos y autenticación.",
+          "Stripe — tratamiento de los pagos y las transferencias.",
+          "PostHog — medición de uso del producto.",
+          "Sentry — seguimiento de los errores técnicos."
+        ],
+        "todo": "Ubicación de los servidores adoptada en cada proveedor y referencias de los contratos de encargo de tratamiento firmados."
+      },
+      {
+        "id": "partage",
+        "title": "16. Comunicación de datos",
+        "body": "AVYOR no vende tus datos personales ni los transmite a ningún intermediario de datos. La comunicación se limita a los proveedores enumerados arriba, a los usuarios con los que eliges interactuar y a las autoridades competentes cuando una obligación legal lo exige."
+      },
+      {
+        "id": "transferts",
+        "title": "17. Transferencias fuera de la Unión Europea",
+        "body": "Algunos de los proveedores citados pueden tratar datos fuera de la Unión Europea. Es el caso, en particular, de Vercel, sociedad establecida en Estados Unidos, que aloja este sitio y mide su audiencia.",
+        "todo": "Regiones de alojamiento efectivamente adoptadas y mecanismo de transferencia aplicable a cada proveedor, por documentar antes de cualquier puesta en producción."
+      },
+      {
+        "id": "conservation",
+        "title": "18. Plazos de conservación",
+        "body": "Tus datos se conservan mientras tu cuenta esté activa. Tras la eliminación de la cuenta, los elementos necesarios para cumplir obligaciones legales, en particular contables, se conservan el tiempo requerido y después se eliminan.",
+        "todo": "Plazos exactos por categoría de datos, por fijar con el editor antes de la publicación: aquí no se estiman."
+      },
+      {
+        "id": "securite",
+        "title": "19. Seguridad",
+        "body": "Los intercambios con el servicio están cifrados en HTTPS/TLS. La autenticación y los cambios sensibles de la cuenta pasan por el sistema de autenticación de Supabase. Ningún sistema es infalible: no comuniques nunca tu contraseña e infórmanos de cualquier actividad inusual en tu cuenta."
+      },
+      {
+        "id": "vos-droits",
+        "title": "20. Tus derechos",
+        "body": "Si el Reglamento General de Protección de Datos te resulta aplicable, dispones de los siguientes derechos sobre tus datos personales:",
+        "items": [
+          "Acceso: obtener la confirmación de que tus datos se tratan y recibir una copia.",
+          "Rectificación: hacer corregir datos inexactos o incompletos.",
+          "Supresión: solicitar la eliminación de tus datos, dentro de los límites previstos por la ley.",
+          "Limitación: solicitar la suspensión de un tratamiento mientras se realiza una comprobación.",
+          "Oposición: oponerte a un tratamiento basado en el interés legítimo.",
+          "Portabilidad: recibir tus datos en un formato estructurado y legible por máquina.",
+          "Retirada del consentimiento: retirarlo en cualquier momento, sin efecto sobre lo anterior."
+        ]
+      },
+      {
+        "id": "exercer-vos-droits",
+        "title": "21. Ejercer tus derechos",
+        "body": "Escribe a la dirección de contacto indicada al final del documento, precisando la dirección de correo electrónico asociada a tu cuenta y la naturaleza de tu solicitud. No adjuntes contraseñas ni datos bancarios completos.",
+        "todo": "Designación de un delegado de protección de datos y publicación de sus datos de contacto, si el nombramiento resulta obligatorio."
+      },
+      {
+        "id": "supprimer-mon-compte",
+        "title": "22. Eliminar mi cuenta",
+        "body": "La eliminación se hace desde la aplicación: abre Ajustes, después Seguridad, y elige eliminar la cuenta. Tu perfil, tus contenidos y tus conversaciones dejan entonces de ser accesibles para los demás usuarios. Si tienes una colaboración en curso, termínala o contacta con el soporte antes de eliminar tu cuenta: los elementos vinculados a un pago pueden tener que conservarse por motivos legales. En caso de dificultad, escribe a la dirección de contacto desde el correo asociado a la cuenta."
+      },
+      {
+        "id": "mineurs",
+        "title": "23. Menores",
+        "body": "AVYOR no está destinada a menores. Si sabemos que se ha creado una cuenta por debajo de la edad requerida, se elimina.",
+        "todo": "Edad mínima adoptada para abrir una cuenta, por alinear con las condiciones de uso y el derecho aplicable."
+      },
+      {
+        "id": "modifications",
+        "title": "24. Modificaciones de esta política",
+        "body": "Esta política puede evolucionar con el producto. La fecha de la última actualización figura al principio de la página, y cualquier cambio sustancial se te señalará en la aplicación."
+      },
+      {
+        "id": "contact-privacy",
+        "title": "25. Contactar con nosotros",
+        "body": "Para cualquier duda relativa a esta política o a tus datos, escríbenos a la dirección de contacto indicada más abajo."
+      },
+      {
+        "id": "autorite-controle",
+        "title": "26. Autoridad de control",
+        "body": "Si consideras que tus derechos no se respetan, puedes presentar una reclamación ante la autoridad de protección de datos competente. En Francia es la Commission nationale de l’informatique et des libertés (CNIL), www.cnil.fr; en España, la Agencia Española de Protección de Datos (AEPD), www.aepd.es.",
+        "todo": "Autoridad principal por confirmar una vez determinado el establecimiento principal del editor."
+      }
+    ]
+  },
+  "terms": {
+    "title": "Condiciones de uso",
+    "lastUpdated": "17 de septiembre de 2026",
+    "intro": "Estas condiciones regulan el uso de la aplicación AVYOR y las colaboraciones entre Creators y marcas. Describen el funcionamiento real del producto. La identidad del editor, el derecho aplicable y la jurisdicción competente quedan por determinar antes de la puesta en producción y se señalan como tales.",
+    "sections": [
+      {
+        "id": "objet",
+        "title": "1. Objeto",
+        "body": "Estas condiciones definen las reglas de acceso y de uso de AVYOR, aplicación móvil de puesta en contacto entre Creators y marcas. Al crear una cuenta o al usar la aplicación, las aceptas, junto con la política de privacidad. Si no aceptas sus términos, no uses AVYOR."
+      },
+      {
+        "id": "definitions",
+        "title": "2. Definiciones",
+        "body": "Para la lectura de este documento:",
+        "items": [
+          "Creator: usuario que presenta su trabajo y responde a campañas.",
+          "Marca: usuario que publica una campaña y busca Creators.",
+          "Campaña: briefing publicado por una marca, que describe el proyecto, los contenidos esperados y las condiciones.",
+          "Colaboración: proyecto iniciado entre un Creator y una marca a raíz de una campaña.",
+          "Entregable: contenido entregado por el Creator en el marco de una colaboración."
+        ]
+      },
+      {
+        "id": "acces",
+        "title": "3. Acceso al servicio",
+        "body": "A AVYOR se accede desde una aplicación móvil. El acceso requiere un dispositivo compatible y una conexión a internet, cuyo coste corre a tu cargo. Algunas funcionalidades pueden evolucionar, añadirse o retirarse a medida que el producto avanza."
+      },
+      {
+        "id": "compte",
+        "title": "4. Creación de cuenta",
+        "body": "Facilitas información exacta al crear tu cuenta y la mantienes actualizada. Eres responsable de la confidencialidad de tus credenciales y de las acciones realizadas desde tu cuenta. Una cuenta es personal: no se comparte ni se cede."
+      },
+      {
+        "id": "age",
+        "title": "5. Requisitos de edad",
+        "body": "AVYOR está reservada a las personas que han alcanzado la edad necesaria para contratar y para consentir el tratamiento de sus datos.",
+        "todo": "Edad mínima adoptada, por alinear con la política de privacidad y el derecho aplicable."
+      },
+      {
+        "id": "obligations",
+        "title": "6. Obligaciones del usuario",
+        "body": "Te comprometes a usar AVYOR conforme a la ley y a estas condiciones, a no suplantar la identidad de un tercero, a no publicar contenido cuyos derechos no poseas y a no intentar eludir los mecanismos técnicos del servicio."
+      },
+      {
+        "id": "profils-creator",
+        "title": "7. Perfiles Creator",
+        "body": "Tu perfil, tus vídeos y tu portafolio están destinados a ser consultados por los demás usuarios. Deben reflejar tu trabajo real. Las estadísticas mostradas describen la actividad observada en tus contenidos; no constituyen una promesa de visibilidad ni una garantía de ingresos."
+      },
+      {
+        "id": "comptes-marque",
+        "title": "8. Cuentas de marca",
+        "body": "Si usas AVYOR en nombre de una organización, declaras disponer de poder para obligarla. La información de campaña publicada debe ser exacta y reflejar el proyecto realmente previsto."
+      },
+      {
+        "id": "campagnes-terms",
+        "title": "9. Campañas",
+        "body": "Una campaña describe el proyecto, los contenidos esperados y las condiciones de colaboración. Estos elementos constituyen la referencia común del proyecto: una marca no puede exigir después un entregable ajeno al briefing aceptado."
+      },
+      {
+        "id": "candidatures",
+        "title": "10. Candidaturas y matching",
+        "body": "Un Creator puede presentarse a una campaña; una marca puede consultar los perfiles y la información de compatibilidad propuesta por el matching. El matching es una ayuda a la lectura: no decide, y ni AVYOR ni el matching garantizan que una candidatura prospere."
+      },
+      {
+        "id": "collaborations-terms",
+        "title": "11. Colaboraciones",
+        "body": "Una colaboración comienza cuando el Creator y la marca se ponen de acuerdo sobre una campaña. Los intercambios, las etapas y los entregables se siguen en la aplicación. AVYOR facilita la herramienta; el acuerdo vincula al Creator y a la marca entre sí."
+      },
+      {
+        "id": "contenus",
+        "title": "12. Contenidos",
+        "body": "Sigues siendo propietario de los contenidos que publicas en AVYOR. Al publicarlos, concedes a AVYOR una licencia limitada, no exclusiva y estrictamente necesaria para alojarlos, mostrarlos y difundirlos dentro de la aplicación en el marco del funcionamiento del servicio."
+      },
+      {
+        "id": "droits-livrables",
+        "title": "13. Derechos sobre los entregables",
+        "body": "Los derechos de uso concedidos a la marca sobre un entregable son los definidos en las condiciones de la campaña aceptada: soporte, duración y territorio. Cualquier uso que exceda ese marco debe ser objeto de un acuerdo aparte entre la marca y el Creator."
+      },
+      {
+        "id": "propriete-intellectuelle",
+        "title": "14. Propiedad intelectual de AVYOR",
+        "body": "El nombre AVYOR, su logotipo, su interfaz y sus componentes de software están protegidos. Estas condiciones no te transfieren ningún derecho sobre ellos."
+      },
+      {
+        "id": "messagerie-terms",
+        "title": "15. Mensajería",
+        "body": "La mensajería sirve para los intercambios vinculados a las campañas y a las colaboraciones. No es un canal privado ilimitado: las conversaciones pueden consultarse en el marco de la tramitación de una denuncia o de un litigio."
+      },
+      {
+        "id": "paiements-terms",
+        "title": "16. Pagos",
+        "body": "Los pagos pasan por Stripe; AVYOR no almacena ningún dato bancario. La marca financia la colaboración, y la transferencia al Creator se produce tras la validación del entregable, según las condiciones del proyecto y el estado de la cuenta de pago del Creator. Los importes y las comisiones aplicables se presentan en la aplicación antes del compromiso. Los plazos de tramitación dependen del proveedor de pagos."
+      },
+      {
+        "id": "annulations",
+        "title": "17. Cancelaciones y litigios de colaboración",
+        "body": "Si una colaboración se interrumpe, las partes buscan primero un acuerdo entre ellas. En caso de desacuerdo persistente, dirígete al soporte indicando el proyecto afectado. AVYOR no es parte del acuerdo celebrado entre un Creator y una marca, y no arbitra en su lugar el fondo de su relación contractual."
+      },
+      {
+        "id": "interdits",
+        "title": "18. Comportamientos prohibidos",
+        "body": "Quedan prohibidos, en particular:",
+        "items": [
+          "El spam, la captación masiva y la manipulación de audiencia.",
+          "El acoso, las amenazas y los discursos de odio.",
+          "Los contenidos violentos o sexuales no solicitados.",
+          "El fraude, la declaración falsa y la suplantación de identidad.",
+          "La publicación de contenidos que vulneren los derechos de un tercero.",
+          "Cualquier intento de eludir los pagos previstos por el servicio."
+        ]
+      },
+      {
+        "id": "moderation",
+        "title": "19. Denuncia y moderación",
+        "body": "Los perfiles, los vídeos y las conversaciones disponen de acciones de denuncia y de bloqueo. Las denuncias se examinan y pueden conducir a la retirada de un contenido o a una medida sobre la cuenta afectada."
+      },
+      {
+        "id": "suspension",
+        "title": "20. Suspensión y resolución",
+        "body": "AVYOR puede suspender o cerrar una cuenta en caso de incumplimiento de estas condiciones, en particular tras una denuncia confirmada. Cuando las circunstancias lo permiten, la medida va precedida de una información y puedes impugnarla ante el soporte."
+      },
+      {
+        "id": "suppression-compte-terms",
+        "title": "21. Eliminación de tu cuenta",
+        "body": "Puedes eliminar tu cuenta en cualquier momento desde Ajustes y después Seguridad. Termina antes tus colaboraciones en curso: algunos elementos vinculados a un pago deben conservarse por motivos legales, como indica la política de privacidad."
+      },
+      {
+        "id": "responsabilite",
+        "title": "22. Responsabilidad",
+        "body": "AVYOR facilita una herramienta de puesta en contacto y no es parte de los acuerdos celebrados entre Creators y marcas. AVYOR no garantiza el resultado de una campaña ni el comportamiento de un usuario. Dentro de los límites permitidos por el derecho aplicable, la responsabilidad de AVYOR no se extiende a los daños indirectos. Ninguna estipulación de este documento excluye una responsabilidad que no pueda excluirse."
+      },
+      {
+        "id": "disponibilite",
+        "title": "23. Disponibilidad del servicio",
+        "body": "AVYOR se facilita tal cual y según su disponibilidad. El servicio puede interrumpirse por mantenimiento, actualización o incidencia técnica. No se garantiza ningún nivel de disponibilidad concreto."
+      },
+      {
+        "id": "services-tiers",
+        "title": "24. Servicios de terceros",
+        "body": "AVYOR se apoya en servicios de terceros, en particular Supabase y Stripe, cuyas condiciones propias se aplican a su ámbito. Los enlaces a servicios externos que puedas añadir a tu perfil son responsabilidad tuya."
+      },
+      {
+        "id": "donnees-terms",
+        "title": "25. Protección de datos",
+        "body": "El tratamiento de tus datos personales se describe en la política de privacidad, que forma parte integrante de estas condiciones."
+      },
+      {
+        "id": "modification-conditions",
+        "title": "26. Modificación de las condiciones",
+        "body": "Estas condiciones pueden modificarse para seguir la evolución del producto o de la normativa. La fecha de la última actualización figura al principio de la página, y cualquier cambio sustancial se te señalará en la aplicación. Seguir usando AVYOR tras su entrada en vigor equivale a aceptarlas."
+      },
+      {
+        "id": "droit-applicable",
+        "title": "27. Derecho aplicable y litigios",
+        "body": "Las condiciones en las que un litigio relativo a estas condiciones se somete a un tribunal dependen del derecho aplicable y de tu condición de consumidor o de profesional.",
+        "todo": "Derecho aplicable y jurisdicción competente, por determinar con el editor antes de la puesta en producción. Aquí no se presume ninguna cláusula."
+      },
+      {
+        "id": "contact-terms",
+        "title": "28. Contacto",
+        "body": "Para cualquier duda relativa a estas condiciones, escríbenos a la dirección de contacto indicada más abajo."
+      }
+    ]
+  },
+  "legal": {
+    "title": "Aviso legal",
+    "lastUpdated": "17 de septiembre de 2026",
+    "intro": "Esta página reúne la información de publicación relativa al producto AVYOR y a este sitio. Las menciones obligatorias que dependen del registro del editor aún no están determinadas: se señalan como pendientes en lugar de rellenarse por aproximación.",
+    "sections": [
+      {
+        "id": "editeur",
+        "title": "1. Editor",
+        "body": "AVYOR es un producto móvil operado por Shavod.",
+        "todo": "Razón social, forma jurídica, capital social, número de registro mercantil, número de IVA intracomunitario y domicilio social del editor."
+      },
+      {
+        "id": "directeur-publication",
+        "title": "2. Director de publicación",
+        "body": "El director de publicación es el representante legal del editor.",
+        "todo": "Nombre del director de publicación."
+      },
+      {
+        "id": "contact-legal",
+        "title": "3. Contactar con nosotros",
+        "body": "Las solicitudes relativas al producto, al soporte o a tus datos se dirigen a la dirección de contacto indicada al final de la página. Es también el canal indicado para denunciar un contenido desde este sitio.",
+        "todo": "Número de teléfono y dirección postal de contacto, si el editor desea publicarlos."
+      },
+      {
+        "id": "hebergement-app",
+        "title": "4. Alojamiento de la aplicación",
+        "body": "Los datos de la aplicación y su autenticación se apoyan en la infraestructura de Supabase. Los pagos los trata Stripe.",
+        "todo": "Entidad jurídica y dirección de cada proveedor de alojamiento, tal como deben figurar en el aviso legal."
+      },
+      {
+        "id": "hebergement-site",
+        "title": "5. Alojamiento de este sitio",
+        "body": "Este sitio es un conjunto de páginas estáticas, sin base de datos ni cuenta de usuario. Está alojado por Vercel.",
+        "todo": "Razón social completa y dirección de Vercel, que deben tomarse de su propio aviso legal."
+      },
+      {
+        "id": "propriete-intellectuelle-legal",
+        "title": "6. Propiedad intelectual",
+        "body": "El nombre AVYOR, su logotipo, la interfaz de la aplicación y los contenidos de este sitio están protegidos. Queda prohibida toda reproducción o representación no autorizada. Las capturas presentadas en este sitio muestran las pantallas reales de la aplicación con datos de demostración: los perfiles, marcas, importes y estadísticas que aparecen son ilustrativos y no constituyen testimonios ni resultados de clientes."
+      },
+      {
+        "id": "marques-tierces",
+        "title": "7. Marcas de terceros",
+        "body": "App Store y el logotipo de Apple son marcas de Apple Inc. Google Play y el logotipo de Google Play son marcas de Google LLC. Estos elementos se reproducen según las reglas de uso de sus propietarios, únicamente para indicar las plataformas de distribución de la aplicación."
+      },
+      {
+        "id": "donnees-legal",
+        "title": "8. Protección de datos",
+        "body": "El tratamiento de los datos personales se describe en la política de privacidad, que precisa los datos recogidos, sus finalidades, los proveedores implicados y la manera de ejercer tus derechos."
+      },
+      {
+        "id": "conditions-legal",
+        "title": "9. Condiciones de uso",
+        "body": "El uso de la aplicación se rige por las condiciones de uso, que describen las cuentas, las campañas, las colaboraciones, los contenidos y los pagos."
+      }
+    ]
+  }
+}

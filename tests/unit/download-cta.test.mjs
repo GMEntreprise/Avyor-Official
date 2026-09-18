@@ -29,7 +29,8 @@ test('la primitive n’alourdit pas le bundle ni ne laisse tourner de timer', ()
 test('le bouton de marque pointe vers une vraie route et porte son identité', () => {
   const source = brand();
   assert.match(source, /HoverBorderGradient/);
-  assert.match(source, /downloadHref/, 'la destination vient de la configuration centrale');
+  assert.match(source, /DOWNLOAD_SLUG/, 'la destination vient de la configuration centrale');
+  assert.match(source, /useHref/, 'et suit la langue de la page');
   assert.doesNotMatch(source, /href=["']#["']/);
 });
 

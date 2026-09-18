@@ -4,7 +4,11 @@ import { ArrowDown, ArrowUpRight, Pause, Play } from 'lucide-react';
 import { DownloadAppButton } from './DownloadAppButton';
 import { StoreButtons } from './StoreButtons';
 import { Device, DemoCaption } from './Device';
+import { Title } from './Lines';
+import { useHref, useUi } from '../content/context';
 export function Hero() {
+  const ui = useUi();
+  const href = useHref();
   const video = useRef<HTMLVideoElement>(null);
   const reduced = useReducedMotion();
   const [playing, setPlaying] = useState(false);
@@ -66,25 +70,20 @@ export function Hero() {
         <div className="hero-copy">
           <p className="eyebrow">
             <span className="eyebrow-line" />
-            LA CRÉATION FAIT LA RENCONTRE
+            {ui.hero.eyebrow}
           </p>
           <h1>
-            Le bon Creator.
-            <br />
-            <span>
-              La bonne
-              <br className="desktop-break" /> campagne.
-            </span>
+            <Title headline={ui.hero.title} breakClass="desktop-break" />
           </h1>
           <p className="hero-description">
-            Creators et marques, trouvez-vous.
+            {ui.hero.description[0]}
             <br />
-            Créez ensemble. Gardez le projet au même endroit.
+            {ui.hero.description[1]}
           </p>
           <div className="hero-actions">
-            <DownloadAppButton variant="hero" label="Télécharger l’app" />
-            <a className="quiet-link" href="/#experience">
-              Voir comment ça marche <ArrowDown size={15} aria-hidden="true" />
+            <DownloadAppButton variant="hero" label={ui.download.app} />
+            <a className="quiet-link" href={`${href('')}#experience`}>
+              {ui.hero.seeHow} <ArrowDown size={15} aria-hidden="true" />
             </a>
           </div>
           <StoreButtons />
@@ -92,30 +91,30 @@ export function Hero() {
         <m.div className="hero-product" initial={false} animate={{ y: 0 }}>
           <div className="hero-orbit" />
           <div className="device-tag tag-top">
-            <span>LE TALENT SE VOIT.</span>
+            <span>{ui.hero.tagTop}</span>
             <ArrowUpRight size={17} />
           </div>
           <Device scene="02-matching" className="hero-device-back" priority />
           <Device scene="04-feed" className="hero-device-front" priority />
           <div className="device-tag tag-bottom">
             <span className="tag-rule" />
-            <span>LA RENCONTRE SE CRÉE.</span>
+            <span>{ui.hero.tagBottom}</span>
           </div>
         </m.div>
       </div>
       <div className="hero-bottom container">
-        <a href="/#experience">
+        <a href={`${href('')}#experience`}>
           <span className="scroll-line" />
-          EXPLORER AVYOR
+          {ui.hero.explore}
         </a>
         <DemoCaption />
         <button
           className="video-control"
           onClick={toggle}
-          aria-label={playing ? 'Mettre la vidéo en pause' : 'Lire la vidéo'}
+          aria-label={playing ? ui.media.pauseVideo : ui.media.playVideo}
         >
           {playing ? <Pause size={14} /> : <Play size={14} />}
-          <span>{playing ? 'Pause' : 'Lire'}</span>
+          <span>{playing ? ui.media.pause : ui.media.play}</span>
         </button>
       </div>
     </section>

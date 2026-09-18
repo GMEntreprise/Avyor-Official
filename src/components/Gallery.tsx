@@ -1,19 +1,12 @@
 import { useRef } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { Device, DemoCaption } from './Device';
+import { Title } from './Lines';
+import { useUi } from '../content/context';
 import { ordinal } from '../lib/utils';
-const shots = [
-  ['04-feed', 'Le travail, d’abord.', 'Un feed pour découvrir les créations.'],
-  ['08-portfolio', 'Votre univers, en détail.', 'Des projets réunis dans un portfolio.'],
-  ['05-campaign', 'Un brief pour se comprendre.', 'Le contexte de votre prochaine création.'],
-  ['06-collaboration', 'Le projet garde son fil.', 'La conversation accompagne la collaboration.'],
-  [
-    '03-match-detail',
-    'Les raisons de la rencontre.',
-    'Une lecture des informations de compatibilité.',
-  ],
-];
 export function Gallery() {
+  const ui = useUi().gallery;
+  const shots = ui.shots;
   const ref = useRef<HTMLDivElement>(null);
   const drag = useRef<{ x: number; scroll: number } | null>(null);
   const move = (d: number) =>
@@ -25,22 +18,16 @@ export function Gallery() {
     <section className="gallery-section">
       <div className="container gallery-heading">
         <div>
-          <p className="eyebrow">05 — LE PRODUIT, SANS DÉTOUR</p>
+          <p className="eyebrow">{ui.eyebrow}</p>
           <h2>
-            Un aperçu.
-            <br />
-            <span>De vraies possibilités.</span>
+            <Title headline={ui.title} />
           </h2>
         </div>
         <div className="gallery-controls">
-          <button
-            className="icon-button"
-            onClick={() => move(-1)}
-            aria-label="Captures précédentes"
-          >
+          <button className="icon-button" onClick={() => move(-1)} aria-label={ui.previous}>
             <ArrowLeft />
           </button>
-          <button className="icon-button" onClick={() => move(1)} aria-label="Captures suivantes">
+          <button className="icon-button" onClick={() => move(1)} aria-label={ui.next}>
             <ArrowRight />
           </button>
         </div>
@@ -50,7 +37,7 @@ export function Gallery() {
         ref={ref}
         tabIndex={0}
         role="region"
-        aria-label="Captures de l’application, utilisez les flèches pour parcourir"
+        aria-label={ui.region}
         onKeyDown={(e) => {
           if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
             e.preventDefault();

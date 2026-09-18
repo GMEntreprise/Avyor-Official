@@ -1,13 +1,14 @@
 {
-  "measuredAt": "2026-09-18T12:54:00.374Z",
+  "measuredAt": "2026-09-18T14:20:33.420Z",
   "initial": [
-    "assets/index-BdnWsgeW.js",
+    "assets/index-CVZvfYsW.js",
     "assets/motion-DDGmUNfW.js"
   ],
   "metrics": {
-    "jsGzip": 142180,
-    "jsGzipTotal": 154787,
-    "cssGzip": 11939,
+    "jsGzip": 137077,
+    "jsGzipPerLocale": 157700,
+    "jsGzipAllLocales": 235586,
+    "cssGzip": 12898,
     "pageHeroVideo": 492408,
     "poster": 125272,
     "film": 1022871,
@@ -17,7 +18,8 @@
   },
   "budgets": {
     "jsGzip": 143360,
-    "jsGzipTotal": 168960,
+    "jsGzipPerLocale": 168960,
+    "jsGzipAllLocales": 291840,
     "cssGzip": 25600,
     "pageHeroVideo": 614400,
     "poster": 225280,

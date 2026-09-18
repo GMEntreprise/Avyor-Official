@@ -1,37 +1,37 @@
 import { LegalTableOfContents } from './LegalTableOfContents';
 import { config } from '../config';
+import { useHref, useSite } from '../content/context';
+import type { LegalDoc } from '../content/types';
+import { DEFAULT_LOCALE } from '../i18n/locales';
 
-export interface LegalSection {
-  id: string;
-  title: string;
-  body?: string;
-  items?: string[];
-  /** What is genuinely unknown today. Shown as such, never filled with a guess. */
-  todo?: string;
-}
-export interface LegalDoc {
-  title: string;
-  intro: string;
-  lastUpdated: string;
-  sections: LegalSection[];
-}
+export type { LegalDoc, LegalSection } from '../content/types';
+
+/** The documents a legal page always points to, by slug. */
+const CROSSLINKS = ['privacy', 'terms', 'legal', 'security'];
 
 export function LegalDocument({ doc }: { doc: LegalDoc }) {
+  const { content, locale } = useSite();
+  const ui = content.ui.legal;
+  const href = useHref();
   const pending = doc.sections.filter((s) => s.todo).length;
+  const labelOf = (slug: string) => content.pages.find((p) => p.slug === slug)?.label ?? slug;
   return (
     <div className="legal-layout">
       <LegalTableOfContents items={doc.sections.map(({ id, title }) => ({ id, title }))} />
       <div className="legal-document">
-        <p className="legal-updated">Dernière mise à jour : {doc.lastUpdated}.</p>
+        <p className="legal-updated">
+          {ui.updated} {doc.lastUpdated}.
+        </p>
+        {/* A translated legal document is a reading aid; the French text is
+            the one that binds. Saying so is the honest thing to display. */}
+        {locale !== DEFAULT_LOCALE && ui.translationNotice && (
+          <p className="legal-translation">{ui.translationNotice}</p>
+        )}
         <p className="legal-intro">{doc.intro}</p>
         {pending > 0 && (
           <aside className="legal-notice">
-            <strong>Document en préparation pour le lancement.</strong>
-            <p>
-              {pending} section{pending > 1 ? 's' : ''} attend{pending > 1 ? 'ent' : ''} une
-              information que l’éditeur doit fournir. Elles sont signalées dans le texte plutôt que
-              complétées par approximation.
-            </p>
+            <strong>{ui.noticeTitle}</strong>
+            <p>{ui.notice(pending)}</p>
           </aside>
         )}
         {doc.sections.map((section) => (
@@ -47,22 +47,22 @@ export function LegalDocument({ doc }: { doc: LegalDoc }) {
             )}
             {section.todo && (
               <p className="legal-todo">
-                <strong>À compléter avant publication :</strong> {section.todo}
+                <strong>{ui.todoLabel}</strong> {section.todo}
               </p>
             )}
           </section>
         ))}
         <section id="contact-document">
-          <h2>Contact</h2>
+          <h2>{ui.contactTitle}</h2>
           <p>
-            Pour toute question relative à ce document :{' '}
-            <a href={`mailto:${config.email}`}>{config.email}</a>.
+            {ui.contactLead} <a href={`mailto:${config.email}`}>{config.email}</a>.
           </p>
           <p className="legal-crosslinks">
-            <a href="/privacy/">Politique de confidentialité</a>
-            <a href="/terms/">Conditions d’utilisation</a>
-            <a href="/legal/">Mentions légales</a>
-            <a href="/security/">Sécurité &amp; paiements</a>
+            {CROSSLINKS.map((slug) => (
+              <a key={slug} href={href(slug)}>
+                {labelOf(slug)}
+              </a>
+            ))}
           </p>
         </section>
       </div>

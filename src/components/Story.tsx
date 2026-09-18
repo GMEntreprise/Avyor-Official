@@ -1,10 +1,15 @@
 import { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, m, useReducedMotion } from 'motion/react';
 import { ArrowUpRight } from 'lucide-react';
-import { scenes } from '../content/site';
+import { useHref, useSite } from '../content/context';
+import { Title } from './Lines';
 import { motionTokens } from '../config';
 import { Device, DemoCaption } from './Device';
 export function Story() {
+  const { content } = useSite();
+  const { scenes } = content;
+  const ui = content.ui.story;
+  const href = useHref();
   const [active, setActive] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
   const reduced = useReducedMotion();
@@ -22,13 +27,11 @@ export function Story() {
   return (
     <section id="experience" className="story container" ref={ref}>
       <div className="section-heading">
-        <p className="eyebrow">01 — LA RENCONTRE, PUIS LE PROJET</p>
+        <p className="eyebrow">{ui.eyebrow}</p>
         <h2>
-          Moins d’outils.
-          <br />
-          <span>Plus de création.</span>
+          <Title headline={ui.title} />
         </h2>
-        <p>Du premier regard au projet livré, un fil continu.</p>
+        <p>{ui.lead}</p>
       </div>
       <div className="story-layout">
         <div className="story-copy">
@@ -42,8 +45,8 @@ export function Story() {
               <span className="step-label">{scene.tag}</span>
               <h3>{scene.heading}</h3>
               <p>{scene.body}</p>
-              <a className="text-link" href="/features/">
-                Explorer le produit <ArrowUpRight size={16} />
+              <a className="text-link" href={href('features')}>
+                {ui.link} <ArrowUpRight size={16} />
               </a>
               <div className="story-mobile-device">
                 <Device scene={scene.id} />
@@ -53,7 +56,9 @@ export function Story() {
         </div>
         <div className="story-visual">
           <div className="story-sticky">
-            <span className="device-overline">DANS L’APP / {scenes[active].label}</span>
+            <span className="device-overline">
+              {ui.inApp} / {scenes[active].label}
+            </span>
             <div className="story-device-stage">
               <AnimatePresence mode="sync" initial={false}>
                 <m.div
@@ -68,11 +73,11 @@ export function Story() {
                 </m.div>
               </AnimatePresence>
             </div>
-            <div className="story-progress" aria-label="Étapes du produit">
+            <div className="story-progress" aria-label={ui.steps}>
               {scenes.map((s, i) => (
                 <a
                   key={s.id}
-                  href={`/#step-${i}`}
+                  href={`${href('')}#step-${i}`}
                   className={i === active ? 'active' : ''}
                   aria-label={s.label}
                   aria-current={i === active ? 'step' : undefined}

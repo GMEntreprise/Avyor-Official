@@ -13,9 +13,33 @@ const sum = (ext) => files.filter((f) => f.endsWith(ext)).reduce((s, f) => s + g
 const manifest = JSON.parse(readFileSync('dist/.vite/manifest.json', 'utf8'));
 const entry = Object.values(manifest).find((c) => c.isEntry);
 const initial = [entry.file, ...(entry.imports ?? []).map((k) => manifest[k].file)];
+
+/** Every chunk reached from a manifest key, the key's own chunk included. */
+function graph(key, seen = new Set()) {
+  if (!manifest[key] || seen.has(key)) return seen;
+  seen.add(key);
+  for (const next of manifest[key].imports ?? []) graph(next, seen);
+  return seen;
+}
+const initialFiles = new Set(initial);
+/**
+ * What one visitor downloads, in their language and nowhere near the others.
+ * A language is a chunk of its own — shell plus long-form text — so five
+ * languages cost a visitor one language, and the build as a whole is held to a
+ * separate, wider ceiling that grows by a fixed amount per language.
+ */
+const { locales } = JSON.parse(readFileSync('dist/build-meta.json', 'utf8'));
+const localeWeight = (locale) =>
+  [...graph(`src/content/locales/${locale}.ts`), ...graph(`src/content/deep/${locale}.ts`)]
+    .map((key) => manifest[key].file)
+    .filter((file, i, all) => all.indexOf(file) === i && !initialFiles.has(file))
+    .reduce((s, f) => s + gzip(f.replace('assets/', '')), 0);
+const heaviestLocale = Math.max(...locales.map(localeWeight));
+
 const metrics = {
   jsGzip: initial.reduce((s, f) => s + gzip(f.replace('assets/', '')), 0),
-  jsGzipTotal: sum('.js'),
+  jsGzipPerLocale: initial.reduce((s, f) => s + gzip(f.replace('assets/', '')), 0) + heaviestLocale,
+  jsGzipAllLocales: sum('.js'),
   cssGzip: sum('.css'),
   // Arrière-plans des Heroes : chargés à la demande, mais rien ne les bornait.
   pageHeroVideo: Math.max(
@@ -42,7 +66,10 @@ const metrics = {
 };
 const budgets = {
   jsGzip: 140 * 1024,
-  jsGzipTotal: 165 * 1024,
+  jsGzipPerLocale: 165 * 1024,
+  // One visitor pays for one language; the build carries them all. Each extra
+  // language is allowed a fixed weight, so adding one stays a deliberate cost.
+  jsGzipAllLocales: (165 + (locales.length - 1) * 30) * 1024,
   cssGzip: 25 * 1024,
   pageHeroVideo: 600 * 1024,
   poster: 220 * 1024,

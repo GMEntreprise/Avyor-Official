@@ -1,7 +1,10 @@
 import { ArrowUpRight } from 'lucide-react';
 import { stores, anyStoreAvailable } from '../config';
+import { useHref, useUi } from '../content/context';
 import { StoreCard } from './StoreCard';
 export function StoreButtons() {
+  const ui = useUi().store;
+  const href = useHref();
   return (
     <div className="store-area">
       <div className="store-buttons">
@@ -11,9 +14,9 @@ export function StoreButtons() {
       </div>
       {!anyStoreAvailable && (
         <p className="store-note">
-          Le lancement se prépare.{' '}
-          <a href="/contact/">
-            Parlons de votre projet <ArrowUpRight size={13} aria-hidden="true" />
+          {ui.launching}{' '}
+          <a href={href('contact')}>
+            {ui.talk} <ArrowUpRight size={13} aria-hidden="true" />
           </a>
         </p>
       )}

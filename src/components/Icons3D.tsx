@@ -704,3 +704,111 @@ export function ControlIcon({ size = 96 }: { size?: number }) {
     </svg>
   );
 }
+
+/**
+ * The flags of the published languages.
+ *
+ * They are national symbols, so they are drawn to their real geometry and
+ * colours rather than restyled; only the chip around them belongs to AVYOR —
+ * a rounded corner, a thin rim and the same top-left sheen as the icons, so a
+ * flag sits in the menu like everything else without being altered.
+ *
+ * A language is not a country. Where no single flag can stand for a language,
+ * the most neutral of the flags in use is chosen — Arabic is shown with the
+ * flag of the United Arab Emirates rather than one bearing a religious
+ * inscription.
+ */
+function FlagChip({ size, children }: { size: number; children: React.ReactNode }) {
+  const id = useIds();
+  return (
+    <svg
+      width={size}
+      height={(size * 2) / 3}
+      viewBox="0 0 60 40"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <defs>
+        <clipPath id={id('chip')}>
+          <rect width="60" height="40" rx="6" />
+        </clipPath>
+        <linearGradient id={id('sheen')} x1="0" y1="0" x2="0.7" y2="1">
+          <stop offset="0" stopColor="#ffffff" stopOpacity="0.28" />
+          <stop offset="0.55" stopColor="#ffffff" stopOpacity="0" />
+        </linearGradient>
+      </defs>
+      <g clipPath={`url(#${id('chip')})`}>
+        {children}
+        <rect width="60" height="40" fill={`url(#${id('sheen')})`} />
+      </g>
+      <rect
+        x="0.6"
+        y="0.6"
+        width="58.8"
+        height="38.8"
+        rx="5.4"
+        fill="none"
+        stroke="#ffffff"
+        strokeOpacity="0.28"
+      />
+    </svg>
+  );
+}
+
+export function FlagFr({ size = 24 }: { size?: number }) {
+  return (
+    <FlagChip size={size}>
+      <rect width="60" height="40" fill="#ffffff" />
+      <rect width="20" height="40" fill="#002395" />
+      <rect x="40" width="20" height="40" fill="#ed2939" />
+    </FlagChip>
+  );
+}
+
+export function FlagEn({ size = 24 }: { size?: number }) {
+  return (
+    <FlagChip size={size}>
+      <rect width="60" height="40" fill="#012169" />
+      <g strokeLinecap="butt">
+        <path d="M0 0 60 40M60 0 0 40" stroke="#ffffff" strokeWidth="8" />
+        <path d="M0 0 60 40M60 0 0 40" stroke="#c8102e" strokeWidth="4" />
+        <path d="M30 0v40M0 20h60" stroke="#ffffff" strokeWidth="13" />
+        <path d="M30 0v40M0 20h60" stroke="#c8102e" strokeWidth="7" />
+      </g>
+    </FlagChip>
+  );
+}
+
+export function FlagEs({ size = 24 }: { size?: number }) {
+  return (
+    <FlagChip size={size}>
+      <rect width="60" height="40" fill="#aa151b" />
+      <rect y="10" width="60" height="20" fill="#f1bf00" />
+    </FlagChip>
+  );
+}
+
+export function FlagHe({ size = 24 }: { size?: number }) {
+  return (
+    <FlagChip size={size}>
+      <rect width="60" height="40" fill="#ffffff" />
+      <rect y="5" width="60" height="5" fill="#0038b8" />
+      <rect y="30" width="60" height="5" fill="#0038b8" />
+      <g fill="none" stroke="#0038b8" strokeWidth="1.8">
+        <path d="M30 12.5 36.5 23.75h-13z" />
+        <path d="M30 27.5 23.5 16.25h13z" />
+      </g>
+    </FlagChip>
+  );
+}
+
+export function FlagAr({ size = 24 }: { size?: number }) {
+  return (
+    <FlagChip size={size}>
+      <rect width="60" height="13.34" fill="#00732f" />
+      <rect y="13.34" width="60" height="13.33" fill="#ffffff" />
+      <rect y="26.67" width="60" height="13.33" fill="#000000" />
+      <rect width="15" height="40" fill="#ff0000" />
+    </FlagChip>
+  );
+}
