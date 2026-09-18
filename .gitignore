@@ -10,3 +10,11 @@ playwright-report/
 # Artefacts régénérés par les scripts du projet
 tsconfig.tsbuildinfo
 docs/site/screenshots/
+
+# Sorties régénérables de l'outil vidéo : les rushes sources et les exports
+# web sont versionnés, les intermédiaires se refabriquent par un rendu.
+tools/avyor-video/build/
+tools/avyor-video/public/footage/
+video/exports/masters/
+video/exports/posters/*.png
+video/exports/previews/

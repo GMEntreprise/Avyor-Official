@@ -1,0 +1,135 @@
+{
+  "generator": "built-in image_gen",
+  "brand_reference": "brand/masters/avyor-logo.png",
+  "source_images": [
+    {
+      "file": "avatar-master.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 1668447,
+      "sha256": "a226f18dcc565007bb099daaf964bd10311df8a2ddb9cb8102d269f1f3b8cf1a"
+    },
+    {
+      "file": "shot-01-start.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 1720488,
+      "sha256": "43ab541ab1f63a03b9a9d25ba84a0cd6d29ce7784f9c15cef03299990822a9a8"
+    },
+    {
+      "file": "shot-02-recording.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 1671288,
+      "sha256": "278e83d1f8176dd0e389e5f8f3c2aab7dfbcf264927f84ad3462708d2fba1f56"
+    },
+    {
+      "file": "shot-03-brand-discovery.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 1519070,
+      "sha256": "7dbc8df5d2a2857f17504dbead609d8a0d263376041415d320e7172467666846"
+    },
+    {
+      "file": "shot-04-collaboration.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 1657884,
+      "sha256": "41f9d832e535b40f7519fc55963de1bcf6ca49ea6bb3d91533034f3543658545"
+    },
+    {
+      "file": "shot-05-final.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 1686072,
+      "sha256": "8718cc3318de37cc7165893e5c580513c395017a4afe8bb2f311d60e571beea6"
+    },
+    {
+      "file": "mobile/shot-01-start.png",
+      "width": 941,
+      "height": 1672,
+      "bytes": 1885100,
+      "sha256": "bde90725a559f47d53f674d620a6ceb2558b420b2f01f14eb639a7a77189d29e"
+    },
+    {
+      "file": "mobile/shot-02-recording.png",
+      "width": 941,
+      "height": 1672,
+      "bytes": 1807464,
+      "sha256": "ad93f5f14d519d50a965449d99e9e9e72a3ac09421c8df4927650a64dc374b05"
+    },
+    {
+      "file": "mobile/shot-03-brand-discovery.png",
+      "width": 941,
+      "height": 1672,
+      "bytes": 1600234,
+      "sha256": "cb1f742ceab764205718cf373d6946753224056893fd3e3c2f7f915559efecd8"
+    },
+    {
+      "file": "mobile/shot-04-collaboration.png",
+      "width": 941,
+      "height": 1672,
+      "bytes": 1745087,
+      "sha256": "eed1cce124b1178eab4074770b62438d8703a9b291a38704d7bf221fe9585548"
+    },
+    {
+      "file": "mobile/shot-05-final.png",
+      "width": 941,
+      "height": 1672,
+      "bytes": 1856508,
+      "sha256": "3c165e08be9323ee47f41c7991f02aaad8ec14492acdfcf3b2649369844e9dd6"
+    }
+  ],
+  "ui_sources": [
+    {
+      "file": "video/ui/campaign.png",
+      "bytes": 832861,
+      "sha256": "e578c3ead46ec54ebeb8f553326c65d2bf71b74d12de1f449ca209a06e34d48e",
+      "content": "Existing app screenshots with demonstration data"
+    },
+    {
+      "file": "video/ui/collaboration.png",
+      "bytes": 287696,
+      "sha256": "44089f17af10957ca1c0ba0bc7d211628c6acf972b2bd9d7f25285912eb40e0c",
+      "content": "Existing app screenshots with demonstration data"
+    },
+    {
+      "file": "video/ui/discover.png",
+      "bytes": 4424702,
+      "sha256": "23da9e5d099725200d06afbd61a2c8dc5db641bd3409626de7df927e61c3953b",
+      "content": "Existing app screenshots with demonstration data"
+    },
+    {
+      "file": "video/ui/portfolio.png",
+      "bytes": 1105606,
+      "sha256": "3c1713fc4eb870727425232efdb4740a294d98864d82185ee3305aad922eafe2",
+      "content": "Existing app screenshots with demonstration data"
+    }
+  ],
+  "exports": [
+    {
+      "file": "video/exports/posters/hero-avyor-desktop-poster.png",
+      "bytes": 2716751
+    },
+    {
+      "file": "video/exports/posters/hero-avyor-desktop-poster.webp",
+      "bytes": 67634
+    },
+    {
+      "file": "video/exports/posters/hero-avyor-mobile-poster.png",
+      "bytes": 2853006
+    },
+    {
+      "file": "video/exports/posters/hero-avyor-mobile-poster.webp",
+      "bytes": 92670
+    },
+    {
+      "file": "video/exports/previews/avyor-animatic-desktop.mp4",
+      "bytes": 4053599
+    },
+    {
+      "file": "video/exports/previews/avyor-animatic-mobile.mp4",
+      "bytes": 4915398
+    }
+  ]
+}

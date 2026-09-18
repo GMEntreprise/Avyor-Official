@@ -1,0 +1,10 @@
+import { cpSync, mkdirSync } from 'node:fs';
+import { resolve } from 'node:path';
+const root=resolve(import.meta.dir,'../../..'), project=resolve(import.meta.dir,'..');
+mkdirSync(resolve(project,'public'),{recursive:true});
+cpSync(resolve(root,'video/source/images'),resolve(project,'public/images'),{recursive:true,filter:p=>!p.includes('/archive')});
+cpSync(resolve(root,'video/ui'),resolve(project,'public/ui'),{recursive:true});
+mkdirSync(resolve(project,'public/brand'),{recursive:true});
+cpSync(resolve(root,'brand/masters/avyor-logo.png'),resolve(project,'public/brand/avyor-logo.png'));
+cpSync(resolve(root,'video/source/runway'),resolve(project,'public/footage'),{recursive:true});
+console.log('Images, UI, logo and selected source footage synced to isolated Remotion public directory.');

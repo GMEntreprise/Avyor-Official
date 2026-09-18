@@ -1,0 +1,42 @@
+{
+  "name": "avyor-video",
+  "version": "1.0.0",
+  "description": "AVYOR hero production: native desktop and mobile, real UI compositing",
+  "repository": {},
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@remotion/cli": "4.0.526",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "remotion": "4.0.526"
+  },
+  "devDependencies": {
+    "@remotion/eslint-config-flat": "4.0.526",
+    "@types/react": "19.2.7",
+    "@types/web": "0.0.166",
+    "eslint": "9.19.0",
+    "prettier": "3.8.1",
+    "typescript": "5.9.3",
+    "@types/bun": "latest"
+  },
+  "scripts": {
+    "dev": "bun run video:studio",
+    "build": "remotion bundle src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src",
+    "test": "bun test tests",
+    "assets:sync": "bun scripts/sync-assets.ts",
+    "video:studio": "bun run assets:sync && remotion studio src/index.ts --port=3008",
+    "video:preview:desktop": "bun scripts/render.ts preview desktop",
+    "video:preview:mobile": "bun scripts/render.ts preview mobile",
+    "video:render:desktop": "bun scripts/render.ts production desktop",
+    "video:render:mobile": "bun scripts/render.ts production mobile",
+    "video:poster": "bun scripts/render.ts poster desktop && bun scripts/render.ts poster mobile",
+    "video:check": "bun scripts/check-production.ts",
+    "video:measure": "bun scripts/measure.ts"
+  },
+  "sideEffects": [
+    "*.css"
+  ]
+}

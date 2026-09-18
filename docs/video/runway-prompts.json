@@ -1,0 +1,45 @@
+{
+  "model": "Gen-4.5",
+  "mode": "Image to Video",
+  "durationSeconds": 3,
+  "fps": 24,
+  "notes": [
+    "Desktop: select 16:9 and matching landscape image.",
+    "Mobile: select 9:16 and matching mobile image.",
+    "Keep sign shape/lettering stable. Review each generated clip before selection.",
+    "Images generated with built-in image_gen, not with Runway.",
+    "UI insertion and tracking take place in Remotion after motion approval."
+  ],
+  "shots": [
+    {
+      "id": "shot-01",
+      "prompt": "The camera performs a very slow cinematic push-in toward the creator and the vertically mounted smartphone. The creator makes one small, deliberate adjustment to the phone angle, then moves their hand away and focuses on the screen. Movement is restrained, natural and professional. The illuminated AVYOR wall sign stays fixed, sharp and unchanged.",
+      "desktopOutput": "video/source/runway/desktop/shot-01-v01.mp4",
+      "mobileOutput": "video/source/runway/mobile/shot-01-v01.mp4"
+    },
+    {
+      "id": "shot-02",
+      "prompt": "The camera makes a smooth slow lateral move from left to right while the creator gently turns the mug for a product shot. The smartphone stays stable on its mount. The background shifts with gentle realistic parallax. The illuminated AVYOR wall sign retains its exact shape and lettering. Motion is calm and intentional.",
+      "desktopOutput": "video/source/runway/desktop/shot-02-v01.mp4",
+      "mobileOutput": "video/source/runway/mobile/shot-02-v01.mp4"
+    },
+    {
+      "id": "shot-03",
+      "prompt": "The camera makes a barely perceptible slow push toward the smartphone. The hands keep the device steady and nearly parallel to the camera, with all four screen corners visible throughout. A thumb makes one subtle movement near the lower bezel. The blank screen remains stable for later compositing. The AVYOR wall sign stays sharp and unchanged.",
+      "desktopOutput": "video/source/runway/desktop/shot-03-v01.mp4",
+      "mobileOutput": "video/source/runway/mobile/shot-03-v01.mp4"
+    },
+    {
+      "id": "shot-04",
+      "prompt": "The camera gently pushes toward the creator while the creator looks down at the smartphone and performs one slow intentional thumb interaction near the edge. Their expression shifts subtly from concentration to quiet confidence. The phone remains stable with all four screen corners visible. The AVYOR sign remains fixed and unchanged.",
+      "desktopOutput": "video/source/runway/desktop/shot-04-v01.mp4",
+      "mobileOutput": "video/source/runway/mobile/shot-04-v01.mp4"
+    },
+    {
+      "id": "shot-05",
+      "prompt": "The camera makes a smooth slow push toward the vertically mounted smartphone as the creator finishes the product filming motion behind it. The dark phone screen gradually dominates the frame while the creator's movement settles. Keep the motion controlled to support a transition back to the opening. The AVYOR wall sign stays unchanged wherever visible.",
+      "desktopOutput": "video/source/runway/desktop/shot-05-v01.mp4",
+      "mobileOutput": "video/source/runway/mobile/shot-05-v01.mp4"
+    }
+  ]
+}

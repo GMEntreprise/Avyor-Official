@@ -1,0 +1,26 @@
+[
+  {
+    "format": "desktop",
+    "durationSeconds": 14,
+    "frames": 336,
+    "width": 1920,
+    "height": 1080,
+    "bytes": 4053599,
+    "audio": false,
+    "blackFramesDetected": false,
+    "firstLastMeanAbsoluteRGBDifference": 1.2774299125514403,
+    "scope": "animatic only; final Runway clips remain unvalidated"
+  },
+  {
+    "format": "mobile",
+    "durationSeconds": 14,
+    "frames": 336,
+    "width": 1080,
+    "height": 1920,
+    "bytes": 4915398,
+    "audio": false,
+    "blackFramesDetected": false,
+    "firstLastMeanAbsoluteRGBDifference": 1.5369457304526748,
+    "scope": "animatic only; final Runway clips remain unvalidated"
+  }
+]

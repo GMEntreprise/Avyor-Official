@@ -1,0 +1,7 @@
+node_modules/
+build/
+.cache/
+public/images/
+public/ui/
+public/brand/
+public/footage/

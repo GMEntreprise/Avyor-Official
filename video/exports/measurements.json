@@ -1,0 +1,40 @@
+[
+  {
+    "file": "previews/avyor-animatic-desktop.mp4",
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1920,
+        "height": 1080,
+        "avg_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "14.000000",
+      "size": "4053599",
+      "bit_rate": "2316342"
+    }
+  },
+  {
+    "file": "previews/avyor-animatic-mobile.mp4",
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1080,
+        "height": 1920,
+        "avg_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "14.000000",
+      "size": "4915398",
+      "bit_rate": "2808798"
+    }
+  }
+]
