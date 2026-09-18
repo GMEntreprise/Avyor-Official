@@ -21,7 +21,9 @@ export default defineConfig({
     },
     {
       // L'admin News, sur un bac à sable jetable : jamais le vrai contenu.
-      command: 'NEWS_ROOT=.news-e2e bunx vite --host 127.0.0.1 --port 5181 --strictPort',
+      // Mot de passe propre au test : celui du poste vit dans .env.local.
+      command:
+        'NEWS_ROOT=.news-e2e AVYOR_ADMIN_PASSWORD=mot-de-passe-e2e bunx vite --host 127.0.0.1 --port 5181 --strictPort',
       url: 'http://127.0.0.1:5181/admin/',
       reuseExistingServer: true,
     },

@@ -1,4 +1,4 @@
-import { defineConfig, type Plugin } from 'vite';
+import { defineConfig, loadEnv, type Plugin } from 'vite';
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 import { randomBytes } from 'node:crypto';
@@ -7,8 +7,29 @@ import { join, basename } from 'node:path';
 import { introScript } from './src/components/intro-session';
 import { isHomeRoute } from './src/i18n/locales';
 import { localizeShell } from './src/i18n/dev-shell';
+import { splitPath } from './src/i18n/locales';
+import { newsPayloadFor, publicCorpus } from './src/news/build';
+import { listPublished } from './src/news/store.server';
 import { createNewsApi } from './src/news/admin-api.server';
 import { defaultPaths, type NewsPaths } from './src/news/store.server';
+
+/**
+ * The News data of the requested route, as the build embeds it in each page.
+ * Read from the published articles at every request, so an article published
+ * in the admin shows up on the next reload.
+ */
+function newsScript(route: string) {
+  const { locale, slug } = splitPath(route.split('?')[0].replace(/index\.html$/, ''));
+  try {
+    const payload = newsPayloadFor(publicCorpus(listPublished(defaultPaths)), locale, slug);
+    return `<script id="avyor-news" type="application/json">${JSON.stringify(payload).replace(/</g, '\\u003c')}</script>`;
+  } catch (error) {
+    // A corpus the build would refuse must not take the whole dev server down:
+    // the page loses its News, and the reason is on the console.
+    console.warn('News indisponible en développement :', (error as Error).message);
+    return '';
+  }
+}
 
 /**
  * What `scripts/prerender.mjs` does for each language and each page, applied to
@@ -27,10 +48,8 @@ function shellDevPlugin(): Plugin {
       // `ctx.path` is the resolved file (always /index.html under the SPA
       // fallback); the requested route is on `originalUrl`.
       const route = ctx.originalUrl ?? ctx.path ?? '/';
-      return localizeShell(
-        html.replace('<!--head-->', isHomeRoute(route) ? `<script>${introScript}</script>` : ''),
-        route,
-      );
+      const head = `${isHomeRoute(route) ? `<script>${introScript}</script>` : ''}${newsScript(route)}`;
+      return localizeShell(html.replace('<!--head-->', head), route);
     },
   };
 }
@@ -45,7 +64,7 @@ function shellDevPlugin(): Plugin {
  * content tree, which is how the end-to-end test publishes without touching
  * the real articles.
  */
-function newsAdminPlugin(): Plugin {
+function newsAdminPlugin(password: string): Plugin {
   const token = randomBytes(24).toString('hex');
   const root = process.env.NEWS_ROOT;
   const paths: NewsPaths = root
@@ -78,22 +97,31 @@ function newsAdminPlugin(): Plugin {
         if (!req.url?.startsWith('/__news/api/')) return next();
         const address = server.httpServer?.address();
         const port = typeof address === 'object' && address ? address.port : 5173;
-        api ??= createNewsApi({ paths, token, port });
+        api ??= createNewsApi({ paths, token, port, password });
         void api(req, res, next);
       });
     },
     transformIndexHtml(html, ctx) {
       if (!ctx.path.startsWith('/admin/')) return html;
+      // The page never carries the token any more: it is exchanged for the
+      // password. All it needs to know is whether a password exists at all.
       return html.replace(
-        '<!--admin-token-->',
-        `<meta name="avyor-admin-token" content="${token}">`,
+        '<!--admin-gate-->',
+        `<meta name="avyor-admin-gate" content="${password ? 'ready' : 'absent'}">`,
       );
     },
   };
 }
 
-export default defineConfig(({ isSsrBuild }) => ({
-  plugins: [react(), tailwindcss(), shellDevPlugin(), newsAdminPlugin()],
+export default defineConfig(({ isSsrBuild, mode }) => ({
+  // Read from `.env.local`, which is never committed: the repository is public.
+  // Nothing of it reaches the browser — it is only compared, on this machine.
+  plugins: [
+    react(),
+    tailwindcss(),
+    shellDevPlugin(),
+    newsAdminPlugin(loadEnv(mode, process.cwd(), 'AVYOR_').AVYOR_ADMIN_PASSWORD ?? ''),
+  ],
   build: {
     manifest: !isSsrBuild,
     // Never inline assets as base64: under 4 kB Vite would fold them into the

@@ -318,3 +318,18 @@ test('l’ancienne adresse d’un article renommé est redirigée, sans chaîne'
   assert.ok(!redirects.some((r) => r.source === rule.destination), 'redirection en chaîne');
   assert.equal(existsSync(join(site, 'news/ancienne-adresse')), false);
 });
+
+test('le paquet de données du développement est celui que le build écrit', async () => {
+  // Le serveur de développement ne lance pas le pré-rendu : il fabrique ce
+  // paquet lui-même. S'ils divergent, News existe au build et pas en
+  // développement — c'est ce qui a rendu la section invisible pendant
+  // l'écriture du site. On compare donc page par page, sur le vrai build.
+  const { newsPayloadFor, publicCorpus } = await import('../../src/news/build.ts');
+  const corpus = publicCorpus(articles);
+  const routes = ['/', '/news/', ...fr.map(pathOf), '/en/'];
+  for (const route of routes) {
+    const embedded = JSON.parse(html(route)('#avyor-news').text());
+    const { locale, slug } = route === '/en/' ? { locale: 'en', slug: '' } : { locale: 'fr', slug: route.replace(/^\/|\/$/g, '') };
+    assert.deepEqual(newsPayloadFor(corpus, locale, slug), embedded, route);
+  }
+});

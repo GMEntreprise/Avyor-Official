@@ -223,3 +223,47 @@ export function rssFeed(
   const updated = list[0]?.updatedAt ?? new Date(0).toISOString();
   return `<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>${xml(feed.title)}</title><link>${xml(feed.link)}</link><description>${xml(feed.description)}</description><language>${xml(feed.locale)}</language><lastBuildDate>${new Date(updated).toUTCString()}</lastBuildDate><atom:link href="${xml(feed.self)}" rel="self" type="application/rss+xml"/>${items}</channel></rss>`;
 }
+
+/** The payload a page embeds for hydration: which languages have News, plus this route's data. */
+export interface NewsPayload extends Omit<NewsData, 'enabled'> {
+  enabledLocales: string[];
+}
+
+/**
+ * The News data a single route carries.
+ *
+ * The build writes this into every page it prerenders. Development serves one
+ * template for every address and never runs the prerender, so the dev server
+ * builds it on the fly from the same corpus — without it, News simply does not
+ * exist while developing: no link in the navigation, no latest articles on the
+ * home page, no article page. That is exactly how the section stayed invisible
+ * in dev while being complete in the build.
+ */
+export function newsPayloadFor(corpus: Article[], locale: string, slug: string): NewsPayload {
+  const enabledLocales = [...new Set(corpus.map((article) => article.locale))].filter(
+    (other) => forLocale(corpus, other).length > 0,
+  );
+  const payload: NewsPayload = { enabledLocales };
+  const list = forLocale(corpus, locale);
+  if (!list.length) return payload;
+
+  if (slug === '') {
+    payload.latest = list.slice(0, 3).map(summarize);
+    return payload;
+  }
+  const page = /^news\/page\/(\d+)$/.exec(slug);
+  if (slug === 'news' || page) {
+    payload.index = indexPage(list, page ? Number(page[1]) : 1);
+    return payload;
+  }
+  const article = slug.startsWith('news/')
+    ? list.find((other) => other.slug === slug.slice('news/'.length))
+    : undefined;
+  if (article)
+    payload.article = {
+      article: toPublic(article),
+      related: relatedFor(article, list),
+      alternates: alternatesFor(article, corpus),
+    };
+  return payload;
+}

@@ -1,12 +1,38 @@
 import type { Article, ValidationError } from '../news/types';
 
 /**
- * The admin's only door to the content: every call carries the session token
- * the development server wrote into the page, and every failure comes back as
- * an error — a save is never reported as done unless the server said so.
+ * The admin's only door to the content: every call carries the session token,
+ * and every failure comes back as an error — a save is never reported as done
+ * unless the server said so.
+ *
+ * The token is not in the page: it is exchanged for the password, once per
+ * browser session, and kept in `sessionStorage` so a reload does not ask again
+ * while closing the tab does.
  */
-const token =
-  document.querySelector<HTMLMetaElement>('meta[name="avyor-admin-token"]')?.content ?? '';
+const KEY = 'avyor-admin-token';
+const read = () => {
+  try {
+    return sessionStorage.getItem(KEY) ?? '';
+  } catch {
+    return '';
+  }
+};
+let token = read();
+
+/** Told to the gate when the server stops recognising this session. */
+export const SESSION_EVENT = 'avyor-admin-session';
+
+export const hasSession = () => Boolean(token);
+
+export function closeSession() {
+  token = '';
+  try {
+    sessionStorage.removeItem(KEY);
+  } catch {
+    /* a browser that refuses storage still works, it just asks each reload */
+  }
+  dispatchEvent(new Event(SESSION_EVENT));
+}
 
 export class ApiError extends Error {
   status: number;
@@ -29,6 +55,9 @@ async function call<T>(path: string, init: RequestInit = {}): Promise<T> {
     throw new ApiError(0, 'Le serveur de développement ne répond pas. Est-il lancé ?');
   }
   const data = await response.json().catch(() => ({}));
+  // The server no longer knows this session: back to the password, whatever
+  // the screen was doing.
+  if (response.status === 403 && token && path !== '/session') closeSession();
   if (!response.ok)
     throw new ApiError(response.status, data.message ?? `Erreur ${response.status}.`, data.errors);
   return data as T;
@@ -60,6 +89,20 @@ export function newId() {
 }
 
 export const api = {
+  /** Exchanges the password for a session token. The password is never stored. */
+  openSession: async (password: string) => {
+    const { token: granted } = await call<{ token: string }>('/session', {
+      method: 'POST',
+      ...json({ password }),
+    });
+    token = granted;
+    try {
+      sessionStorage.setItem(KEY, granted);
+    } catch {
+      /* not stored: this tab keeps working, the next reload asks again */
+    }
+    dispatchEvent(new Event(SESSION_EVENT));
+  },
   list: () => call<{ articles: Row[] }>('/articles'),
   read: (id: string) => call<{ published?: Article; draft?: Article }>(`/articles/${id}`),
   create: (id: string, locale: string) =>

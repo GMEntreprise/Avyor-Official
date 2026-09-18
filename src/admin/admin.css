@@ -27,6 +27,88 @@
 .admin-local {
   font-size: 0.8rem;
   color: #f2c178;
+  margin-inline-start: auto;
+}
+.admin-lock {
+  margin-inline-start: 16px;
+  padding: 7px 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+.admin-lock:hover {
+  color: #fff;
+  border-color: #ffffff4d;
+}
+
+/* ------------------------------------------------------------------ porte */
+
+.admin-gate {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+.admin-gate-card {
+  width: min(400px, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 30px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--surface);
+}
+.admin-gate-card h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+.admin-gate-eyebrow {
+  margin: 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+}
+.admin-gate-note {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+.admin-gate-card label {
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+.admin-gate-card input {
+  padding: 11px 13px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #0b1020;
+  color: #fff;
+  font: inherit;
+}
+.admin-gate-card button {
+  padding: 11px 16px;
+  border: 0;
+  border-radius: 10px;
+  background: #6134ea;
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+.admin-gate-card button[disabled] {
+  opacity: 0.55;
+  cursor: default;
+}
+.admin-gate-error {
+  margin: 0;
+  font-size: 0.86rem;
+  color: #ff9a9a;
 }
 .admin-main {
   max-width: 1180px;

@@ -14,6 +14,17 @@ import sharp from 'sharp';
 const ADMIN = 'http://127.0.0.1:5181/admin/';
 const PUBLIC = 'http://127.0.0.1:4176';
 const ROOT = '.news-e2e';
+const MOT_DE_PASSE = 'mot-de-passe-e2e';
+
+/** L'admin ne s'ouvre qu'avec le mot de passe du serveur de développement. */
+async function ouvrirAdmin(page: Page) {
+  await page.goto(ADMIN);
+  if (await page.getByLabel('Mot de passe').isVisible()) {
+    await page.getByLabel('Mot de passe').fill(MOT_DE_PASSE);
+    await page.getByRole('button', { name: 'Entrer' }).click();
+  }
+  await expect(page.getByRole('button', { name: 'Nouvel article' })).toBeVisible();
+}
 
 test.describe.configure({ mode: 'serial' });
 test.beforeEach(() => {
@@ -69,7 +80,7 @@ test('parcours complet : de l’admin au lecteur, puis retour', async ({ page, b
   );
 
   /* ---- Créer et mettre en forme ---------------------------------------- */
-  await page.goto(ADMIN);
+  await ouvrirAdmin(page);
   await page.getByRole('button', { name: 'Nouvel article' }).click();
   await field(page, 'Titre', 'Préparer un tournage : la liste complète');
   await page.getByRole('button', { name: 'Depuis le titre' }).click();
@@ -223,4 +234,27 @@ test('une mutation sans la session de l’admin est refusée', async ({ request 
     data: { id: 'intrus000001', locale: 'fr' },
   });
   expect(response.status()).toBe(403);
+});
+
+test('l’admin demande le mot de passe, et le retient le temps de l’onglet', async ({ browser }) => {
+  const page = await (await browser.newContext()).newPage();
+  await page.goto(ADMIN);
+  // Rien de l'admin n'est monté tant que la porte n'est pas ouverte.
+  await expect(page.getByRole('button', { name: 'Nouvel article' })).toHaveCount(0);
+
+  await page.getByLabel('Mot de passe').fill('ouvre-toi');
+  await page.getByRole('button', { name: 'Entrer' }).click();
+  await expect(page.getByRole('alert')).toHaveText(/refusé/i);
+  // Et l'API elle-même reste fermée : l'écran n'est pas la seule serrure.
+  expect((await page.request.get('http://127.0.0.1:5181/__news/api/articles')).status()).toBe(403);
+
+  await page.getByLabel('Mot de passe').fill(MOT_DE_PASSE);
+  await page.getByRole('button', { name: 'Entrer' }).click();
+  await expect(page.getByRole('button', { name: 'Nouvel article' })).toBeVisible();
+
+  // Un rechargement ne redemande rien ; « Verrouiller » referme.
+  await page.reload();
+  await expect(page.getByRole('button', { name: 'Nouvel article' })).toBeVisible();
+  await page.getByRole('button', { name: 'Verrouiller' }).click();
+  await expect(page.getByLabel('Mot de passe')).toBeVisible();
 });

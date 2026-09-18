@@ -7,6 +7,16 @@ bun run dev          # démarre le site et l’admin
 # puis ouvrir http://127.0.0.1:5173/admin/
 ```
 
+## Ouvrir l’admin
+
+L’admin demande un mot de passe. Il vit dans `.env.local`, à la racine du projet — fichier **ni commité ni déployé**, puisque le dépôt est public :
+
+```
+AVYOR_ADMIN_PASSWORD=<votre mot de passe>
+```
+
+Relancez `bun run dev` après l’avoir écrit ou changé. **Sans mot de passe configuré, l’admin reste fermée** : la page l’annonce et l’API refuse tout, y compris la lecture. Le mot de passe n’est jamais stocké par le navigateur ; il est échangé contre un jeton de session, gardé le temps de l’onglet — un rechargement ne le redemande pas, **Verrouiller** ou la fermeture de l’onglet le rend obligatoire. Cinq essais ratés ferment la porte une minute.
+
 ## Où vivent les articles
 
 | Dossier | Contenu | Versionné | Déployé |
@@ -73,7 +83,7 @@ bun run test:e2e         # parcours public et parcours d’administration
 
 ## À savoir
 
-- **L’admin n’existe qu’en développement.** Le site déployé n’a ni page d’administration ni API : un test le vérifie à chaque build.
+- **L’admin n’existe qu’en développement.** Le site déployé n’a ni page d’administration ni API : un test le vérifie à chaque build. Le mot de passe ne protège donc que ce poste — il n’y a rien à protéger ailleurs.
 - **Les images** sont réencodées en WebP à l’envoi, leurs métadonnées retirées, et nommées par leur empreinte. Seuls PNG, JPEG et WebP sont acceptés — jamais SVG, qui peut porter du script.
 - **Une image a toujours un texte alternatif.** C’est une condition de publication.
 - **Les ancres de section** sont posées à l’enregistrement. Avant la première publication elles suivent le titre ; ensuite elles ne bougent plus, même si le titre est retouché — un lien partagé continue de fonctionner.

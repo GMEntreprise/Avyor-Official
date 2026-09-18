@@ -52,7 +52,8 @@ Une modification d’un article en ligne **ne touche jamais la version publiée*
 
 L’API d’administration n’existe que sur le serveur de développement (`vite.config.ts`, `apply: 'serve'`). Elle refuse toute requête qui ne vient pas de la page d’admin :
 
-- jeton de session tiré au démarrage du serveur, écrit uniquement dans la page d’admin — un autre site ne peut ni le lire (même origine) ni envoyer l’en-tête qui le porte sans une requête préalable que l’API n’accorde jamais ;
+- un mot de passe, demandé une fois par session de navigateur. Le serveur le tient de `AVYOR_ADMIN_PASSWORD` (dans `.env.local`, jamais commité) ; **sans lui, l’admin ne s’ouvre pas du tout**. Les essais sont comparés en temps constant, ralentis, et la porte se ferme une minute après cinq échecs ;
+- un jeton de session tiré au démarrage du serveur, remis **en échange du mot de passe** et jamais écrit dans la page — un autre site ne peut ni le lire (même origine) ni envoyer l’en-tête qui le porte sans une requête préalable que l’API n’accorde jamais ;
 - l’en-tête `Host` doit désigner cette machine (contre le rebinding DNS) ;
 - l’`Origin`, s’il est envoyé, doit être ce serveur.
 

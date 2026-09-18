@@ -9,7 +9,7 @@ import { createNewsApi } from '../../src/news/admin-api.server.ts';
 const TOKEN = 'a'.repeat(48);
 
 /** A real HTTP server on a random port, with its own content tree. */
-async function start() {
+async function start({ password, now } = {}) {
   const root = mkdtempSync(join(tmpdir(), 'avyor-api-'));
   const paths = {
     published: join(root, 'news'),
@@ -22,7 +22,7 @@ async function start() {
   const server = createServer();
   await new Promise((resolve) => server.listen(0, '127.0.0.1', resolve));
   const port = server.address().port;
-  const api = createNewsApi({ paths, token: TOKEN, port });
+  const api = createNewsApi({ paths, token: TOKEN, port, password, now });
   server.on('request', (req, res) =>
     api(req, res, () => {
       res.writeHead(404);
@@ -217,6 +217,70 @@ test('un envoi qui n’est pas une image est refusé', async () => {
       headers: { 'content-type': 'application/octet-stream', 'x-filename': 'x.svg' },
     });
     assert.equal(response.status, 422);
+  } finally {
+    server.close();
+  }
+});
+
+/* ------------------------------------------------------------- mot de passe */
+
+test('le jeton s’obtient contre le mot de passe, et seulement contre lui', async () => {
+  const { server, call } = await start({ password: 'mot-de-passe-de-test' });
+  try {
+    const refuse = await call('/session', {
+      method: 'POST',
+      body: { password: 'presque-le-bon' },
+      headers: { 'x-avyor-admin': '' },
+    });
+    assert.equal(refuse.status, 403);
+    assert.equal((await refuse.json()).token, undefined);
+
+    const ouvre = await call('/session', {
+      method: 'POST',
+      body: { password: 'mot-de-passe-de-test' },
+      headers: { 'x-avyor-admin': '' },
+    });
+    assert.equal(ouvre.status, 200);
+    const { token } = await ouvre.json();
+    assert.equal(token, TOKEN);
+    // Et ce jeton ouvre bien le reste.
+    assert.equal((await call('/articles', { headers: { 'x-avyor-admin': token } })).status, 200);
+  } finally {
+    server.close();
+  }
+});
+
+test('cinq essais ratés ferment la porte une minute', async () => {
+  let instant = 1_000_000;
+  const { server, call } = await start({ password: 'mot-de-passe-de-test', now: () => instant });
+  const essai = (password) =>
+    call('/session', { method: 'POST', body: { password }, headers: { 'x-avyor-admin': '' } });
+  try {
+    for (let i = 0; i < 5; i++) assert.equal((await essai('faux')).status, 403);
+    // Même le bon mot de passe attend : sinon la limite ne limite rien.
+    const bloque = await essai('mot-de-passe-de-test');
+    assert.equal(bloque.status, 429);
+    assert.match((await bloque.json()).message, /Trop de tentatives/);
+
+    instant += 61_000;
+    assert.equal((await essai('mot-de-passe-de-test')).status, 200);
+  } finally {
+    server.close();
+  }
+});
+
+test('sans mot de passe configuré, l’admin ne s’ouvre pas du tout', async () => {
+  // Défaut volontaire : pas de mot de passe, pas d’admin — jamais l’inverse.
+  const { server, call, paths } = await start();
+  try {
+    const response = await call('/session', {
+      method: 'POST',
+      body: { password: '' },
+      headers: { 'x-avyor-admin': '' },
+    });
+    assert.equal(response.status, 503);
+    assert.match((await response.json()).message, /AVYOR_ADMIN_PASSWORD/);
+    assert.equal(readdirSync(paths.drafts).length, 0);
   } finally {
     server.close();
   }

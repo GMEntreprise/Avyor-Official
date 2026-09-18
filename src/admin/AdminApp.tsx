@@ -34,7 +34,7 @@ const STATE_LABEL: Record<Row['state'], string> = {
   archived: 'Archivé',
 };
 
-export function AdminApp() {
+export function AdminApp({ onLock }: { onLock: () => void }) {
   const [open, setOpen] = useState<string | null>(() =>
     new URLSearchParams(location.search).get('article'),
   );
@@ -54,6 +54,9 @@ export function AdminApp() {
           <strong>AVYOR</strong> · Admin News
         </a>
         <span className="admin-local">Local — jamais publié tel quel</span>
+        <button type="button" className="admin-lock" onClick={onLock}>
+          Verrouiller
+        </button>
       </header>
       {open ? (
         <ArticleEditor key={open} id={open} onClose={() => setOpen(null)} onOpen={setOpen} />

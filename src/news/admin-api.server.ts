@@ -5,10 +5,14 @@
  * set of static files with no endpoint, so there is nothing there to attack.
  * Locally it still refuses anything that did not come from the admin page:
  *
- *   · a per-session token, generated when the server starts and written into
- *     the admin page only. Another site cannot read it (same-origin policy)
- *     and cannot send the custom header carrying it without a CORS preflight,
- *     which this API never grants;
+ *   · a password, asked once per browser session. The server holds it from
+ *     `AVYOR_ADMIN_PASSWORD` (in `.env.local`, never committed); without it
+ *     configured, the admin stays closed. Attempts are compared in constant
+ *     time, slowed down, and locked out after a handful of failures;
+ *   · a per-session token, generated when the server starts and handed out
+ *     only in exchange for the password. Another site cannot read it
+ *     (same-origin policy) and cannot send the custom header carrying it
+ *     without a CORS preflight, which this API never grants;
  *   · the Host header must be this machine, which defeats DNS rebinding;
  *   · the Origin header, when sent, must be this server.
  *
@@ -16,7 +20,7 @@
  * lives in the store and the model, so it applies here and in the build alike.
  */
 import type { IncomingMessage, ServerResponse } from 'node:http';
-import { timingSafeEqual } from 'node:crypto';
+import { createHash, timingSafeEqual } from 'node:crypto';
 import { assignHeadingIds } from './model.ts';
 import {
   archive,
@@ -83,6 +87,18 @@ function sameToken(given: unknown, expected: string) {
   return timingSafeEqual(Buffer.from(given), Buffer.from(expected));
 }
 
+/**
+ * Compared on their digests, so two passwords of different lengths still take
+ * the same time to reject — and the password never has to be measured.
+ */
+const digest = (value: string) => createHash('sha256').update(value, 'utf8').digest();
+const samePassword = (given: unknown, expected: string) =>
+  typeof given === 'string' && timingSafeEqual(digest(given), digest(expected));
+
+/** How a wrong password is answered: slowly, then not at all for a minute. */
+const ATTEMPTS = 5;
+const LOCKOUT = 60_000;
+
 /** The admin list: one row per article, whatever state it is in. */
 function overview(paths: NewsPaths) {
   const drafts = new Map(listDrafts(paths).map((a) => [a.id, a]));
@@ -115,12 +131,19 @@ export function createNewsApi({
   paths,
   token,
   port,
+  password = '',
+  now = Date.now,
 }: {
   paths: NewsPaths;
   token: string;
   port: number;
+  /** Empty means no password configured: the admin refuses to open at all. */
+  password?: string;
+  now?: () => number;
 }) {
   const hosts = new Set([`127.0.0.1:${port}`, `localhost:${port}`]);
+  let failures = 0;
+  let lockedUntil = 0;
   return async (req: IncomingMessage, res: ServerResponse, next: () => void) => {
     const url = new URL(req.url ?? '/', 'http://local');
     if (!url.pathname.startsWith('/__news/api/')) return next();
@@ -130,10 +153,37 @@ export function createNewsApi({
       const origin = req.headers.origin;
       if (origin && !hosts.has(origin.replace(/^https?:\/\//, '')))
         throw new HttpError(403, 'Origine refusée.');
-      if (!sameToken(req.headers['x-avyor-admin'], token))
-        throw new HttpError(403, 'Session d’administration invalide. Rechargez la page.');
-
       const method = req.method ?? 'GET';
+
+      // The one route reached without a token: it is how a token is obtained.
+      if (route === '/session' && method === 'POST') {
+        if (!password)
+          throw new HttpError(
+            503,
+            'Aucun mot de passe d’administration n’est configuré. Ajoutez AVYOR_ADMIN_PASSWORD dans .env.local, puis relancez le serveur.',
+          );
+        const remaining = lockedUntil - now();
+        if (remaining > 0)
+          throw new HttpError(
+            429,
+            `Trop de tentatives. Réessayez dans ${Math.ceil(remaining / 1000)} secondes.`,
+          );
+        const { password: given } = await readJson(req);
+        if (!samePassword(given, password)) {
+          // A wrong answer costs time, and five of them cost a minute.
+          if (++failures >= ATTEMPTS) {
+            failures = 0;
+            lockedUntil = now() + LOCKOUT;
+          }
+          await new Promise((resolve) => setTimeout(resolve, 300));
+          throw new HttpError(403, 'Mot de passe refusé.');
+        }
+        failures = 0;
+        return send(res, 200, { token });
+      }
+
+      if (!sameToken(req.headers['x-avyor-admin'], token))
+        throw new HttpError(403, 'Session d’administration expirée. Entrez le mot de passe.');
       let match: RegExpMatchArray | null;
 
       if (route === '/articles' && method === 'GET')
