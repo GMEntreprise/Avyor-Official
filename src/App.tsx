@@ -1,14 +1,14 @@
 import { LazyMotion, domAnimation } from 'motion/react';
-import {
-  ArrowUpRight,
-  Clapperboard,
-  Compass,
-  MessagesSquare,
-  ShieldCheck,
-  Wallet,
-  Layers,
-} from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import { Navbar } from './components/Navbar';
+// Illustrations only: served as images, kept out of the JavaScript bundle.
+// Drawn in components/Icons3D.tsx, exported by scripts/build-icons.tsx.
+import discoverIcon from './assets/icons/discover.svg';
+import createIcon from './assets/icons/create.svg';
+import collaborateIcon from './assets/icons/collaborate.svg';
+import contextIcon from './assets/icons/context.svg';
+import paymentIcon from './assets/icons/payment.svg';
+import controlIcon from './assets/icons/control.svg';
 import { Footer } from './components/Footer';
 import { Intro } from './components/Intro';
 import { Hero } from './components/Hero';
@@ -58,20 +58,21 @@ function Home() {
             AVYOR réunit Creators et marques dans une application mobile : découvrez les créations,
             trouvez les bons profils et donnez un cadre à vos collaborations.
           </p>
-          <div>
-            <span>
-              <Compass size={18} />
-              Découvrir
-            </span>
-            <span>
-              <Clapperboard size={18} />
-              Créer
-            </span>
-            <span>
-              <MessagesSquare size={18} />
-              Collaborer
-            </span>
-          </div>
+          <ul className="manifesto-pillars">
+            {(
+              [
+                [discoverIcon, 'Découvrir', 'Le feed vidéo et les profils Creator.'],
+                [createIcon, 'Créer', 'Modèles guidés, studio et portfolio.'],
+                [collaborateIcon, 'Collaborer', 'Brief, messages et livrables.'],
+              ] as const
+            ).map(([icon, verb, detail]) => (
+              <li key={verb}>
+                <img src={icon} width="104" height="104" alt="" loading="lazy" decoding="async" />
+                <strong>{verb}</strong>
+                <span>{detail}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
       {/* <Film /> */}
@@ -193,32 +194,31 @@ function Home() {
           </p>
         </div>
         <div className="trust-grid">
-          {[
+          {(
             [
-              MessagesSquare,
-              'Le contexte reste.',
-              'Messages et étapes de collaboration sont réunis. Retrouvez les échanges lorsque le projet évolue.',
-            ],
-            [
-              Wallet,
-              'Le paiement se suit.',
-              'La marque finance la collaboration via Stripe. Le transfert au Creator suit la validation du livrable et les conditions du projet.',
-            ],
-            [
-              ShieldCheck,
-              'Vous gardez le contrôle.',
-              'Paramètres du compte, signalement, blocage et support : les actions utiles restent accessibles.',
-            ],
-          ].map(([Icon, title, body], i) => {
-            const C = Icon as typeof Layers;
-            return (
-              <Reveal as="article" key={String(title)} delay={i}>
-                <C size={27} strokeWidth={1.3} aria-hidden="true" />
-                <h3>{String(title)}</h3>
-                <p>{String(body)}</p>
-              </Reveal>
-            );
-          })}
+              [
+                contextIcon,
+                'Le contexte reste.',
+                'Messages et étapes de collaboration sont réunis. Retrouvez les échanges lorsque le projet évolue.',
+              ],
+              [
+                paymentIcon,
+                'Le paiement se suit.',
+                'La marque finance la collaboration via Stripe. Le transfert au Creator suit la validation du livrable et les conditions du projet.',
+              ],
+              [
+                controlIcon,
+                'Vous gardez le contrôle.',
+                'Paramètres du compte, signalement, blocage et support : les actions utiles restent accessibles.',
+              ],
+            ] as const
+          ).map(([icon, title, body], i) => (
+            <Reveal as="article" key={title} delay={i}>
+              <img src={icon} width="96" height="96" alt="" loading="lazy" decoding="async" />
+              <h3>{title}</h3>
+              <p>{body}</p>
+            </Reveal>
+          ))}
         </div>
         <a className="text-link" href="/security/">
           Comprendre les paiements et la sécurité <ArrowUpRight size={17} />

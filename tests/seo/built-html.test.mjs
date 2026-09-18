@@ -276,3 +276,64 @@ test('sitemap et robots cohérents avec les routes', () => {
   assert.ok(existsSync('dist/404.html'));
   assert.match(readFileSync('dist/404.html', 'utf8'), /noindex/);
 });
+
+test('les icônes en volume sont des images décoratives, chargées à la demande', () => {
+  const $ = load(read(''));
+  const icons = $('.manifesto-pillars img, .trust-grid img');
+  assert.equal(icons.length, 6, 'trois icônes au manifeste, trois à la section 06');
+  icons.each((_, img) => {
+    const src = $(img).attr('src');
+    // Le texte porte le sens : alt vide, l'image n'est pas annoncée.
+    assert.equal($(img).attr('alt'), '', `${src} doit rester décorative`);
+    assert.equal($(img).attr('loading'), 'lazy', `${src} doit attendre l’approche de sa section`);
+    // Empreintée par Vite : servie à part, jamais repliée dans le JavaScript.
+    assert.match(
+      src,
+      /^\/assets\/[a-z]+-[A-Za-z0-9_-]{8}\.svg$/,
+      `${src} n’est pas un fichier empreinté`,
+    );
+    const svg = readFileSync('dist' + src, 'utf8');
+    // Un SVG autonome a besoin de son espace de noms pour s’afficher en image.
+    assert.match(svg, /^<svg xmlns="http:\/\/www\.w3\.org\/2000\/svg"/);
+    assert.doesNotMatch(
+      svg,
+      /<(image|foreignObject|filter|feGaussianBlur|text)\b/,
+      `${src} : dessin pur attendu`,
+    );
+    assert.doesNotMatch(svg, /href="https?:/, `${src} charge une ressource externe`);
+    // Chaque référence de dégradé doit exister dans le même fichier.
+    const ids = new Set([...svg.matchAll(/ id="([^"]+)"/g)].map((m) => m[1]));
+    const refs = [...svg.matchAll(/url\(#([^)]+)\)/g)].map((m) => m[1]);
+    assert.ok(refs.length > 3, `${src} doit s’appuyer sur ses dégradés`);
+    for (const ref of refs) assert.ok(ids.has(ref), `${src} : url(#${ref}) ne mène à rien`);
+  });
+});
+
+test('aucune image n’est repliée dans le JavaScript ni dans le HTML', () => {
+  // Sous 4 ko, Vite inline les fichiers par défaut : les illustrations
+  // reviendraient dans ce que tout visiteur télécharge. Les SVG le sont en
+  // URL encodée (data:image/svg+xml,…), les autres en base64 : les deux formes.
+  for (const file of readdirSync('dist/assets').filter((f) => f.endsWith('.js')))
+    assert.doesNotMatch(
+      readFileSync('dist/assets/' + file, 'utf8'),
+      /data:image\/(svg\+xml|png|webp|jpe?g)[;,]/,
+      `${file} contient une image encodée`,
+    );
+  for (const route of routes)
+    assert.doesNotMatch(read(route), /src="data:image\//, `/${route}/ embarque une image encodée`);
+});
+
+test('l’accueil n’a ni identifiant dupliqué ni référence url(#…) cassée', () => {
+  const $ = load(read(''));
+  const ids = $('[id]')
+    .map((_, n) => $(n).attr('id'))
+    .get();
+  assert.deepEqual(
+    ids.filter((id, i) => ids.indexOf(id) !== i),
+    [],
+    'identifiants dupliqués',
+  );
+  const known = new Set(ids);
+  for (const [, ref] of read('').matchAll(/url\(#([^)]+)\)/g))
+    assert.ok(known.has(ref), `url(#${ref}) ne mène à rien`);
+});

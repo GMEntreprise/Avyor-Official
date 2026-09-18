@@ -28,6 +28,9 @@ export default defineConfig(({ isSsrBuild }) => ({
   plugins: [react(), tailwindcss(), introDevPlugin()],
   build: {
     manifest: !isSsrBuild,
+    // Never inline assets as base64: under 4 kB Vite would fold them into the
+    // JavaScript, which is exactly where the illustrations must not travel.
+    assetsInlineLimit: 0,
     rollupOptions: {
       output: { manualChunks: isSsrBuild ? undefined : { motion: ['motion/react'] } },
     },

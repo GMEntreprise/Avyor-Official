@@ -4,8 +4,8 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --host 127.0.0.1",
-    "build": "tsc -b && vite build && vite build --ssr src/entry-server.tsx --outDir .ssr && node scripts/prerender.mjs",
+    "dev": "bun run icons:build && vite --host 127.0.0.1",
+    "build": "bun run icons:build && tsc -b && vite build && vite build --ssr src/entry-server.tsx --outDir .ssr && node scripts/prerender.mjs",
     "preview": "node scripts/serve.mjs",
     "typecheck": "tsc -b",
     "lint": "eslint src tests scripts/*.mjs",
@@ -20,7 +20,8 @@
     "format:check": "prettier --check src scripts/*.mjs tests *.ts *.json *.js index.html",
     "measure": "node scripts/measure.mjs",
     "assets:video": "sh scripts/build-video.sh",
-    "test:visual:update": "playwright test --grep \"capture\" --update-snapshots"
+    "test:visual:update": "playwright test --grep \"capture\" --update-snapshots",
+    "icons:build": "bun scripts/build-icons.tsx"
   },
   "dependencies": {
     "react": "^19.1.1",

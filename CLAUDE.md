@@ -60,6 +60,21 @@ Pièges connus, protégés par des tests :
 - Réutilisez les tokens de `src/styles.css` (`--navy`, `--surface`, `--violet`, `--muted`, `--line`, `--fast`, `--normal`, `--ease`). Pas de nouveau rayon, couleur, ombre ou police arbitraire.
 - **Budget** : `bun run budget` mesure le JS réellement chargé par une page (entrée + imports statiques), pas la somme de tous les chunks. Le contenu volumineux propre à quelques routes se charge à la demande.
 
+## Icônes en volume
+
+Les icônes du manifeste et de la section 06 sont **dessinées** dans `src/components/Icons3D.tsx` et **servies en fichiers `.svg`** : `scripts/build-icons.tsx` les exporte vers `src/assets/icons/` avant chaque `build` et chaque `dev`. Ne les rendez pas en SVG inline dans la page : c'est de l'illustration pure, qui n'a rien à faire dans le JavaScript que chaque visiteur télécharge — inline, elles ont fait dépasser le budget. Toute nouvelle icône suit la même recette, décrite en entier dans `docs/design/icones-3d-prompt.md` (prompt réutilisable sur d'autres sites).
+
+- **Modifiez le composant, jamais le fichier `.svg`** : il est régénéré et vos changements seraient écrasés.
+- **`build.assetsInlineLimit` reste à 0** dans `vite.config.ts`. Sinon Vite replie tout fichier de moins de 4 ko dans le JavaScript, en URL encodée pour les SVG. Un test l'interdit.
+
+- **Une lumière, en haut à gauche, pour toute la famille.** Couches, de l'arrière vers l'avant : ombre au sol, épaisseur décalée de 4-5 px, face en dégradé diagonal, liseré spéculaire, zones creusées avec paroi, détails en relief, brillance découpée à la forme.
+- **SVG pur** : ni image embarquée, ni ressource externe, ni texte, ni filtre de flou. Les ombres sont des dégradés.
+- **Identifiants via `useId()`** dans le composant. En fichier, chaque icône est son propre document ; un test vérifie que chaque `url(#…)` mène à un identifiant du même fichier.
+- **Décoratives** : `<img alt="" loading="lazy">`. Le texte porte le sens.
+- **Palette de la marque uniquement** : violet `#7c5cff` et ses teintes, bleu `#5a7cf5`, surface `#1d2247`, ombre `#010208`.
+- **Taille** : 88-104 px sur ordinateur ; sur téléphone, liste avec l'icône à 64-68 px à gauche. Avant d'intégrer, chercher les règles responsives qui visent déjà les `svg` du conteneur : deux sections avaient une règle qui les aurait écrasées à 16 et 30 px.
+- **Relire en grand avant d'intégrer** : rendre chaque icône à 280 px sur le vrai fond et chercher les défauts connus — brillance en rectangle, ombre invisible, creux sans paroi, chevauchements, pièces qui dépassent.
+
 ## Déploiement
 
 Vercel, configuré par `vercel.json`. Runbook complet : `docs/site/deploiement-vercel.md`.

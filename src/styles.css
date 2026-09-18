@@ -798,20 +798,45 @@ h3 {
   max-width: 570px;
   font-size: 0.9rem;
 }
-.manifesto-bottom > div {
-  display: flex;
-  gap: 26px;
-  align-items: center;
+/* The three verbs of the product, each with its own dimensional icon. */
+.manifesto-pillars {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 168px));
+  gap: 28px;
+  flex-shrink: 0;
 }
-.manifesto-bottom > div span {
+.manifesto-pillars li {
   display: flex;
-  gap: 8px;
-  align-items: center;
-  font-size: 0.76rem;
-  white-space: nowrap;
+  flex-direction: column;
+  align-items: flex-start;
 }
-.manifesto-bottom svg {
-  color: #b3a0ff;
+.manifesto-pillars img {
+  display: block;
+  margin: 0 0 8px -6px;
+  transition: transform var(--normal) var(--ease);
+}
+.manifesto-pillars li:hover img {
+  transform: translateY(-4px);
+}
+.manifesto-pillars strong {
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #f5f6f9;
+}
+.manifesto-pillars span {
+  margin-top: 6px;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+@media (prefers-reduced-motion: reduce) {
+  .manifesto-pillars li:hover img {
+    transform: none;
+  }
 }
 .section-heading {
   max-width: 760px;
@@ -1179,9 +1204,18 @@ h3 {
   margin-top: 55px;
   margin-bottom: 30px;
 }
-.trust-grid svg {
-  color: #bcaaff;
-  margin-bottom: 28px;
+.trust-grid img {
+  display: block;
+  margin: 0 0 18px -8px;
+  transition: transform var(--normal) var(--ease);
+}
+.trust-grid article:hover img {
+  transform: translateY(-4px);
+}
+@media (prefers-reduced-motion: reduce) {
+  .trust-grid article:hover img {
+    transform: none;
+  }
 }
 .trust-grid h3 {
   font-size: 1.3rem;
@@ -1877,8 +1911,9 @@ footer {
   .manifesto-bottom {
     gap: 50px;
   }
-  .manifesto-bottom > div {
-    gap: 15px;
+  .manifesto-pillars {
+    gap: 18px;
+    grid-template-columns: repeat(3, minmax(0, 150px));
   }
   .story-layout,
   .feed-layout {
@@ -1964,9 +1999,10 @@ footer {
   .manifesto-bottom {
     display: block;
   }
-  .manifesto-bottom > div {
-    margin-top: 30px;
-    gap: 30px;
+  .manifesto-pillars {
+    margin-top: 40px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
   }
   .audience {
     min-height: 475px;
@@ -2201,15 +2237,30 @@ footer {
   .manifesto-bottom > p {
     font-size: 0.86rem;
   }
-  .manifesto-bottom > div {
-    gap: 22px;
+  /* On a phone the three verbs become a list: icon beside its text. */
+  .manifesto-pillars {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+    margin-top: 34px;
   }
-  .manifesto-bottom > div span {
-    font-size: 0.68rem;
-    gap: 6px;
+  .manifesto-pillars li {
+    display: grid;
+    grid-template-columns: 68px minmax(0, 1fr);
+    column-gap: 16px;
+    align-items: center;
   }
-  .manifesto-bottom svg {
-    width: 16px;
+  .manifesto-pillars img {
+    width: 68px;
+    height: 68px;
+    margin: 0;
+    grid-row: span 2;
+  }
+  .manifesto-pillars strong {
+    align-self: end;
+  }
+  .manifesto-pillars span {
+    align-self: start;
+    margin-top: 3px;
   }
   .section-heading .eyebrow {
     font-size: 0.61rem;
@@ -2391,12 +2442,15 @@ footer {
   }
   .trust-grid article {
     display: grid;
-    grid-template-columns: 30px 1fr;
-    column-gap: 20px;
+    grid-template-columns: 68px minmax(0, 1fr);
+    column-gap: 18px;
+    align-items: start;
   }
-  .trust-grid svg {
+  .trust-grid img {
+    width: 68px;
+    height: 68px;
     grid-row: span 2;
-    margin-bottom: 0;
+    margin: 0;
   }
   .trust-grid h3 {
     font-size: 1.25rem;
