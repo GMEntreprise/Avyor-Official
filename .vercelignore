@@ -1,0 +1,11 @@
+# Rien de tout cela n'entre dans `bun run build` : autant ne pas l'expédier.
+video/
+tools/
+docs/
+brand/
+SEO_BOOSTER/
+tests/
+playwright-report/
+test-results/
+.github/
+.ssr/

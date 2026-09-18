@@ -59,6 +59,15 @@ Pièges connus, protégés par des tests :
 - Réutilisez les tokens de `src/styles.css` (`--navy`, `--surface`, `--violet`, `--muted`, `--line`, `--fast`, `--normal`, `--ease`). Pas de nouveau rayon, couleur, ombre ou police arbitraire.
 - **Budget** : `bun run budget` mesure le JS réellement chargé par une page (entrée + imports statiques), pas la somme de tous les chunks. Le contenu volumineux propre à quelques routes se charge à la demande.
 
+## Déploiement
+
+Vercel, configuré par `vercel.json`. Runbook complet : `docs/site/deploiement-vercel.md`.
+
+- **`dist/_headers` n'est lu que par Netlify et Cloudflare.** Vercel l'ignore : tout en-tête ajouté là doit l'être aussi dans `vercel.json`, et un test échoue sinon.
+- **`/assets/` mélange fichiers empreintés et médias au nom stable.** Le cache immuable est réservé aux `.js`, `.css` et `.woff2` ; les médias sont révalidables. Ne posez jamais `immutable` sur `/assets/(.*)` : un an de cache sur un fichier au nom fixe rend toute mise à jour invisible.
+- **Le site reste `noindex` tant qu'il vit sur un domaine `vercel.app`.** `scripts/vercel-build.mjs` refuse de construire un site indexable sur ce domaine, pour ne pas mettre une copie en concurrence avec le vrai domaine.
+- L'URL canonique ne vient pas d'un fichier versionné : elle est déduite de `VERCEL_PROJECT_PRODUCTION_URL`, ou forcée par `VITE_SITE_URL`.
+
 ## Règles SEO
 
 - Les tests portent sur le **HTML construit** (`tests/seo/`), pas sur le source.

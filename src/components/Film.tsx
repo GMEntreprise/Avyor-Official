@@ -20,9 +20,11 @@ export function Film() {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    const node = section.current, element = video.current;
+    const node = section.current,
+      element = video.current;
     if (!node || !element || reduced) return;
-    const connection = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection;
+    const connection = (navigator as Navigator & { connection?: { saveData?: boolean } })
+      .connection;
     if (connection?.saveData) return;
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -30,7 +32,10 @@ export function Film() {
         observer.disconnect();
         setLoaded(true);
         element.load();
-        element.play().then(() => setPlaying(true)).catch(() => setPlaying(false));
+        element
+          .play()
+          .then(() => setPlaying(true))
+          .catch(() => setPlaying(false));
       },
       { rootMargin: '400px 0px' },
     );
@@ -44,7 +49,11 @@ export function Film() {
   const toggle = () => {
     const element = video.current;
     if (!element) return;
-    if (element.paused) element.play().then(() => setPlaying(true)).catch(() => setPlaying(false));
+    if (element.paused)
+      element
+        .play()
+        .then(() => setPlaying(true))
+        .catch(() => setPlaying(false));
     else {
       element.pause();
       setPlaying(false);

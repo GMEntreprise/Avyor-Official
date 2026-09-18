@@ -44,7 +44,8 @@ const budgets = {
   mobileVideo: 1.5 * 1024 * 1024,
 };
 for (const key in budgets)
-  if (key in metrics) assert.ok(metrics[key] <= budgets[key], `${key}: ${metrics[key]} > ${budgets[key]}`);
+  if (key in metrics)
+    assert.ok(metrics[key] <= budgets[key], `${key}: ${metrics[key]} > ${budgets[key]}`);
 writeFileSync(
   'docs/site/performance-budget.json',
   JSON.stringify({ measuredAt: new Date().toISOString(), initial, metrics, budgets }, null, 2),
