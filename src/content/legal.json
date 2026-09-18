@@ -18,8 +18,8 @@
       {
         "id": "donnees-du-site",
         "title": "3. Ce site de présentation",
-        "body": "Ce site ne comporte ni formulaire de compte, ni outil publicitaire, ni mesure d’audience. Aucun cookie n’y est déposé. Une préférence stockée dans la mémoire de session de votre navigateur permet de ne jouer l’animation d’introduction qu’une fois ; elle disparaît à la fermeture de l’onglet et ne quitte jamais votre appareil. Les messages que vous envoyez à l’adresse de contact sont traités pour répondre à votre demande.",
-        "todo": "Identité et localisation de l’hébergeur du site, à indiquer une fois la mise en ligne arbitrée."
+        "body": "Ce site est hébergé par Vercel et ne comporte ni formulaire de compte ni outil publicitaire. Il mesure sa fréquentation avec Vercel Web Analytics et Vercel Speed Insights, deux outils sans cookie : aucun cookie n’est déposé sur votre appareil et aucun identifiant durable ne vous est attribué. Sont relevés la page consultée, la page qui vous y a mené, le pays, le type d’appareil, le système et le navigateur, ainsi que des mesures de rapidité d’affichage de la page. Ces données ne servent qu’à comprendre l’audience du site et à corriger ce qui est lent ; elles ne permettent pas de vous suivre d’un site à l’autre et ne sont ni vendues ni recoupées avec votre compte. Une préférence stockée dans la mémoire de session de votre navigateur permet de ne jouer l’animation d’introduction qu’une fois ; elle disparaît à la fermeture de l’onglet et ne quitte jamais votre appareil. Les messages que vous envoyez à l’adresse de contact sont traités pour répondre à votre demande.",
+        "todo": "Base juridique de la mesure d’audience à trancher : dispense de consentement au titre de la mesure d’audience ou intérêt légitime, selon l’analyse retenue au regard des critères de la CNIL. Raison sociale et adresse de Vercel à reprendre de ses propres mentions légales."
       },
       {
         "id": "donnees-fournies",
@@ -82,13 +82,14 @@
       {
         "id": "cookies",
         "title": "14. Cookies et technologies similaires",
-        "body": "Ce site n’utilise aucun cookie. L’application mobile s’appuie sur un stockage local nécessaire au maintien de votre session et à vos préférences ; il ne sert pas à la publicité."
+        "body": "Ce site n’utilise aucun cookie, y compris pour la mesure d’audience : Vercel Web Analytics et Speed Insights fonctionnent sans en déposer. L’application mobile s’appuie sur un stockage local nécessaire au maintien de votre session et à vos préférences ; il ne sert pas à la publicité."
       },
       {
         "id": "prestataires",
         "title": "15. Prestataires et sous-traitants",
         "body": "AVYOR s’appuie sur un nombre limité de prestataires techniques :",
         "items": [
+          "Vercel — hébergement de ce site, mesure d’audience et mesure de rapidité.",
           "Supabase — hébergement des données et authentification.",
           "Stripe — traitement des paiements et des transferts.",
           "PostHog — mesure d’usage du produit.",
@@ -104,7 +105,7 @@
       {
         "id": "transferts",
         "title": "17. Transferts hors Union européenne",
-        "body": "Certains prestataires cités peuvent traiter des données en dehors de l’Union européenne.",
+        "body": "Certains prestataires cités peuvent traiter des données en dehors de l’Union européenne. C’est notamment le cas de Vercel, société établie aux États-Unis, qui héberge ce site et en mesure l’audience.",
         "todo": "Régions d’hébergement effectivement retenues et mécanisme de transfert applicable pour chaque prestataire, à documenter avant toute mise en production."
       },
       {
@@ -363,8 +364,8 @@
       {
         "id": "hebergement-site",
         "title": "5. Hébergement de ce site",
-        "body": "Ce site est un ensemble de pages statiques, sans base de données ni compte utilisateur.",
-        "todo": "Nom, raison sociale et adresse de l’hébergeur retenu pour la mise en ligne publique."
+        "body": "Ce site est un ensemble de pages statiques, sans base de données ni compte utilisateur. Il est hébergé par Vercel.",
+        "todo": "Raison sociale complète et adresse de Vercel, à reprendre de ses propres mentions légales."
       },
       {
         "id": "propriete-intellectuelle-legal",

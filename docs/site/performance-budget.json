@@ -1,12 +1,12 @@
 {
-  "measuredAt": "2026-09-18T09:34:24.397Z",
+  "measuredAt": "2026-09-18T11:53:49.035Z",
   "initial": [
-    "assets/index-CsMkbUcg.js",
+    "assets/index-2XFQY7db.js",
     "assets/motion-DDGmUNfW.js"
   ],
   "metrics": {
-    "jsGzip": 142183,
-    "jsGzipTotal": 154429,
+    "jsGzip": 142182,
+    "jsGzipTotal": 154789,
     "cssGzip": 11938,
     "poster": 125272,
     "film": 1022871,

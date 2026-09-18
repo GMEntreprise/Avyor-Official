@@ -67,7 +67,29 @@ VITE_GOOGLE_PLAY_URL = https://play.google.com/store/apps/details?id=…
 
 Le filtre de `src/lib/store-url.ts` n'accepte que ces deux domaines en HTTPS. Une URL qui ne passe pas le filtre est **ignorée** : la plateforme reste « Bientôt disponible » plutôt que d'exposer un lien douteux. Navbar, hero, page de téléchargement, footer et données structurées suivent ensuite tout seuls.
 
-## 6. En-têtes servis
+## 6. Mesure d'audience et de rapidité
+
+Vercel Web Analytics et Speed Insights sont installés. Deux choses à savoir.
+
+**Il faut les activer dans Vercel**, sinon rien ne remonte : Settings → Analytics, puis Settings → Speed Insights, bouton *Enable*. Sans activation, les chemins `/_vercel/insights/script.js` et `/_vercel/speed-insights/script.js` répondent 404.
+
+**Ils ne partent que depuis le déploiement de production.** `scripts/vercel-build.mjs` n'active la mesure que si `VERCEL_ENV` vaut `production`. Ailleurs — prévisualisations, serveur local, tests — les scripts viennent d'un chemin que seul Vercel sert : ce ne serait qu'une erreur de plus dans la console du visiteur, et des chiffres faussés.
+
+Le chargement est différé jusqu'à ce que le navigateur soit disponible : la mesure ne prend jamais de bande passante à la page qu'elle mesure. Les indicateurs de rapidité sont lus depuis l'historique du navigateur, arriver tard ne fait donc rien perdre.
+
+Les deux outils fonctionnent **sans cookie**. Ils sont déclarés dans la politique de confidentialité, et **un test échoue si un outil de mesure est installé sans y être mentionné**. La base juridique de cette mesure reste à trancher : c'est un TODO signalé dans la page.
+
+### Ce qu'il ne faut pas faire
+
+Les recettes toutes faites pour projets React ajoutent une réécriture attrape-tout :
+
+```json
+{ "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }] }
+```
+
+Elle existe pour les sites dont une seule page HTML existe. **Ici, chaque route est pré-rendue** : l'accès direct fonctionne déjà. Cette règle servirait l'accueil, avec un statut 200, à la place de la page 404 — pour chaque adresse inventée, y compris celles que testent les robots. Un test la refuse.
+
+## 7. En-têtes servis
 
 Ils vivent dans `vercel.json`, pas dans `dist/_headers` — **ce dernier n'est lu que par Netlify et Cloudflare, Vercel l'ignore**. Un test échoue si un en-tête déclaré dans l'un manque à l'autre.
 
@@ -86,11 +108,11 @@ Le réseau de Vercel garde quand même ces fichiers en cache à la périphérie,
 
 Un test échoue si un fichier au nom stable reçoit un `max-age` positif.
 
-## 7. `.env.production`
+## 8. `.env.production`
 
 Ce fichier contient encore l'URL de l'ancienne prévisualisation. **Il est sans effet sur Vercel** : une variable d'environnement a la priorité, ce qui a été vérifié. Il ne sert plus qu'aux constructions locales, et peut être supprimé une fois le domaine en place.
 
-## 8. Ce qui n'est pas expédié
+## 9. Ce qui n'est pas expédié
 
 `.vercelignore` écarte `/video/`, `/tools/`, `/brand/`, `/docs/`, `/tests/`, `/SEO_BOOSTER/` et les rapports. Seuls `src/`, `public/`, `scripts/`, `index.html` et les fichiers de configuration partent.
 
@@ -98,7 +120,7 @@ Ce fichier contient encore l'URL de l'ancienne prévisualisation. **Il est sans 
 
 Les tests appliquent désormais le moteur gitignore de git lui-même, et non une comparaison de chaînes : ils vérifient qu'aucun fichier dont le build ou une page a besoin n'est écarté.
 
-## 9. Points non vérifiés
+## 10. Points non vérifiés
 
 Le comportement réel des en-têtes et des redirections de barre oblique **n'a pas pu être testé sans déployer**. Après la première mise en ligne, contrôlez :
 

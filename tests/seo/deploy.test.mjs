@@ -200,3 +200,55 @@ test('les redirections françaises mènent à une vraie page et n’en masquent 
     assert.ok(destination.endsWith('/'), `${destination} doit suivre la forme des canonicals`);
   }
 });
+
+test('aucune réécriture attrape-tout ne peut effacer la vraie page 404', () => {
+  // Le réflexe des projets React classiques est de rediriger tout vers
+  // /index.html, parce qu'une seule page HTML existe. Ici chaque route est
+  // pré-rendue : une telle règle servirait l'accueil, avec un statut 200, à
+  // la place de la page 404 — et pour chaque adresse inventée par un robot.
+  for (const rule of config.rewrites ?? []) {
+    assert.doesNotMatch(
+      rule.destination,
+      /^\/index\.html$/,
+      `« ${rule.source} → ${rule.destination} » remplacerait la page 404 par l’accueil`,
+    );
+    assert.notEqual(rule.source, '/(.*)', 'réécriture attrape-tout interdite');
+  }
+  assert.ok(existsSync('dist/404.html'));
+});
+
+test('un outil de mesure installé est déclaré dans la politique de confidentialité', () => {
+  // Installer un outil de mesure rend fausse toute phrase qui dit le contraire.
+  const dependencies = Object.keys(
+    JSON.parse(readFileSync('package.json', 'utf8')).dependencies ?? {},
+  );
+  const legal = readFileSync('src/content/legal.json', 'utf8');
+  const tools = [
+    ['@vercel/analytics', /Vercel Web Analytics/],
+    ['@vercel/speed-insights', /Speed Insights/],
+  ];
+  const installed = tools.filter(([pkg]) => dependencies.includes(pkg));
+  for (const [pkg, mention] of installed)
+    assert.match(legal, mention, `${pkg} est installé mais absent de la politique`);
+  if (installed.length)
+    // Et la phrase d'origine, qui niait toute mesure, ne doit pas subsister.
+    assert.doesNotMatch(legal, /ni mesure d’audience/, 'la politique nie une mesure qui existe');
+});
+
+test('la mesure d’audience ne part que depuis le déploiement de production', () => {
+  // Ses scripts viennent d'un chemin que seul Vercel sert : ailleurs, ce ne
+  // serait qu'une erreur de plus dans la console du visiteur.
+  const builder = readFileSync('scripts/vercel-build.mjs', 'utf8');
+  assert.match(builder, /VERCEL_ENV === 'production'/);
+  assert.match(builder, /VITE_VERCEL_INSIGHTS/);
+  assert.match(
+    readFileSync('src/entry-client.tsx', 'utf8'),
+    /import\.meta\.env\.VITE_VERCEL_INSIGHTS === 'true'/,
+  );
+  // Le build local, lui, ne doit en garder aucune trace.
+  for (const file of readdirSync('dist/assets').filter((f) => f.endsWith('.js')))
+    assert.doesNotMatch(
+      readFileSync('dist/assets/' + file, 'utf8'),
+      /_vercel\/insights|vercel-scripts/,
+    );
+});

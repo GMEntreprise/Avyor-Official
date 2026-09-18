@@ -41,12 +41,20 @@ if (indexable && /(^|\.)vercel\.app$/.test(hostname)) {
   process.exit(1);
 }
 
+/**
+ * Vercel Web Analytics and Speed Insights serve their scripts from paths only
+ * Vercel answers, and only for the production deployment do their numbers mean
+ * anything. Elsewhere they would be two 404s in every visitor's console.
+ */
+const insights = process.env.VERCEL_ENV === 'production';
+
 console.log(`Canonical origin : ${origin}`);
 console.log(`Indexable        : ${indexable ? 'yes' : 'no (pages carry noindex)'}`);
+console.log(`Insights         : ${insights ? 'analytics and speed insights' : 'off'}`);
 
 const build = spawn('bun', ['run', 'build'], {
   stdio: 'inherit',
-  env: { ...process.env, VITE_SITE_URL: origin },
+  env: { ...process.env, VITE_SITE_URL: origin, VITE_VERCEL_INSIGHTS: String(insights) },
 });
 build.on('exit', (code) => process.exit(code ?? 1));
 build.on('error', (error) => {

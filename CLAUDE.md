@@ -84,6 +84,8 @@ Vercel, configuré par `vercel.json`. Runbook complet : `docs/site/deploiement-v
 - **Vercel applique les en-têtes aux réponses d'erreur aussi.** Un `max-age` positif sur un média fige une 404 passagère dans le navigateur : c'est arrivé au logo, resté introuvable une semaine après son retour. Ne donnez jamais de `max-age` positif à un fichier au nom stable.
 - **Le site reste `noindex` tant qu'il vit sur un domaine `vercel.app`.** `scripts/vercel-build.mjs` refuse de construire un site indexable sur ce domaine, pour ne pas mettre une copie en concurrence avec le vrai domaine.
 - **Tout motif de `.vercelignore` commence par `/`.** Sans ancrage, la syntaxe gitignore vise le nom à toutes les profondeurs : `brand/` a exclu `public/assets/brand/` et le logo n'a jamais été servi en production.
+- **Aucune réécriture attrape-tout vers `/index.html`.** Chaque route est pré-rendue et l'accès direct fonctionne : cette règle, réflexe des projets React classiques, servirait l'accueil en 200 à la place de la page 404. Un test la refuse.
+- **Un outil de mesure installé doit être déclaré dans `src/content/legal.json`**, et la mesure ne part que du déploiement de production (`VERCEL_ENV`), ses scripts venant d'un chemin que seul Vercel sert. Un test vérifie les deux.
 - L'URL canonique ne vient pas d'un fichier versionné : elle est déduite de `VERCEL_PROJECT_PRODUCTION_URL`, ou forcée par `VITE_SITE_URL`.
 
 ## Règles SEO
