@@ -56,6 +56,7 @@ Pièges connus, protégés par des tests :
 - Numérotez avec `ordinal()` : `0{i + 1}` donne « 010 » à partir de la dixième.
 - `motion` est chargé via `LazyMotion` + `domAnimation` : importez `m`, jamais `motion`.
 - **L'alias `@/` n'est pas configuré.** Les composants shadcn/Aceternity doivent être adaptés en imports relatifs avant intégration.
+- **Une image utilisée par un composant s'importe depuis `src/assets/`**, elle ne se désigne pas par une adresse `/assets/…` vers `public/`. Importée, Vite l'empreinte : son absence fait échouer le build au lieu de partir en 404 en production, et chaque nouvelle version reçoit une adresse qu'aucun navigateur n'a en cache. `public/` est réservé aux fichiers qui doivent garder une adresse fixe : favicons, `og.png`, manifeste, `robots.txt`. Un test l'impose pour le logo.
 - Réutilisez les tokens de `src/styles.css` (`--navy`, `--surface`, `--violet`, `--muted`, `--line`, `--fast`, `--normal`, `--ease`). Pas de nouveau rayon, couleur, ombre ou police arbitraire.
 - **Budget** : `bun run budget` mesure le JS réellement chargé par une page (entrée + imports statiques), pas la somme de tous les chunks. Le contenu volumineux propre à quelques routes se charge à la demande.
 

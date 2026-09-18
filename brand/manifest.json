@@ -37,6 +37,7 @@
     },
     {
       "file": "assets/brand/logo.webp",
+      "root": "src",
       "source": "brand/masters/avyor-logo.png",
       "bytes": 29842,
       "sha256": "528434ce5b2bfffedf296977e308aa97209e026d49e6e07c57b3253ab7532690"
@@ -49,6 +50,7 @@
     },
     {
       "file": "assets/brand/logo-mask.webp",
+      "root": "src",
       "source": "brand/masters/avyor-logo.png",
       "bytes": 44608,
       "sha256": "6920876e9f77b16fd52f105cd329467feabb631c6f68ab64a8da5ae7d2bd06eb"

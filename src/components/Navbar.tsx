@@ -3,11 +3,12 @@ import * as Dialog from '@radix-ui/react-dialog';
 import { ArrowUpRight, Menu, X } from 'lucide-react';
 import { navigation } from '../content/site';
 import { DownloadAppButton } from './DownloadAppButton';
+import logo from '../assets/brand/logo.webp';
 import { ordinal } from '../lib/utils';
 export function Brand() {
   return (
     <a className="brand" href="/" aria-label="AVYOR, accueil">
-      <img src="/assets/brand/logo.webp" width="44" height="44" alt="" />
+      <img src={logo} width="44" height="44" alt="" />
       <span>
         avyor<span className="brand-period">.</span>
       </span>

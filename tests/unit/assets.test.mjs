@@ -30,14 +30,15 @@ test('les exports respectent les hashes du manifeste et les captures gardent leu
   const manifest = JSON.parse(readFileSync('brand/manifest.json'));
   assert.ok(manifest.files.length >= 25);
   for (const f of manifest.files) {
+    // Images imported by components live in src/ so Vite fingerprints them.
+    const path = `${f.root ?? 'public'}/${f.file}`;
     assert.equal(
-      createHash('sha256')
-        .update(readFileSync('public/' + f.file))
-        .digest('hex'),
+      createHash('sha256').update(readFileSync(path)).digest('hex'),
       f.sha256,
+      `${path} ne correspond plus au manifeste`,
     );
     if (f.file.includes('/screens/')) {
-      const m = await sharp('public/' + f.file).metadata();
+      const m = await sharp(path).metadata();
       assert.ok(Math.abs(m.width / m.height - 1320 / 2868) < 0.001);
       assert.ok(m.width <= 1320);
     }
@@ -47,4 +48,31 @@ test('le partage social est en 1200 × 630', async () => {
   const m = await sharp('public/og.png').metadata();
   assert.equal(m.width, 1200);
   assert.equal(m.height, 630);
+});
+
+test('le logo passe par Vite : un fichier manquant casse le build, pas la production', async () => {
+  // Désigné par une adresse brute vers public/, le logo a pu manquer en
+  // production sans que rien ne le signale. Importé, il est empreinté par
+  // Vite : son absence fait échouer la construction, et une nouvelle version
+  // reçoit une nouvelle adresse qu'aucun navigateur n'a en cache.
+  const { readdirSync } = await import('node:fs');
+  const walk = (dir) =>
+    readdirSync(dir, { withFileTypes: true }).flatMap((e) =>
+      e.isDirectory() ? walk(`${dir}/${e.name}`) : [`${dir}/${e.name}`],
+    );
+  for (const file of walk('src').filter((f) => /\.(tsx?|css)$/.test(f)))
+    assert.doesNotMatch(
+      readFileSync(file, 'utf8'),
+      // Une adresse absolue, entre guillemets. L'import relatif « ../assets/ »
+      // est au contraire la forme attendue.
+      /["'`]\/assets\/brand\//,
+      `${file} désigne un logo par son adresse au lieu de l’importer`,
+    );
+  // Et l'ancienne copie publique ne doit pas revenir en doublon.
+  for (const name of ['logo.webp', 'logo-mask.webp'])
+    assert.equal(
+      (await import('node:fs')).existsSync(`public/assets/brand/${name}`),
+      false,
+      `public/assets/brand/${name} ferait doublon avec la version importée`,
+    );
 });

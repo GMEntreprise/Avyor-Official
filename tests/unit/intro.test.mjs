@@ -23,16 +23,30 @@ test('l’intro est rendue par le serveur, donc elle ne dépend pas de l’hydra
     );
 });
 
+/** Images the intro imports: Vite fingerprints them, so they cannot go missing. */
+const imports = Object.fromEntries(
+  [...source.matchAll(/^import (\w+) from '(\.\.\/assets\/[^']+)';$/gm)].map((m) => [
+    m[1],
+    'src/components/' + m[2],
+  ]),
+);
+
+test('l’intro importe ses images au lieu de les désigner par une adresse', () => {
+  // Une adresse /assets/… vers public/ ne casse pas le build si le fichier
+  // manque : elle part en 404 en production. C'est arrivé au logo.
+  assert.doesNotMatch(code, /["']\/assets\//, 'image référencée par une adresse brute');
+  assert.ok(imports.logo && imports.logoMask, 'le logo et son masque doivent être importés');
+  assert.match(source, /href=\{logoMask\}/);
+  assert.match(source, /src=\{logo\}/);
+});
+
 test('l’intro ne met pas le master 450 Ko sur le chemin du premier rendu', () => {
-  const assets = [...source.matchAll(/["'](\/assets\/[^"']+)["']/g)].map((m) => m[1]);
-  assert.ok(assets.length >= 2, 'l’intro doit référencer le logo officiel');
-  for (const asset of assets)
-    assert.ok(statSync('public' + asset).size < 120_000, `${asset} est trop lourd`);
+  for (const file of Object.values(imports))
+    assert.ok(statSync(file).size < 120_000, `${file} est trop lourd`);
 });
 
 test('le masque garde assez de résolution pour être net au départ', async () => {
-  const mask = source.match(/href="(\/assets\/[^"]+)"/)[1];
-  const meta = await sharp('public' + mask).metadata();
+  const meta = await sharp(imports.logoMask).metadata();
   assert.ok(meta.hasAlpha, 'le masque a besoin du canal alpha du logo');
   assert.ok(meta.width >= 512, 'le logo est rendu jusqu’à ~860 px physiques');
 });

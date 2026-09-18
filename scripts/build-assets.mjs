@@ -8,13 +8,17 @@ const root = process.cwd(),
 await mkdir(join(out, 'assets/screens'), { recursive: true });
 await mkdir(join(out, 'assets/media'), { recursive: true });
 await mkdir(join(out, 'assets/brand'), { recursive: true });
+// Imported by components, so Vite gives them a content hash: a missing file
+// fails the build instead of shipping a 404, and a changed file gets a new URL.
+await mkdir(join(root, 'src/assets/brand'), { recursive: true });
 const records = [];
-async function emit(name, buffer, source) {
-  const file = join(out, name);
+async function emit(name, buffer, source, base = 'public') {
+  const file = join(root, base, name);
   await writeFile(file + '.tmp', buffer);
   await rename(file + '.tmp', file);
   records.push({
     file: name,
+    ...(base === 'public' ? {} : { root: base }),
     source,
     bytes: buffer.length,
     sha256: createHash('sha256').update(buffer).digest('hex'),
@@ -35,6 +39,7 @@ await emit(
     .webp({ lossless: true })
     .toBuffer(),
   'brand/masters/avyor-logo.png',
+  'src',
 );
 await emit('assets/brand/logo.png', await readFile(master), 'brand/masters/avyor-logo.png');
 // The intro mask is the first thing painted, ahead of the hero poster: it needs
@@ -46,6 +51,7 @@ await emit(
     .webp({ quality: 90, alphaQuality: 100 })
     .toBuffer(),
   'brand/masters/avyor-logo.png',
+  'src',
 );
 const logo = await sharp(master).resize(320, 320, { withoutEnlargement: true }).toBuffer();
 await emit(

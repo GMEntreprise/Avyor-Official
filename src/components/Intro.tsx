@@ -1,3 +1,6 @@
+import logo from '../assets/brand/logo.webp';
+import logoMask from '../assets/brand/logo-mask.webp';
+
 /**
  * The AVYOR intro: the logo widens into an aperture that uncovers the hero.
  *
@@ -32,7 +35,7 @@ export function Intro() {
             <rect width="1000" height="1000" fill="white" />
             <image
               className="intro-aperture"
-              href="/assets/brand/logo-mask.webp"
+              href={logoMask}
               x="350"
               y="350"
               width="300"
@@ -43,7 +46,7 @@ export function Intro() {
         </defs>
         <rect width="1000" height="1000" fill="#070b15" mask="url(#logo-reveal)" />
       </svg>
-      <img className="intro-mark" src="/assets/brand/logo.webp" width="160" height="160" alt="" />
+      <img className="intro-mark" src={logo} width="160" height="160" alt="" />
     </div>
   );
 }
