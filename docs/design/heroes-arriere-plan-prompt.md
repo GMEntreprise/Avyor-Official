@@ -57,84 +57,126 @@ Mesurées sur le fichier, avant le voile CSS :
 - Aucun visage net dans la bande 68-100 % : il entrerait en concurrence avec le téléphone.
 - Pas de mouvement rapide : c'est un fond derrière un titre. Une lente respiration, rien de plus.
 
-## 3. Creators — « on voit les créateurs »
+## 3. Deux mondes, pas deux fois la même pièce
+
+Les arrière-plans actuels montrent la même chose : une pièce sombre avec des gens dedans. Rien ne distingue la page Creators de la page Marques.
+
+La direction retenue les oppose : **Creators la nuit**, intime, on fabrique. **Marques le jour**, ouvert, on choisit. Dans les deux cas, la lumière vient des vignettes du feed elles-mêmes — c'est ce qui rattache les deux pages entre elles, et ce qui les détache de l'existant.
+
+## 4. Creators — la nuit, on fabrique
 
 ### Intention
 
-L'arrière-plan doit dire : *voici des créateurs, et voici leur travail.* Plutôt qu'une personne seule dans le noir, **un mur de vidéos verticales**, doucement défilant, où l'on distingue des gens en train de créer — le feed AVYOR suggéré par la lumière, jamais par une interface.
+*Voici des créateurs, et voici leur travail.* Un créateur de dos, petit dans le cadre, éclairé par un mur de vignettes verticales qui défilent lentement. Le feed AVYOR suggéré **par la lumière**, jamais par une interface. Son travail existe au milieu de celui des autres.
 
-Au premier plan, décalé dans la bande centrale, **un créateur de dos ou de trois quarts**, en train de filmer ou de régler son téléphone. On le voit travailler, on voit derrière lui ce que d'autres créent.
-
-### Prompt de génération
-
-À coller dans le modèle d'image ou de vidéo. En anglais : les modèles y répondent mieux.
+### Prompt — ordinateur, 16:9
 
 ```text
-Cinematic wide shot, 16:9. A content creator seen from behind at three
-quarters, slightly right of centre, filming a small product on a table with a
-phone on a tripod. Warm practical light on their shoulder and hands.
+Cinematic wide shot, 16:9, night. A single content creator seen from behind
+over the shoulder at three quarters, standing at a small table slightly right
+of centre, adjusting a phone clipped to a tripod. Only their shoulder, the rim
+of their hair and their hands catch a warm practical light.
 
-Behind them, filling the middle and right of the frame, a large soft wall of
-vertical video panels — a video feed suggested purely as light, gently drifting
-upward. Each panel glows softly: people cooking, applying skincare, walking
-outdoors, holding products. Faces are out of focus and partly cropped, read as
-atmosphere rather than portraits. No interface, no buttons, no text anywhere.
+The room is lit almost entirely by a tall wall of vertical video panels facing
+them — a feed rendered purely as light. Panels of different heights, softly out
+of focus, drifting slowly upward at different speeds. Inside them, glimpses of
+people creating: hands folding fabric, steam rising from a cup, someone walking
+in morning light, a skincare gesture. Human and warm, never sharp enough to
+read a face. No screens, no interface, no buttons, no text.
 
-The left third of the frame is quiet: empty studio depth, a soft violet rim of
-light grazing a wall, visible texture, never pure black.
+Left third of the frame: depth, not emptiness. The studio recedes into dark
+blue, one soft violet light grazes a textured wall, faint dust hangs in the
+air. Dark, but you can see into it — never crushed black.
 
-Deep navy blue ambience, violet and cool blue accents from the panels, warm skin
-tones on the creator. Shallow depth of field, soft film grain, no lens flare.
-Calm, premium, documentary feel. Very slow motion: the panels drift, the creator
-barely moves.
+Deep navy ambience, violet and cyan spill from the panels, warm amber on skin.
+Anamorphic feel, shallow depth of field, gentle film grain. Calm, intimate,
+premium documentary. Extremely slow motion: the panels drift, the creator
+barely shifts his weight.
 ```
 
-**Négatif :** `text, letters, words, logo, watermark, user interface, app screen, buttons, icons, numbers, percentages, charts, harsh highlights, blown highlights, pure black background, crowded composition, fast motion, lens flare, centered subject`
+### Prompt — mobile, 9:16
+
+L'arrière-plan y est couvert à 90 % : on cherche une ambiance, pas une scène.
+
+```text
+Vertical 9:16, night. A close, intimate view of the same studio. In the lower
+third, a warm rim of light on a creator's shoulder and hands. Above and behind,
+a tall wall of vertical panels of light drifting slowly upward, deeply out of
+focus, holding blurred glimpses of people creating.
+
+Navy depth, violet and cyan glow, one warm amber accent. No face in focus, no
+screens, no interface, no text. Heavy bokeh, soft grain. Extremely slow drift.
+Atmosphere, not a scene.
+```
+
+**Négatif, pour les deux :** `text, letters, words, logo, watermark, signage, user interface, app screen, buttons, icons, numbers, percentages, charts, sharp faces, portrait, crowd, blown highlights, pure black, harsh contrast, centered subject, fast motion, lens flare, neon sign`
 
 ### Points de vigilance
 
-- Les panneaux du feed doivent rester **des rectangles verticaux de lumière**, pas des captures d'application.
-- Le créateur ne doit pas être au centre exact : il entrerait en conflit avec le titre.
-- Le mur de panneaux ne doit pas former de grille trop régulière, sinon on lit une interface.
+- Les vignettes restent **des rectangles verticaux de lumière**, jamais des captures d'application.
+- Le créateur n'est pas au centre exact : il entrerait en conflit avec le titre.
+- Le mur ne doit pas former une grille régulière, sinon on lit une interface.
+- Aucun visage net : ce sont des présences, pas des portraits.
 
-## 4. Marques — « on choisit un regard »
+## 5. Marques — le jour, on choisit
 
 ### Intention
 
-Côté marque, le sujet n'est pas de créer mais de **choisir**. L'arrière-plan doit montrer quelqu'un qui **regarde le travail des créateurs** : moins de personnages que la version actuelle, mieux éclairés, un geste lisible.
+Côté marque, on ne fabrique pas, **on choisit**. Une seule personne — la version actuelle en a deux, dont aucune n'est lisible — le geste de comparer deux vignettes, et de l'air autour. Le jour, pour trancher franchement avec la page Creators.
 
-Le défaut d'aujourd'hui est une scène à deux personnes dans le noir, où l'on ne distingue ni les visages ni ce qu'ils font. **Une seule personne, une seule action claire**, et de l'air autour.
-
-### Prompt de génération
+### Prompt — ordinateur, 16:9
 
 ```text
-Cinematic wide shot, 16:9. A brand marketer at a clean desk, seen from three
-quarters, slightly right of centre, leaning in to look at vertical video
-thumbnails floating in front of them as soft panels of light. One hand raised
-mid-gesture, as if choosing one.
+Cinematic wide shot, 16:9, cool overcast daylight. A single brand marketer
+standing at a wide, uncluttered table slightly right of centre, seen at three
+quarters, one hand lifted mid-gesture as if setting one vertical frame beside
+another — comparing, choosing.
 
-The panels are suggested as glowing vertical rectangles only: no interface, no
-buttons, no text, no charts. A few show blurred people at work; they read as
-atmosphere.
+Around them, a loose arrangement of vertical panels of light floating at
+slightly different depths and angles, like frames held up for comparison.
+Softly out of focus, each holding a blurred glimpse of someone at work. No
+screens, no interface, no buttons, no text, no charts.
 
-The left third of the frame is quiet and uncluttered: depth of an office, a
-soft violet light grazing a wall, visible texture, never pure black. Keep
-generous empty space around the subject.
+Left third of the frame: an airy office receding. A tall window out of frame
+casts soft light across a textured concrete wall, and deep shadow gathers
+toward the left edge. Open, calm, generous empty space.
 
-Deep navy ambience, cool violet and blue light from the panels, one warm desk
-lamp for skin tones. Shallow depth of field, soft grain. Calm, considered,
-premium. Very slow motion: the panels drift slightly, the person barely moves.
+Desaturated navy-leaning daylight, cool blue and violet inside the panels, a
+single warm accent on skin. Shallow depth of field, soft grain, no flare.
+Considered, editorial, premium. Extremely slow motion: the panels settle, the
+hand barely moves.
 ```
 
-**Négatif :** `text, letters, words, logo, watermark, user interface, app screen, buttons, icons, numbers, percentages, charts, graphs, crowd, two people talking, dark unlit faces, blown highlights, pure black background, fast motion, lens flare`
+### Prompt — mobile, 9:16
+
+```text
+Vertical 9:16, cool overcast daylight. A close view of the same office. In the
+lower third, a hand entering frame beside a floating vertical panel of light.
+Above, more panels drifting at different depths, deeply out of focus, and a
+textured concrete wall receding into soft shadow.
+
+Desaturated navy-leaning daylight, cool blue and violet glow, one warm accent.
+No face, no screens, no interface, no text. Heavy bokeh, soft grain. Extremely
+slow drift. Atmosphere, not a scene.
+```
+
+**Négatif, pour les deux :** `text, letters, words, logo, watermark, signage, user interface, app screen, laptop screen, buttons, icons, numbers, percentages, charts, graphs, two people, meeting, conversation, dark unlit face, night, clutter, paperwork, blown highlights, pure black, fast motion, lens flare`
 
 ### Points de vigilance
 
-- **Une personne, pas deux.** La version actuelle en a deux, et aucune n'est lisible.
-- Le geste doit se comprendre sans texte : la main qui choisit.
+- **Une personne, pas deux.**
+- Le geste doit se comprendre sans un mot : la main qui compare.
 - Garder du vide : c'est ce qui manque le plus aujourd'hui.
+- Jour ne veut pas dire clair partout : le bord gauche reste dans l'ombre, pour le titre.
 
-## 5. Intégration
+## 6. Réglages de génération
+
+- Format : **16:9** pour l'ordinateur, **9:16** généré à part — ne jamais recadrer le plan large, le sujet serait coupé.
+- Générer **trois variantes** de chaque et comparer sur la page, pas dans le générateur.
+- Garder la même famille de lumière entre les deux pages : c'est le feed qui éclaire. Seule l'heure change.
+- Si le modèle glisse un logo, un écran ou du texte malgré le négatif : régénérer plutôt que retoucher.
+
+## 7. Intégration
 
 1. Placer les sources générées hors du site, par exemple `video/source/heroes/`, **sans jamais les modifier**.
 2. Produire les quatre fichiers par page aux formats du tableau. Exemple :
@@ -155,7 +197,7 @@ premium. Very slow motion: the panels drift slightly, the person barely moves.
 3. Déposer les fichiers dans `src/assets/heroes/`. Les noms sont imposés : ne rien renommer, `src/config/page-heroes.ts` les importe.
 4. **Alléger le voile** de `.page-hero-surface::after` dans `src/styles.css`. Il a été calibré pour des images très sombres. Point de départ à ajuster en mesurant : `0,88` à 5 %, `0,55` à 38 %, `0,12` à 75 %.
 
-## 6. Vérification
+## 8. Vérification
 
 Avant de committer :
 
