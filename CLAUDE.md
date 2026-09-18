@@ -97,3 +97,9 @@ Vercel, configuré par `vercel.json`. Runbook complet : `docs/site/deploiement-v
 ## À préserver
 
 L'identité visuelle sombre, la typographie Manrope locale, l'intro masque-logo une fois par session, la grille éditoriale et le ton factuel. Enrichissez ; ne refondez pas.
+
+## Heroes Creators, Marques et Produit
+
+`PageHero` conserve le gabarit éditorial et ajoute un fond uniquement aux trois routes déclarées dans `src/config/page-heroes.ts`. Les images générées et leurs prompts sont conservés dans `brand/sources/page-heroes/`. `node scripts/build-page-heroes.mjs` produit les WebP et les boucles H.264 dans `src/assets/heroes/` ; FFmpeg n'est nécessaire qu'à cette génération explicite, jamais au build du site.
+
+Le poster est servi dès le HTML. Une seule vidéo, choisie pour le viewport, est chargée après le rendu. Respecter l'économie de données, la pause manuelle, la visibilité de la page et le changement de préférence reduced-motion pendant la lecture. Ne pas remplacer les vrais écrans `Device` par une UI générée. Les tests `tests/e2e/page-heroes.spec.ts` couvrent ces comportements et le rendu sans JavaScript.

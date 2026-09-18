@@ -1383,6 +1383,98 @@ footer {
   font-size: 0.6rem;
   color: #9da7bc;
 }
+.page-hero-surface {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--navy);
+}
+.page-hero-backdrop,
+.page-hero-backdrop picture,
+.page-hero-backdrop img,
+.page-hero-backdrop video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.page-hero-backdrop {
+  z-index: -2;
+}
+.page-hero-backdrop img,
+.page-hero-backdrop video {
+  object-fit: cover;
+  object-position: center;
+}
+.page-hero-backdrop video {
+  opacity: 0;
+  transition: opacity var(--slow) var(--ease);
+}
+.page-hero-backdrop video.has-frame {
+  opacity: 1;
+}
+.page-hero-surface::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(11, 16, 32, 0.95) 5%,
+      rgba(11, 16, 32, 0.82) 38%,
+      rgba(11, 16, 32, 0.28) 75%
+    ),
+    linear-gradient(0deg, var(--navy), transparent 35%, rgba(11, 16, 32, 0.2));
+}
+.page-hero-controls {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 28px;
+}
+.page-hero-controls .video-control {
+  background: rgba(11, 16, 32, 0.8);
+}
+@media (min-width: 1100px) {
+  .page-hero-backdrop img,
+  .page-hero-backdrop video {
+    object-position: right center;
+  }
+  .page-hero-surface .page-device {
+    align-items: flex-end;
+  }
+}
+@media (max-width: 700px) {
+  .page-hero-backdrop {
+    height: min(900px, 100%);
+  }
+  .page-hero-backdrop::after {
+    content: '';
+    position: absolute;
+    inset: 70% 0 0;
+    background: linear-gradient(0deg, var(--navy), transparent);
+  }
+  .page-hero-controls {
+    position: absolute;
+    top: 105px;
+    right: 20px;
+    width: auto;
+    padding: 0;
+  }
+  .page-hero-surface::after {
+    background:
+      linear-gradient(0deg, var(--navy), rgba(11, 16, 32, 0.38) 36%, rgba(11, 16, 32, 0.85) 66%),
+      linear-gradient(90deg, rgba(11, 16, 32, 0.5), transparent);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .page-hero-backdrop video,
+  .page-hero-controls {
+    display: none;
+  }
+}
 .page-hero {
   padding-top: 145px;
   padding-bottom: 65px;

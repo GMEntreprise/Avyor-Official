@@ -1,0 +1,31 @@
+creators.png
+
+Use case: ads-marketing. Asset type: premium cinematic website hero background, landscape 16:9, render at native high resolution ideally 3840x2160. Photorealistic real premium commercial photography, restrained and believable, rich navy and charcoal palette with subtle violet practical light. LEFT 45% must remain very dark, quiet negative space for white HTML title added later; all action and main subjects center-right, readable with website crop. Physical AVYOR background sign with official reference symbol reproduced recognizably (open circular arch over upward flowing pointed sculptural ribbons), NOT a random A, and correct crisp letters exactly "AVYOR" (A V Y O R), subtle tasteful blue-violet glow. No headline, CTA, watermark, other text, other branding, fake UI, metrics, or client logos.
+Input images: Image 1 is official AVYOR symbol reference, preserve its shape. Image 2 is reference for the SAME fictional male creator identity and established studio design language; do not copy the old framing.
+Scene: wider cinematic view of an actual creator at work in a refined dark studio. SAME adult man with wavy dark brown hair, short stubble, recognizable facial proportions as reference, graphite overshirt over navy shirt. He is actively filming a small unbranded ceramic product with a vertical neutral smartphone on a compact tabletop rig, focused face, natural anatomically correct hands, one hand adjusting product placement while the other steadies the rig. Show tabletop, product, compact creative tools, softbox edge and material board as plausible filming context, restrained object count. Product and phone physically align for filming; screen turned away or dark, no UI. Creator's face at x=72% approximately, table work in right half. The official AVYOR symbol AND word AVYOR are a crisp small wall sign above and behind the scene in right half. Real skin texture, cinematic soft key light, subtle practical violet rim, depth and photographic realism, no excessive fog or glossy CGI appearance.
+
+Reference paths:
+/Users/shavod/Developer/Avyor-Official/brand/masters/avyor-logo.png
+/Users/shavod/Developer/Avyor-Official/video/source/images/avatar-master.png
+
+============
+
+brands.png
+
+Use case: ads-marketing. Asset type: premium cinematic website hero background, landscape 16:9, render at native high resolution ideally 3840x2160. Photorealistic real premium commercial photography, restrained and believable, rich navy and charcoal palette with subtle violet practical light. LEFT 45% must remain very dark, quiet negative space for white HTML title added later; all action and main subjects center-right, readable with website crop. Physical AVYOR background sign with official reference symbol reproduced recognizably (open circular arch over upward flowing pointed sculptural ribbons), NOT a random A, and correct crisp letters exactly "AVYOR" (A V Y O R), subtle tasteful blue-violet glow. No headline, CTA, watermark, other text, other branding, fake UI, metrics, or client logos.
+Input image: official AVYOR symbol reference; reproduce shape faithfully as a physical background sign.
+Scene: two credible adult brand professionals, one woman and one man with natural diverse appearances, working together calmly over a campaign brief at a charcoal material table in a refined creative studio. Refined unbranded clothes in dark neutral colors, authentic collaborative expressions and gestures, realistic hands. Show physical material swatches, a few storyboard photographs WITHOUT words, and a slim unbranded laptop with its screen turned away from the viewer. Concrete campaign planning, premium brand strategy editorial photograph. Both people and tabletop activity are center-right and comfortably framed in a medium-wide shot. Official AVYOR symbol with correct AVYOR letters below visible on rear wall in right half. Soft realistic illumination of faces, subtle violet accent, dark navy architectural studio, calm elegant purposeful atmosphere. No poses at camera, no stock-photo high fives, no fake graphics.
+
+Reference paths:
+/Users/shavod/Developer/Avyor-Official/brand/masters/avyor-logo.png
+
+============
+
+product.png
+
+Use case: ads-marketing. Asset type: premium cinematic website hero background, landscape 16:9, render at native high resolution ideally 3840x2160. Photorealistic real premium commercial photography, restrained and believable, rich navy and charcoal palette with subtle violet practical light. LEFT 45% must remain very dark, quiet negative space for white HTML title added later; all action and main subjects center-right, readable with website crop. Physical AVYOR background sign with official reference symbol reproduced recognizably (open circular arch over upward flowing pointed sculptural ribbons), NOT a random A, and correct crisp letters exactly "AVYOR" (A V Y O R), subtle tasteful blue-violet glow. No headline, CTA, watermark, other text, other branding, fake UI, metrics, or client logos.
+Input image: official AVYOR symbol reference, exact recognizable design for the illuminated wall sculpture.
+Scene: premium cinematic product photograph of a refined dark mobile-workspace and technology studio. A neutral unbranded smartphone lies almost flat at a low angle on a charcoal desk in the lower RIGHT half, blank/off screen with realistic restrained reflection. Beside it a compact creator rig and a small elegant neutral earbud case. Objects convincingly manufactured, precise clean geometry and believable material texture. Sculptural illuminated official AVYOR symbol on rear wall with separate clean physical letters AVYOR beneath, visible in upper-right portion. Geometric practical lighting and subtle reflections convey a mobile creative application without showing any UI. Eye-level-to-desk low camera view with elegant layered depth, restrained photographic lighting, navy black and charcoal, tasteful subtle violet. LEFT 45% mostly empty dark wall and desk for HTML title. IMPORTANT: this will sit BEHIND an existing large upright phone rendered separately by the website; do NOT add giant upright phones, standing screens, tablets, monitors, or device mockup frames. No people.
+
+Reference paths:
+/Users/shavod/Developer/Avyor-Official/brand/masters/avyor-logo.png

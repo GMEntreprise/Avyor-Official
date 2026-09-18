@@ -1,0 +1,62 @@
+[
+  {
+    "slug": "creators",
+    "format": "desktop",
+    "width": 1600,
+    "height": 900,
+    "duration": 10,
+    "fps": 24,
+    "posterBytes": 84802,
+    "videoBytes": 492408
+  },
+  {
+    "slug": "creators",
+    "format": "mobile",
+    "width": 480,
+    "height": 854,
+    "duration": 10,
+    "fps": 24,
+    "posterBytes": 49406,
+    "videoBytes": 186144
+  },
+  {
+    "slug": "brands",
+    "format": "desktop",
+    "width": 1600,
+    "height": 900,
+    "duration": 10,
+    "fps": 24,
+    "posterBytes": 73552,
+    "videoBytes": 462977
+  },
+  {
+    "slug": "brands",
+    "format": "mobile",
+    "width": 480,
+    "height": 854,
+    "duration": 10,
+    "fps": 24,
+    "posterBytes": 31170,
+    "videoBytes": 156983
+  },
+  {
+    "slug": "features",
+    "format": "desktop",
+    "width": 1600,
+    "height": 900,
+    "duration": 10,
+    "fps": 24,
+    "posterBytes": 68670,
+    "videoBytes": 479588
+  },
+  {
+    "slug": "features",
+    "format": "mobile",
+    "width": 480,
+    "height": 854,
+    "duration": 10,
+    "fps": 24,
+    "posterBytes": 38336,
+    "videoBytes": 199806
+  }
+]

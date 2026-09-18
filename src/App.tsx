@@ -12,6 +12,7 @@ import controlIcon from './assets/icons/control.svg';
 import { Footer } from './components/Footer';
 import { Intro } from './components/Intro';
 import { Hero } from './components/Hero';
+import { PageHero } from './components/PageHero';
 import { Story } from './components/Story';
 // La section film est prête mais mise en sommeil : le composant, ses styles et
 // ses assets restent en place. Pour la réactiver, décommenter cet import et le
@@ -233,7 +234,7 @@ function InnerPage({ page, deep }: { page: Page; deep?: DeepContent }) {
   const sections = deep?.sectionsBySlug[page.slug] ?? [];
   return (
     <>
-      <section className={`page-hero container ${page.screen ? 'with-device' : ''}`}>
+      <PageHero slug={page.slug} withDevice={Boolean(page.screen)}>
         <div>
           <nav className="breadcrumb" aria-label="Fil d’Ariane">
             <a href="/">Accueil</a>
@@ -268,7 +269,7 @@ function InnerPage({ page, deep }: { page: Page; deep?: DeepContent }) {
             <DemoCaption />
           </div>
         )}
-      </section>
+      </PageHero>
       {['privacy', 'terms', 'legal'].includes(page.slug) ? (
         <div className="container">{deep && <LegalDocument doc={deep.legalDocs[page.slug]} />}</div>
       ) : page.slug === 'faq' ? (
