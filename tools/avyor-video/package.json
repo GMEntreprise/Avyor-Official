@@ -34,7 +34,8 @@
     "video:render:mobile": "bun scripts/render.ts production mobile",
     "video:poster": "bun scripts/render.ts poster desktop && bun scripts/render.ts poster mobile",
     "video:check": "bun scripts/check-production.ts",
-    "video:measure": "bun scripts/measure.ts"
+    "video:measure": "bun scripts/measure.ts",
+    "video:publish": "bun scripts/publish.ts"
   },
   "sideEffects": [
     "*.css"

@@ -1,14 +1,16 @@
 {
-  "measuredAt": "2026-09-17T22:50:49.186Z",
+  "measuredAt": "2026-09-18T07:42:36.929Z",
   "initial": [
-    "assets/index-c6RwAQzP.js",
+    "assets/index-DUKl1TEF.js",
     "assets/motion-DDGmUNfW.js"
   ],
   "metrics": {
     "jsGzip": 140823,
     "jsGzipTotal": 153069,
-    "cssGzip": 10818,
+    "cssGzip": 11048,
     "poster": 125272,
+    "film": 1022871,
+    "filmPoster": 74922,
     "desktopVideo": 174251,
     "mobileVideo": 129343
   },
@@ -17,6 +19,8 @@
     "jsGzipTotal": 168960,
     "cssGzip": 25600,
     "poster": 225280,
+    "film": 1572864,
+    "filmPoster": 122880,
     "desktopVideo": 3145728,
     "mobileVideo": 1572864
   }

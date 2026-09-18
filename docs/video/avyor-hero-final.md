@@ -112,7 +112,11 @@ Les invariants couverts : la timeline ne demande jamais à un rush plus d'images
 ## 12. Ce qui n'a pas été fait
 
 - **Mobile 9:16** : aucun rush portrait ne couvre les beats du milieu. `production.json` garde ses entrées mobiles à `null` et l'export mobile est refusé — délibérément, plutôt que de livrer un paysage recadré.
-- **Intégration au site** : le master n'a pas remplacé `/assets/hero-desktop.mp4`. Le site reste intact. À 2,91 Mo, l'intégration demande d'abord un arbitrage de compression face au budget du site.
+- **Intégration au site** : le Hero n'a pas été touché. Il affiche sa vidéo à `opacity: 0.3`, en fond d'ambiance — les écrans AVYOR composités y seraient invisibles, et tout le travail de suivi perdu. Le film a donc reçu sa propre section, `src/components/Film.tsx`, à pleine opacité.
+
+  **Cette section est actuellement en sommeil** : son montage dans `App.tsx` est commenté. Le composant, ses styles et ses assets restent en place ; deux lignes à décommenter la réactivent.
+
+  Encodage retenu pour cet usage : 1080p conservé, CRF 27, soit **1,7 Mo en MP4 et 1,0 Mo en WebM**. Le 720p avait été mesuré à 952 Ko mais rendait le texte des écrans AVYOR illisible — inacceptable pour une section dont c'est justement le sujet. Publication par `bun run video:publish`, étape explicite et séparée du rendu.
 - **Correction colorimétrique** entre rushes : non faite. Les trois plans viennent du même décor et se raccordent correctement à l'œil, mais aucune uniformisation n'a été mesurée.
 - **Les cinq boucles consécutives** demandées n'ont pas été visionnées en continu ; la boucle a été vérifiée sur ses images de raccord (174 → 0).
 

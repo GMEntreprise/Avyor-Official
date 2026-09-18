@@ -13,6 +13,10 @@ import { Footer } from './components/Footer';
 import { Intro } from './components/Intro';
 import { Hero } from './components/Hero';
 import { Story } from './components/Story';
+// La section film est prête mais mise en sommeil : le composant, ses styles et
+// ses assets restent en place. Pour la réactiver, décommenter cet import et le
+// <Film /> plus bas dans Home.
+// import { Film } from './components/Film';
 import { Workflow } from './components/Workflow';
 import { Gallery } from './components/Gallery';
 import { Faq } from './components/Faq';
@@ -69,6 +73,7 @@ function Home() {
           </div>
         </div>
       </section>
+      {/* <Film /> */}
       <Story />
       <section className="audiences container" id="audiences">
         <div className="section-heading">

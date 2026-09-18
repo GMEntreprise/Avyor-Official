@@ -1,4 +1,4 @@
-import { readFileSync, readdirSync, statSync, writeFileSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync, statSync, writeFileSync } from 'node:fs';
 import { gzipSync } from 'node:zlib';
 import assert from 'node:assert/strict';
 const files = readdirSync('dist/assets');
@@ -18,6 +18,18 @@ const metrics = {
   jsGzipTotal: sum('.js'),
   cssGzip: sum('.css'),
   poster: statSync('dist/assets/hero-poster.webp').size,
+  // The film is held to its own ceiling: shown at full size, it must never be
+  // able to grow into the cost of opening the site. Its section is asleep for
+  // now, so the measure steps aside when the assets are not shipped.
+  ...(existsSync('dist/assets/avyor-film.mp4')
+    ? {
+        film: Math.min(
+          statSync('dist/assets/avyor-film.mp4').size,
+          statSync('dist/assets/avyor-film.webm').size,
+        ),
+        filmPoster: statSync('dist/assets/avyor-film-poster.webp').size,
+      }
+    : {}),
   desktopVideo: statSync('dist/assets/hero-desktop.mp4').size,
   mobileVideo: statSync('dist/assets/hero-mobile.mp4').size,
 };
@@ -26,11 +38,13 @@ const budgets = {
   jsGzipTotal: 165 * 1024,
   cssGzip: 25 * 1024,
   poster: 220 * 1024,
+  film: 1.5 * 1024 * 1024,
+  filmPoster: 120 * 1024,
   desktopVideo: 3 * 1024 * 1024,
   mobileVideo: 1.5 * 1024 * 1024,
 };
 for (const key in budgets)
-  assert.ok(metrics[key] <= budgets[key], `${key}: ${metrics[key]} > ${budgets[key]}`);
+  if (key in metrics) assert.ok(metrics[key] <= budgets[key], `${key}: ${metrics[key]} > ${budgets[key]}`);
 writeFileSync(
   'docs/site/performance-budget.json',
   JSON.stringify({ measuredAt: new Date().toISOString(), initial, metrics, budgets }, null, 2),

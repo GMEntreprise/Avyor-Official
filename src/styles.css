@@ -1467,6 +1467,77 @@ footer {
     transition: none;
   }
 }
+/* The film section. The poster sits underneath and the video fades over it
+   once it can play, so the block never changes height and never flashes. */
+.film-section {
+  padding-block: 110px 105px;
+  border-bottom: 1px solid var(--line);
+}
+.film-heading {
+  max-width: 760px;
+  margin-bottom: 46px;
+}
+.film-heading h2 {
+  margin-top: 26px;
+}
+.film-heading > p:not(.eyebrow) {
+  margin-top: 24px;
+  max-width: 62ch;
+}
+.film-frame {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: #070b15;
+  aspect-ratio: 16 / 9;
+  box-shadow: 0 30px 80px #04081580;
+}
+.film-frame > img,
+.film-frame > video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.film-frame > video {
+  opacity: 0;
+  transition: opacity var(--normal) var(--ease);
+}
+.film-frame > video.is-playing {
+  opacity: 1;
+}
+.film-control {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  z-index: 2;
+  background: #0b1020cc;
+  backdrop-filter: blur(10px);
+}
+.film-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px 28px;
+  margin-top: 20px;
+}
+@media (max-width: 900px) {
+  .film-section {
+    padding-block: 80px 76px;
+  }
+  .film-heading {
+    margin-bottom: 32px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .film-frame > video {
+    display: none;
+  }
+}
 /* Legal pages share the site's shell and typography, and almost none of its
    motion: the content is what matters here. */
 .legal-layout {

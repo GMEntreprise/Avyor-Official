@@ -54,7 +54,9 @@ if(mode==='poster' && format==='desktop') {
   await run('node',[cli,'render','src/index.ts',(mode==='preview'?'AvyorAnimatic':'AvyorHero')+capital,output,'--codec=h264','--crf='+(mode==='preview'?'20':'16'),'--pixel-format=yuv420p','--concurrency=2',...browserArgs]);
   if(mode==='production') {
     const web=resolve(site,'video/exports/web');mkdirSync(web,{recursive:true});
-    await run('node',[cli,'ffmpeg','-y','-v','error','-i',output,'-an','-c:v','libx264','-preset','slow','-crf','23','-pix_fmt','yuv420p','-movflags','+faststart',resolve(web,name+'.mp4')]);
-    await run('node',[cli,'ffmpeg','-y','-v','error','-i',output,'-an','-c:v','libvpx-vp9','-b:v','0','-crf','32',resolve(web,name+'.webm')]);
+    // The film is shown at full opacity, so the AVYOR screens on the phones
+    // have to stay readable: resolution is kept, the bitrate is what gives.
+    await run('node',[cli,'ffmpeg','-y','-v','error','-i',output,'-an','-c:v','libx264','-preset','slow','-crf','27','-pix_fmt','yuv420p','-movflags','+faststart',resolve(web,name+'.mp4')]);
+    await run('node',[cli,'ffmpeg','-y','-v','error','-i',output,'-an','-c:v','libvpx-vp9','-b:v','0','-crf','36',resolve(web,name+'.webm')]);
   }
 }
