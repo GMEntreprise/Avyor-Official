@@ -12,8 +12,8 @@ bun run test:all
 | --- | --- |
 | `typecheck` (TypeScript strict) | aucune erreur |
 | `lint` (ESLint) | aucune erreur |
-| `test` — unitaires | **140 tests, 0 échec** |
-| `build` | 60 pages statiques + 404, 0 article publié |
+| `test` — unitaires | **142 tests, 0 échec** |
+| `build` | 60 pages statiques + 5 pages News (4 articles publiés) + 404 |
 | `test:seo` — HTML construit | **114 tests, 0 échec** (dont 17 sur le site de test News) |
 | `test:e2e` — Playwright, desktop et mobile | **118 tests, 12 ignorés** (un seul passage nécessaire), 0 échec |
 
@@ -55,6 +55,8 @@ Un test qui passe du premier coup ne prouve rien tant qu’on ne l’a pas vu é
 6. **Contraste insuffisant** sur le bouton de recherche (blanc sur violet clair, 4,34:1) : remplacé par le violet foncé de la marque.
 7. **Titres identiques répétés** en fin de document juridique (`Contact` / `Contact`) — corrigé dans les cinq langues.
 8. **Un test ancien s’appuyait sur un comportement impossible en production** : `/marques/` est une redirection déclarée, elle ne montre jamais la page 404. La prévisualisation locale applique désormais les redirections de `vercel.json`, ce qui a révélé l’écart.
+9. **L’intro rejouait à chaque changement de langue, en développement.** Le garde de session n’était posé que sur `/` : le serveur de développement comparait l’adresse demandée à une seule chaîne, alors que chaque langue a son accueil (`/en/`, `/es/`…). La règle est maintenant unique (`isHomeRoute` dans `src/i18n/locales.ts`), partagée par le pré-rendu et le serveur de développement, et vérifiée langue par langue.
+10. **Le bac à sable de l’admin héritait des News du vrai build** : il copie `dist`, où les articles publiés vivent désormais. Une page dépubliée dans le bac à sable restait servie par le fichier hérité. Les pages News copiées sont effacées avant la reconstruction — sans quoi le test aurait fini par valider une dépublication qui ne retire rien.
 
 ## Contrôles visuels
 
@@ -62,7 +64,7 @@ Captures dans [`captures/`](captures/) : liste, article, article avec sommaire, 
 
 ## Limites réelles
 
-- **Rien n’est publié.** Les quatre articles sont des brouillons ; l’espace News n’apparaît donc pas encore sur le site en ligne. C’est voulu : la publication est une décision éditoriale.
+- **Les quatre articles sont publiés** (français), donc présents dans le build : pages, liste, recherche, flux, sitemap, navigation et « Dernières publications » de l’accueil. **Ils ne sont pas encore en ligne** : la mise en ligne, c’est le déploiement.
 - **Le site public n’a pas été déployé** dans le cadre de ce travail, et **aucune vérification Search Console n’a été faite** : elle demande l’accès au compte.
 - Les mesures de performance sont des mesures de laboratoire, sur un serveur local.
 - Les brouillons ne sont ni sauvegardés hors de ce poste, ni partagés entre machines — conséquence directe du dépôt public.
@@ -72,7 +74,7 @@ Captures dans [`captures/`](captures/) : liste, article, article avec sommaire, 
 
 ## Prochaines décisions utiles
 
-1. Relire les quatre articles, puis publier ceux qui conviennent (un clic, puis un commit).
+1. Pousser le dépôt : c’est ce qui met les quatre articles en ligne. Les relire une dernière fois avant, ou après sur l’URL de prévisualisation Vercel.
 2. Décider si les articles seront traduits : la mécanique `hreflang` est prête et n’attend que de vraies traductions.
 3. Brancher — ou non — les trois événements éditoriaux à un outil de mesure, en tranchant la question du consentement.
 4. Après la mise en service du domaine : vérification Search Console, envoi du sitemap, inspection d’une URL d’article.

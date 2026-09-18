@@ -7,6 +7,7 @@ import {
   introScript,
   LOCALES,
   DEFAULT_LOCALE,
+  isHomeRoute,
   localeMeta,
   routeFor,
   listPublished,
@@ -272,7 +273,7 @@ for (const locale of LOCALES) {
       route,
       document(
         locale,
-        `${preload}${head(locale, page)}${page.slug === '' ? `<script>${introScript}</script>` : ''}${payloadScript(newsPayload(locale, extra))}`,
+        `${preload}${head(locale, page)}${isHomeRoute(route) ? `<script>${introScript}</script>` : ''}${payloadScript(newsPayload(locale, extra))}`,
         render(locale, route, newsFor(locale, extra)),
       ),
     );

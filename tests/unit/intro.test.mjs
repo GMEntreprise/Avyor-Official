@@ -1,4 +1,5 @@
 import test from 'node:test';
+import { LOCALES, isHomeRoute, routeFor } from '../../src/i18n/locales.ts';
 import assert from 'node:assert/strict';
 import { readFileSync, statSync } from 'node:fs';
 import sharp from 'sharp';
@@ -79,4 +80,24 @@ test('elle ne se rejoue pas à chaque page de la session', () => {
   // Un script avant peinture doit rester minuscule et sur une seule ligne.
   assert.doesNotMatch(introScript, /\n/);
   assert.ok(introScript.length < 400);
+});
+
+test('l’accueil de chaque langue est reconnu comme l’entrée du site', () => {
+  // La garde de session n'est posée que sur l'accueil. Si une langue n'est pas
+  // reconnue, son intro se rejoue à chaque passage — c'est arrivé en
+  // développement, où le serveur ne connaissait que « / ».
+  for (const locale of LOCALES) {
+    assert.ok(isHomeRoute(routeFor(locale, '')), routeFor(locale, ''));
+    assert.ok(isHomeRoute(`${routeFor(locale, '')}index.html`), locale);
+    assert.ok(isHomeRoute(routeFor(locale, '').replace(/\/$/, '') || '/'), locale);
+    for (const slug of ['creators', 'faq', 'news'])
+      assert.ok(!isHomeRoute(routeFor(locale, slug)), routeFor(locale, slug));
+  }
+});
+
+test('le pré-rendu et le serveur de développement posent la garde depuis cette règle', () => {
+  // Deux chemins d'injection, une seule définition de « l'accueil » : c'est
+  // leur divergence qui avait rendu l'intro bavarde en développement.
+  for (const file of ['vite.config.ts', 'scripts/prerender.mjs'])
+    assert.match(readFileSync(file, 'utf8'), /isHomeRoute\(/, file);
 });

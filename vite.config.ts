@@ -5,6 +5,7 @@ import { randomBytes } from 'node:crypto';
 import { copyFileSync, createReadStream, existsSync, mkdirSync } from 'node:fs';
 import { join, basename } from 'node:path';
 import { introScript } from './src/components/intro-session';
+import { isHomeRoute } from './src/i18n/locales';
 import { createNewsApi } from './src/news/admin-api.server';
 import { defaultPaths, type NewsPaths } from './src/news/store.server';
 
@@ -22,9 +23,11 @@ function introDevPlugin(): Plugin {
     transformIndexHtml(html, ctx) {
       // `ctx.path` is the resolved file (always /index.html under the SPA
       // fallback); the requested route is on `originalUrl`.
-      const route = (ctx.originalUrl ?? ctx.path ?? '/').split('?')[0];
-      const isHome = route === '/' || route === '/index.html';
-      return html.replace('<!--head-->', isHome ? `<script>${introScript}</script>` : '');
+      const route = ctx.originalUrl ?? ctx.path ?? '/';
+      return html.replace(
+        '<!--head-->',
+        isHomeRoute(route) ? `<script>${introScript}</script>` : '',
+      );
     },
   };
 }

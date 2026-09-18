@@ -29,7 +29,14 @@ const deep: Record<Locale, DeepContent> = {
   ar: deepAr,
 };
 
-export { LOCALES, DEFAULT_LOCALE, localeMeta, routeFor, localePrefix } from './i18n/locales';
+export {
+  LOCALES,
+  DEFAULT_LOCALE,
+  localeMeta,
+  routeFor,
+  localePrefix,
+  isHomeRoute,
+} from './i18n/locales';
 export { config } from './config';
 export { introScript } from './components/intro-session';
 export const contentFor = (locale: Locale) => content[locale];

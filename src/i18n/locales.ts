@@ -68,3 +68,15 @@ export function swapLocale(path: string, target: Locale): string {
   if (target === DEFAULT_LOCALE) return rest;
   return `/${target}${rest === '/' ? '/' : rest}`;
 }
+
+/**
+ * Every language has its own entry page: `/`, `/en/`, `/es/`… Only those carry
+ * the intro, and its session guard.
+ *
+ * The build knows a page by its slug, but the dev server only sees a URL — and
+ * for a while it compared that URL to `/` alone, so every non-French home
+ * replayed the intro at each language change. One rule now serves both.
+ */
+export function isHomeRoute(route: string): boolean {
+  return splitPath(route.split('?')[0].replace(/index\.html$/, '')).slug === '';
+}
