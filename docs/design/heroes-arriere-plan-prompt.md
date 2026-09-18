@@ -35,6 +35,7 @@ Les noms sont imposés par `src/config/page-heroes.ts`, dans `src/assets/heroes/
 **Sur ordinateur**, largeur de l'image de gauche à droite :
 
 - **0 à 46 %** : le titre. Doit rester calme et sombre, mais **pas noir** : c'est là que l'image paraît vide aujourd'hui. Une profondeur, une lumière rasante, une texture suffisent.
+  **La source de lumière doit se trouver à droite du cadre.** Une fenêtre à gauche illumine précisément la zone du titre : il faut alors un voile épais pour rester lisible, et ce voile éteint toute l'image. C'est arrivé aux premiers essais, dont la bande du titre est montée à 94 et 112 pour une cible de 18 à 40.
 - **46 à 68 %** : **c'est ici que la scène doit se lire.** Le sujet vit dans cette bande.
 - **68 à 100 %** : recouvert par la maquette du téléphone. Ne rien y placer d'important.
 
@@ -84,9 +85,11 @@ people creating: hands folding fabric, steam rising from a cup, someone walking
 in morning light, a skincare gesture. Human and warm, never sharp enough to
 read a face. No screens, no interface, no buttons, no text.
 
-Left third of the frame: depth, not emptiness. The studio recedes into dark
-blue, one soft violet light grazes a textured wall, faint dust hangs in the
-air. Dark, but you can see into it — never crushed black.
+All the light comes from the right of the frame: the panel wall and one warm
+practical lamp. Toward the left the studio recedes into dark blue — a soft
+violet light grazes a textured wall, faint dust hangs in the air. Dark, but you
+can see into it: never crushed black, and never a window or a bright surface on
+that side.
 
 Deep navy ambience, violet and cyan spill from the panels, warm amber on skin.
 Anamorphic feel, shallow depth of field, gentle film grain. Calm, intimate,
@@ -118,56 +121,64 @@ Atmosphere, not a scene.
 - Le mur ne doit pas former une grille régulière, sinon on lit une interface.
 - Aucun visage net : ce sont des présences, pas des portraits.
 
-## 5. Marques — le jour, on choisit
+## 5. Marques — la table de sélection
 
 ### Intention
 
-Côté marque, on ne fabrique pas, **on choisit**. Une seule personne — la version actuelle en a deux, dont aucune n'est lisible — le geste de comparer deux vignettes, et de l'air autour. Le jour, pour trancher franchement avec la page Creators.
+Les premiers essais ont donné deux fois la même image, parce que les deux prompts employaient le même procédé : des panneaux verticaux flottants. Séparer les pages par l'heure ne suffit pas. **Marques doit changer de géométrie.**
+
+Chez Creators, tout est vertical, en l'air, debout : le mur de vignettes qui défile. Chez Marques, tout est **horizontal, posé, à hauteur de table** : des cadres étalés qu'une main déplace, compare, met de côté. On ne fabrique pas, on trie.
 
 ### Prompt — ordinateur, 16:9
 
 ```text
-Cinematic wide shot, 16:9, cool overcast daylight. A single brand marketer
-standing at a wide, uncluttered table slightly right of centre, seen at three
-quarters, one hand lifted mid-gesture as if setting one vertical frame beside
-another — comparing, choosing.
+Cinematic three-quarter shot, 16:9, slightly elevated camera looking across a
+long dark table. One woman stands at the right of the frame, seen at three
+quarters from behind her shoulder, leaning in over the table. Her face is
+partly visible, calm, attentive.
 
-Around them, a loose arrangement of vertical panels of light floating at
-slightly different depths and angles, like frames held up for comparison.
-Softly out of focus, each holding a blurred glimpse of someone at work. No
-screens, no interface, no buttons, no text, no charts.
+Laid flat across the table in front of her, a loose row of vertical frames the
+size of a hand — like backlit film prints — each glowing faintly from within
+with a blurred glimpse of someone at work. Her hand rests on one and slides it
+slightly apart from the others: she is choosing. The frames are objects of
+light on a surface, never floating in the air, never screens.
 
-Left third of the frame: an airy office receding. A tall window out of frame
-casts soft light across a textured concrete wall, and deep shadow gathers
-toward the left edge. Open, calm, generous empty space.
+The light comes from the right: one low warm lamp just out of frame, plus the
+soft glow rising from the frames onto her hands and jaw. Toward the left the
+room falls away into deep navy shadow — a dark wall, the edge of the table
+catching a thin violet rim, air and depth, but no window and no bright surface
+on that side.
 
-Desaturated navy-leaning daylight, cool blue and violet inside the panels, a
-single warm accent on skin. Shallow depth of field, soft grain, no flare.
-Considered, editorial, premium. Extremely slow motion: the panels settle, the
-hand barely moves.
+Deep navy and near-black, violet in the glow of the frames, one warm amber
+accent on skin. Dark wood or dark stone surface, not grey concrete. Shallow
+depth of field, soft film grain, no flare. Quiet, editorial, premium.
+Extremely slow motion: the frames pulse faintly, her hand barely moves.
 ```
+
+**Négatif :** `text, letters, words, logo, watermark, signage, user interface, app screen, laptop, monitor, tablet, buttons, icons, numbers, percentages, charts, graphs, floating panels, hanging panels, holograms, window on the left, bright left wall, grey concrete, two people, meeting, crowd, blown highlights, pure black, harsh contrast, fast motion, lens flare`
 
 ### Prompt — mobile, 9:16
 
+L'arrière-plan y est couvert à 90 % : on cherche une matière, pas une scène.
+
 ```text
-Vertical 9:16, cool overcast daylight. A close view of the same office. In the
-lower third, a hand entering frame beside a floating vertical panel of light.
-Above, more panels drifting at different depths, deeply out of focus, and a
-textured concrete wall receding into soft shadow.
+Vertical 9:16. Close view across a dark table. In the lower half, a hand
+resting on one small vertical frame of light among several laid flat, each
+glowing faintly with a blurred figure at work. Above, the room falls away into
+deep navy shadow.
 
-Desaturated navy-leaning daylight, cool blue and violet glow, one warm accent.
-No face, no screens, no interface, no text. Heavy bokeh, soft grain. Extremely
-slow drift. Atmosphere, not a scene.
+Light from the right: one low warm lamp out of frame. Deep navy, violet glow,
+one amber accent. Dark wood surface. No face, no screens, no interface, no
+text, no window. Heavy bokeh, soft grain. Extremely slow. Matter, not a scene.
 ```
-
-**Négatif, pour les deux :** `text, letters, words, logo, watermark, signage, user interface, app screen, laptop screen, buttons, icons, numbers, percentages, charts, graphs, two people, meeting, conversation, dark unlit face, night, clutter, paperwork, blown highlights, pure black, fast motion, lens flare`
 
 ### Points de vigilance
 
+- **Aucun panneau flottant** : c'est le procédé de Creators. Ici les cadres sont **posés**.
+- **Aucune fenêtre ni mur clair à gauche** : c'est ce qui a fait monter la bande du titre à 112 lors des premiers essais.
 - **Une personne, pas deux.**
-- Le geste doit se comprendre sans un mot : la main qui compare.
-- Garder du vide : c'est ce qui manque le plus aujourd'hui.
-- Jour ne veut pas dire clair partout : le bord gauche reste dans l'ombre, pour le titre.
+- Le geste doit se comprendre sans un mot : la main qui écarte un cadre des autres.
+- Éviter le béton gris : il a donné des images d'agence, hors palette. Navy, bois sombre, violet.
 
 ## 6. Réglages de génération
 
