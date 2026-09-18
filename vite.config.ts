@@ -6,27 +6,30 @@ import { copyFileSync, createReadStream, existsSync, mkdirSync } from 'node:fs';
 import { join, basename } from 'node:path';
 import { introScript } from './src/components/intro-session';
 import { isHomeRoute } from './src/i18n/locales';
+import { localizeShell } from './src/i18n/dev-shell';
 import { createNewsApi } from './src/news/admin-api.server';
 import { defaultPaths, type NewsPaths } from './src/news/store.server';
 
 /**
- * The intro itself is a React component, so it renders in dev like anything
- * else. Its once-per-session guard, however, is injected into <head> by
- * `scripts/prerender.mjs`, which never runs under `vite dev` — without this
- * the intro would replay on every page while developing. Same source, same
- * rule (the entrance of the site only), so dev behaves like production.
+ * What `scripts/prerender.mjs` does for each language and each page, applied to
+ * the single document the dev server serves — because the prerender never runs
+ * under `vite dev`, and anything only it provides is missing while developing.
+ *
+ * Two things: the language of the address (the page reads its language from
+ * `<html lang>`), and the intro's once-per-session guard on an entry page, from
+ * the same source and the same rule as the build.
  */
-function introDevPlugin(): Plugin {
+function shellDevPlugin(): Plugin {
   return {
-    name: 'avyor-intro-dev',
+    name: 'avyor-shell-dev',
     apply: 'serve',
     transformIndexHtml(html, ctx) {
       // `ctx.path` is the resolved file (always /index.html under the SPA
       // fallback); the requested route is on `originalUrl`.
       const route = ctx.originalUrl ?? ctx.path ?? '/';
-      return html.replace(
-        '<!--head-->',
-        isHomeRoute(route) ? `<script>${introScript}</script>` : '',
+      return localizeShell(
+        html.replace('<!--head-->', isHomeRoute(route) ? `<script>${introScript}</script>` : ''),
+        route,
       );
     },
   };
@@ -90,7 +93,7 @@ function newsAdminPlugin(): Plugin {
 }
 
 export default defineConfig(({ isSsrBuild }) => ({
-  plugins: [react(), tailwindcss(), introDevPlugin(), newsAdminPlugin()],
+  plugins: [react(), tailwindcss(), shellDevPlugin(), newsAdminPlugin()],
   build: {
     manifest: !isSsrBuild,
     // Never inline assets as base64: under 4 kB Vite would fold them into the

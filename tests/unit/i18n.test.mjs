@@ -1,4 +1,5 @@
 import test from 'node:test';
+import { localizeShell } from '../../src/i18n/dev-shell.ts';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import {
@@ -124,4 +125,21 @@ test('une écriture de droite à gauche a ses ajustements', () => {
   // Les dégradés de lisibilité sont orientés à la main : ils doivent être inversés.
   assert.match(css, /\[dir='rtl'\] \.hero:after/);
   assert.match(css, /linear-gradient\(\s*270deg/);
+});
+
+test('le gabarit de développement annonce la langue de l’adresse', () => {
+  // La page lit sa langue dans `<html lang>` (entry-client.tsx). En production
+  // chaque langue a son document ; en développement il n'y en a qu'un, figé en
+  // français — et tout le site s'affichait en français sous /en/, /es/…
+  const shell = readFileSync('index.html', 'utf8');
+  const attrs = (html) => html.match(/<html\b[^>]*>/)[0];
+  assert.equal(attrs(localizeShell(shell, '/')), '<html lang="fr" dir="ltr">');
+  assert.equal(attrs(localizeShell(shell, '/en/creators/')), '<html lang="en" dir="ltr">');
+  assert.equal(attrs(localizeShell(shell, '/es/')), '<html lang="es" dir="ltr">');
+  assert.equal(attrs(localizeShell(shell, '/he/faq/')), '<html lang="he" dir="rtl">');
+  assert.equal(attrs(localizeShell(shell, '/ar/index.html')), '<html lang="ar" dir="rtl">');
+  // Une adresse inconnue reste dans la langue de référence, comme la 404.
+  assert.equal(attrs(localizeShell(shell, '/zz/')), '<html lang="fr" dir="ltr">');
+  // Le reste du document n'est pas touché.
+  assert.equal(localizeShell(shell, '/en/').replace(/<html\b[^>]*>/, '<html lang="fr" dir="ltr">'), shell);
 });
