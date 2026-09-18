@@ -1,23 +1,23 @@
 {
-  "id": "portfolio001",
-  "locale": "fr",
-  "title": "Portfolio UGC : quoi montrer quand on débute",
-  "slug": "portfolio-ugc-quoi-montrer-quand-on-debute",
+  "id": "portfolioen1",
+  "locale": "en",
+  "title": "UGC portfolio: what to show when you are starting out",
+  "slug": "ugc-portfolio-what-to-show-when-starting-out",
   "slugHistory": [],
-  "excerpt": "Pas encore de client, et une première campagne en vue ? Un portfolio montre d’abord votre façon de travailler. Cinq pièces à préparer, présentées honnêtement, et ce qu’il vaut mieux retirer.",
+  "excerpt": "No client yet, and a first campaign in sight? A portfolio shows how you work before it shows who you worked for. Five pieces to prepare, presented honestly, and what to remove.",
   "type": "guide",
   "audience": "creators",
   "theme": "create",
   "author": {
     "kind": "organization",
-    "name": "Équipe éditoriale AVYOR"
+    "name": "AVYOR editorial team"
   },
   "featured": false,
   "cover": {
-    "src": "/news/media/portfolio-ugc-quoi-montrer-quand-on-debute-couverture-23d6f83b.webp",
+    "src": "/news/media/ugc-portfolio-what-to-show-when-starting-out-couverture-23d6f83b.webp",
     "width": 1600,
     "height": 900,
-    "alt": "Illustration AVYOR : un clap de tournage en volume, violet, sur fond bleu nuit."
+    "alt": "AVYOR illustration: a clapperboard in relief, violet, on a midnight blue background."
   },
   "body": {
     "type": "doc",
@@ -27,7 +27,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Vous voulez candidater à votre première campagne, mais vous n’avez encore travaillé pour aucune marque. Votre galerie contient des vidéos de vacances, deux tutoriels et un unboxing tourné il y a un an. Vous hésitez à vous présenter."
+            "text": "You want to apply to your first campaign, but you have not worked for any brand yet. Your gallery holds holiday videos, two tutorials and an unboxing filmed a year ago. You hesitate to put yourself forward."
           }
         ]
       },
@@ -36,7 +36,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Un portfolio ne montre pas d’abord pour qui vous avez travaillé : il montre comment vous travaillez.",
+            "text": "A portfolio does not show who you worked for first: it shows how you work.",
             "marks": [
               {
                 "type": "bold"
@@ -45,7 +45,7 @@
           },
           {
             "type": "text",
-            "text": " Trois à cinq vidéos courtes, réalisées pour l’occasion et présentées honnêtement comme des projets personnels, suffisent à le prouver. Voici lesquelles préparer, et comment les présenter."
+            "text": " Three to five short videos, made for the occasion and presented honestly as personal projects, are enough to prove it. Here is which ones to prepare, and how to present them."
           }
         ]
       },
@@ -53,12 +53,12 @@
         "type": "heading",
         "attrs": {
           "level": 2,
-          "id": "ce-qu-une-marque-cherche-dans-un-portfolio"
+          "id": "what-a-brand-looks-for-in-a-portfolio"
         },
         "content": [
           {
             "type": "text",
-            "text": "Ce qu’une marque cherche dans un portfolio"
+            "text": "What a brand looks for in a portfolio"
           }
         ]
       },
@@ -67,7 +67,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Une marque qui parcourt votre portfolio se pose quelques questions simples :"
+            "text": "A brand going through your portfolio asks a few simple questions:"
           }
         ]
       },
@@ -82,7 +82,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Sait-il faire comprendre un produit en quelques secondes ?"
+                    "text": "Can they make a product understood within seconds?"
                   }
                 ]
               }
@@ -96,7 +96,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Le son, la lumière et le cadrage sont-ils propres ?"
+                    "text": "Are the sound, the light and the framing clean?"
                   }
                 ]
               }
@@ -110,7 +110,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Le rythme va-t-il à l’essentiel ?"
+                    "text": "Does the pace go straight to the point?"
                   }
                 ]
               }
@@ -124,7 +124,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Sait-il suivre une consigne sans perdre sa personnalité ?"
+                    "text": "Can they follow an instruction without losing their own voice?"
                   }
                 ]
               }
@@ -137,7 +137,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Aucune de ces questions ne demande d’avoir déjà eu un client. Elles demandent des vidéos pensées pour y répondre."
+            "text": "None of those questions requires a past client. They require videos made to answer them."
           }
         ]
       },
@@ -145,12 +145,12 @@
         "type": "heading",
         "attrs": {
           "level": 2,
-          "id": "sans-client-des-projets-personnels-presentes-comme-tels"
+          "id": "without-a-client-personal-projects-presented-as-such"
         },
         "content": [
           {
             "type": "text",
-            "text": "Sans client : des projets personnels, présentés comme tels"
+            "text": "Without a client: personal projects, presented as such"
           }
         ]
       },
@@ -159,11 +159,11 @@
         "content": [
           {
             "type": "text",
-            "text": "Filmez des produits que vous possédez et utilisez vraiment, comme si une marque vous l’avait demandé. C’est la façon la plus directe de montrer votre travail. Une règle ne souffre aucune exception : "
+            "text": "Film products you own and genuinely use, as if a brand had asked you to. It is the most direct way to show your work. One rule allows no exception: "
           },
           {
             "type": "text",
-            "text": "présentez ces vidéos comme des projets personnels",
+            "text": "present these videos as personal projects",
             "marks": [
               {
                 "type": "bold"
@@ -172,7 +172,7 @@
           },
           {
             "type": "text",
-            "text": ". N’écrivez pas « pour la marque X » et ne laissez pas croire à une collaboration qui n’a pas eu lieu : une marque qui s’en aperçoit ne vous le pardonnera pas, et vous aurez perdu ce que le portfolio devait prouver."
+            "text": ". Do not write “for brand X” and do not suggest a collaboration that never happened: a brand that notices will not forgive it, and you will have lost the very thing the portfolio was meant to prove."
           }
         ]
       },
@@ -187,7 +187,7 @@
             "content": [
               {
                 "type": "text",
-                "text": "Exemple de légende honnête : ",
+                "text": "An honest caption, for example: ",
                 "marks": [
                   {
                     "type": "bold"
@@ -196,7 +196,7 @@
               },
               {
                 "type": "text",
-                "text": "« Projet personnel, non commandé. Objectif : montrer en 15 secondes que ce casque tient pendant la course. Contrainte que je me suis fixée : aucun texte à l’écran. »",
+                "text": "“Personal project, not commissioned. Goal: show in 15 seconds that these headphones stay in place while running. Constraint I set myself: no on-screen text.”",
                 "marks": [
                   {
                     "type": "italic"
@@ -211,12 +211,12 @@
         "type": "heading",
         "attrs": {
           "level": 2,
-          "id": "cinq-pieces-pour-un-premier-portfolio"
+          "id": "five-pieces-for-a-first-portfolio"
         },
         "content": [
           {
             "type": "text",
-            "text": "Cinq pièces pour un premier portfolio"
+            "text": "Five pieces for a first portfolio"
           }
         ]
       },
@@ -225,7 +225,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Chacune prouve une compétence différente. Vous n’êtes pas obligé de toutes les faire ; trois bien choisies valent mieux que cinq bâclées."
+            "text": "Each one proves a different skill. You do not have to make them all; three well chosen beat five rushed."
           }
         ]
       },
@@ -243,7 +243,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Pièce"
+                        "text": "Piece"
                       }
                     ]
                   }
@@ -257,7 +257,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Durée indicative"
+                        "text": "Indicative length"
                       }
                     ]
                   }
@@ -271,7 +271,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Ce qu’elle prouve"
+                        "text": "What it proves"
                       }
                     ]
                   }
@@ -290,7 +290,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Accroche produit"
+                        "text": "Product hook"
                       }
                     ]
                   }
@@ -304,7 +304,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "10 à 15 s"
+                        "text": "10 to 15 s"
                       }
                     ]
                   }
@@ -318,7 +318,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Vous captez l’attention et posez le problème dès les premières secondes."
+                        "text": "You catch attention and set out the problem in the first seconds."
                       }
                     ]
                   }
@@ -337,7 +337,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Démonstration ou tutoriel"
+                        "text": "Demo or tutorial"
                       }
                     ]
                   }
@@ -351,7 +351,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "30 à 45 s"
+                        "text": "30 to 45 s"
                       }
                     ]
                   }
@@ -365,7 +365,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Vous faites comprendre un usage, étape par étape."
+                        "text": "You make a use understood, step by step."
                       }
                     ]
                   }
@@ -384,7 +384,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Témoignage face caméra"
+                        "text": "Piece to camera"
                       }
                     ]
                   }
@@ -398,7 +398,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "20 à 30 s"
+                        "text": "20 to 30 s"
                       }
                     ]
                   }
@@ -412,7 +412,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Vous parlez naturellement d’un produit, sans lire un texte."
+                        "text": "You speak naturally about a product, without reading a script."
                       }
                     ]
                   }
@@ -445,7 +445,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "20 à 40 s"
+                        "text": "20 to 40 s"
                       }
                     ]
                   }
@@ -459,7 +459,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Vous mettez en valeur un objet et son emballage, sans temps mort."
+                        "text": "You show off an object and its packaging, with no dead time."
                       }
                     ]
                   }
@@ -478,7 +478,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Avant / après ou lifestyle"
+                        "text": "Before / after or lifestyle"
                       }
                     ]
                   }
@@ -492,7 +492,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "15 à 30 s"
+                        "text": "15 to 30 s"
                       }
                     ]
                   }
@@ -506,7 +506,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Vous montrez un résultat ou un produit dans une scène de vie crédible."
+                        "text": "You show a result, or a product in a believable everyday scene."
                       }
                     ]
                   }
@@ -521,7 +521,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Ces durées sont des repères pour une première série, pas des normes : lisez toujours les consignes de la campagne à laquelle vous répondez."
+            "text": "These lengths are landmarks for a first set, not standards: always read the instructions of the campaign you are answering."
           }
         ]
       },
@@ -529,12 +529,12 @@
         "type": "heading",
         "attrs": {
           "level": 2,
-          "id": "trois-lignes-de-contexte-sous-chaque-video"
+          "id": "three-lines-of-context-under-each-video"
         },
         "content": [
           {
             "type": "text",
-            "text": "Trois lignes de contexte sous chaque vidéo"
+            "text": "Three lines of context under each video"
           }
         ]
       },
@@ -543,7 +543,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Une vidéo sans contexte laisse la marque deviner ce que vous cherchiez. Ajoutez sous chacune :"
+            "text": "A video without context leaves the brand guessing what you were after. Add under each:"
           }
         ]
       },
@@ -558,7 +558,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "L’objectif",
+                    "text": "The goal",
                     "marks": [
                       {
                         "type": "bold"
@@ -567,7 +567,7 @@
                   },
                   {
                     "type": "text",
-                    "text": " : ce que la vidéo devait faire comprendre."
+                    "text": ": what the video had to make clear."
                   }
                 ]
               }
@@ -581,7 +581,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "La contrainte",
+                    "text": "The constraint",
                     "marks": [
                       {
                         "type": "bold"
@@ -590,7 +590,7 @@
                   },
                   {
                     "type": "text",
-                    "text": " : la consigne que vous vous êtes imposée."
+                    "text": ": the rule you set yourself."
                   }
                 ]
               }
@@ -604,7 +604,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Ce que vous changeriez",
+                    "text": "What you would change",
                     "marks": [
                       {
                         "type": "bold"
@@ -613,7 +613,7 @@
                   },
                   {
                     "type": "text",
-                    "text": " : une phrase qui montre votre regard sur votre propre travail."
+                    "text": ": one sentence showing how you look at your own work."
                   }
                 ]
               }
@@ -626,7 +626,7 @@
         "content": [
           {
             "type": "text",
-            "text": "La troisième ligne est souvent celle qu’une marque retient : elle montre que vous savez recevoir un retour."
+            "text": "The third line is often the one a brand remembers: it shows that you can take feedback."
           }
         ]
       },
@@ -634,12 +634,12 @@
         "type": "heading",
         "attrs": {
           "level": 2,
-          "id": "ce-qu-il-vaut-mieux-retirer"
+          "id": "what-is-better-taken-out"
         },
         "content": [
           {
             "type": "text",
-            "text": "Ce qu’il vaut mieux retirer"
+            "text": "What is better taken out"
           }
         ]
       },
@@ -654,7 +654,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Les vidéos dont le son n’est pas audible sans musique."
+                    "text": "Videos whose sound is not audible without music."
                   }
                 ]
               }
@@ -668,7 +668,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Les contenus sans produit ni message, même réussis : ils ne répondent à aucune question de la marque."
+                    "text": "Content with no product and no message, however good: it answers none of the brand’s questions."
                   }
                 ]
               }
@@ -682,7 +682,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Les doublons : deux unboxings similaires disent la même chose."
+                    "text": "Duplicates: two similar unboxings say the same thing."
                   }
                 ]
               }
@@ -696,7 +696,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Tout ce qui pourrait laisser croire à un partenariat qui n’existe pas."
+                    "text": "Anything that could suggest a partnership that does not exist."
                   }
                 ]
               }
@@ -708,12 +708,12 @@
         "type": "heading",
         "attrs": {
           "level": 2,
-          "id": "avant-de-candidater"
+          "id": "before-you-apply"
         },
         "content": [
           {
             "type": "text",
-            "text": "Avant de candidater"
+            "text": "Before you apply"
           }
         ]
       },
@@ -734,7 +734,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Trois à cinq vidéos, chacune prouvant une compétence différente."
+                        "text": "Three to five videos, each proving a different skill."
                       }
                     ]
                   }
@@ -748,7 +748,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Chaque projet personnel est présenté comme tel."
+                        "text": "Every personal project is presented as one."
                       }
                     ]
                   }
@@ -762,7 +762,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Chaque vidéo porte ses trois lignes de contexte."
+                        "text": "Every video carries its three lines of context."
                       }
                     ]
                   }
@@ -776,7 +776,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Le son est audible sans musique sur toutes les vidéos."
+                        "text": "The sound is audible without music on all of them."
                       }
                     ]
                   }
@@ -790,7 +790,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Les formats demandés par la campagne visée sont représentés."
+                        "text": "The formats requested by the campaign you target are represented."
                       }
                     ]
                   }
@@ -804,12 +804,12 @@
         "type": "heading",
         "attrs": {
           "level": 2,
-          "id": "dans-avyor"
+          "id": "inside-avyor"
         },
         "content": [
           {
             "type": "text",
-            "text": "Dans AVYOR"
+            "text": "Inside AVYOR"
           }
         ]
       },
@@ -818,7 +818,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Le portfolio d’un Creator sur AVYOR classe les réalisations par type de contenu, et les photos peuvent l’alimenter sans passer par le feed. Pour préparer vos premières pièces, les modèles de vidéo guidés couvrent sept familles de formats — accroche produit, témoignage, lifestyle, unboxing, tutoriel, avant/après, storytelling — chacune avec ses étapes, sa durée et son niveau de difficulté."
+            "text": "A Creator’s portfolio on AVYOR sorts work by content type, and photos can feed it without going through the feed. To prepare your first pieces, the guided video templates cover seven families of formats — product hook, testimonial, lifestyle, unboxing, tutorial, before/after, storytelling — each with its steps, its length and its difficulty level."
           }
         ]
       }
@@ -826,32 +826,32 @@
   },
   "sources": [],
   "cta": {
-    "label": "Découvrir le parcours Creator",
+    "label": "Discover the Creator journey",
     "slug": "creators"
   },
   "related": [
-    "premierecol1"
+    "premiereen01"
   ],
   "translations": {
-    "en": "portfolioen1",
+    "fr": "portfolio001",
     "es": "portfolioes1",
     "he": "portfoliohe1",
     "ar": "portfolioar1"
   },
   "seo": {
-    "title": "Portfolio UGC quand on débute : quoi montrer | AVYOR",
-    "description": "Sans client, un portfolio UGC montre votre façon de travailler : cinq vidéos à préparer, comment présenter des projets personnels honnêtement, et quoi retirer.",
+    "title": "UGC portfolio when starting out: what to show | AVYOR",
+    "description": "With no client, a UGC portfolio shows how you work: five videos to prepare, how to present personal projects honestly, and what to take out.",
     "image": {
-      "src": "/news/media/portfolio-ugc-quoi-montrer-quand-on-debute-partage-be2b0822.jpg",
+      "src": "/news/media/ugc-portfolio-what-to-show-when-starting-out-partage-be2b0822.jpg",
       "width": 1200,
       "height": 630,
-      "alt": "Illustration AVYOR : un clap de tournage en volume, violet, sur fond bleu nuit."
+      "alt": "AVYOR illustration: a clapperboard in relief, violet, on a midnight blue background."
     },
     "noindex": false
   },
-  "revision": 4,
-  "createdAt": "2026-09-18T16:59:44.174Z",
-  "updatedAt": "2026-09-18T18:47:04.918Z",
-  "publishedAt": "2026-09-18T17:43:51.179Z",
+  "revision": 3,
+  "createdAt": "2026-09-18T18:45:18.876Z",
+  "updatedAt": "2026-09-18T18:47:04.922Z",
+  "publishedAt": "2026-09-18T18:47:04.922Z",
   "status": "published"
 }

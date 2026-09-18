@@ -1,23 +1,23 @@
 {
-  "id": "briefugc0001",
-  "locale": "fr",
-  "title": "Brief UGC : quoi préciser pour éviter les allers-retours",
-  "slug": "brief-ugc-quoi-preciser",
+  "id": "briefugcen01",
+  "locale": "en",
+  "title": "UGC brief: what to specify to avoid going back and forth",
+  "slug": "ugc-brief-what-to-specify",
   "slugHistory": [],
-  "excerpt": "Une vidéo soignée qui passe à côté du sujet vient souvent d’un brief flou. Les cinq décisions à prendre avant le tournage, un exemple annoté et une liste à vérifier.",
+  "excerpt": "A polished video that misses the point usually comes from a vague brief. The five decisions to make before the shoot, an annotated example and a list to check.",
   "type": "guide",
   "audience": "brands",
   "theme": "prepare",
   "author": {
     "kind": "organization",
-    "name": "Équipe éditoriale AVYOR"
+    "name": "AVYOR editorial team"
   },
   "featured": true,
   "cover": {
-    "src": "/news/media/brief-ugc-quoi-preciser-couverture-986271fc.webp",
+    "src": "/news/media/ugc-brief-what-to-specify-couverture-986271fc.webp",
     "width": 1600,
     "height": 900,
-    "alt": "Illustration AVYOR : une fiche de points à cocher et une bulle de message, en volume, sur fond bleu nuit."
+    "alt": "AVYOR illustration: a checklist card and a message bubble, in relief, on a midnight blue background."
   },
   "body": {
     "type": "doc",
@@ -27,7 +27,7 @@
         "content": [
           {
             "type": "text",
-            "text": "La vidéo arrive. La lumière est belle, le produit bien filmé, le ton naturel. Et pourtant, elle ne sert pas votre campagne : elle parle de la mauvaise qualité du produit, elle dure une minute quand il en fallait quinze secondes, ou elle est tournée à l’horizontale. Vous demandez une nouvelle version, le Creator ne comprend pas ce qui n’allait pas, et une semaine passe."
+            "text": "The video arrives. The light is beautiful, the product well filmed, the tone natural. And yet it does not serve your campaign: it praises the wrong quality, it runs for a minute when fifteen seconds were needed, or it was shot horizontally. You ask for another version, the Creator does not see what was wrong, and a week goes by."
           }
         ]
       },
@@ -36,11 +36,11 @@
         "content": [
           {
             "type": "text",
-            "text": "Souvent, le problème n’est pas la vidéo mais le brief. "
+            "text": "Often the problem is not the video but the brief. "
           },
           {
             "type": "text",
-            "text": "Un brief évite les allers-retours quand il fixe cinq choses avant le tournage : à qui parle la vidéo, le message unique, les livrables exacts, ce qui est imposé ou libre, et la façon dont la vidéo sera validée et utilisée.",
+            "text": "A brief avoids going back and forth when it settles five things before the shoot: who the video speaks to, the single message, the exact deliverables, what is fixed and what is free, and how the video will be approved and used.",
             "marks": [
               {
                 "type": "bold"
@@ -49,7 +49,7 @@
           },
           {
             "type": "text",
-            "text": " Le reste de cet article détaille chacune de ces décisions, avec un exemple de brief annoté et une liste à vérifier avant l’envoi."
+            "text": " The rest of this article goes through each of those decisions, with an annotated brief and a list to check before you send it."
           }
         ]
       },
@@ -86,7 +86,7 @@
               },
               {
                 "type": "text",
-                "text": ") désigne ici un contenu créé par un Creator pour une marque, qui le publie en général sur ses propres canaux : publicité, fiche produit, réseaux de la marque. C’est différent d’une publication d’influence, diffusée par le Creator auprès de sa propre audience. Les deux se préparent avec un brief, mais pas avec les mêmes attentes."
+                "text": ") here means content made by a Creator for a brand, which the brand generally publishes on its own channels: ads, product pages, its own social accounts. That is different from an influence post, published by the Creator to their own audience. Both are prepared with a brief, but not with the same expectations."
               }
             ]
           }
@@ -96,12 +96,12 @@
         "type": "heading",
         "attrs": {
           "level": 2,
-          "id": "pourquoi-un-brief-flou-coute-des-allers-retours"
+          "id": "why-a-vague-brief-costs-you-rounds-of-revisions"
         },
         "content": [
           {
             "type": "text",
-            "text": "Pourquoi un brief flou coûte des allers-retours"
+            "text": "Why a vague brief costs you rounds of revisions"
           }
         ]
       },
@@ -110,7 +110,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Un Creator qui reçoit un brief incomplet ne s’arrête pas : il comble les vides avec ses propres hypothèses. Il choisit un angle, une durée, un format, un ton. Ces choix sont souvent bons en soi, mais ce ne sont pas les vôtres. Vous découvrez l’écart à la livraison, au moment où le corriger coûte le plus cher : un nouveau tournage plutôt qu’une phrase de plus dans le brief."
+            "text": "A Creator who receives an incomplete brief does not stop: they fill the gaps with their own assumptions. They pick an angle, a length, a format, a tone. Those choices are often good in themselves, but they are not yours. You discover the gap on delivery, exactly when fixing it costs the most: another shoot instead of one more sentence in the brief."
           }
         ]
       },
@@ -119,11 +119,11 @@
         "content": [
           {
             "type": "text",
-            "text": "Les consignes les plus courantes sont aussi les plus trompeuses. "
+            "text": "The most common instructions are also the most misleading. "
           },
           {
             "type": "text",
-            "text": "« Une vidéo authentique qui met en avant le produit »",
+            "text": "“An authentic video that showcases the product”",
             "marks": [
               {
                 "type": "italic"
@@ -132,7 +132,7 @@
           },
           {
             "type": "text",
-            "text": " ne dit ni pour qui, ni quel avantage, ni sous quelle forme. Chacun peut s’y reconnaître, et c’est précisément ce qui la rend inutile."
+            "text": " says neither who it is for, nor which benefit, nor in what form. Anyone can agree with it, and that is precisely what makes it useless."
           }
         ]
       },
@@ -140,12 +140,12 @@
         "type": "heading",
         "attrs": {
           "level": 2,
-          "id": "les-cinq-decisions-a-prendre-avant-d-ecrire"
+          "id": "the-five-decisions-to-make-before-writing"
         },
         "content": [
           {
             "type": "text",
-            "text": "Les cinq décisions à prendre avant d’écrire"
+            "text": "The five decisions to make before writing"
           }
         ]
       },
@@ -153,12 +153,12 @@
         "type": "heading",
         "attrs": {
           "level": 3,
-          "id": "section-1-a-qui-parle-la-video-et-de-quel-probleme"
+          "id": "section-1-who-the-video-speaks-to-and-about-which-problem"
         },
         "content": [
           {
             "type": "text",
-            "text": "1. À qui parle la vidéo, et de quel problème"
+            "text": "1. Who the video speaks to, and about which problem"
           }
         ]
       },
@@ -167,11 +167,11 @@
         "content": [
           {
             "type": "text",
-            "text": "Décrivez une personne précise et la situation dans laquelle votre produit l’aide. "
+            "text": "Describe one precise person and the situation where your product helps them. "
           },
           {
             "type": "text",
-            "text": "« Les femmes de 25 à 35 ans »",
+            "text": "“Women aged 25 to 35”",
             "marks": [
               {
                 "type": "italic"
@@ -180,11 +180,11 @@
           },
           {
             "type": "text",
-            "text": " est une cible marketing ; "
+            "text": " is a marketing target; "
           },
           {
             "type": "text",
-            "text": "« quelqu’un qui court le matin et dont la gourde fuit dans le sac »",
+            "text": "“someone who runs in the morning and whose bottle leaks inside their bag”",
             "marks": [
               {
                 "type": "italic"
@@ -193,7 +193,7 @@
           },
           {
             "type": "text",
-            "text": " est une scène que le Creator peut jouer. Plus la situation est concrète, plus la vidéo sera juste sans que vous ayez à l’écrire à sa place."
+            "text": " is a scene the Creator can play. The more concrete the situation, the closer the video will land without you having to write it for them."
           }
         ]
       },
@@ -201,12 +201,12 @@
         "type": "heading",
         "attrs": {
           "level": 3,
-          "id": "section-2-le-message-unique"
+          "id": "section-2-the-single-message"
         },
         "content": [
           {
             "type": "text",
-            "text": "2. Le message unique"
+            "text": "2. The single message"
           }
         ]
       },
@@ -215,11 +215,11 @@
         "content": [
           {
             "type": "text",
-            "text": "Une vidéo courte porte "
+            "text": "A short video carries "
           },
           {
             "type": "text",
-            "text": "un seul message",
+            "text": "one message",
             "marks": [
               {
                 "type": "bold"
@@ -228,7 +228,7 @@
           },
           {
             "type": "text",
-            "text": ". Si vous listez six avantages, le Creator en choisira un, ou les citera tous trop vite pour qu’un seul reste. Choisissez celui qui compte pour la personne décrite plus haut, et gardez les autres pour d’autres vidéos."
+            "text": ". If you list six benefits, the Creator will pick one, or race through all of them so that none is remembered. Choose the one that matters to the person described above, and keep the others for other videos."
           }
         ]
       },
@@ -236,12 +236,12 @@
         "type": "heading",
         "attrs": {
           "level": 3,
-          "id": "section-3-les-livrables-au-format-pres"
+          "id": "section-3-the-deliverables-down-to-the-format"
         },
         "content": [
           {
             "type": "text",
-            "text": "3. Les livrables, au format près"
+            "text": "3. The deliverables, down to the format"
           }
         ]
       },
@@ -250,7 +250,7 @@
         "content": [
           {
             "type": "text",
-            "text": "C’est une partie souvent oubliée, et pourtant la plus simple à écrire. Précisez :"
+            "text": "This part is often forgotten, and yet it is the easiest to write. Specify:"
           }
         ]
       },
@@ -265,7 +265,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "le nombre de vidéos, et leur durée cible ;"
+                    "text": "the number of videos, and their target length;"
                   }
                 ]
               }
@@ -279,7 +279,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "le format : vertical 9:16, carré, horizontal ;"
+                    "text": "the format: vertical 9:16, square, horizontal;"
                   }
                 ]
               }
@@ -293,7 +293,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "ce que vous attendez exactement : vidéo montée, fichiers bruts, ou les deux ;"
+                    "text": "what you expect exactly: edited video, raw files, or both;"
                   }
                 ]
               }
@@ -307,7 +307,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "les variantes utiles : plusieurs accroches pour les trois premières secondes, plusieurs fins ;"
+                    "text": "the useful variants: several hooks for the first three seconds, several endings;"
                   }
                 ]
               }
@@ -321,7 +321,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "les sous-titres, la musique, le texte à l’écran : qui s’en charge."
+                    "text": "subtitles, music, on-screen text: who takes care of them."
                   }
                 ]
               }
@@ -333,12 +333,12 @@
         "type": "heading",
         "attrs": {
           "level": 3,
-          "id": "section-4-ce-qui-est-impose-ce-qui-est-libre"
+          "id": "section-4-what-is-fixed-what-is-free"
         },
         "content": [
           {
             "type": "text",
-            "text": "4. Ce qui est imposé, ce qui est libre"
+            "text": "4. What is fixed, what is free"
           }
         ]
       },
@@ -347,11 +347,11 @@
         "content": [
           {
             "type": "text",
-            "text": "Séparez en deux listes. D’un côté, "
+            "text": "Split it into two lists. On one side, "
           },
           {
             "type": "text",
-            "text": "les points non négociables",
+            "text": "the non-negotiable points",
             "marks": [
               {
                 "type": "bold"
@@ -360,7 +360,7 @@
           },
           {
             "type": "text",
-            "text": " : une mention à faire figurer, une allégation interdite, un geste d’utilisation à montrer, une marque concurrente à ne pas filmer. De l’autre, ce que vous laissez au Creator : le décor, les mots, le rythme. Imposer un script mot à mot retire souvent ce pour quoi vous l’avez choisi ; ne dictez que les phrases qui doivent l’être."
+            "text": ": a disclosure to display, a claim that is not allowed, a gesture of use to show, a competing brand not to film. On the other, what you leave to the Creator: the setting, the words, the pace. Imposing a word-for-word script often removes the very thing you chose them for; dictate only the sentences that have to be dictated."
           }
         ]
       },
@@ -368,12 +368,12 @@
         "type": "heading",
         "attrs": {
           "level": 3,
-          "id": "section-5-la-validation-et-les-droits-d-usage"
+          "id": "section-5-approval-and-usage-rights"
         },
         "content": [
           {
             "type": "text",
-            "text": "5. La validation et les droits d’usage"
+            "text": "5. Approval and usage rights"
           }
         ]
       },
@@ -382,11 +382,11 @@
         "content": [
           {
             "type": "text",
-            "text": "Dites qui valide, dans quel délai, et combien de tours de retouches sont compris. Précisez aussi "
+            "text": "Say who approves, within what time, and how many rounds of revisions are included. Also state "
           },
           {
             "type": "text",
-            "text": "où, combien de temps et dans quels pays",
+            "text": "where, for how long and in which countries",
             "marks": [
               {
                 "type": "bold"
@@ -395,7 +395,7 @@
           },
           {
             "type": "text",
-            "text": " vous utiliserez la vidéo : sur vos réseaux, en publicité payante, sur votre site. Ces droits d’usage font partie de l’accord ; les laisser implicites, c’est reporter la discussion au moment où elle est la plus délicate."
+            "text": " you will use the video: on your social accounts, in paid advertising, on your website. Those usage rights are part of the agreement; leaving them implicit only postpones the conversation to the moment it is hardest to have."
           }
         ]
       },
@@ -404,11 +404,11 @@
         "content": [
           {
             "type": "text",
-            "text": "Si le Creator publie aussi la vidéo sur son propre compte, la collaboration relève de l’influence commerciale. En France, la loi impose alors d’indiquer clairement la mention « Publicité » ou « Collaboration commerciale » pendant toute la promotion ("
+            "text": "If the Creator also publishes the video on their own account, the collaboration falls under commercial influence. In France, the law then requires a clear “Publicité” or “Collaboration commerciale” disclosure throughout the promotion ("
           },
           {
             "type": "text",
-            "text": "loi n° 2023-451, article 5",
+            "text": "French law no. 2023-451, article 5",
             "marks": [
               {
                 "type": "link",
@@ -420,7 +420,7 @@
           },
           {
             "type": "text",
-            "text": "). Autant le prévoir dans le brief."
+            "text": "). If your campaign runs in France, plan for it in the brief; elsewhere, check the rules that apply to you."
           }
         ]
       },
@@ -428,12 +428,12 @@
         "type": "heading",
         "attrs": {
           "level": 2,
-          "id": "exemple-de-brief-annote"
+          "id": "an-annotated-brief"
         },
         "content": [
           {
             "type": "text",
-            "text": "Exemple de brief annoté"
+            "text": "An annotated brief"
           }
         ]
       },
@@ -448,7 +448,7 @@
             "content": [
               {
                 "type": "text",
-                "text": "Produit et marque fictifs, pour l’illustration. Chaque ligne montre une consigne floue, sa version utile et ce qu’elle change."
+                "text": "Fictional product and brand, for illustration. Each row shows a vague instruction, its useful version, and what it prevents."
               }
             ]
           }
@@ -468,7 +468,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Rubrique"
+                        "text": "Section"
                       }
                     ]
                   }
@@ -482,7 +482,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Brief flou"
+                        "text": "Vague brief"
                       }
                     ]
                   }
@@ -496,7 +496,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Brief utile"
+                        "text": "Useful brief"
                       }
                     ]
                   }
@@ -510,7 +510,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Ce que ça évite"
+                        "text": "What it prevents"
                       }
                     ]
                   }
@@ -529,7 +529,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Public"
+                        "text": "Audience"
                       }
                     ]
                   }
@@ -543,7 +543,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "« Les sportifs »"
+                        "text": "“Sporty people”"
                       }
                     ]
                   }
@@ -557,7 +557,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "« Quelqu’un qui court avant le travail et range sa gourde dans son sac. »"
+                        "text": "“Someone who runs before work and puts their bottle in their bag.”"
                       }
                     ]
                   }
@@ -571,7 +571,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Un angle « performance » quand le vrai sujet est le sac mouillé."
+                        "text": "A performance angle when the real subject is a wet bag."
                       }
                     ]
                   }
@@ -604,7 +604,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "« Montrer toutes les qualités de la gourde »"
+                        "text": "“Show everything the bottle does well”"
                       }
                     ]
                   }
@@ -618,7 +618,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "« Elle ne fuit pas, même renversée dans un sac. »"
+                        "text": "“It does not leak, even upside down in a bag.”"
                       }
                     ]
                   }
@@ -632,7 +632,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Six avantages cités en quinze secondes, aucun retenu."
+                        "text": "Six benefits in fifteen seconds, none remembered."
                       }
                     ]
                   }
@@ -651,7 +651,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Livrables"
+                        "text": "Deliverables"
                       }
                     ]
                   }
@@ -665,7 +665,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "« Une vidéo dynamique »"
+                        "text": "“A dynamic video”"
                       }
                     ]
                   }
@@ -679,7 +679,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "« Deux vidéos verticales 9:16 de 15 à 20 s, trois accroches différentes, fichiers bruts inclus. »"
+                        "text": "“Two vertical 9:16 videos of 15 to 20 s, three different hooks, raw files included.”"
                       }
                     ]
                   }
@@ -693,7 +693,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Une vidéo horizontale d’une minute, impossible à utiliser en publicité."
+                        "text": "A one-minute horizontal video that cannot be used as an ad."
                       }
                     ]
                   }
@@ -712,7 +712,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Imposé / libre"
+                        "text": "Fixed / free"
                       }
                     ]
                   }
@@ -726,7 +726,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Rien de précisé"
+                        "text": "Nothing specified"
                       }
                     ]
                   }
@@ -740,7 +740,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "« Montrer la gourde retournée au-dessus d’un sac ouvert. Libre : lieu, tenue, mots. Interdit : parler de garde au froid. »"
+                        "text": "“Show the bottle upside down above an open bag. Free: place, outfit, words. Not allowed: any claim about keeping drinks cold.”"
                       }
                     ]
                   }
@@ -754,7 +754,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Une allégation que la marque ne peut pas prouver."
+                        "text": "A claim the brand cannot prove."
                       }
                     ]
                   }
@@ -773,7 +773,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Validation et usage"
+                        "text": "Approval and use"
                       }
                     ]
                   }
@@ -787,7 +787,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Rien de précisé"
+                        "text": "Nothing specified"
                       }
                     ]
                   }
@@ -801,7 +801,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "« Retour sous 48 h, une série de retouches comprise. Usage : réseaux de la marque et publicité, 6 mois, France. »"
+                        "text": "“Feedback within 48 h, one round of revisions included. Use: brand accounts and ads, 6 months, France.”"
                       }
                     ]
                   }
@@ -815,7 +815,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Une négociation sur les droits après la livraison."
+                        "text": "A negotiation about rights after delivery."
                       }
                     ]
                   }
@@ -829,12 +829,12 @@
         "type": "heading",
         "attrs": {
           "level": 2,
-          "id": "ce-qu-il-vaut-mieux-ne-pas-ecrire"
+          "id": "what-is-better-left-out"
         },
         "content": [
           {
             "type": "text",
-            "text": "Ce qu’il vaut mieux ne pas écrire"
+            "text": "What is better left out"
           }
         ]
       },
@@ -849,7 +849,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Des adjectifs à la place de décisions",
+                    "text": "Adjectives instead of decisions",
                     "marks": [
                       {
                         "type": "bold"
@@ -858,7 +858,7 @@
                   },
                   {
                     "type": "text",
-                    "text": " : « authentique », « dynamique », « impactant » ne se filment pas."
+                    "text": ": “authentic”, “dynamic”, “impactful” cannot be filmed."
                   }
                 ]
               }
@@ -872,7 +872,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Une liste d’avantages sans hiérarchie",
+                    "text": "A list of benefits with no order",
                     "marks": [
                       {
                         "type": "bold"
@@ -881,7 +881,7 @@
                   },
                   {
                     "type": "text",
-                    "text": " : si tout est prioritaire, rien ne l’est."
+                    "text": ": if everything is a priority, nothing is."
                   }
                 ]
               }
@@ -895,7 +895,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Un script complet imposé",
+                    "text": "A full script imposed",
                     "marks": [
                       {
                         "type": "bold"
@@ -904,7 +904,7 @@
                   },
                   {
                     "type": "text",
-                    "text": " quand seules deux phrases sont réellement obligatoires."
+                    "text": " when only two sentences are genuinely mandatory."
                   }
                 ]
               }
@@ -918,7 +918,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Des références que le Creator ne peut pas voir",
+                    "text": "References the Creator cannot see",
                     "marks": [
                       {
                         "type": "bold"
@@ -927,7 +927,7 @@
                   },
                   {
                     "type": "text",
-                    "text": " : « comme notre dernière campagne » sans lien vers celle-ci."
+                    "text": ": “like our last campaign”, with no link to it."
                   }
                 ]
               }
@@ -939,12 +939,12 @@
         "type": "heading",
         "attrs": {
           "level": 2,
-          "id": "la-liste-a-verifier-avant-d-envoyer"
+          "id": "the-list-to-check-before-sending"
         },
         "content": [
           {
             "type": "text",
-            "text": "La liste à vérifier avant d’envoyer"
+            "text": "The list to check before sending"
           }
         ]
       },
@@ -965,7 +965,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "La personne visée et sa situation sont décrites en une ou deux phrases."
+                        "text": "The person you address and their situation are described in one or two sentences."
                       }
                     ]
                   }
@@ -979,7 +979,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Un seul message principal est écrit noir sur blanc."
+                        "text": "One main message is written down in plain words."
                       }
                     ]
                   }
@@ -993,7 +993,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Le nombre de vidéos, leur durée, leur format et les variantes sont précisés."
+                        "text": "The number of videos, their length, format and variants are specified."
                       }
                     ]
                   }
@@ -1007,7 +1007,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Les points imposés et interdits sont séparés de ce qui est libre."
+                        "text": "The mandatory and forbidden points are separated from what is free."
                       }
                     ]
                   }
@@ -1021,7 +1021,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Le délai de validation et le nombre de retouches comprises sont indiqués."
+                        "text": "The approval time and the number of revision rounds included are stated."
                       }
                     ]
                   }
@@ -1035,7 +1035,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Les droits d’usage — supports, durée, pays — sont écrits."
+                        "text": "Usage rights — channels, duration, countries — are written down."
                       }
                     ]
                   }
@@ -1049,7 +1049,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "La mention de transparence est prévue si le Creator publie sur son compte."
+                        "text": "A disclosure is planned if the Creator publishes on their own account."
                       }
                     ]
                   }
@@ -1063,12 +1063,12 @@
         "type": "heading",
         "attrs": {
           "level": 2,
-          "id": "dans-avyor"
+          "id": "inside-avyor"
         },
         "content": [
           {
             "type": "text",
-            "text": "Dans AVYOR"
+            "text": "Inside AVYOR"
           }
         ]
       },
@@ -1077,7 +1077,7 @@
         "content": [
           {
             "type": "text",
-            "text": "L’assistant de campagne d’AVYOR procède en quatre étapes : informations, budget, ciblage, puis révision du brief complet avant publication. Le ciblage couvre les plateformes, l’audience et l’échéance ; la révision est le bon moment pour repasser la liste ci-dessus. Les droits d’usage accordés sur un livrable sont ceux définis dans les conditions de la campagne acceptée : ce que vous y écrivez fait référence pour les deux parties."
+            "text": "The AVYOR campaign assistant goes through four steps: information, budget, targeting, then a review of the complete brief before publication. Targeting covers platforms, audience and deadline; the review is the right moment to go through the list above. The usage rights granted on a deliverable are the ones defined in the conditions of the accepted campaign: what you write there is the reference for both sides."
           }
         ]
       }
@@ -1092,32 +1092,32 @@
     }
   ],
   "cta": {
-    "label": "Découvrir le parcours marque",
+    "label": "Discover the brand journey",
     "slug": "brands"
   },
   "related": [
-    "choixcrea001"
+    "choixcreaen1"
   ],
   "translations": {
-    "en": "briefugcen01",
+    "fr": "briefugc0001",
     "es": "briefugces01",
     "he": "briefugche01",
     "ar": "briefugcar01"
   },
   "seo": {
-    "title": "Brief UGC : les points à préciser avant le tournage | AVYOR",
-    "description": "Public, message, livrables, contraintes, validation et droits d’usage : ce qu’un brief UGC doit fixer pour éviter les allers-retours, avec un exemple annoté.",
+    "title": "UGC brief: what to specify before the shoot | AVYOR",
+    "description": "Audience, message, deliverables, constraints, approval and usage rights: what a UGC brief has to settle to avoid going back and forth, with an annotated example.",
     "image": {
-      "src": "/news/media/brief-ugc-quoi-preciser-partage-03f50e88.jpg",
+      "src": "/news/media/ugc-brief-what-to-specify-partage-03f50e88.jpg",
       "width": 1200,
       "height": 630,
-      "alt": "Illustration AVYOR : une fiche de points à cocher et une bulle de message, en volume, sur fond bleu nuit."
+      "alt": "AVYOR illustration: a checklist card and a message bubble, in relief, on a midnight blue background."
     },
     "noindex": false
   },
-  "revision": 4,
-  "createdAt": "2026-09-18T16:59:44.036Z",
-  "updatedAt": "2026-09-18T18:47:04.895Z",
-  "publishedAt": "2026-09-18T17:43:51.168Z",
+  "revision": 3,
+  "createdAt": "2026-09-18T18:45:18.739Z",
+  "updatedAt": "2026-09-18T18:47:04.905Z",
+  "publishedAt": "2026-09-18T18:47:04.905Z",
   "status": "published"
 }

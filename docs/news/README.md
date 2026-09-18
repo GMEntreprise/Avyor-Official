@@ -27,6 +27,10 @@ Relancez `bun run dev` après l’avoir écrit ou changé. **Sans mot de passe c
 
 Le dépôt GitHub est public : un brouillon commité serait lisible par tous avant sa publication. Il reste donc sur votre poste, exclu par `.gitignore` **et** par `.vercelignore`. Corollaire : un brouillon n’est ni sauvegardé ailleurs, ni partagé entre deux machines.
 
+## Les articles livrés
+
+Les quatre articles de départ sont écrits dans `scripts/news-articles/<langue>.mjs` — un fichier par langue, la même liste de familles dans chacun. Les liens entre traductions ne s’écrivent pas à la main : ils sont déduits de la famille, dans les deux sens, par `scripts/news-seed-articles.mjs`. Ajouter une langue à un article, c’est ajouter son entrée dans le fichier de cette langue, puis relancer `bun run news:seed`.
+
 ## Écrire un article
 
 1. **Nouvel article** → choisissez la langue. L’article naît en brouillon.
@@ -72,7 +76,7 @@ git add -A content/news vercel.json && git commit -m "News : retrait de <titre>"
 ## Commandes
 
 ```bash
-bun run news:seed        # (re)crée les quatre brouillons de départ
+bun run news:seed        # (re)crée les brouillons de départ, dans les cinq langues
 bun run news:publish     # liste les brouillons ; <id> ou --all pour publier
 bun run news:redirects   # réaligne vercel.json sur les articles publiés
 bun run news:fixture     # construit le site de test (articles fictifs publiés)

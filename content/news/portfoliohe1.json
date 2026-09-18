@@ -1,23 +1,23 @@
 {
-  "id": "portfolio001",
-  "locale": "fr",
-  "title": "Portfolio UGC : quoi montrer quand on débute",
-  "slug": "portfolio-ugc-quoi-montrer-quand-on-debute",
+  "id": "portfoliohe1",
+  "locale": "he",
+  "title": "תיק עבודות UGC: מה להציג כשמתחילים",
+  "slug": "portfolio-ugc-ma-lehatsig-bahatchala",
   "slugHistory": [],
-  "excerpt": "Pas encore de client, et une première campagne en vue ? Un portfolio montre d’abord votre façon de travailler. Cinq pièces à préparer, présentées honnêtement, et ce qu’il vaut mieux retirer.",
+  "excerpt": "עוד בלי לקוח, וקמפיין ראשון באופק? תיק עבודות מראה קודם כול איך אתם עובדים. חמישה פריטים להכנה, מוצגים בכנות, ומה עדיף להוריד.",
   "type": "guide",
   "audience": "creators",
   "theme": "create",
   "author": {
     "kind": "organization",
-    "name": "Équipe éditoriale AVYOR"
+    "name": "צוות המערכת של AVYOR"
   },
   "featured": false,
   "cover": {
-    "src": "/news/media/portfolio-ugc-quoi-montrer-quand-on-debute-couverture-23d6f83b.webp",
+    "src": "/news/media/portfolio-ugc-ma-lehatsig-bahatchala-couverture-23d6f83b.webp",
     "width": 1600,
     "height": 900,
-    "alt": "Illustration AVYOR : un clap de tournage en volume, violet, sur fond bleu nuit."
+    "alt": "איור AVYOR: קלאפר צילום בתלת־ממד, סגול, על רקע כחול לילה."
   },
   "body": {
     "type": "doc",
@@ -27,7 +27,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Vous voulez candidater à votre première campagne, mais vous n’avez encore travaillé pour aucune marque. Votre galerie contient des vidéos de vacances, deux tutoriels et un unboxing tourné il y a un an. Vous hésitez à vous présenter."
+            "text": "אתם רוצים להגיש מועמדות לקמפיין הראשון שלכם, אבל עוד לא עבדתם עם אף מותג. בגלריה שלכם יש סרטוני חופשה, שני מדריכים ואנבוקסינג שצולם לפני שנה. אתם מהססים להציג את עצמכם."
           }
         ]
       },
@@ -36,7 +36,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Un portfolio ne montre pas d’abord pour qui vous avez travaillé : il montre comment vous travaillez.",
+            "text": "תיק עבודות אינו מראה קודם כול עבור מי עבדתם: הוא מראה איך אתם עובדים.",
             "marks": [
               {
                 "type": "bold"
@@ -45,7 +45,7 @@
           },
           {
             "type": "text",
-            "text": " Trois à cinq vidéos courtes, réalisées pour l’occasion et présentées honnêtement comme des projets personnels, suffisent à le prouver. Voici lesquelles préparer, et comment les présenter."
+            "text": " שלושה עד חמישה סרטונים קצרים, שנעשו לצורך העניין ומוצגים בכנות כפרויקטים אישיים, מספיקים כדי להוכיח זאת. הנה אילו להכין, ואיך להציג אותם."
           }
         ]
       },
@@ -53,12 +53,12 @@
         "type": "heading",
         "attrs": {
           "level": 2,
-          "id": "ce-qu-une-marque-cherche-dans-un-portfolio"
+          "id": "what-a-brand-looks-for"
         },
         "content": [
           {
             "type": "text",
-            "text": "Ce qu’une marque cherche dans un portfolio"
+            "text": "מה מותג מחפש בתיק עבודות"
           }
         ]
       },
@@ -67,7 +67,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Une marque qui parcourt votre portfolio se pose quelques questions simples :"
+            "text": "מותג שעובר על תיק העבודות שלכם שואל כמה שאלות פשוטות:"
           }
         ]
       },
@@ -82,7 +82,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Sait-il faire comprendre un produit en quelques secondes ?"
+                    "text": "האם הוא יודע להסביר מוצר בתוך שניות?"
                   }
                 ]
               }
@@ -96,7 +96,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Le son, la lumière et le cadrage sont-ils propres ?"
+                    "text": "האם הסאונד, התאורה והקדרור נקיים?"
                   }
                 ]
               }
@@ -110,7 +110,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Le rythme va-t-il à l’essentiel ?"
+                    "text": "האם הקצב הולך לעיקר?"
                   }
                 ]
               }
@@ -124,7 +124,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Sait-il suivre une consigne sans perdre sa personnalité ?"
+                    "text": "האם הוא יודע לעמוד בהנחיה בלי לאבד את האישיות שלו?"
                   }
                 ]
               }
@@ -137,7 +137,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Aucune de ces questions ne demande d’avoir déjà eu un client. Elles demandent des vidéos pensées pour y répondre."
+            "text": "אף אחת מהשאלות האלה אינה דורשת לקוח קודם. הן דורשות סרטונים שנועדו לענות עליהן."
           }
         ]
       },
@@ -145,12 +145,12 @@
         "type": "heading",
         "attrs": {
           "level": 2,
-          "id": "sans-client-des-projets-personnels-presentes-comme-tels"
+          "id": "personal-projects"
         },
         "content": [
           {
             "type": "text",
-            "text": "Sans client : des projets personnels, présentés comme tels"
+            "text": "בלי לקוח: פרויקטים אישיים, מוצגים ככאלה"
           }
         ]
       },
@@ -159,11 +159,11 @@
         "content": [
           {
             "type": "text",
-            "text": "Filmez des produits que vous possédez et utilisez vraiment, comme si une marque vous l’avait demandé. C’est la façon la plus directe de montrer votre travail. Une règle ne souffre aucune exception : "
+            "text": "צלמו מוצרים שיש לכם ושאתם באמת משתמשים בהם, כאילו מותג ביקש זאת. זו הדרך הישירה ביותר להראות את העבודה שלכם. כלל אחד אינו סובל חריגים: "
           },
           {
             "type": "text",
-            "text": "présentez ces vidéos comme des projets personnels",
+            "text": "הציגו את הסרטונים האלה כפרויקטים אישיים",
             "marks": [
               {
                 "type": "bold"
@@ -172,7 +172,7 @@
           },
           {
             "type": "text",
-            "text": ". N’écrivez pas « pour la marque X » et ne laissez pas croire à une collaboration qui n’a pas eu lieu : une marque qui s’en aperçoit ne vous le pardonnera pas, et vous aurez perdu ce que le portfolio devait prouver."
+            "text": ". אל תכתבו “עבור מותג X” ואל תרמזו על שיתוף פעולה שלא היה: מותג שיבחין בכך לא יסלח, ואיבדתם בדיוק את מה שתיק העבודות היה אמור להוכיח."
           }
         ]
       },
@@ -187,7 +187,7 @@
             "content": [
               {
                 "type": "text",
-                "text": "Exemple de légende honnête : ",
+                "text": "דוגמה לכיתוב כן: ",
                 "marks": [
                   {
                     "type": "bold"
@@ -196,7 +196,7 @@
               },
               {
                 "type": "text",
-                "text": "« Projet personnel, non commandé. Objectif : montrer en 15 secondes que ce casque tient pendant la course. Contrainte que je me suis fixée : aucun texte à l’écran. »",
+                "text": "“פרויקט אישי, לא בהזמנה. מטרה: להראות ב־15 שניות שהאוזניות האלה נשארות במקום בזמן ריצה. מגבלה שהצבתי לעצמי: בלי טקסט על המסך.”",
                 "marks": [
                   {
                     "type": "italic"
@@ -211,12 +211,12 @@
         "type": "heading",
         "attrs": {
           "level": 2,
-          "id": "cinq-pieces-pour-un-premier-portfolio"
+          "id": "five-pieces"
         },
         "content": [
           {
             "type": "text",
-            "text": "Cinq pièces pour un premier portfolio"
+            "text": "חמישה פריטים לתיק עבודות ראשון"
           }
         ]
       },
@@ -225,7 +225,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Chacune prouve une compétence différente. Vous n’êtes pas obligé de toutes les faire ; trois bien choisies valent mieux que cinq bâclées."
+            "text": "כל אחד מוכיח יכולת אחרת. אתם לא חייבים להכין את כולם; שלושה נבחרים היטב עדיפים על חמישה מרושלים."
           }
         ]
       },
@@ -243,7 +243,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Pièce"
+                        "text": "פריט"
                       }
                     ]
                   }
@@ -257,7 +257,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Durée indicative"
+                        "text": "אורך מומלץ"
                       }
                     ]
                   }
@@ -271,7 +271,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Ce qu’elle prouve"
+                        "text": "מה הוא מוכיח"
                       }
                     ]
                   }
@@ -290,7 +290,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Accroche produit"
+                        "text": "פתיח מוצר"
                       }
                     ]
                   }
@@ -304,7 +304,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "10 à 15 s"
+                        "text": "10 עד 15 שניות"
                       }
                     ]
                   }
@@ -318,7 +318,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Vous captez l’attention et posez le problème dès les premières secondes."
+                        "text": "אתם תופסים תשומת לב ומציגים את הבעיה כבר בשניות הראשונות."
                       }
                     ]
                   }
@@ -337,7 +337,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Démonstration ou tutoriel"
+                        "text": "הדגמה או מדריך"
                       }
                     ]
                   }
@@ -351,7 +351,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "30 à 45 s"
+                        "text": "30 עד 45 שניות"
                       }
                     ]
                   }
@@ -365,7 +365,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Vous faites comprendre un usage, étape par étape."
+                        "text": "אתם מסבירים שימוש, שלב אחר שלב."
                       }
                     ]
                   }
@@ -384,7 +384,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Témoignage face caméra"
+                        "text": "דיבור מול המצלמה"
                       }
                     ]
                   }
@@ -398,7 +398,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "20 à 30 s"
+                        "text": "20 עד 30 שניות"
                       }
                     ]
                   }
@@ -412,7 +412,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Vous parlez naturellement d’un produit, sans lire un texte."
+                        "text": "אתם מדברים בטבעיות על מוצר, בלי לקרוא טקסט."
                       }
                     ]
                   }
@@ -431,7 +431,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Unboxing"
+                        "text": "אנבוקסינג"
                       }
                     ]
                   }
@@ -445,7 +445,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "20 à 40 s"
+                        "text": "20 עד 40 שניות"
                       }
                     ]
                   }
@@ -459,7 +459,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Vous mettez en valeur un objet et son emballage, sans temps mort."
+                        "text": "אתם מבליטים חפץ ואת האריזה שלו, בלי זמן מת."
                       }
                     ]
                   }
@@ -478,7 +478,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Avant / après ou lifestyle"
+                        "text": "לפני / אחרי או לייפסטייל"
                       }
                     ]
                   }
@@ -492,7 +492,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "15 à 30 s"
+                        "text": "15 עד 30 שניות"
                       }
                     ]
                   }
@@ -506,7 +506,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Vous montrez un résultat ou un produit dans une scène de vie crédible."
+                        "text": "אתם מראים תוצאה, או מוצר בתוך סצנה יומיומית אמינה."
                       }
                     ]
                   }
@@ -521,7 +521,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Ces durées sont des repères pour une première série, pas des normes : lisez toujours les consignes de la campagne à laquelle vous répondez."
+            "text": "האורכים האלה הם נקודות ייחוס לסדרה ראשונה, לא תקנים: קראו תמיד את ההנחיות של הקמפיין שאליו אתם ניגשים."
           }
         ]
       },
@@ -529,12 +529,12 @@
         "type": "heading",
         "attrs": {
           "level": 2,
-          "id": "trois-lignes-de-contexte-sous-chaque-video"
+          "id": "three-lines-of-context"
         },
         "content": [
           {
             "type": "text",
-            "text": "Trois lignes de contexte sous chaque vidéo"
+            "text": "שלוש שורות הקשר מתחת לכל סרטון"
           }
         ]
       },
@@ -543,7 +543,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Une vidéo sans contexte laisse la marque deviner ce que vous cherchiez. Ajoutez sous chacune :"
+            "text": "סרטון בלי הקשר משאיר למותג לנחש מה חיפשתם. הוסיפו מתחת לכל אחד:"
           }
         ]
       },
@@ -558,7 +558,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "L’objectif",
+                    "text": "המטרה",
                     "marks": [
                       {
                         "type": "bold"
@@ -567,7 +567,7 @@
                   },
                   {
                     "type": "text",
-                    "text": " : ce que la vidéo devait faire comprendre."
+                    "text": ": מה הסרטון היה אמור להבהיר."
                   }
                 ]
               }
@@ -581,7 +581,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "La contrainte",
+                    "text": "המגבלה",
                     "marks": [
                       {
                         "type": "bold"
@@ -590,7 +590,7 @@
                   },
                   {
                     "type": "text",
-                    "text": " : la consigne que vous vous êtes imposée."
+                    "text": ": ההנחיה שהצבתם לעצמכם."
                   }
                 ]
               }
@@ -604,7 +604,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Ce que vous changeriez",
+                    "text": "מה הייתם משנים",
                     "marks": [
                       {
                         "type": "bold"
@@ -613,7 +613,7 @@
                   },
                   {
                     "type": "text",
-                    "text": " : une phrase qui montre votre regard sur votre propre travail."
+                    "text": ": משפט שמראה איך אתם מסתכלים על העבודה שלכם."
                   }
                 ]
               }
@@ -626,7 +626,7 @@
         "content": [
           {
             "type": "text",
-            "text": "La troisième ligne est souvent celle qu’une marque retient : elle montre que vous savez recevoir un retour."
+            "text": "השורה השלישית היא לרוב זו שמותג זוכר: היא מראה שאתם יודעים לקבל משוב."
           }
         ]
       },
@@ -634,12 +634,12 @@
         "type": "heading",
         "attrs": {
           "level": 2,
-          "id": "ce-qu-il-vaut-mieux-retirer"
+          "id": "what-to-remove"
         },
         "content": [
           {
             "type": "text",
-            "text": "Ce qu’il vaut mieux retirer"
+            "text": "מה עדיף להוריד"
           }
         ]
       },
@@ -654,7 +654,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Les vidéos dont le son n’est pas audible sans musique."
+                    "text": "סרטונים שהסאונד שלהם אינו נשמע בלי מוזיקה."
                   }
                 ]
               }
@@ -668,7 +668,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Les contenus sans produit ni message, même réussis : ils ne répondent à aucune question de la marque."
+                    "text": "תכנים בלי מוצר ובלי מסר, מוצלחים ככל שיהיו: הם אינם עונים על אף שאלה של המותג."
                   }
                 ]
               }
@@ -682,7 +682,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Les doublons : deux unboxings similaires disent la même chose."
+                    "text": "כפילויות: שני אנבוקסינגים דומים אומרים אותו דבר."
                   }
                 ]
               }
@@ -696,7 +696,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Tout ce qui pourrait laisser croire à un partenariat qui n’existe pas."
+                    "text": "כל מה שעלול לרמוז על שיתוף פעולה שאינו קיים."
                   }
                 ]
               }
@@ -708,12 +708,12 @@
         "type": "heading",
         "attrs": {
           "level": 2,
-          "id": "avant-de-candidater"
+          "id": "before-you-apply"
         },
         "content": [
           {
             "type": "text",
-            "text": "Avant de candidater"
+            "text": "לפני הגשת המועמדות"
           }
         ]
       },
@@ -734,7 +734,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Trois à cinq vidéos, chacune prouvant une compétence différente."
+                        "text": "שלושה עד חמישה סרטונים, כל אחד מוכיח יכולת אחרת."
                       }
                     ]
                   }
@@ -748,7 +748,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Chaque projet personnel est présenté comme tel."
+                        "text": "כל פרויקט אישי מוצג ככזה."
                       }
                     ]
                   }
@@ -762,7 +762,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Chaque vidéo porte ses trois lignes de contexte."
+                        "text": "לכל סרטון יש שלוש שורות הקשר."
                       }
                     ]
                   }
@@ -776,7 +776,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Le son est audible sans musique sur toutes les vidéos."
+                        "text": "הסאונד נשמע בלי מוזיקה בכל הסרטונים."
                       }
                     ]
                   }
@@ -790,7 +790,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Les formats demandés par la campagne visée sont représentés."
+                        "text": "הפורמטים שהקמפיין מבקש מיוצגים."
                       }
                     ]
                   }
@@ -804,12 +804,12 @@
         "type": "heading",
         "attrs": {
           "level": 2,
-          "id": "dans-avyor"
+          "id": "inside-avyor"
         },
         "content": [
           {
             "type": "text",
-            "text": "Dans AVYOR"
+            "text": "בתוך AVYOR"
           }
         ]
       },
@@ -818,7 +818,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Le portfolio d’un Creator sur AVYOR classe les réalisations par type de contenu, et les photos peuvent l’alimenter sans passer par le feed. Pour préparer vos premières pièces, les modèles de vidéo guidés couvrent sept familles de formats — accroche produit, témoignage, lifestyle, unboxing, tutoriel, avant/après, storytelling — chacune avec ses étapes, sa durée et son niveau de difficulté."
+            "text": "תיק העבודות של יוצר ב־AVYOR מסדר את העבודות לפי סוג תוכן, ותמונות יכולות להזין אותו בלי לעבור דרך הפיד. כדי להכין את הפריטים הראשונים, תבניות הווידאו המודרכות מכסות שבע משפחות של פורמטים — פתיח מוצר, עדות, לייפסטייל, אנבוקסינג, מדריך, לפני/אחרי, סטוריטלינג — כל אחת עם השלבים שלה, האורך ורמת הקושי."
           }
         ]
       }
@@ -826,32 +826,32 @@
   },
   "sources": [],
   "cta": {
-    "label": "Découvrir le parcours Creator",
+    "label": "לגלות את מסלול היוצר",
     "slug": "creators"
   },
   "related": [
-    "premierecol1"
+    "premierehe01"
   ],
   "translations": {
+    "fr": "portfolio001",
     "en": "portfolioen1",
     "es": "portfolioes1",
-    "he": "portfoliohe1",
     "ar": "portfolioar1"
   },
   "seo": {
-    "title": "Portfolio UGC quand on débute : quoi montrer | AVYOR",
-    "description": "Sans client, un portfolio UGC montre votre façon de travailler : cinq vidéos à préparer, comment présenter des projets personnels honnêtement, et quoi retirer.",
+    "title": "תיק עבודות UGC בהתחלה: מה להציג | AVYOR",
+    "description": "בלי לקוח, תיק עבודות UGC מראה איך אתם עובדים: חמישה סרטונים להכנה, איך להציג פרויקטים אישיים בכנות, ומה להוריד.",
     "image": {
-      "src": "/news/media/portfolio-ugc-quoi-montrer-quand-on-debute-partage-be2b0822.jpg",
+      "src": "/news/media/portfolio-ugc-ma-lehatsig-bahatchala-partage-be2b0822.jpg",
       "width": 1200,
       "height": 630,
-      "alt": "Illustration AVYOR : un clap de tournage en volume, violet, sur fond bleu nuit."
+      "alt": "איור AVYOR: קלאפר צילום בתלת־ממד, סגול, על רקע כחול לילה."
     },
     "noindex": false
   },
-  "revision": 4,
-  "createdAt": "2026-09-18T16:59:44.174Z",
-  "updatedAt": "2026-09-18T18:47:04.918Z",
-  "publishedAt": "2026-09-18T17:43:51.179Z",
+  "revision": 3,
+  "createdAt": "2026-09-18T18:45:19.429Z",
+  "updatedAt": "2026-09-18T18:47:04.927Z",
+  "publishedAt": "2026-09-18T18:47:04.927Z",
   "status": "published"
 }

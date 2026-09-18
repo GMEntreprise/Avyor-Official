@@ -1,23 +1,23 @@
 {
-  "id": "briefugc0001",
-  "locale": "fr",
-  "title": "Brief UGC : quoi préciser pour éviter les allers-retours",
-  "slug": "brief-ugc-quoi-preciser",
+  "id": "briefugche01",
+  "locale": "he",
+  "title": "בריף UGC: מה לפרט כדי לא לחזור שוב ושוב לתיקונים",
+  "slug": "brif-ugc-ma-lefaret",
   "slugHistory": [],
-  "excerpt": "Une vidéo soignée qui passe à côté du sujet vient souvent d’un brief flou. Les cinq décisions à prendre avant le tournage, un exemple annoté et une liste à vérifier.",
+  "excerpt": "סרטון מוקפד שמפספס את המטרה נובע לרוב מבריף מעורפל. חמש ההחלטות שיש לקבל לפני הצילום, דוגמה מוערת ורשימה לבדיקה.",
   "type": "guide",
   "audience": "brands",
   "theme": "prepare",
   "author": {
     "kind": "organization",
-    "name": "Équipe éditoriale AVYOR"
+    "name": "צוות המערכת של AVYOR"
   },
   "featured": true,
   "cover": {
-    "src": "/news/media/brief-ugc-quoi-preciser-couverture-986271fc.webp",
+    "src": "/news/media/brif-ugc-ma-lefaret-couverture-986271fc.webp",
     "width": 1600,
     "height": 900,
-    "alt": "Illustration AVYOR : une fiche de points à cocher et une bulle de message, en volume, sur fond bleu nuit."
+    "alt": "איור AVYOR: כרטיס משימות לסימון ובועת הודעה, בתלת־ממד, על רקע כחול לילה."
   },
   "body": {
     "type": "doc",
@@ -27,7 +27,7 @@
         "content": [
           {
             "type": "text",
-            "text": "La vidéo arrive. La lumière est belle, le produit bien filmé, le ton naturel. Et pourtant, elle ne sert pas votre campagne : elle parle de la mauvaise qualité du produit, elle dure une minute quand il en fallait quinze secondes, ou elle est tournée à l’horizontale. Vous demandez une nouvelle version, le Creator ne comprend pas ce qui n’allait pas, et une semaine passe."
+            "text": "הסרטון מגיע. התאורה יפה, המוצר מצולם היטב, הטון טבעי. ובכל זאת הוא לא משרת את הקמפיין שלכם: הוא מדבר על התכונה הלא נכונה, הוא נמשך דקה במקום חמש־עשרה שניות, או שהוא צולם לרוחב. אתם מבקשים גרסה נוספת, היוצר לא מבין מה לא היה בסדר, ושבוע חולף."
           }
         ]
       },
@@ -36,11 +36,11 @@
         "content": [
           {
             "type": "text",
-            "text": "Souvent, le problème n’est pas la vidéo mais le brief. "
+            "text": "לרוב הבעיה אינה הסרטון אלא הבריף. "
           },
           {
             "type": "text",
-            "text": "Un brief évite les allers-retours quand il fixe cinq choses avant le tournage : à qui parle la vidéo, le message unique, les livrables exacts, ce qui est imposé ou libre, et la façon dont la vidéo sera validée et utilisée.",
+            "text": "בריף מונע סבבי תיקונים כשהוא קובע חמישה דברים לפני הצילום: למי הסרטון מדבר, מהו המסר היחיד, מהם התוצרים המדויקים, מה מחייב ומה נתון לבחירה, וכיצד הסרטון יאושר וישמש.",
             "marks": [
               {
                 "type": "bold"
@@ -49,7 +49,7 @@
           },
           {
             "type": "text",
-            "text": " Le reste de cet article détaille chacune de ces décisions, avec un exemple de brief annoté et une liste à vérifier avant l’envoi."
+            "text": " המשך המאמר מפרט כל אחת מההחלטות האלה, עם דוגמה מוערת של בריף ורשימה לבדיקה לפני השליחה."
           }
         ]
       },
@@ -86,7 +86,7 @@
               },
               {
                 "type": "text",
-                "text": ") désigne ici un contenu créé par un Creator pour une marque, qui le publie en général sur ses propres canaux : publicité, fiche produit, réseaux de la marque. C’est différent d’une publication d’influence, diffusée par le Creator auprès de sa propre audience. Les deux se préparent avec un brief, mais pas avec les mêmes attentes."
+                "text": ") מציין כאן תוכן שיוצר מכין עבור מותג, והמותג מפרסם אותו בדרך כלל בערוצים שלו: פרסומת, עמוד מוצר, הרשתות של המותג. זה שונה מפוסט השפעה, שהיוצר מפיץ לקהל שלו. את שניהם מכינים עם בריף, אבל לא עם אותן ציפיות."
               }
             ]
           }
@@ -96,12 +96,12 @@
         "type": "heading",
         "attrs": {
           "level": 2,
-          "id": "pourquoi-un-brief-flou-coute-des-allers-retours"
+          "id": "why-a-vague-brief-costs"
         },
         "content": [
           {
             "type": "text",
-            "text": "Pourquoi un brief flou coûte des allers-retours"
+            "text": "למה בריף מעורפל עולה בסבבי תיקונים"
           }
         ]
       },
@@ -110,7 +110,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Un Creator qui reçoit un brief incomplet ne s’arrête pas : il comble les vides avec ses propres hypothèses. Il choisit un angle, une durée, un format, un ton. Ces choix sont souvent bons en soi, mais ce ne sont pas les vôtres. Vous découvrez l’écart à la livraison, au moment où le corriger coûte le plus cher : un nouveau tournage plutôt qu’une phrase de plus dans le brief."
+            "text": "יוצר שמקבל בריף חלקי לא עוצר: הוא ממלא את החללים בהנחות שלו. הוא בוחר זווית, אורך, פורמט, טון. הבחירות האלה טובות לרוב כשלעצמן, אבל הן אינן שלכם. את הפער אתם מגלים במסירה, בדיוק ברגע שבו התיקון יקר ביותר: צילום נוסף במקום משפט נוסף בבריף."
           }
         ]
       },
@@ -119,11 +119,11 @@
         "content": [
           {
             "type": "text",
-            "text": "Les consignes les plus courantes sont aussi les plus trompeuses. "
+            "text": "ההנחיות הנפוצות ביותר הן גם המטעות ביותר. "
           },
           {
             "type": "text",
-            "text": "« Une vidéo authentique qui met en avant le produit »",
+            "text": "“סרטון אותנטי שמבליט את המוצר”",
             "marks": [
               {
                 "type": "italic"
@@ -132,7 +132,7 @@
           },
           {
             "type": "text",
-            "text": " ne dit ni pour qui, ni quel avantage, ni sous quelle forme. Chacun peut s’y reconnaître, et c’est précisément ce qui la rend inutile."
+            "text": " אינו אומר למי, לא איזו תועלת, ולא באיזו צורה. כל אחד יכול להזדהות איתו, וזה בדיוק מה שהופך אותו לחסר תועלת."
           }
         ]
       },
@@ -140,12 +140,12 @@
         "type": "heading",
         "attrs": {
           "level": 2,
-          "id": "les-cinq-decisions-a-prendre-avant-d-ecrire"
+          "id": "the-five-decisions"
         },
         "content": [
           {
             "type": "text",
-            "text": "Les cinq décisions à prendre avant d’écrire"
+            "text": "חמש ההחלטות שיש לקבל לפני הכתיבה"
           }
         ]
       },
@@ -153,12 +153,12 @@
         "type": "heading",
         "attrs": {
           "level": 3,
-          "id": "section-1-a-qui-parle-la-video-et-de-quel-probleme"
+          "id": "decision-audience"
         },
         "content": [
           {
             "type": "text",
-            "text": "1. À qui parle la vidéo, et de quel problème"
+            "text": "1. למי הסרטון מדבר, ועל איזו בעיה"
           }
         ]
       },
@@ -167,11 +167,11 @@
         "content": [
           {
             "type": "text",
-            "text": "Décrivez une personne précise et la situation dans laquelle votre produit l’aide. "
+            "text": "תארו אדם מסוים ואת המצב שבו המוצר שלכם עוזר לו. "
           },
           {
             "type": "text",
-            "text": "« Les femmes de 25 à 35 ans »",
+            "text": "“נשים בנות 25 עד 35”",
             "marks": [
               {
                 "type": "italic"
@@ -180,11 +180,11 @@
           },
           {
             "type": "text",
-            "text": " est une cible marketing ; "
+            "text": " זה קהל יעד שיווקי; "
           },
           {
             "type": "text",
-            "text": "« quelqu’un qui court le matin et dont la gourde fuit dans le sac »",
+            "text": "“מי שרץ בבוקר והבקבוק שלו נוזל בתוך התיק”",
             "marks": [
               {
                 "type": "italic"
@@ -193,7 +193,7 @@
           },
           {
             "type": "text",
-            "text": " est une scène que le Creator peut jouer. Plus la situation est concrète, plus la vidéo sera juste sans que vous ayez à l’écrire à sa place."
+            "text": " זו סצנה שהיוצר יכול לשחק. ככל שהמצב מוחשי יותר, כך הסרטון יקלע למטרה בלי שתכתבו אותו במקומו."
           }
         ]
       },
@@ -201,12 +201,12 @@
         "type": "heading",
         "attrs": {
           "level": 3,
-          "id": "section-2-le-message-unique"
+          "id": "decision-message"
         },
         "content": [
           {
             "type": "text",
-            "text": "2. Le message unique"
+            "text": "2. המסר היחיד"
           }
         ]
       },
@@ -215,11 +215,11 @@
         "content": [
           {
             "type": "text",
-            "text": "Une vidéo courte porte "
+            "text": "סרטון קצר נושא "
           },
           {
             "type": "text",
-            "text": "un seul message",
+            "text": "מסר אחד",
             "marks": [
               {
                 "type": "bold"
@@ -228,7 +228,7 @@
           },
           {
             "type": "text",
-            "text": ". Si vous listez six avantages, le Creator en choisira un, ou les citera tous trop vite pour qu’un seul reste. Choisissez celui qui compte pour la personne décrite plus haut, et gardez les autres pour d’autres vidéos."
+            "text": ". אם תמנו שש תועליות, היוצר יבחר אחת, או ימנה את כולן מהר מדי מכדי שמישהי מהן תיזכר. בחרו את זו שחשובה לאדם שתיארתם, ושמרו את האחרות לסרטונים אחרים."
           }
         ]
       },
@@ -236,12 +236,12 @@
         "type": "heading",
         "attrs": {
           "level": 3,
-          "id": "section-3-les-livrables-au-format-pres"
+          "id": "decision-deliverables"
         },
         "content": [
           {
             "type": "text",
-            "text": "3. Les livrables, au format près"
+            "text": "3. התוצרים, עד לפורמט"
           }
         ]
       },
@@ -250,7 +250,7 @@
         "content": [
           {
             "type": "text",
-            "text": "C’est une partie souvent oubliée, et pourtant la plus simple à écrire. Précisez :"
+            "text": "זה החלק שנשכח לעיתים קרובות, ודווקא הפשוט ביותר לכתיבה. פרטו:"
           }
         ]
       },
@@ -265,7 +265,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "le nombre de vidéos, et leur durée cible ;"
+                    "text": "את מספר הסרטונים ואת אורכם הרצוי;"
                   }
                 ]
               }
@@ -279,7 +279,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "le format : vertical 9:16, carré, horizontal ;"
+                    "text": "את הפורמט: אנכי 9:16, ריבועי, אופקי;"
                   }
                 ]
               }
@@ -293,7 +293,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "ce que vous attendez exactement : vidéo montée, fichiers bruts, ou les deux ;"
+                    "text": "מה בדיוק אתם מצפים לקבל: סרטון ערוך, קבצי גלם, או שניהם;"
                   }
                 ]
               }
@@ -307,7 +307,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "les variantes utiles : plusieurs accroches pour les trois premières secondes, plusieurs fins ;"
+                    "text": "את הווריאציות המועילות: כמה פתיחים לשלוש השניות הראשונות, כמה סיומים;"
                   }
                 ]
               }
@@ -321,7 +321,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "les sous-titres, la musique, le texte à l’écran : qui s’en charge."
+                    "text": "כתוביות, מוזיקה, טקסט על המסך: מי אחראי עליהם."
                   }
                 ]
               }
@@ -333,12 +333,12 @@
         "type": "heading",
         "attrs": {
           "level": 3,
-          "id": "section-4-ce-qui-est-impose-ce-qui-est-libre"
+          "id": "decision-fixed-or-free"
         },
         "content": [
           {
             "type": "text",
-            "text": "4. Ce qui est imposé, ce qui est libre"
+            "text": "4. מה מחייב ומה נתון לבחירה"
           }
         ]
       },
@@ -347,11 +347,11 @@
         "content": [
           {
             "type": "text",
-            "text": "Séparez en deux listes. D’un côté, "
+            "text": "הפרידו לשתי רשימות. מצד אחד, "
           },
           {
             "type": "text",
-            "text": "les points non négociables",
+            "text": "הנקודות שאינן נתונות למשא ומתן",
             "marks": [
               {
                 "type": "bold"
@@ -360,7 +360,7 @@
           },
           {
             "type": "text",
-            "text": " : une mention à faire figurer, une allégation interdite, un geste d’utilisation à montrer, une marque concurrente à ne pas filmer. De l’autre, ce que vous laissez au Creator : le décor, les mots, le rythme. Imposer un script mot à mot retire souvent ce pour quoi vous l’avez choisi ; ne dictez que les phrases qui doivent l’être."
+            "text": ": גילוי שחייב להופיע, טענה אסורה, תנועת שימוש שיש להראות, מותג מתחרה שאין לצלם. מצד שני, מה שאתם משאירים ליוצר: התפאורה, המילים, הקצב. הכתבת תסריט מילה במילה מסירה לא פעם בדיוק את מה שבגללו בחרתם בו; הכתיבו רק את המשפטים שחייבים להיאמר כך."
           }
         ]
       },
@@ -368,12 +368,12 @@
         "type": "heading",
         "attrs": {
           "level": 3,
-          "id": "section-5-la-validation-et-les-droits-d-usage"
+          "id": "decision-approval-and-rights"
         },
         "content": [
           {
             "type": "text",
-            "text": "5. La validation et les droits d’usage"
+            "text": "5. האישור וזכויות השימוש"
           }
         ]
       },
@@ -382,11 +382,11 @@
         "content": [
           {
             "type": "text",
-            "text": "Dites qui valide, dans quel délai, et combien de tours de retouches sont compris. Précisez aussi "
+            "text": "אמרו מי מאשר, בתוך כמה זמן, וכמה סבבי תיקונים כלולים. פרטו גם "
           },
           {
             "type": "text",
-            "text": "où, combien de temps et dans quels pays",
+            "text": "היכן, לכמה זמן ובאילו מדינות",
             "marks": [
               {
                 "type": "bold"
@@ -395,7 +395,7 @@
           },
           {
             "type": "text",
-            "text": " vous utiliserez la vidéo : sur vos réseaux, en publicité payante, sur votre site. Ces droits d’usage font partie de l’accord ; les laisser implicites, c’est reporter la discussion au moment où elle est la plus délicate."
+            "text": " תשתמשו בסרטון: ברשתות שלכם, בפרסום ממומן, באתר שלכם. זכויות השימוש האלה הן חלק מההסכם; להשאיר אותן מובנות מאליהן פירושו לדחות את השיחה לרגע העדין ביותר."
           }
         ]
       },
@@ -404,11 +404,11 @@
         "content": [
           {
             "type": "text",
-            "text": "Si le Creator publie aussi la vidéo sur son propre compte, la collaboration relève de l’influence commerciale. En France, la loi impose alors d’indiquer clairement la mention « Publicité » ou « Collaboration commerciale » pendant toute la promotion ("
+            "text": "אם היוצר מפרסם את הסרטון גם בחשבון שלו, שיתוף הפעולה נכנס לתחום ההשפעה המסחרית. בצרפת החוק מחייב אז לציין בבירור “Publicité” או “Collaboration commerciale” לאורך כל הקידום ("
           },
           {
             "type": "text",
-            "text": "loi n° 2023-451, article 5",
+            "text": "החוק הצרפתי מס׳ 2023-451, סעיף 5",
             "marks": [
               {
                 "type": "link",
@@ -420,7 +420,7 @@
           },
           {
             "type": "text",
-            "text": "). Autant le prévoir dans le brief."
+            "text": "). אם הקמפיין שלכם רץ בצרפת, כדאי לקבוע זאת כבר בבריף; במקומות אחרים, בדקו את הכללים החלים עליכם."
           }
         ]
       },
@@ -428,12 +428,12 @@
         "type": "heading",
         "attrs": {
           "level": 2,
-          "id": "exemple-de-brief-annote"
+          "id": "annotated-brief-example"
         },
         "content": [
           {
             "type": "text",
-            "text": "Exemple de brief annoté"
+            "text": "דוגמה לבריף מוער"
           }
         ]
       },
@@ -448,7 +448,7 @@
             "content": [
               {
                 "type": "text",
-                "text": "Produit et marque fictifs, pour l’illustration. Chaque ligne montre une consigne floue, sa version utile et ce qu’elle change."
+                "text": "מוצר ומותג בדיוניים, להמחשה. כל שורה מציגה הנחיה מעורפלת, את הגרסה המועילה שלה, ומה היא מונעת."
               }
             ]
           }
@@ -468,7 +468,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Rubrique"
+                        "text": "סעיף"
                       }
                     ]
                   }
@@ -482,7 +482,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Brief flou"
+                        "text": "בריף מעורפל"
                       }
                     ]
                   }
@@ -496,7 +496,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Brief utile"
+                        "text": "בריף מועיל"
                       }
                     ]
                   }
@@ -510,7 +510,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Ce que ça évite"
+                        "text": "מה זה מונע"
                       }
                     ]
                   }
@@ -529,7 +529,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Public"
+                        "text": "קהל"
                       }
                     ]
                   }
@@ -543,7 +543,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "« Les sportifs »"
+                        "text": "“ספורטאים”"
                       }
                     ]
                   }
@@ -557,7 +557,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "« Quelqu’un qui court avant le travail et range sa gourde dans son sac. »"
+                        "text": "“מי שרץ לפני העבודה ומכניס את הבקבוק לתיק.”"
                       }
                     ]
                   }
@@ -571,7 +571,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Un angle « performance » quand le vrai sujet est le sac mouillé."
+                        "text": "זווית של ביצועים כשהנושא האמיתי הוא תיק רטוב."
                       }
                     ]
                   }
@@ -590,7 +590,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Message"
+                        "text": "מסר"
                       }
                     ]
                   }
@@ -604,7 +604,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "« Montrer toutes les qualités de la gourde »"
+                        "text": "“להראות את כל היתרונות של הבקבוק”"
                       }
                     ]
                   }
@@ -618,7 +618,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "« Elle ne fuit pas, même renversée dans un sac. »"
+                        "text": "“הוא לא נוזל, גם הפוך בתוך תיק.”"
                       }
                     ]
                   }
@@ -632,7 +632,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Six avantages cités en quinze secondes, aucun retenu."
+                        "text": "שש תועליות בחמש־עשרה שניות, ואף אחת לא נזכרת."
                       }
                     ]
                   }
@@ -651,7 +651,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Livrables"
+                        "text": "תוצרים"
                       }
                     ]
                   }
@@ -665,7 +665,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "« Une vidéo dynamique »"
+                        "text": "“סרטון דינמי”"
                       }
                     ]
                   }
@@ -679,7 +679,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "« Deux vidéos verticales 9:16 de 15 à 20 s, trois accroches différentes, fichiers bruts inclus. »"
+                        "text": "“שני סרטונים אנכיים 9:16 באורך 15 עד 20 שניות, שלושה פתיחים שונים, כולל קבצי גלם.”"
                       }
                     ]
                   }
@@ -693,7 +693,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Une vidéo horizontale d’une minute, impossible à utiliser en publicité."
+                        "text": "סרטון אופקי באורך דקה, שאי אפשר להשתמש בו כפרסומת."
                       }
                     ]
                   }
@@ -712,7 +712,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Imposé / libre"
+                        "text": "מחייב / חופשי"
                       }
                     ]
                   }
@@ -726,7 +726,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Rien de précisé"
+                        "text": "לא פורט דבר"
                       }
                     ]
                   }
@@ -740,7 +740,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "« Montrer la gourde retournée au-dessus d’un sac ouvert. Libre : lieu, tenue, mots. Interdit : parler de garde au froid. »"
+                        "text": "“להראות את הבקבוק הפוך מעל תיק פתוח. חופשי: מקום, לבוש, מילים. אסור: לדבר על שמירת קור.”"
                       }
                     ]
                   }
@@ -754,7 +754,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Une allégation que la marque ne peut pas prouver."
+                        "text": "טענה שהמותג אינו יכול להוכיח."
                       }
                     ]
                   }
@@ -773,7 +773,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Validation et usage"
+                        "text": "אישור ושימוש"
                       }
                     ]
                   }
@@ -787,7 +787,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Rien de précisé"
+                        "text": "לא פורט דבר"
                       }
                     ]
                   }
@@ -801,7 +801,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "« Retour sous 48 h, une série de retouches comprise. Usage : réseaux de la marque et publicité, 6 mois, France. »"
+                        "text": "“תשובה בתוך 48 שעות, סבב תיקונים אחד כלול. שימוש: רשתות המותג ופרסום, 6 חודשים, צרפת.”"
                       }
                     ]
                   }
@@ -815,7 +815,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Une négociation sur les droits après la livraison."
+                        "text": "משא ומתן על הזכויות אחרי המסירה."
                       }
                     ]
                   }
@@ -829,12 +829,12 @@
         "type": "heading",
         "attrs": {
           "level": 2,
-          "id": "ce-qu-il-vaut-mieux-ne-pas-ecrire"
+          "id": "what-not-to-write"
         },
         "content": [
           {
             "type": "text",
-            "text": "Ce qu’il vaut mieux ne pas écrire"
+            "text": "מה עדיף לא לכתוב"
           }
         ]
       },
@@ -849,7 +849,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Des adjectifs à la place de décisions",
+                    "text": "תארים במקום החלטות",
                     "marks": [
                       {
                         "type": "bold"
@@ -858,7 +858,7 @@
                   },
                   {
                     "type": "text",
-                    "text": " : « authentique », « dynamique », « impactant » ne se filment pas."
+                    "text": ": “אותנטי”, “דינמי”, “בעל אימפקט” — אי אפשר לצלם אותם."
                   }
                 ]
               }
@@ -872,7 +872,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Une liste d’avantages sans hiérarchie",
+                    "text": "רשימת יתרונות בלי סדר עדיפויות",
                     "marks": [
                       {
                         "type": "bold"
@@ -881,7 +881,7 @@
                   },
                   {
                     "type": "text",
-                    "text": " : si tout est prioritaire, rien ne l’est."
+                    "text": ": אם הכול דחוף, שום דבר אינו דחוף."
                   }
                 ]
               }
@@ -895,7 +895,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Un script complet imposé",
+                    "text": "תסריט מלא מוכתב",
                     "marks": [
                       {
                         "type": "bold"
@@ -904,7 +904,7 @@
                   },
                   {
                     "type": "text",
-                    "text": " quand seules deux phrases sont réellement obligatoires."
+                    "text": " כששני משפטים בלבד הם באמת מחייבים."
                   }
                 ]
               }
@@ -918,7 +918,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Des références que le Creator ne peut pas voir",
+                    "text": "הפניות שהיוצר אינו יכול לראות",
                     "marks": [
                       {
                         "type": "bold"
@@ -927,7 +927,7 @@
                   },
                   {
                     "type": "text",
-                    "text": " : « comme notre dernière campagne » sans lien vers celle-ci."
+                    "text": ": “כמו בקמפיין הקודם שלנו”, בלי קישור אליו."
                   }
                 ]
               }
@@ -939,12 +939,12 @@
         "type": "heading",
         "attrs": {
           "level": 2,
-          "id": "la-liste-a-verifier-avant-d-envoyer"
+          "id": "checklist-before-sending"
         },
         "content": [
           {
             "type": "text",
-            "text": "La liste à vérifier avant d’envoyer"
+            "text": "רשימת הבדיקה לפני השליחה"
           }
         ]
       },
@@ -965,7 +965,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "La personne visée et sa situation sont décrites en une ou deux phrases."
+                        "text": "האדם שאליו פונים והמצב שלו מתוארים במשפט או שניים."
                       }
                     ]
                   }
@@ -979,7 +979,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Un seul message principal est écrit noir sur blanc."
+                        "text": "מסר מרכזי אחד כתוב במפורש."
                       }
                     ]
                   }
@@ -993,7 +993,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Le nombre de vidéos, leur durée, leur format et les variantes sont précisés."
+                        "text": "מספר הסרטונים, אורכם, הפורמט והווריאציות מפורטים."
                       }
                     ]
                   }
@@ -1007,7 +1007,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Les points imposés et interdits sont séparés de ce qui est libre."
+                        "text": "הנקודות המחייבות והאסורות מופרדות ממה שנתון לבחירה."
                       }
                     ]
                   }
@@ -1021,7 +1021,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Le délai de validation et le nombre de retouches comprises sont indiqués."
+                        "text": "זמן האישור ומספר סבבי התיקונים הכלולים מצוינים."
                       }
                     ]
                   }
@@ -1035,7 +1035,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Les droits d’usage — supports, durée, pays — sont écrits."
+                        "text": "זכויות השימוש — ערוצים, משך, מדינות — כתובות."
                       }
                     ]
                   }
@@ -1049,7 +1049,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "La mention de transparence est prévue si le Creator publie sur son compte."
+                        "text": "גילוי השקיפות מתוכנן אם היוצר מפרסם בחשבון שלו."
                       }
                     ]
                   }
@@ -1063,12 +1063,12 @@
         "type": "heading",
         "attrs": {
           "level": 2,
-          "id": "dans-avyor"
+          "id": "inside-avyor"
         },
         "content": [
           {
             "type": "text",
-            "text": "Dans AVYOR"
+            "text": "בתוך AVYOR"
           }
         ]
       },
@@ -1077,7 +1077,7 @@
         "content": [
           {
             "type": "text",
-            "text": "L’assistant de campagne d’AVYOR procède en quatre étapes : informations, budget, ciblage, puis révision du brief complet avant publication. Le ciblage couvre les plateformes, l’audience et l’échéance ; la révision est le bon moment pour repasser la liste ci-dessus. Les droits d’usage accordés sur un livrable sont ceux définis dans les conditions de la campagne acceptée : ce que vous y écrivez fait référence pour les deux parties."
+            "text": "אשף הקמפיין של AVYOR עובר ארבעה שלבים: מידע, תקציב, פילוח, ולבסוף סקירה של הבריף המלא לפני הפרסום. הפילוח כולל את הפלטפורמות, הקהל והמועד; הסקירה היא הרגע הנכון לעבור על הרשימה שלמעלה. זכויות השימוש המוענקות על תוצר הן אלה שהוגדרו בתנאי הקמפיין שאושר: מה שכתוב שם הוא הקובע לשני הצדדים."
           }
         ]
       }
@@ -1092,32 +1092,32 @@
     }
   ],
   "cta": {
-    "label": "Découvrir le parcours marque",
+    "label": "לגלות את מסלול המותג",
     "slug": "brands"
   },
   "related": [
-    "choixcrea001"
+    "choixcreahe1"
   ],
   "translations": {
+    "fr": "briefugc0001",
     "en": "briefugcen01",
     "es": "briefugces01",
-    "he": "briefugche01",
     "ar": "briefugcar01"
   },
   "seo": {
-    "title": "Brief UGC : les points à préciser avant le tournage | AVYOR",
-    "description": "Public, message, livrables, contraintes, validation et droits d’usage : ce qu’un brief UGC doit fixer pour éviter les allers-retours, avec un exemple annoté.",
+    "title": "בריף UGC: מה לפרט לפני הצילום | AVYOR",
+    "description": "קהל, מסר, תוצרים, מגבלות, אישור וזכויות שימוש: מה שבריף UGC חייב לקבוע כדי למנוע סבבי תיקונים, עם דוגמה מוערת ורשימת בדיקה.",
     "image": {
-      "src": "/news/media/brief-ugc-quoi-preciser-partage-03f50e88.jpg",
+      "src": "/news/media/brif-ugc-ma-lefaret-partage-03f50e88.jpg",
       "width": 1200,
       "height": 630,
-      "alt": "Illustration AVYOR : une fiche de points à cocher et une bulle de message, en volume, sur fond bleu nuit."
+      "alt": "איור AVYOR: כרטיס משימות לסימון ובועת הודעה, בתלת־ממד, על רקע כחול לילה."
     },
     "noindex": false
   },
-  "revision": 4,
-  "createdAt": "2026-09-18T16:59:44.036Z",
-  "updatedAt": "2026-09-18T18:47:04.895Z",
-  "publishedAt": "2026-09-18T17:43:51.168Z",
+  "revision": 3,
+  "createdAt": "2026-09-18T18:45:19.293Z",
+  "updatedAt": "2026-09-18T18:47:04.907Z",
+  "publishedAt": "2026-09-18T18:47:04.907Z",
   "status": "published"
 }

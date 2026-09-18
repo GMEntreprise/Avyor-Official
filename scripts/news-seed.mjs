@@ -76,21 +76,41 @@ async function cover(slug, icon) {
 
 /* ------------------------------------------------------------------ écriture */
 
+const sameTranslations = (a = {}, b = {}) =>
+  JSON.stringify(Object.entries(a).sort()) === JSON.stringify(Object.entries(b).sort());
+
 let written = 0;
+let relinked = 0;
 for (const spec of articles) {
   const existing = readArticle(paths, spec.id);
-  if ((existing.draft || existing.published) && !force) {
-    console.log(`· ${spec.id} existe déjà, conservé (--force pour le réécrire).`);
+  if (existing.published) {
+    // Un article en ligne n'est jamais réécrit ici. Seuls ses liens de
+    // traduction peuvent changer : ils dépendent des autres langues, pas de
+    // son texte, et une traduction publiée sans lien retour n'est pas
+    // déclarée par le site. La modification reste un brouillon, à publier.
+    const current = existing.draft ?? existing.published;
+    if (sameTranslations(current.translations, spec.article.translations)) {
+      console.log(`· ${spec.id} est publié : conservé tel quel.`);
+      continue;
+    }
+    await saveDraft(
+      paths,
+      { ...current, translations: spec.article.translations },
+      current.revision,
+    );
+    relinked++;
+    console.log(`↔ ${spec.id} — liens de traduction mis à jour (à publier)`);
     continue;
   }
-  if (existing.published) {
-    console.log(`· ${spec.id} est publié : jamais réécrit par ce script.`);
+  if (existing.draft && !force) {
+    console.log(`· ${spec.id} existe déjà, conservé (--force pour le réécrire).`);
     continue;
   }
   const icon = `src/assets/icons/${spec.icon}.svg`;
   if (!existsSync(icon)) throw new Error(`Icône absente : ${icon}. Lancez bun run icons:build.`);
   const media = await cover(spec.slug, icon);
-  const draft = existing.draft ?? (await createDraft(paths, { id: spec.id, locale: 'fr' }));
+  const draft =
+    existing.draft ?? (await createDraft(paths, { id: spec.id, locale: spec.locale }));
   const now = new Date().toISOString();
   await saveDraft(
     paths,
@@ -98,9 +118,11 @@ for (const spec of articles) {
       ...draft,
       ...spec.article,
       id: spec.id,
-      locale: 'fr',
+      locale: spec.locale,
       slug: spec.slug,
-      body: assignHeadingIds(spec.article.body, { keep: false }),
+      // `keep: true` : les ancres écrites à la main (hébreu, arabe) sont
+      // conservées ; les autres titres reçoivent la leur, dérivée du texte.
+      body: assignHeadingIds(spec.article.body, { keep: true }),
       cover: { ...media.cover, alt: spec.coverAlt },
       seo: { ...spec.article.seo, image: { ...media.share, alt: spec.coverAlt }, noindex: false },
       updatedAt: now,
@@ -108,6 +130,8 @@ for (const spec of articles) {
     draft.revision,
   );
   written++;
-  console.log(`✓ ${spec.id} — ${spec.article.title}`);
+  console.log(`✓ ${spec.locale}  ${spec.id} — ${spec.article.title}`);
 }
-console.log(`${written} brouillon(s) écrit(s) dans ${paths.drafts}/. Rien n’est publié.`);
+console.log(
+  `${written} brouillon(s) écrit(s)${relinked ? `, ${relinked} relié(s) à ses traductions` : ''} dans ${paths.drafts}/. Rien n’est publié.`,
+);

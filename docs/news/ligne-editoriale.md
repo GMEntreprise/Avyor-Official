@@ -36,7 +36,9 @@ Trois événements, sans donnée personnelle : consultation d’article, utilisa
 
 # Les dix sujets évalués
 
-Angles de départ, validés contre le contenu du site et le fonctionnement réel de l’application. Ce ne sont pas des mots-clés dont le volume aurait été mesuré. Les quatre P1 sont **rédigés et publiés** (en français).
+Angles de départ, validés contre le contenu du site et le fonctionnement réel de l’application. Ce ne sont pas des mots-clés dont le volume aurait été mesuré. Les quatre P1 sont **rédigés et publiés dans les cinq langues** (fr, en, es, he, ar).
+
+Une traduction n’est pas une réécriture : même promesse, même plan, mêmes outils de décision. Ce qui change est ce qui doit changer — la langue, l’adresse, et le fait de **dire qu’une règle citée est française** quand le lecteur ne l’est pas. L’hébreu et l’arabe écrivent leurs ancres de section en latin : une ancre se dérive du texte du titre, ce qui ne donnerait rien de partageable dans ces alphabets.
 
 ## P1 — Brief UGC : quoi préciser pour éviter les allers-retours · publié
 

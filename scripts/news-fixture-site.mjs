@@ -18,9 +18,10 @@ import {
 } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { join } from 'node:path';
-import { articles } from './news-seed-articles.mjs';
+import { articles as livres } from './news-seed-articles.mjs';
 import { newsRedirects } from '../src/news/store.server.ts';
 import { assignHeadingIds } from '../src/news/model.ts';
+import { LOCALES, localePrefix } from '../src/i18n/locales.ts';
 
 const root = '.news-fixture';
 const site = join(root, 'site');
@@ -31,6 +32,23 @@ rmSync(root, { recursive: true, force: true });
 mkdirSync(join(root, 'news'), { recursive: true });
 mkdirSync(join(root, 'drafts'), { recursive: true });
 cpSync('dist', site, { recursive: true });
+// `dist` porte les News du vrai contenu, dans les cinq langues ; le site de
+// test n'a que les siennes. Sans ce nettoyage, une langue « sans article »
+// garderait la section héritée du build réel.
+for (const locale of LOCALES)
+  rmSync(join(site, localePrefix(locale).slice(1), 'news'), { recursive: true, force: true });
+// Les médias, eux, viennent de `public/` et sont servis tels quels : le
+// nettoyage ci-dessus les emporte, on les remet à leur place.
+cpSync('public/news/media', join(site, 'news', 'media'), { recursive: true });
+
+/*
+ * Le site de test n'emprunte qu'une langue au corpus réel : il éprouve la
+ * mécanique des pages publiées (sommaire, ancres, pagination, redirection,
+ * brouillon qui ne fuit pas), pas le contenu. Prendre les cinq langues
+ * donnerait une section News à chacune — et le test « une langue sans article
+ * n'a ni page ni lien » n'aurait plus de langue sans article.
+ */
+const articles = livres.filter((spec) => spec.locale === 'fr');
 
 // The covers of the four P1 articles, as the seed script wrote them.
 const mediaFiles = readdirSync('public/news/media');
@@ -41,7 +59,17 @@ const covers = articles.map((spec) => {
   return { src: `/news/media/${file}`, width: 1600, height: 900, alt: spec.coverAlt };
 });
 
-const day = (n) => new Date(Date.UTC(2026, 8, 1 + n, 8)).toISOString();
+
+const day = (n) => {
+  const date = new Date(Date.UTC(2026, 8, 1 + n, 8));
+  // Une date future n'est pas publiable : le build refuserait le corpus, et
+  // l'erreur ne dirait pas que le fautif est ce générateur de dates.
+  if (date.getTime() > Date.now())
+    throw new Error(
+      `Site de test : la date du ${date.toISOString().slice(0, 10)} est dans le futur. Reculez la base de day().`,
+    );
+  return date.toISOString();
+};
 const base = (id, overrides) => ({
   id,
   locale: 'fr',
@@ -234,7 +262,7 @@ writeFileSync(
       seo: { title: 'BROUILLON-SECRET-7F3A', description: 'BROUILLON-SECRET-7F3A', noindex: false },
       body: { type: 'doc', content: [p('BROUILLON-SECRET-7F3A')] },
       publishedAt: null,
-      updatedAt: day(20),
+      updatedAt: day(16),
     }),
   ),
 );

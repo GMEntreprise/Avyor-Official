@@ -1,23 +1,23 @@
 {
-  "id": "portfolio001",
-  "locale": "fr",
-  "title": "Portfolio UGC : quoi montrer quand on débute",
-  "slug": "portfolio-ugc-quoi-montrer-quand-on-debute",
+  "id": "portfolioar1",
+  "locale": "ar",
+  "title": "معرض أعمال UGC: ماذا تعرضون في البداية",
+  "slug": "portfolio-ugc-mada-tuzhir-fi-albidaya",
   "slugHistory": [],
-  "excerpt": "Pas encore de client, et une première campagne en vue ? Un portfolio montre d’abord votre façon de travailler. Cinq pièces à préparer, présentées honnêtement, et ce qu’il vaut mieux retirer.",
+  "excerpt": "لا زبون بعد، وحملة أولى في الأفق؟ معرض الأعمال يُظهر أولًا طريقتكم في العمل. خمسة أعمال تُحضَّر، تُعرض بصدق، وما يُستحسن حذفه.",
   "type": "guide",
   "audience": "creators",
   "theme": "create",
   "author": {
     "kind": "organization",
-    "name": "Équipe éditoriale AVYOR"
+    "name": "فريق التحرير في AVYOR"
   },
   "featured": false,
   "cover": {
-    "src": "/news/media/portfolio-ugc-quoi-montrer-quand-on-debute-couverture-23d6f83b.webp",
+    "src": "/news/media/portfolio-ugc-mada-tuzhir-fi-albidaya-couverture-23d6f83b.webp",
     "width": 1600,
     "height": 900,
-    "alt": "Illustration AVYOR : un clap de tournage en volume, violet, sur fond bleu nuit."
+    "alt": "رسم توضيحي من AVYOR: كلاكيت تصوير مجسّم، بنفسجي، على خلفية زرقاء داكنة."
   },
   "body": {
     "type": "doc",
@@ -27,7 +27,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Vous voulez candidater à votre première campagne, mais vous n’avez encore travaillé pour aucune marque. Votre galerie contient des vidéos de vacances, deux tutoriels et un unboxing tourné il y a un an. Vous hésitez à vous présenter."
+            "text": "تريدون التقدّم إلى حملتكم الأولى، لكنكم لم تعملوا بعدُ مع أي علامة تجارية. معرضكم يحوي فيديوهات عطلة، ودرسين، وفيديو فتح عبوة صُوِّر قبل سنة. وتترددون في تقديم أنفسكم."
           }
         ]
       },
@@ -36,7 +36,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Un portfolio ne montre pas d’abord pour qui vous avez travaillé : il montre comment vous travaillez.",
+            "text": "معرض الأعمال لا يُظهر أولًا لمن عملتم: يُظهر كيف تعملون.",
             "marks": [
               {
                 "type": "bold"
@@ -45,7 +45,7 @@
           },
           {
             "type": "text",
-            "text": " Trois à cinq vidéos courtes, réalisées pour l’occasion et présentées honnêtement comme des projets personnels, suffisent à le prouver. Voici lesquelles préparer, et comment les présenter."
+            "text": " ثلاثة إلى خمسة فيديوهات قصيرة، أُنجزت لهذا الغرض وعُرضت بصدق كمشاريع شخصية، تكفي لإثبات ذلك. وإليكم أيها تُحضَّر، وكيف تُعرض."
           }
         ]
       },
@@ -53,12 +53,12 @@
         "type": "heading",
         "attrs": {
           "level": 2,
-          "id": "ce-qu-une-marque-cherche-dans-un-portfolio"
+          "id": "what-a-brand-looks-for"
         },
         "content": [
           {
             "type": "text",
-            "text": "Ce qu’une marque cherche dans un portfolio"
+            "text": "ما تبحث عنه علامة تجارية في معرض أعمال"
           }
         ]
       },
@@ -67,7 +67,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Une marque qui parcourt votre portfolio se pose quelques questions simples :"
+            "text": "العلامة التي تتصفّح معرضكم تطرح أسئلة بسيطة:"
           }
         ]
       },
@@ -82,7 +82,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Sait-il faire comprendre un produit en quelques secondes ?"
+                    "text": "هل يُحسن تفهيم منتج في ثوانٍ؟"
                   }
                 ]
               }
@@ -96,7 +96,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Le son, la lumière et le cadrage sont-ils propres ?"
+                    "text": "هل الصوت والإضاءة والتأطير نظيفة؟"
                   }
                 ]
               }
@@ -110,7 +110,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Le rythme va-t-il à l’essentiel ?"
+                    "text": "هل الإيقاع يذهب إلى الجوهر؟"
                   }
                 ]
               }
@@ -124,7 +124,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Sait-il suivre une consigne sans perdre sa personnalité ?"
+                    "text": "هل يُحسن اتّباع تعليمة دون أن يفقد شخصيته؟"
                   }
                 ]
               }
@@ -137,7 +137,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Aucune de ces questions ne demande d’avoir déjà eu un client. Elles demandent des vidéos pensées pour y répondre."
+            "text": "لا يتطلب أي من هذه الأسئلة زبونًا سابقًا. تتطلب فيديوهات صُنعت للإجابة عنها."
           }
         ]
       },
@@ -145,12 +145,12 @@
         "type": "heading",
         "attrs": {
           "level": 2,
-          "id": "sans-client-des-projets-personnels-presentes-comme-tels"
+          "id": "personal-projects"
         },
         "content": [
           {
             "type": "text",
-            "text": "Sans client : des projets personnels, présentés comme tels"
+            "text": "بلا زبون: مشاريع شخصية، تُعرض على حقيقتها"
           }
         ]
       },
@@ -159,11 +159,11 @@
         "content": [
           {
             "type": "text",
-            "text": "Filmez des produits que vous possédez et utilisez vraiment, comme si une marque vous l’avait demandé. C’est la façon la plus directe de montrer votre travail. Une règle ne souffre aucune exception : "
+            "text": "صوّروا منتجات تملكونها وتستعملونها فعلًا، كما لو أن علامة طلبت ذلك. إنها الطريقة الأكثر مباشرة لعرض عملكم. وقاعدة واحدة لا استثناء فيها: "
           },
           {
             "type": "text",
-            "text": "présentez ces vidéos comme des projets personnels",
+            "text": "اعرضوا هذه الفيديوهات كمشاريع شخصية",
             "marks": [
               {
                 "type": "bold"
@@ -172,7 +172,7 @@
           },
           {
             "type": "text",
-            "text": ". N’écrivez pas « pour la marque X » et ne laissez pas croire à une collaboration qui n’a pas eu lieu : une marque qui s’en aperçoit ne vous le pardonnera pas, et vous aurez perdu ce que le portfolio devait prouver."
+            "text": ". لا تكتبوا «لصالح العلامة س» ولا توحوا بتعاون لم يحدث: العلامة التي تكتشف ذلك لن تسامح، وتكونون قد خسرتم ما كان معرض الأعمال ليثبته."
           }
         ]
       },
@@ -187,7 +187,7 @@
             "content": [
               {
                 "type": "text",
-                "text": "Exemple de légende honnête : ",
+                "text": "مثال على تعليق صادق: ",
                 "marks": [
                   {
                     "type": "bold"
@@ -196,7 +196,7 @@
               },
               {
                 "type": "text",
-                "text": "« Projet personnel, non commandé. Objectif : montrer en 15 secondes que ce casque tient pendant la course. Contrainte que je me suis fixée : aucun texte à l’écran. »",
+                "text": "«مشروع شخصي، غير مطلوب من أحد. الهدف: إظهار في 15 ثانية أن هذه السماعات تثبت أثناء الجري. القيد الذي فرضته على نفسي: بلا نص على الشاشة.»",
                 "marks": [
                   {
                     "type": "italic"
@@ -211,12 +211,12 @@
         "type": "heading",
         "attrs": {
           "level": 2,
-          "id": "cinq-pieces-pour-un-premier-portfolio"
+          "id": "five-pieces"
         },
         "content": [
           {
             "type": "text",
-            "text": "Cinq pièces pour un premier portfolio"
+            "text": "خمسة أعمال لمعرض أول"
           }
         ]
       },
@@ -225,7 +225,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Chacune prouve une compétence différente. Vous n’êtes pas obligé de toutes les faire ; trois bien choisies valent mieux que cinq bâclées."
+            "text": "كل عمل يثبت مهارة مختلفة. لستم ملزَمين بإنجازها كلها؛ ثلاثة مختارة بعناية خير من خمسة مستعجلة."
           }
         ]
       },
@@ -243,7 +243,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Pièce"
+                        "text": "العمل"
                       }
                     ]
                   }
@@ -257,7 +257,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Durée indicative"
+                        "text": "مدة إرشادية"
                       }
                     ]
                   }
@@ -271,7 +271,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Ce qu’elle prouve"
+                        "text": "ما يثبته"
                       }
                     ]
                   }
@@ -290,7 +290,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Accroche produit"
+                        "text": "مقدمة منتج"
                       }
                     ]
                   }
@@ -304,7 +304,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "10 à 15 s"
+                        "text": "من 10 إلى 15 ثانية"
                       }
                     ]
                   }
@@ -318,7 +318,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Vous captez l’attention et posez le problème dès les premières secondes."
+                        "text": "تجذبون الانتباه وتطرحون المشكلة من الثواني الأولى."
                       }
                     ]
                   }
@@ -337,7 +337,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Démonstration ou tutoriel"
+                        "text": "عرض أو درس"
                       }
                     ]
                   }
@@ -351,7 +351,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "30 à 45 s"
+                        "text": "من 30 إلى 45 ثانية"
                       }
                     ]
                   }
@@ -365,7 +365,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Vous faites comprendre un usage, étape par étape."
+                        "text": "تجعلون استعمالًا مفهومًا، خطوة خطوة."
                       }
                     ]
                   }
@@ -384,7 +384,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Témoignage face caméra"
+                        "text": "حديث أمام الكاميرا"
                       }
                     ]
                   }
@@ -398,7 +398,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "20 à 30 s"
+                        "text": "من 20 إلى 30 ثانية"
                       }
                     ]
                   }
@@ -412,7 +412,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Vous parlez naturellement d’un produit, sans lire un texte."
+                        "text": "تتحدثون بعفوية عن منتج، دون قراءة نص."
                       }
                     ]
                   }
@@ -431,7 +431,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Unboxing"
+                        "text": "فتح عبوة"
                       }
                     ]
                   }
@@ -445,7 +445,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "20 à 40 s"
+                        "text": "من 20 إلى 40 ثانية"
                       }
                     ]
                   }
@@ -459,7 +459,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Vous mettez en valeur un objet et son emballage, sans temps mort."
+                        "text": "تُبرزون غرضًا وتغليفه، بلا وقت ميت."
                       }
                     ]
                   }
@@ -478,7 +478,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Avant / après ou lifestyle"
+                        "text": "قبل / بعد أو لايف ستايل"
                       }
                     ]
                   }
@@ -492,7 +492,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "15 à 30 s"
+                        "text": "من 15 إلى 30 ثانية"
                       }
                     ]
                   }
@@ -506,7 +506,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Vous montrez un résultat ou un produit dans une scène de vie crédible."
+                        "text": "تعرضون نتيجة، أو منتجًا في مشهد يومي مقنع."
                       }
                     ]
                   }
@@ -521,7 +521,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Ces durées sont des repères pour une première série, pas des normes : lisez toujours les consignes de la campagne à laquelle vous répondez."
+            "text": "هذه المدد معالم لسلسلة أولى لا معايير: اقرأوا دائمًا تعليمات الحملة التي تتقدّمون إليها."
           }
         ]
       },
@@ -529,12 +529,12 @@
         "type": "heading",
         "attrs": {
           "level": 2,
-          "id": "trois-lignes-de-contexte-sous-chaque-video"
+          "id": "three-lines-of-context"
         },
         "content": [
           {
             "type": "text",
-            "text": "Trois lignes de contexte sous chaque vidéo"
+            "text": "ثلاثة أسطر من السياق تحت كل فيديو"
           }
         ]
       },
@@ -543,7 +543,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Une vidéo sans contexte laisse la marque deviner ce que vous cherchiez. Ajoutez sous chacune :"
+            "text": "فيديو بلا سياق يترك العلامة تخمّن ما كنتم تبحثون عنه. أضيفوا تحت كل واحد:"
           }
         ]
       },
@@ -558,7 +558,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "L’objectif",
+                    "text": "الهدف",
                     "marks": [
                       {
                         "type": "bold"
@@ -567,7 +567,7 @@
                   },
                   {
                     "type": "text",
-                    "text": " : ce que la vidéo devait faire comprendre."
+                    "text": ": ما كان على الفيديو أن يوضّحه."
                   }
                 ]
               }
@@ -581,7 +581,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "La contrainte",
+                    "text": "القيد",
                     "marks": [
                       {
                         "type": "bold"
@@ -590,7 +590,7 @@
                   },
                   {
                     "type": "text",
-                    "text": " : la consigne que vous vous êtes imposée."
+                    "text": ": التعليمة التي فرضتموها على أنفسكم."
                   }
                 ]
               }
@@ -604,7 +604,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Ce que vous changeriez",
+                    "text": "ما كنتم ستغيّرونه",
                     "marks": [
                       {
                         "type": "bold"
@@ -613,7 +613,7 @@
                   },
                   {
                     "type": "text",
-                    "text": " : une phrase qui montre votre regard sur votre propre travail."
+                    "text": ": جملة تُظهر نظرتكم إلى عملكم."
                   }
                 ]
               }
@@ -626,7 +626,7 @@
         "content": [
           {
             "type": "text",
-            "text": "La troisième ligne est souvent celle qu’une marque retient : elle montre que vous savez recevoir un retour."
+            "text": "السطر الثالث هو غالبًا ما تحتفظ به العلامة: يُظهر أنكم تُحسنون تلقّي الملاحظات."
           }
         ]
       },
@@ -634,12 +634,12 @@
         "type": "heading",
         "attrs": {
           "level": 2,
-          "id": "ce-qu-il-vaut-mieux-retirer"
+          "id": "what-to-remove"
         },
         "content": [
           {
             "type": "text",
-            "text": "Ce qu’il vaut mieux retirer"
+            "text": "ما يُستحسن حذفه"
           }
         ]
       },
@@ -654,7 +654,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Les vidéos dont le son n’est pas audible sans musique."
+                    "text": "الفيديوهات التي لا يُسمع صوتها بلا موسيقى."
                   }
                 ]
               }
@@ -668,7 +668,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Les contenus sans produit ni message, même réussis : ils ne répondent à aucune question de la marque."
+                    "text": "المحتوى بلا منتج ولا رسالة، مهما كان متقنًا: لا يجيب عن أي سؤال للعلامة."
                   }
                 ]
               }
@@ -682,7 +682,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Les doublons : deux unboxings similaires disent la même chose."
+                    "text": "التكرار: فيديوا فتح عبوة متشابهان يقولان الشيء نفسه."
                   }
                 ]
               }
@@ -696,7 +696,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Tout ce qui pourrait laisser croire à un partenariat qui n’existe pas."
+                    "text": "كل ما قد يوحي بشراكة غير موجودة."
                   }
                 ]
               }
@@ -708,12 +708,12 @@
         "type": "heading",
         "attrs": {
           "level": 2,
-          "id": "avant-de-candidater"
+          "id": "before-you-apply"
         },
         "content": [
           {
             "type": "text",
-            "text": "Avant de candidater"
+            "text": "قبل التقدّم إلى حملة"
           }
         ]
       },
@@ -734,7 +734,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Trois à cinq vidéos, chacune prouvant une compétence différente."
+                        "text": "ثلاثة إلى خمسة فيديوهات، كل واحد يثبت مهارة مختلفة."
                       }
                     ]
                   }
@@ -748,7 +748,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Chaque projet personnel est présenté comme tel."
+                        "text": "كل مشروع شخصي معروض على حقيقته."
                       }
                     ]
                   }
@@ -762,7 +762,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Chaque vidéo porte ses trois lignes de contexte."
+                        "text": "كل فيديو يحمل أسطره الثلاثة من السياق."
                       }
                     ]
                   }
@@ -776,7 +776,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Le son est audible sans musique sur toutes les vidéos."
+                        "text": "الصوت مسموع بلا موسيقى في كل الفيديوهات."
                       }
                     ]
                   }
@@ -790,7 +790,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Les formats demandés par la campagne visée sont représentés."
+                        "text": "الصيغ التي تطلبها الحملة المستهدَفة ممثَّلة."
                       }
                     ]
                   }
@@ -804,12 +804,12 @@
         "type": "heading",
         "attrs": {
           "level": 2,
-          "id": "dans-avyor"
+          "id": "inside-avyor"
         },
         "content": [
           {
             "type": "text",
-            "text": "Dans AVYOR"
+            "text": "داخل AVYOR"
           }
         ]
       },
@@ -818,7 +818,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Le portfolio d’un Creator sur AVYOR classe les réalisations par type de contenu, et les photos peuvent l’alimenter sans passer par le feed. Pour préparer vos premières pièces, les modèles de vidéo guidés couvrent sept familles de formats — accroche produit, témoignage, lifestyle, unboxing, tutoriel, avant/après, storytelling — chacune avec ses étapes, sa durée et son niveau de difficulté."
+            "text": "معرض أعمال صانع المحتوى في AVYOR يرتّب الأعمال بحسب نوع المحتوى، ويمكن للصور أن تغذّيه دون المرور بالموجز. ولتحضير أعمالكم الأولى، تغطّي قوالب الفيديو الموجَّهة سبع عائلات من الصيغ — مقدمة منتج، شهادة، لايف ستايل، فتح عبوة، درس، قبل/بعد، سرد قصصي — لكل واحدة خطواتها ومدتها ومستوى صعوبتها."
           }
         ]
       }
@@ -826,32 +826,32 @@
   },
   "sources": [],
   "cta": {
-    "label": "Découvrir le parcours Creator",
+    "label": "اكتشف مسار صانع المحتوى",
     "slug": "creators"
   },
   "related": [
-    "premierecol1"
+    "premierear01"
   ],
   "translations": {
+    "fr": "portfolio001",
     "en": "portfolioen1",
     "es": "portfolioes1",
-    "he": "portfoliohe1",
-    "ar": "portfolioar1"
+    "he": "portfoliohe1"
   },
   "seo": {
-    "title": "Portfolio UGC quand on débute : quoi montrer | AVYOR",
-    "description": "Sans client, un portfolio UGC montre votre façon de travailler : cinq vidéos à préparer, comment présenter des projets personnels honnêtement, et quoi retirer.",
+    "title": "معرض أعمال UGC في البداية: ماذا تعرضون | AVYOR",
+    "description": "بلا زبون، يُظهر معرض أعمال UGC طريقتكم في العمل: خمسة فيديوهات تُحضَّر، وكيف تعرضون مشاريع شخصية بصدق، وما يُحذف.",
     "image": {
-      "src": "/news/media/portfolio-ugc-quoi-montrer-quand-on-debute-partage-be2b0822.jpg",
+      "src": "/news/media/portfolio-ugc-mada-tuzhir-fi-albidaya-partage-be2b0822.jpg",
       "width": 1200,
       "height": 630,
-      "alt": "Illustration AVYOR : un clap de tournage en volume, violet, sur fond bleu nuit."
+      "alt": "رسم توضيحي من AVYOR: كلاكيت تصوير مجسّم، بنفسجي، على خلفية زرقاء داكنة."
     },
     "noindex": false
   },
-  "revision": 4,
-  "createdAt": "2026-09-18T16:59:44.174Z",
-  "updatedAt": "2026-09-18T18:47:04.918Z",
-  "publishedAt": "2026-09-18T17:43:51.179Z",
+  "revision": 3,
+  "createdAt": "2026-09-18T18:45:19.750Z",
+  "updatedAt": "2026-09-18T18:47:04.920Z",
+  "publishedAt": "2026-09-18T18:47:04.920Z",
   "status": "published"
 }

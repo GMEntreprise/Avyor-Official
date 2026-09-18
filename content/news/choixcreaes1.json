@@ -1,23 +1,23 @@
 {
-  "id": "choixcrea001",
-  "locale": "fr",
-  "title": "Comment choisir un Creator au-delà du nombre d’abonnés",
-  "slug": "choisir-un-creator-au-dela-des-abonnes",
+  "id": "choixcreaes1",
+  "locale": "es",
+  "title": "Cómo elegir un Creator más allá del número de seguidores",
+  "slug": "elegir-un-creator-mas-alla-de-los-seguidores",
   "slugHistory": [],
-  "excerpt": "Trois propositions, trois vidéos soignées : laquelle convient à votre marque ? Une grille de comparaison reliée à l’objectif de votre campagne, et les signaux qui doivent vous alerter.",
+  "excerpt": "Tres propuestas, tres vídeos cuidados: ¿cuál conviene a su marca? Una tabla de comparación ligada al objetivo de su campaña, y las señales que deben alertarle.",
   "type": "guide",
   "audience": "brands",
   "theme": "choose",
   "author": {
     "kind": "organization",
-    "name": "Équipe éditoriale AVYOR"
+    "name": "Equipo editorial de AVYOR"
   },
   "featured": false,
   "cover": {
-    "src": "/news/media/choisir-un-creator-au-dela-des-abonnes-couverture-b1f58e7e.webp",
+    "src": "/news/media/elegir-un-creator-mas-alla-de-los-seguidores-couverture-b1f58e7e.webp",
     "width": 1600,
     "height": 900,
-    "alt": "Illustration AVYOR : une boussole en volume, violette et bleue, sur fond bleu nuit."
+    "alt": "Ilustración AVYOR: una brújula en volumen, violeta y azul, sobre fondo azul noche."
   },
   "body": {
     "type": "doc",
@@ -27,11 +27,11 @@
         "content": [
           {
             "type": "text",
-            "text": "Vous avez reçu trois propositions de Creators. Les vidéos sont soignées, mais vous ne savez toujours pas laquelle convient à votre marque. "
+            "text": "Ha recibido tres propuestas de Creators. Los vídeos están cuidados, pero sigue sin saber cuál conviene a su marca. "
           },
           {
             "type": "text",
-            "text": "Commencez par comparer leur manière d’expliquer un produit, les livrables qu’ils proposent et les conditions de collaboration.",
+            "text": "Empiece por comparar su manera de explicar un producto, los entregables que proponen y las condiciones de la colaboración.",
             "marks": [
               {
                 "type": "bold"
@@ -40,7 +40,7 @@
           },
           {
             "type": "text",
-            "text": " Le nombre d’abonnés ne répond pas, à lui seul, à ces questions — et selon votre objectif, il peut ne pas compter du tout."
+            "text": " El número de seguidores no responde por sí solo a esas preguntas — y según su objetivo, puede no contar en absoluto."
           }
         ]
       },
@@ -49,7 +49,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Cet article vous donne une méthode : partir de l’objectif de la campagne, comparer cinq critères observables, puis trancher avec une grille que vous pouvez reprendre telle quelle."
+            "text": "Este artículo le da un método: partir del objetivo de la campaña, comparar cinco criterios observables y decidir con una tabla que puede usar tal cual."
           }
         ]
       },
@@ -57,12 +57,12 @@
         "type": "heading",
         "attrs": {
           "level": 2,
-          "id": "d-abord-votre-objectif"
+          "id": "primero-su-objetivo"
         },
         "content": [
           {
             "type": "text",
-            "text": "D’abord, votre objectif"
+            "text": "Primero, su objetivo"
           }
         ]
       },
@@ -71,7 +71,7 @@
         "content": [
           {
             "type": "text",
-            "text": "La première question n’est pas « quel Creator choisir ? » mais « de quoi ai-je besoin ? »."
+            "text": "La primera pregunta no es «¿qué Creator elegir?» sino «¿qué necesito?»."
           }
         ]
       },
@@ -86,7 +86,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Des contenus pour vos propres canaux",
+                    "text": "Contenidos para sus propios canales",
                     "marks": [
                       {
                         "type": "bold"
@@ -95,7 +95,7 @@
                   },
                   {
                     "type": "text",
-                    "text": " (publicité, fiche produit, réseaux de la marque) : c’est une commande UGC. Ce qui compte, c’est la qualité et la justesse de la vidéo. L’audience du Creator ne sera pas utilisée."
+                    "text": " (publicidad, ficha de producto, redes de la marca): es un encargo UGC. Lo que cuenta es la calidad y la precisión del vídeo. La audiencia del Creator no se usará."
                   }
                 ]
               }
@@ -109,7 +109,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Être vu par une audience précise",
+                    "text": "Que le vea una audiencia concreta",
                     "marks": [
                       {
                         "type": "bold"
@@ -118,7 +118,7 @@
                   },
                   {
                     "type": "text",
-                    "text": " : c’est de l’influence. L’audience du Creator devient un critère, mais sa composition compte davantage que sa taille."
+                    "text": ": eso es influencia. La audiencia del Creator se convierte en un criterio, pero su composición cuenta más que su tamaño."
                   }
                 ]
               }
@@ -131,7 +131,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Beaucoup de campagnes mélangent les deux. Écrivez simplement lequel pèse le plus : il décidera en cas d’hésitation."
+            "text": "Muchas campañas mezclan ambos. Escriba simplemente cuál pesa más: decidirá por usted en caso de duda."
           }
         ]
       },
@@ -139,12 +139,12 @@
         "type": "heading",
         "attrs": {
           "level": 2,
-          "id": "ce-que-le-nombre-d-abonnes-dit-et-ce-qu-il-ne-dit-pas"
+          "id": "lo-que-dice-el-numero-de-seguidores-y-lo-que-no-dice"
         },
         "content": [
           {
             "type": "text",
-            "text": "Ce que le nombre d’abonnés dit, et ce qu’il ne dit pas"
+            "text": "Lo que dice el número de seguidores, y lo que no dice"
           }
         ]
       },
@@ -153,7 +153,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Un nombre d’abonnés indique une taille d’audience potentielle, à un moment donné. Il ne dit ni qui compose cette audience, ni si elle ressemble à vos clients, ni si le Creator sait présenter un produit qu’il n’a pas choisi. Pour une commande UGC, il ne dit presque rien d’utile : vous achetez une vidéo, pas une diffusion."
+            "text": "Un número de seguidores indica el tamaño de una audiencia potencial, en un momento dado. No dice quién compone esa audiencia, ni si se parece a sus clientes, ni si el Creator sabe presentar un producto que no ha elegido. Para un encargo UGC no dice casi nada útil: usted compra un vídeo, no una difusión."
           }
         ]
       },
@@ -161,12 +161,12 @@
         "type": "heading",
         "attrs": {
           "level": 2,
-          "id": "cinq-criteres-a-comparer"
+          "id": "cinco-criterios-para-comparar"
         },
         "content": [
           {
             "type": "text",
-            "text": "Cinq critères à comparer"
+            "text": "Cinco criterios para comparar"
           }
         ]
       },
@@ -174,12 +174,12 @@
         "type": "heading",
         "attrs": {
           "level": 3,
-          "id": "sa-facon-d-expliquer-un-produit"
+          "id": "su-manera-de-explicar-un-producto"
         },
         "content": [
           {
             "type": "text",
-            "text": "Sa façon d’expliquer un produit"
+            "text": "Su manera de explicar un producto"
           }
         ]
       },
@@ -188,7 +188,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Regardez deux ou trois vidéos où le Creator présente quelque chose. Comprend-on en quelques secondes à quoi sert le produit ? Montre-t-il un geste d’utilisation ou se contente-t-il de le tenir face caméra ? Ce que vous voyez là ressemble à ce que vous recevrez."
+            "text": "Mire dos o tres vídeos en los que el Creator presente algo. ¿Se entiende en unos segundos para qué sirve el producto? ¿Muestra un gesto de uso o se limita a sostenerlo ante la cámara? Lo que ve allí se parece a lo que recibirá."
           }
         ]
       },
@@ -196,12 +196,12 @@
         "type": "heading",
         "attrs": {
           "level": 3,
-          "id": "l-adequation-avec-votre-public"
+          "id": "la-adecuacion-con-su-publico"
         },
         "content": [
           {
             "type": "text",
-            "text": "L’adéquation avec votre public"
+            "text": "La adecuación con su público"
           }
         ]
       },
@@ -210,7 +210,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Le ton, le décor, le rythme correspondent-ils aux personnes que vous visez ? Un excellent Creator peut être le mauvais choix si sa façon de parler ne ressemble pas à vos clients."
+            "text": "¿El tono, el decorado y el ritmo corresponden a las personas a las que se dirige? Un excelente Creator puede ser la elección equivocada si su forma de hablar no se parece a la de sus clientes."
           }
         ]
       },
@@ -218,12 +218,12 @@
         "type": "heading",
         "attrs": {
           "level": 3,
-          "id": "la-qualite-d-execution"
+          "id": "la-calidad-de-ejecucion"
         },
         "content": [
           {
             "type": "text",
-            "text": "La qualité d’exécution"
+            "text": "La calidad de ejecución"
           }
         ]
       },
@@ -232,7 +232,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Son audible sans musique, lumière stable, cadrage lisible sur un téléphone, montage qui va à l’essentiel. Ces points se vérifient en une minute et évitent les déceptions techniques."
+            "text": "Sonido audible sin música, luz estable, encuadre legible en un teléfono, montaje que va a lo esencial. Estos puntos se comprueban en un minuto y evitan decepciones técnicas."
           }
         ]
       },
@@ -240,12 +240,12 @@
         "type": "heading",
         "attrs": {
           "level": 3,
-          "id": "les-livrables-qu-il-propose"
+          "id": "los-entregables-que-propone"
         },
         "content": [
           {
             "type": "text",
-            "text": "Les livrables qu’il propose"
+            "text": "Los entregables que propone"
           }
         ]
       },
@@ -254,7 +254,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Un Creator qui propose des variantes d’accroche, des fichiers bruts ou plusieurs formats vous facilite la suite. Comparez ce qui est inclus, pas seulement le montant."
+            "text": "Un Creator que propone variantes de gancho, archivos en bruto o varios formatos le facilita lo que viene después. Compare lo que está incluido, no solo el importe."
           }
         ]
       },
@@ -262,12 +262,12 @@
         "type": "heading",
         "attrs": {
           "level": 3,
-          "id": "la-fiabilite-de-la-collaboration"
+          "id": "la-fiabilidad-de-la-colaboracion"
         },
         "content": [
           {
             "type": "text",
-            "text": "La fiabilité de la collaboration"
+            "text": "La fiabilidad de la colaboración"
           }
         ]
       },
@@ -276,7 +276,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Les réponses sont-elles claires ? Pose-t-il des questions sur le brief ? Accepte-t-il de préciser par écrit les délais, les retouches et les droits d’usage ? Une bonne question avant le tournage vaut mieux qu’une bonne excuse après."
+            "text": "¿Las respuestas son claras? ¿Hace preguntas sobre el brief? ¿Acepta precisar por escrito los plazos, los retoques y los derechos de uso? Una buena pregunta antes del rodaje vale más que una buena excusa después."
           }
         ]
       },
@@ -284,12 +284,12 @@
         "type": "heading",
         "attrs": {
           "level": 2,
-          "id": "la-grille-de-comparaison"
+          "id": "la-tabla-de-comparacion"
         },
         "content": [
           {
             "type": "text",
-            "text": "La grille de comparaison"
+            "text": "La tabla de comparación"
           }
         ]
       },
@@ -298,7 +298,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Notez chaque critère de 1 à 3 pour chaque Creator. La dernière colonne indique quels critères comptent le plus selon votre objectif."
+            "text": "Puntúe cada criterio de 1 a 3 para cada Creator. La última columna indica qué criterios pesan más según su objetivo."
           }
         ]
       },
@@ -316,7 +316,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Critère"
+                        "text": "Criterio"
                       }
                     ]
                   }
@@ -330,7 +330,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Ce que vous regardez"
+                        "text": "Qué mira"
                       }
                     ]
                   }
@@ -344,7 +344,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Où le voir"
+                        "text": "Dónde verlo"
                       }
                     ]
                   }
@@ -358,7 +358,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Priorité"
+                        "text": "Prioridad"
                       }
                     ]
                   }
@@ -377,7 +377,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Explication du produit"
+                        "text": "Explicación del producto"
                       }
                     ]
                   }
@@ -391,7 +391,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "On comprend l’usage en quelques secondes"
+                        "text": "El uso se entiende en unos segundos"
                       }
                     ]
                   }
@@ -405,7 +405,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Portfolio, vidéos de démonstration"
+                        "text": "Portfolio, vídeos de demostración"
                       }
                     ]
                   }
@@ -419,7 +419,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "UGC : forte · Influence : forte"
+                        "text": "UGC: alta · Influencia: alta"
                       }
                     ]
                   }
@@ -438,7 +438,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Adéquation au public"
+                        "text": "Adecuación al público"
                       }
                     ]
                   }
@@ -452,7 +452,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Ton, décor, rythme proches de vos clients"
+                        "text": "Tono, decorado y ritmo próximos a sus clientes"
                       }
                     ]
                   }
@@ -466,7 +466,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Vidéos récentes, profil"
+                        "text": "Vídeos recientes, perfil"
                       }
                     ]
                   }
@@ -480,7 +480,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "UGC : moyenne · Influence : forte"
+                        "text": "UGC: media · Influencia: alta"
                       }
                     ]
                   }
@@ -499,7 +499,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Qualité d’exécution"
+                        "text": "Calidad de ejecución"
                       }
                     ]
                   }
@@ -513,7 +513,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Son, lumière, cadrage, montage"
+                        "text": "Sonido, luz, encuadre, montaje"
                       }
                     ]
                   }
@@ -527,7 +527,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Deux ou trois vidéos au hasard"
+                        "text": "Dos o tres vídeos al azar"
                       }
                     ]
                   }
@@ -541,7 +541,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "UGC : forte · Influence : moyenne"
+                        "text": "UGC: alta · Influencia: media"
                       }
                     ]
                   }
@@ -560,7 +560,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Livrables proposés"
+                        "text": "Entregables propuestos"
                       }
                     ]
                   }
@@ -574,7 +574,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Variantes, fichiers bruts, formats"
+                        "text": "Variantes, archivos en bruto, formatos"
                       }
                     ]
                   }
@@ -588,7 +588,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Proposition, échanges"
+                        "text": "Propuesta, conversación"
                       }
                     ]
                   }
@@ -602,7 +602,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "UGC : forte · Influence : moyenne"
+                        "text": "UGC: alta · Influencia: media"
                       }
                     ]
                   }
@@ -621,7 +621,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Fiabilité"
+                        "text": "Fiabilidad"
                       }
                     ]
                   }
@@ -635,7 +635,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Réponses claires, questions sur le brief"
+                        "text": "Respuestas claras, preguntas sobre el brief"
                       }
                     ]
                   }
@@ -649,7 +649,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Premiers échanges"
+                        "text": "Primeros intercambios"
                       }
                     ]
                   }
@@ -663,7 +663,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "UGC : forte · Influence : forte"
+                        "text": "UGC: alta · Influencia: alta"
                       }
                     ]
                   }
@@ -682,7 +682,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Audience"
+                        "text": "Audiencia"
                       }
                     ]
                   }
@@ -696,7 +696,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Composition et proximité avec vos clients"
+                        "text": "Composición y proximidad con sus clientes"
                       }
                     ]
                   }
@@ -710,7 +710,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Informations fournies par le Creator"
+                        "text": "Información facilitada por el Creator"
                       }
                     ]
                   }
@@ -724,7 +724,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "UGC : faible · Influence : forte"
+                        "text": "UGC: baja · Influencia: alta"
                       }
                     ]
                   }
@@ -745,7 +745,7 @@
             "content": [
               {
                 "type": "text",
-                "text": "Exemple illustratif.",
+                "text": "Ejemplo ilustrativo.",
                 "marks": [
                   {
                     "type": "bold"
@@ -754,7 +754,7 @@
               },
               {
                 "type": "text",
-                "text": " Une marque de cosmétiques veut des vidéos pour ses publicités. Le Creator A a la plus grande audience mais ses vidéos produit sont des plans fixes sans démonstration. Le Creator B a une audience modeste, montre toujours le geste d’application et propose trois accroches. Le Creator C est proche du public visé mais son son est inaudible sans musique. Pour une commande UGC, la grille désigne B : l’audience de A ne sera pas utilisée, et le défaut de C touche un critère prioritaire."
+                "text": " Una marca de cosmética quiere vídeos para su publicidad. El Creator A tiene la mayor audiencia, pero sus vídeos de producto son planos fijos sin demostración. El Creator B tiene una audiencia modesta, muestra siempre el gesto de aplicación y propone tres ganchos. El Creator C está cerca del público objetivo, pero su sonido es inaudible sin música. Para un encargo UGC, la tabla señala a B: la audiencia de A no se usará, y el defecto de C afecta a un criterio prioritario."
               }
             ]
           }
@@ -764,12 +764,12 @@
         "type": "heading",
         "attrs": {
           "level": 2,
-          "id": "les-signaux-qui-doivent-vous-alerter"
+          "id": "las-senales-que-deben-alertarle"
         },
         "content": [
           {
             "type": "text",
-            "text": "Les signaux qui doivent vous alerter"
+            "text": "Las señales que deben alertarle"
           }
         ]
       },
@@ -790,7 +790,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Un portfolio qui ne montre qu’un seul type de vidéo, sans démonstration de produit."
+                        "text": "Un portfolio que solo muestra un tipo de vídeo, sin demostración de producto."
                       }
                     ]
                   }
@@ -804,7 +804,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Des statistiques d’audience que le Creator ne peut ou ne veut pas expliquer."
+                        "text": "Cifras de audiencia que el Creator no puede o no quiere explicar."
                       }
                     ]
                   }
@@ -818,7 +818,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Un refus de préciser par écrit les livrables, les délais ou les droits d’usage."
+                        "text": "Una negativa a precisar por escrito los entregables, los plazos o los derechos de uso."
                       }
                     ]
                   }
@@ -832,7 +832,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Aucune question sur votre brief, même lorsqu’il laisse des points ouverts."
+                        "text": "Ninguna pregunta sobre su brief, incluso cuando deja puntos abiertos."
                       }
                     ]
                   }
@@ -847,7 +847,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Aucun de ces signaux n’est à lui seul rédhibitoire. Ensemble, ils annoncent en général une collaboration difficile."
+            "text": "Ninguna de estas señales es descalificante por sí sola. Juntas, anuncian por lo general una colaboración difícil."
           }
         ]
       },
@@ -855,12 +855,12 @@
         "type": "heading",
         "attrs": {
           "level": 2,
-          "id": "dans-avyor"
+          "id": "en-avyor"
         },
         "content": [
           {
             "type": "text",
-            "text": "Dans AVYOR"
+            "text": "En AVYOR"
           }
         ]
       },
@@ -869,7 +869,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Lorsqu’AVYOR suggère un profil pour votre campagne, il affiche les raisons de la compatibilité : spécialisation dans votre niche, présence sur vos plateformes cibles, taux d’engagement, localisation et langue, score de confiance, activité récente. Ces raisons complètent la lecture d’un portfolio, elles ne la remplacent pas. Vous pouvez ensuite constituer une présélection parmi les candidatures reçues avant de trancher ; la décision reste la vôtre."
+            "text": "Cuando AVYOR sugiere un perfil para su campaña, muestra las razones de la compatibilidad: especialización en su nicho, presencia en sus plataformas objetivo, tasa de interacción, ubicación e idioma, puntuación de confianza, actividad reciente. Esas razones complementan la lectura de un portfolio, no la sustituyen. Después puede formar una preselección entre las candidaturas recibidas antes de decidir; la decisión sigue siendo suya."
           }
         ]
       }
@@ -877,32 +877,32 @@
   },
   "sources": [],
   "cta": {
-    "label": "Découvrir le parcours marque",
+    "label": "Descubrir el recorrido de marca",
     "slug": "brands"
   },
   "related": [
-    "briefugc0001"
+    "briefugces01"
   ],
   "translations": {
+    "fr": "choixcrea001",
     "en": "choixcreaen1",
-    "es": "choixcreaes1",
     "he": "choixcreahe1",
     "ar": "choixcreaar1"
   },
   "seo": {
-    "title": "Choisir un Creator au-delà du nombre d’abonnés | AVYOR",
-    "description": "Comment comparer des Creators selon l’objectif de votre campagne : façon d’expliquer un produit, adéquation au public, livrables, fiabilité. Grille à reprendre.",
+    "title": "Elegir un Creator más allá de los seguidores | AVYOR",
+    "description": "Cómo comparar Creators según el objetivo de su campaña: forma de explicar un producto, adecuación al público, entregables, fiabilidad. Tabla lista para usar.",
     "image": {
-      "src": "/news/media/choisir-un-creator-au-dela-des-abonnes-partage-d51a83ef.jpg",
+      "src": "/news/media/elegir-un-creator-mas-alla-de-los-seguidores-partage-d51a83ef.jpg",
       "width": 1200,
       "height": 630,
-      "alt": "Illustration AVYOR : une boussole en volume, violette et bleue, sur fond bleu nuit."
+      "alt": "Ilustración AVYOR: una brújula en volumen, violeta y azul, sobre fondo azul noche."
     },
     "noindex": false
   },
-  "revision": 4,
-  "createdAt": "2026-09-18T16:59:44.106Z",
-  "updatedAt": "2026-09-18T18:47:04.909Z",
-  "publishedAt": "2026-09-18T17:43:51.173Z",
+  "revision": 3,
+  "createdAt": "2026-09-18T18:45:19.085Z",
+  "updatedAt": "2026-09-18T18:47:04.914Z",
+  "publishedAt": "2026-09-18T18:47:04.914Z",
   "status": "published"
 }

@@ -184,7 +184,16 @@ const BLOCKS = new Set([
 ]);
 const MARKS = new Set(['bold', 'italic', 'link']);
 export const CALLOUTS = ['example', 'checklist', 'warning'] as const;
-const PENDING = /à compléter|a completer|\bTODO\b|\bTBD\b|lorem ipsum/i;
+/*
+ * Un texte laissé en chantier ne se publie pas. Deux formes, et deux
+ * sensibilités à la casse : les mots français s'écrivent comme on les écrit,
+ * les marqueurs de rédaction sont des sigles en majuscules.
+ *
+ * « TODO » sans distinction de casse attrapait « todo », qui veut dire
+ * « tout » en espagnol : aucun article espagnol n'aurait pu être publié.
+ */
+const PENDING = /à compléter|a completer|lorem ipsum/i;
+const PENDING_MARKER = /\bTODO\b|\bTBD\b|\bFIXME\b/;
 
 function checkNode(node: PMNode, path: string, errors: ValidationError[], depth = 0) {
   if (!node || typeof node !== 'object' || !BLOCKS.has(node.type)) {
@@ -271,7 +280,8 @@ export function validateArticle(
 
   if (publishing) {
     const body = article.body?.type === 'doc' ? plainText(article.body) : '';
-    if ([article.title, article.excerpt, body].some((value) => PENDING.test(value ?? '')))
+    const pending = (value = '') => PENDING.test(value) || PENDING_MARKER.test(value);
+    if ([article.title, article.excerpt, body].some((value) => pending(value ?? '')))
       add('body', 'Un marqueur « à compléter » ne peut pas être publié.');
     if (article.publishedAt && new Date(article.publishedAt).getTime() > now.getTime())
       add(

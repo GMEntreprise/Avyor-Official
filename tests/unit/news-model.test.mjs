@@ -348,3 +348,41 @@ test('la pagination découpe l’ensemble, pas seulement ce qui est affiché', (
   assert.equal(paginate(items, 9, 9).page, 3);
   assert.equal(paginate([], 1, 9).pages, 1);
 });
+
+test('un mot courant n’est pas pris pour un marqueur de rédaction', () => {
+  // « todo » veut dire « tout » en espagnol : avec une comparaison insensible
+  // à la casse, aucun article espagnol n’aurait pu être publié.
+  const body = (text) => ({ type: 'doc', content: [{ type: 'paragraph', content: [{ type: 'text', text }] }] });
+  const base = {
+    id: 'abcdefgh1234',
+    locale: 'es',
+    title: 'Todo lo que hay que saber',
+    slug: 'todo-lo-que-hay-que-saber',
+    excerpt: 'Un extracto que dice todo lo que el artículo aporta al lector, con calma.',
+    type: 'guide',
+    audience: 'brands',
+    theme: 'prepare',
+    author: { kind: 'organization', name: 'AVYOR' },
+    status: 'published',
+    publishedAt: '2026-01-01T00:00:00.000Z',
+    updatedAt: '2026-01-01T00:00:00.000Z',
+    createdAt: '2026-01-01T00:00:00.000Z',
+    slugHistory: [],
+    revision: 1,
+    featured: false,
+    related: [],
+    translations: {},
+    sources: [],
+    cta: { label: 'Descubrir', slug: 'brands' },
+    cover: { src: '/news/media/x-0123abcd.webp', width: 1600, height: 900, alt: 'Portada' },
+    seo: { title: 'Todo | AVYOR', description: 'Todo lo que hay que saber antes de empezar una campaña UGC.', noindex: false },
+  };
+  const marker = (article) =>
+    validateArticle(article, { publishing: true, now: new Date('2026-02-01T00:00:00Z') }).some(
+      (error) => /marqueur/.test(error.message),
+    );
+  assert.equal(marker({ ...base, body: body('Todo esto se decide antes del rodaje, todo junto.') }), false);
+  // Le vrai marqueur, lui, est toujours refusé.
+  assert.equal(marker({ ...base, body: body('TODO: escribir esta sección antes de publicar.') }), true);
+  assert.equal(marker({ ...base, body: body('Cette partie est à compléter avant publication.') }), true);
+});

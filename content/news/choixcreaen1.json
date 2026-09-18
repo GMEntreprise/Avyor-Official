@@ -1,23 +1,23 @@
 {
-  "id": "choixcrea001",
-  "locale": "fr",
-  "title": "Comment choisir un Creator au-delà du nombre d’abonnés",
-  "slug": "choisir-un-creator-au-dela-des-abonnes",
+  "id": "choixcreaen1",
+  "locale": "en",
+  "title": "How to choose a Creator beyond follower count",
+  "slug": "choosing-a-creator-beyond-follower-count",
   "slugHistory": [],
-  "excerpt": "Trois propositions, trois vidéos soignées : laquelle convient à votre marque ? Une grille de comparaison reliée à l’objectif de votre campagne, et les signaux qui doivent vous alerter.",
+  "excerpt": "Three proposals, three polished videos: which one fits your brand? A comparison grid tied to your campaign goal, and the signals that should give you pause.",
   "type": "guide",
   "audience": "brands",
   "theme": "choose",
   "author": {
     "kind": "organization",
-    "name": "Équipe éditoriale AVYOR"
+    "name": "AVYOR editorial team"
   },
   "featured": false,
   "cover": {
-    "src": "/news/media/choisir-un-creator-au-dela-des-abonnes-couverture-b1f58e7e.webp",
+    "src": "/news/media/choosing-a-creator-beyond-follower-count-couverture-b1f58e7e.webp",
     "width": 1600,
     "height": 900,
-    "alt": "Illustration AVYOR : une boussole en volume, violette et bleue, sur fond bleu nuit."
+    "alt": "AVYOR illustration: a compass in relief, violet and blue, on a midnight blue background."
   },
   "body": {
     "type": "doc",
@@ -27,11 +27,11 @@
         "content": [
           {
             "type": "text",
-            "text": "Vous avez reçu trois propositions de Creators. Les vidéos sont soignées, mais vous ne savez toujours pas laquelle convient à votre marque. "
+            "text": "You have received three proposals from Creators. The videos are polished, but you still do not know which one fits your brand. "
           },
           {
             "type": "text",
-            "text": "Commencez par comparer leur manière d’expliquer un produit, les livrables qu’ils proposent et les conditions de collaboration.",
+            "text": "Start by comparing how they explain a product, the deliverables they offer and the terms of the collaboration.",
             "marks": [
               {
                 "type": "bold"
@@ -40,7 +40,7 @@
           },
           {
             "type": "text",
-            "text": " Le nombre d’abonnés ne répond pas, à lui seul, à ces questions — et selon votre objectif, il peut ne pas compter du tout."
+            "text": " Follower count answers none of those questions on its own — and depending on your goal, it may not matter at all."
           }
         ]
       },
@@ -49,7 +49,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Cet article vous donne une méthode : partir de l’objectif de la campagne, comparer cinq critères observables, puis trancher avec une grille que vous pouvez reprendre telle quelle."
+            "text": "This article gives you a method: start from the campaign goal, compare five observable criteria, then decide with a grid you can reuse as it is."
           }
         ]
       },
@@ -57,12 +57,12 @@
         "type": "heading",
         "attrs": {
           "level": 2,
-          "id": "d-abord-votre-objectif"
+          "id": "first-your-goal"
         },
         "content": [
           {
             "type": "text",
-            "text": "D’abord, votre objectif"
+            "text": "First, your goal"
           }
         ]
       },
@@ -71,7 +71,7 @@
         "content": [
           {
             "type": "text",
-            "text": "La première question n’est pas « quel Creator choisir ? » mais « de quoi ai-je besoin ? »."
+            "text": "The first question is not “which Creator?” but “what do I need?”."
           }
         ]
       },
@@ -86,7 +86,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Des contenus pour vos propres canaux",
+                    "text": "Content for your own channels",
                     "marks": [
                       {
                         "type": "bold"
@@ -95,7 +95,7 @@
                   },
                   {
                     "type": "text",
-                    "text": " (publicité, fiche produit, réseaux de la marque) : c’est une commande UGC. Ce qui compte, c’est la qualité et la justesse de la vidéo. L’audience du Creator ne sera pas utilisée."
+                    "text": " (ads, product pages, brand accounts): that is a UGC order. What matters is how good and how accurate the video is. The Creator’s audience will not be used."
                   }
                 ]
               }
@@ -109,7 +109,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Être vu par une audience précise",
+                    "text": "Being seen by a specific audience",
                     "marks": [
                       {
                         "type": "bold"
@@ -118,7 +118,7 @@
                   },
                   {
                     "type": "text",
-                    "text": " : c’est de l’influence. L’audience du Creator devient un critère, mais sa composition compte davantage que sa taille."
+                    "text": ": that is influence. The Creator’s audience becomes a criterion, but who it is made of matters more than how large it is."
                   }
                 ]
               }
@@ -131,7 +131,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Beaucoup de campagnes mélangent les deux. Écrivez simplement lequel pèse le plus : il décidera en cas d’hésitation."
+            "text": "Many campaigns mix the two. Simply write down which one weighs more: it will decide for you when you hesitate."
           }
         ]
       },
@@ -139,12 +139,12 @@
         "type": "heading",
         "attrs": {
           "level": 2,
-          "id": "ce-que-le-nombre-d-abonnes-dit-et-ce-qu-il-ne-dit-pas"
+          "id": "what-follower-count-says-and-what-it-does-not"
         },
         "content": [
           {
             "type": "text",
-            "text": "Ce que le nombre d’abonnés dit, et ce qu’il ne dit pas"
+            "text": "What follower count says, and what it does not"
           }
         ]
       },
@@ -153,7 +153,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Un nombre d’abonnés indique une taille d’audience potentielle, à un moment donné. Il ne dit ni qui compose cette audience, ni si elle ressemble à vos clients, ni si le Creator sait présenter un produit qu’il n’a pas choisi. Pour une commande UGC, il ne dit presque rien d’utile : vous achetez une vidéo, pas une diffusion."
+            "text": "A follower count indicates the size of a potential audience, at a given moment. It says nothing about who that audience is made of, whether it resembles your customers, or whether the Creator knows how to present a product they did not choose. For a UGC order it says almost nothing useful: you are buying a video, not a broadcast."
           }
         ]
       },
@@ -161,12 +161,12 @@
         "type": "heading",
         "attrs": {
           "level": 2,
-          "id": "cinq-criteres-a-comparer"
+          "id": "five-criteria-to-compare"
         },
         "content": [
           {
             "type": "text",
-            "text": "Cinq critères à comparer"
+            "text": "Five criteria to compare"
           }
         ]
       },
@@ -174,12 +174,12 @@
         "type": "heading",
         "attrs": {
           "level": 3,
-          "id": "sa-facon-d-expliquer-un-produit"
+          "id": "how-they-explain-a-product"
         },
         "content": [
           {
             "type": "text",
-            "text": "Sa façon d’expliquer un produit"
+            "text": "How they explain a product"
           }
         ]
       },
@@ -188,7 +188,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Regardez deux ou trois vidéos où le Creator présente quelque chose. Comprend-on en quelques secondes à quoi sert le produit ? Montre-t-il un geste d’utilisation ou se contente-t-il de le tenir face caméra ? Ce que vous voyez là ressemble à ce que vous recevrez."
+            "text": "Watch two or three videos where the Creator presents something. Do you understand what the product is for within seconds? Do they show a gesture of use, or simply hold it up to the camera? What you see there is close to what you will receive."
           }
         ]
       },
@@ -196,12 +196,12 @@
         "type": "heading",
         "attrs": {
           "level": 3,
-          "id": "l-adequation-avec-votre-public"
+          "id": "fit-with-your-audience"
         },
         "content": [
           {
             "type": "text",
-            "text": "L’adéquation avec votre public"
+            "text": "Fit with your audience"
           }
         ]
       },
@@ -210,7 +210,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Le ton, le décor, le rythme correspondent-ils aux personnes que vous visez ? Un excellent Creator peut être le mauvais choix si sa façon de parler ne ressemble pas à vos clients."
+            "text": "Do the tone, the setting and the pace match the people you are addressing? An excellent Creator can be the wrong choice if the way they speak does not sound like your customers."
           }
         ]
       },
@@ -218,12 +218,12 @@
         "type": "heading",
         "attrs": {
           "level": 3,
-          "id": "la-qualite-d-execution"
+          "id": "execution-quality"
         },
         "content": [
           {
             "type": "text",
-            "text": "La qualité d’exécution"
+            "text": "Execution quality"
           }
         ]
       },
@@ -232,7 +232,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Son audible sans musique, lumière stable, cadrage lisible sur un téléphone, montage qui va à l’essentiel. Ces points se vérifient en une minute et évitent les déceptions techniques."
+            "text": "Sound audible without music, steady light, framing that reads on a phone, editing that goes straight to the point. These take a minute to check and prevent technical disappointments."
           }
         ]
       },
@@ -240,12 +240,12 @@
         "type": "heading",
         "attrs": {
           "level": 3,
-          "id": "les-livrables-qu-il-propose"
+          "id": "the-deliverables-they-offer"
         },
         "content": [
           {
             "type": "text",
-            "text": "Les livrables qu’il propose"
+            "text": "The deliverables they offer"
           }
         ]
       },
@@ -254,7 +254,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Un Creator qui propose des variantes d’accroche, des fichiers bruts ou plusieurs formats vous facilite la suite. Comparez ce qui est inclus, pas seulement le montant."
+            "text": "A Creator who offers hook variants, raw files or several formats makes the rest of your work easier. Compare what is included, not only the amount."
           }
         ]
       },
@@ -262,12 +262,12 @@
         "type": "heading",
         "attrs": {
           "level": 3,
-          "id": "la-fiabilite-de-la-collaboration"
+          "id": "reliability-of-the-collaboration"
         },
         "content": [
           {
             "type": "text",
-            "text": "La fiabilité de la collaboration"
+            "text": "Reliability of the collaboration"
           }
         ]
       },
@@ -276,7 +276,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Les réponses sont-elles claires ? Pose-t-il des questions sur le brief ? Accepte-t-il de préciser par écrit les délais, les retouches et les droits d’usage ? Une bonne question avant le tournage vaut mieux qu’une bonne excuse après."
+            "text": "Are the answers clear? Do they ask questions about the brief? Do they agree to put deadlines, revisions and usage rights in writing? A good question before the shoot beats a good excuse after it."
           }
         ]
       },
@@ -284,12 +284,12 @@
         "type": "heading",
         "attrs": {
           "level": 2,
-          "id": "la-grille-de-comparaison"
+          "id": "the-comparison-grid"
         },
         "content": [
           {
             "type": "text",
-            "text": "La grille de comparaison"
+            "text": "The comparison grid"
           }
         ]
       },
@@ -298,7 +298,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Notez chaque critère de 1 à 3 pour chaque Creator. La dernière colonne indique quels critères comptent le plus selon votre objectif."
+            "text": "Score each criterion from 1 to 3 for every Creator. The last column tells you which criteria weigh most, depending on your goal."
           }
         ]
       },
@@ -316,7 +316,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Critère"
+                        "text": "Criterion"
                       }
                     ]
                   }
@@ -330,7 +330,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Ce que vous regardez"
+                        "text": "What you look at"
                       }
                     ]
                   }
@@ -344,7 +344,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Où le voir"
+                        "text": "Where to see it"
                       }
                     ]
                   }
@@ -358,7 +358,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Priorité"
+                        "text": "Priority"
                       }
                     ]
                   }
@@ -377,7 +377,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Explication du produit"
+                        "text": "Explaining the product"
                       }
                     ]
                   }
@@ -391,7 +391,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "On comprend l’usage en quelques secondes"
+                        "text": "The use is clear within seconds"
                       }
                     ]
                   }
@@ -405,7 +405,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Portfolio, vidéos de démonstration"
+                        "text": "Portfolio, demo videos"
                       }
                     ]
                   }
@@ -419,7 +419,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "UGC : forte · Influence : forte"
+                        "text": "UGC: high · Influence: high"
                       }
                     ]
                   }
@@ -438,7 +438,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Adéquation au public"
+                        "text": "Fit with the audience"
                       }
                     ]
                   }
@@ -452,7 +452,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Ton, décor, rythme proches de vos clients"
+                        "text": "Tone, setting and pace close to your customers"
                       }
                     ]
                   }
@@ -466,7 +466,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Vidéos récentes, profil"
+                        "text": "Recent videos, profile"
                       }
                     ]
                   }
@@ -480,7 +480,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "UGC : moyenne · Influence : forte"
+                        "text": "UGC: medium · Influence: high"
                       }
                     ]
                   }
@@ -499,7 +499,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Qualité d’exécution"
+                        "text": "Execution quality"
                       }
                     ]
                   }
@@ -513,7 +513,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Son, lumière, cadrage, montage"
+                        "text": "Sound, light, framing, editing"
                       }
                     ]
                   }
@@ -527,7 +527,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Deux ou trois vidéos au hasard"
+                        "text": "Two or three videos at random"
                       }
                     ]
                   }
@@ -541,7 +541,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "UGC : forte · Influence : moyenne"
+                        "text": "UGC: high · Influence: medium"
                       }
                     ]
                   }
@@ -560,7 +560,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Livrables proposés"
+                        "text": "Deliverables offered"
                       }
                     ]
                   }
@@ -574,7 +574,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Variantes, fichiers bruts, formats"
+                        "text": "Variants, raw files, formats"
                       }
                     ]
                   }
@@ -588,7 +588,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Proposition, échanges"
+                        "text": "Proposal, conversation"
                       }
                     ]
                   }
@@ -602,7 +602,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "UGC : forte · Influence : moyenne"
+                        "text": "UGC: high · Influence: medium"
                       }
                     ]
                   }
@@ -621,7 +621,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Fiabilité"
+                        "text": "Reliability"
                       }
                     ]
                   }
@@ -635,7 +635,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Réponses claires, questions sur le brief"
+                        "text": "Clear answers, questions about the brief"
                       }
                     ]
                   }
@@ -649,7 +649,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Premiers échanges"
+                        "text": "First exchanges"
                       }
                     ]
                   }
@@ -663,7 +663,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "UGC : forte · Influence : forte"
+                        "text": "UGC: high · Influence: high"
                       }
                     ]
                   }
@@ -696,7 +696,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Composition et proximité avec vos clients"
+                        "text": "Who it is made of, and how close to your customers"
                       }
                     ]
                   }
@@ -710,7 +710,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Informations fournies par le Creator"
+                        "text": "Information provided by the Creator"
                       }
                     ]
                   }
@@ -724,7 +724,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "UGC : faible · Influence : forte"
+                        "text": "UGC: low · Influence: high"
                       }
                     ]
                   }
@@ -745,7 +745,7 @@
             "content": [
               {
                 "type": "text",
-                "text": "Exemple illustratif.",
+                "text": "Illustrative example.",
                 "marks": [
                   {
                     "type": "bold"
@@ -754,7 +754,7 @@
               },
               {
                 "type": "text",
-                "text": " Une marque de cosmétiques veut des vidéos pour ses publicités. Le Creator A a la plus grande audience mais ses vidéos produit sont des plans fixes sans démonstration. Le Creator B a une audience modeste, montre toujours le geste d’application et propose trois accroches. Le Creator C est proche du public visé mais son son est inaudible sans musique. Pour une commande UGC, la grille désigne B : l’audience de A ne sera pas utilisée, et le défaut de C touche un critère prioritaire."
+                "text": " A cosmetics brand wants videos for its ads. Creator A has the largest audience, but their product videos are static shots with no demonstration. Creator B has a modest audience, always shows the application gesture and offers three hooks. Creator C is close to the target audience but their sound is inaudible without music. For a UGC order the grid points to B: A’s audience will not be used, and C’s weakness sits on a priority criterion."
               }
             ]
           }
@@ -764,12 +764,12 @@
         "type": "heading",
         "attrs": {
           "level": 2,
-          "id": "les-signaux-qui-doivent-vous-alerter"
+          "id": "signals-that-should-give-you-pause"
         },
         "content": [
           {
             "type": "text",
-            "text": "Les signaux qui doivent vous alerter"
+            "text": "Signals that should give you pause"
           }
         ]
       },
@@ -790,7 +790,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Un portfolio qui ne montre qu’un seul type de vidéo, sans démonstration de produit."
+                        "text": "A portfolio showing only one kind of video, with no product demonstration."
                       }
                     ]
                   }
@@ -804,7 +804,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Des statistiques d’audience que le Creator ne peut ou ne veut pas expliquer."
+                        "text": "Audience figures the Creator cannot or will not explain."
                       }
                     ]
                   }
@@ -818,7 +818,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Un refus de préciser par écrit les livrables, les délais ou les droits d’usage."
+                        "text": "A refusal to put deliverables, deadlines or usage rights in writing."
                       }
                     ]
                   }
@@ -832,7 +832,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Aucune question sur votre brief, même lorsqu’il laisse des points ouverts."
+                        "text": "No question about your brief, even when it leaves points open."
                       }
                     ]
                   }
@@ -847,7 +847,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Aucun de ces signaux n’est à lui seul rédhibitoire. Ensemble, ils annoncent en général une collaboration difficile."
+            "text": "None of these signals is disqualifying on its own. Together, they usually announce a difficult collaboration."
           }
         ]
       },
@@ -855,12 +855,12 @@
         "type": "heading",
         "attrs": {
           "level": 2,
-          "id": "dans-avyor"
+          "id": "inside-avyor"
         },
         "content": [
           {
             "type": "text",
-            "text": "Dans AVYOR"
+            "text": "Inside AVYOR"
           }
         ]
       },
@@ -869,7 +869,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Lorsqu’AVYOR suggère un profil pour votre campagne, il affiche les raisons de la compatibilité : spécialisation dans votre niche, présence sur vos plateformes cibles, taux d’engagement, localisation et langue, score de confiance, activité récente. Ces raisons complètent la lecture d’un portfolio, elles ne la remplacent pas. Vous pouvez ensuite constituer une présélection parmi les candidatures reçues avant de trancher ; la décision reste la vôtre."
+            "text": "When AVYOR suggests a profile for your campaign, it shows the reasons behind the match: specialisation in your niche, presence on your target platforms, engagement rate, location and language, trust score, recent activity. Those reasons complement reading a portfolio, they do not replace it. You can then build a shortlist among the applications you receive before deciding; the decision remains yours."
           }
         ]
       }
@@ -877,32 +877,32 @@
   },
   "sources": [],
   "cta": {
-    "label": "Découvrir le parcours marque",
+    "label": "Discover the brand journey",
     "slug": "brands"
   },
   "related": [
-    "briefugc0001"
+    "briefugcen01"
   ],
   "translations": {
-    "en": "choixcreaen1",
+    "fr": "choixcrea001",
     "es": "choixcreaes1",
     "he": "choixcreahe1",
     "ar": "choixcreaar1"
   },
   "seo": {
-    "title": "Choisir un Creator au-delà du nombre d’abonnés | AVYOR",
-    "description": "Comment comparer des Creators selon l’objectif de votre campagne : façon d’expliquer un produit, adéquation au public, livrables, fiabilité. Grille à reprendre.",
+    "title": "Choosing a Creator beyond follower count | AVYOR",
+    "description": "How to compare Creators against your campaign goal: how they explain a product, fit with your audience, deliverables, reliability. A grid you can reuse.",
     "image": {
-      "src": "/news/media/choisir-un-creator-au-dela-des-abonnes-partage-d51a83ef.jpg",
+      "src": "/news/media/choosing-a-creator-beyond-follower-count-partage-d51a83ef.jpg",
       "width": 1200,
       "height": 630,
-      "alt": "Illustration AVYOR : une boussole en volume, violette et bleue, sur fond bleu nuit."
+      "alt": "AVYOR illustration: a compass in relief, violet and blue, on a midnight blue background."
     },
     "noindex": false
   },
-  "revision": 4,
-  "createdAt": "2026-09-18T16:59:44.106Z",
-  "updatedAt": "2026-09-18T18:47:04.909Z",
-  "publishedAt": "2026-09-18T17:43:51.173Z",
+  "revision": 3,
+  "createdAt": "2026-09-18T18:45:18.810Z",
+  "updatedAt": "2026-09-18T18:47:04.912Z",
+  "publishedAt": "2026-09-18T18:47:04.912Z",
   "status": "published"
 }

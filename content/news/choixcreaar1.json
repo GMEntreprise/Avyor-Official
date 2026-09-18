@@ -1,23 +1,23 @@
 {
-  "id": "choixcrea001",
-  "locale": "fr",
-  "title": "Comment choisir un Creator au-delà du nombre d’abonnés",
-  "slug": "choisir-un-creator-au-dela-des-abonnes",
+  "id": "choixcreaar1",
+  "locale": "ar",
+  "title": "كيف تختارون صانع محتوى أبعد من عدد المتابعين",
+  "slug": "ikhtiyar-creator-abad-min-almutabiin",
   "slugHistory": [],
-  "excerpt": "Trois propositions, trois vidéos soignées : laquelle convient à votre marque ? Une grille de comparaison reliée à l’objectif de votre campagne, et les signaux qui doivent vous alerter.",
+  "excerpt": "ثلاثة عروض، ثلاثة فيديوهات متقنة: أيها يناسب علامتكم؟ جدول مقارنة مرتبط بهدف الحملة، والإشارات التي يجب أن تنبّهكم.",
   "type": "guide",
   "audience": "brands",
   "theme": "choose",
   "author": {
     "kind": "organization",
-    "name": "Équipe éditoriale AVYOR"
+    "name": "فريق التحرير في AVYOR"
   },
   "featured": false,
   "cover": {
-    "src": "/news/media/choisir-un-creator-au-dela-des-abonnes-couverture-b1f58e7e.webp",
+    "src": "/news/media/ikhtiyar-creator-abad-min-almutabiin-couverture-b1f58e7e.webp",
     "width": 1600,
     "height": 900,
-    "alt": "Illustration AVYOR : une boussole en volume, violette et bleue, sur fond bleu nuit."
+    "alt": "رسم توضيحي من AVYOR: بوصلة مجسّمة، بنفسجية وزرقاء، على خلفية زرقاء داكنة."
   },
   "body": {
     "type": "doc",
@@ -27,11 +27,11 @@
         "content": [
           {
             "type": "text",
-            "text": "Vous avez reçu trois propositions de Creators. Les vidéos sont soignées, mais vous ne savez toujours pas laquelle convient à votre marque. "
+            "text": "وصلتكم ثلاثة عروض من صنّاع محتوى. الفيديوهات متقنة، لكنكم ما زلتم لا تعرفون أيها يناسب علامتكم. "
           },
           {
             "type": "text",
-            "text": "Commencez par comparer leur manière d’expliquer un produit, les livrables qu’ils proposent et les conditions de collaboration.",
+            "text": "ابدأوا بمقارنة طريقتهم في شرح منتج، والمخرجات التي يقترحونها، وشروط التعاون.",
             "marks": [
               {
                 "type": "bold"
@@ -40,7 +40,7 @@
           },
           {
             "type": "text",
-            "text": " Le nombre d’abonnés ne répond pas, à lui seul, à ces questions — et selon votre objectif, il peut ne pas compter du tout."
+            "text": " فعدد المتابعين وحده لا يجيب عن هذه الأسئلة — وبحسب هدفكم، قد لا يكون ذا شأن أصلًا."
           }
         ]
       },
@@ -49,7 +49,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Cet article vous donne une méthode : partir de l’objectif de la campagne, comparer cinq critères observables, puis trancher avec une grille que vous pouvez reprendre telle quelle."
+            "text": "يمنحكم هذا المقال طريقة: الانطلاق من هدف الحملة، ومقارنة خمسة معايير يمكن ملاحظتها، ثم الحسم بجدول تستطيعون استعماله كما هو."
           }
         ]
       },
@@ -57,12 +57,12 @@
         "type": "heading",
         "attrs": {
           "level": 2,
-          "id": "d-abord-votre-objectif"
+          "id": "first-your-goal"
         },
         "content": [
           {
             "type": "text",
-            "text": "D’abord, votre objectif"
+            "text": "أولًا، هدفكم"
           }
         ]
       },
@@ -71,7 +71,7 @@
         "content": [
           {
             "type": "text",
-            "text": "La première question n’est pas « quel Creator choisir ? » mais « de quoi ai-je besoin ? »."
+            "text": "السؤال الأول ليس «أي صانع محتوى نختار؟» بل «ماذا نحتاج؟»."
           }
         ]
       },
@@ -86,7 +86,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Des contenus pour vos propres canaux",
+                    "text": "محتوى لقنواتكم الخاصة",
                     "marks": [
                       {
                         "type": "bold"
@@ -95,7 +95,7 @@
                   },
                   {
                     "type": "text",
-                    "text": " (publicité, fiche produit, réseaux de la marque) : c’est une commande UGC. Ce qui compte, c’est la qualité et la justesse de la vidéo. L’audience du Creator ne sera pas utilisée."
+                    "text": " (إعلانات، صفحة منتج، حسابات العلامة): هذا طلب UGC. ما يهم هو جودة الفيديو ودقّته. ولن يُستعمل جمهور صانع المحتوى."
                   }
                 ]
               }
@@ -109,7 +109,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Être vu par une audience précise",
+                    "text": "أن يراكم جمهور محدَّد",
                     "marks": [
                       {
                         "type": "bold"
@@ -118,7 +118,7 @@
                   },
                   {
                     "type": "text",
-                    "text": " : c’est de l’influence. L’audience du Creator devient un critère, mais sa composition compte davantage que sa taille."
+                    "text": ": هذا تأثير. يصبح جمهور صانع المحتوى معيارًا، لكن تركيبته أهم من حجمه."
                   }
                 ]
               }
@@ -131,7 +131,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Beaucoup de campagnes mélangent les deux. Écrivez simplement lequel pèse le plus : il décidera en cas d’hésitation."
+            "text": "حملات كثيرة تمزج الاثنين. اكتبوا ببساطة أيهما أثقل وزنًا: هو من سيحسم عند التردد."
           }
         ]
       },
@@ -139,12 +139,12 @@
         "type": "heading",
         "attrs": {
           "level": 2,
-          "id": "ce-que-le-nombre-d-abonnes-dit-et-ce-qu-il-ne-dit-pas"
+          "id": "what-follower-count-says"
         },
         "content": [
           {
             "type": "text",
-            "text": "Ce que le nombre d’abonnés dit, et ce qu’il ne dit pas"
+            "text": "ما يقوله عدد المتابعين وما لا يقوله"
           }
         ]
       },
@@ -153,7 +153,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Un nombre d’abonnés indique une taille d’audience potentielle, à un moment donné. Il ne dit ni qui compose cette audience, ni si elle ressemble à vos clients, ni si le Creator sait présenter un produit qu’il n’a pas choisi. Pour une commande UGC, il ne dit presque rien d’utile : vous achetez une vidéo, pas une diffusion."
+            "text": "عدد المتابعين يشير إلى حجم جمهور محتمل، في لحظة معيّنة. ولا يقول ممّن يتكوّن هذا الجمهور، ولا إن كان يشبه زبائنكم، ولا إن كان صانع المحتوى يُحسن تقديم منتج لم يخترْه. أما في طلب UGC فلا يقول شيئًا مفيدًا تقريبًا: أنتم تشترون فيديو لا بثًّا."
           }
         ]
       },
@@ -161,12 +161,12 @@
         "type": "heading",
         "attrs": {
           "level": 2,
-          "id": "cinq-criteres-a-comparer"
+          "id": "five-criteria"
         },
         "content": [
           {
             "type": "text",
-            "text": "Cinq critères à comparer"
+            "text": "خمسة معايير للمقارنة"
           }
         ]
       },
@@ -174,12 +174,12 @@
         "type": "heading",
         "attrs": {
           "level": 3,
-          "id": "sa-facon-d-expliquer-un-produit"
+          "id": "criterion-explanation"
         },
         "content": [
           {
             "type": "text",
-            "text": "Sa façon d’expliquer un produit"
+            "text": "طريقته في شرح منتج"
           }
         ]
       },
@@ -188,7 +188,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Regardez deux ou trois vidéos où le Creator présente quelque chose. Comprend-on en quelques secondes à quoi sert le produit ? Montre-t-il un geste d’utilisation ou se contente-t-il de le tenir face caméra ? Ce que vous voyez là ressemble à ce que vous recevrez."
+            "text": "شاهدوا فيديوهين أو ثلاثة يقدّم فيها صانع المحتوى شيئًا. هل يُفهم في ثوانٍ ما فائدة المنتج؟ هل يعرض حركة استخدام أم يكتفي بحمله أمام الكاميرا؟ ما ترونه هناك قريب مما ستستلمونه."
           }
         ]
       },
@@ -196,12 +196,12 @@
         "type": "heading",
         "attrs": {
           "level": 3,
-          "id": "l-adequation-avec-votre-public"
+          "id": "criterion-fit"
         },
         "content": [
           {
             "type": "text",
-            "text": "L’adéquation avec votre public"
+            "text": "الملاءمة لجمهوركم"
           }
         ]
       },
@@ -210,7 +210,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Le ton, le décor, le rythme correspondent-ils aux personnes que vous visez ? Un excellent Creator peut être le mauvais choix si sa façon de parler ne ressemble pas à vos clients."
+            "text": "هل النبرة والديكور والإيقاع تناسب من تخاطبونهم؟ قد يكون صانع محتوى ممتاز خيارًا خاطئًا إن كانت طريقته في الكلام لا تشبه زبائنكم."
           }
         ]
       },
@@ -218,12 +218,12 @@
         "type": "heading",
         "attrs": {
           "level": 3,
-          "id": "la-qualite-d-execution"
+          "id": "criterion-execution"
         },
         "content": [
           {
             "type": "text",
-            "text": "La qualité d’exécution"
+            "text": "جودة التنفيذ"
           }
         ]
       },
@@ -232,7 +232,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Son audible sans musique, lumière stable, cadrage lisible sur un téléphone, montage qui va à l’essentiel. Ces points se vérifient en une minute et évitent les déceptions techniques."
+            "text": "صوت مسموع بلا موسيقى، إضاءة ثابتة، تأطير واضح على شاشة هاتف، مونتاج يذهب إلى الجوهر. تُفحص هذه النقاط في دقيقة وتجنّبكم خيبات تقنية."
           }
         ]
       },
@@ -240,12 +240,12 @@
         "type": "heading",
         "attrs": {
           "level": 3,
-          "id": "les-livrables-qu-il-propose"
+          "id": "criterion-deliverables"
         },
         "content": [
           {
             "type": "text",
-            "text": "Les livrables qu’il propose"
+            "text": "المخرجات التي يقترحها"
           }
         ]
       },
@@ -254,7 +254,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Un Creator qui propose des variantes d’accroche, des fichiers bruts ou plusieurs formats vous facilite la suite. Comparez ce qui est inclus, pas seulement le montant."
+            "text": "صانع محتوى يقترح مقدمات بديلة أو ملفات خام أو عدة صيغ يسهّل عليكم ما بعد التسليم. قارنوا ما هو مشمول، لا المبلغ وحده."
           }
         ]
       },
@@ -262,12 +262,12 @@
         "type": "heading",
         "attrs": {
           "level": 3,
-          "id": "la-fiabilite-de-la-collaboration"
+          "id": "criterion-reliability"
         },
         "content": [
           {
             "type": "text",
-            "text": "La fiabilité de la collaboration"
+            "text": "موثوقية التعاون"
           }
         ]
       },
@@ -276,7 +276,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Les réponses sont-elles claires ? Pose-t-il des questions sur le brief ? Accepte-t-il de préciser par écrit les délais, les retouches et les droits d’usage ? Une bonne question avant le tournage vaut mieux qu’une bonne excuse après."
+            "text": "هل الإجابات واضحة؟ هل يطرح أسئلة عن الموجز؟ هل يقبل تحديد المواعيد والتعديلات وحقوق الاستخدام كتابةً؟ سؤال جيد قبل التصوير خير من عذر جيد بعده."
           }
         ]
       },
@@ -284,12 +284,12 @@
         "type": "heading",
         "attrs": {
           "level": 2,
-          "id": "la-grille-de-comparaison"
+          "id": "comparison-grid"
         },
         "content": [
           {
             "type": "text",
-            "text": "La grille de comparaison"
+            "text": "جدول المقارنة"
           }
         ]
       },
@@ -298,7 +298,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Notez chaque critère de 1 à 3 pour chaque Creator. La dernière colonne indique quels critères comptent le plus selon votre objectif."
+            "text": "امنحوا كل معيار درجة من 1 إلى 3 لكل صانع محتوى. ويشير العمود الأخير إلى المعايير الأثقل وزنًا بحسب هدفكم."
           }
         ]
       },
@@ -316,7 +316,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Critère"
+                        "text": "المعيار"
                       }
                     ]
                   }
@@ -330,7 +330,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Ce que vous regardez"
+                        "text": "ما تنظرون إليه"
                       }
                     ]
                   }
@@ -344,7 +344,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Où le voir"
+                        "text": "أين ترونه"
                       }
                     ]
                   }
@@ -358,7 +358,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Priorité"
+                        "text": "الأولوية"
                       }
                     ]
                   }
@@ -377,7 +377,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Explication du produit"
+                        "text": "شرح المنتج"
                       }
                     ]
                   }
@@ -391,7 +391,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "On comprend l’usage en quelques secondes"
+                        "text": "يُفهم الاستعمال في ثوانٍ"
                       }
                     ]
                   }
@@ -405,7 +405,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Portfolio, vidéos de démonstration"
+                        "text": "معرض الأعمال، فيديوهات العرض"
                       }
                     ]
                   }
@@ -419,7 +419,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "UGC : forte · Influence : forte"
+                        "text": "UGC: عالية · تأثير: عالية"
                       }
                     ]
                   }
@@ -438,7 +438,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Adéquation au public"
+                        "text": "الملاءمة للجمهور"
                       }
                     ]
                   }
@@ -452,7 +452,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Ton, décor, rythme proches de vos clients"
+                        "text": "نبرة وديكور وإيقاع قريبة من زبائنكم"
                       }
                     ]
                   }
@@ -466,7 +466,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Vidéos récentes, profil"
+                        "text": "فيديوهات حديثة، الملف الشخصي"
                       }
                     ]
                   }
@@ -480,7 +480,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "UGC : moyenne · Influence : forte"
+                        "text": "UGC: متوسطة · تأثير: عالية"
                       }
                     ]
                   }
@@ -499,7 +499,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Qualité d’exécution"
+                        "text": "جودة التنفيذ"
                       }
                     ]
                   }
@@ -513,7 +513,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Son, lumière, cadrage, montage"
+                        "text": "الصوت، الإضاءة، التأطير، المونتاج"
                       }
                     ]
                   }
@@ -527,7 +527,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Deux ou trois vidéos au hasard"
+                        "text": "فيديوهان أو ثلاثة عشوائيًا"
                       }
                     ]
                   }
@@ -541,7 +541,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "UGC : forte · Influence : moyenne"
+                        "text": "UGC: عالية · تأثير: متوسطة"
                       }
                     ]
                   }
@@ -560,7 +560,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Livrables proposés"
+                        "text": "المخرجات المقترحة"
                       }
                     ]
                   }
@@ -574,7 +574,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Variantes, fichiers bruts, formats"
+                        "text": "بدائل، ملفات خام، صيغ"
                       }
                     ]
                   }
@@ -588,7 +588,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Proposition, échanges"
+                        "text": "العرض والمراسلات"
                       }
                     ]
                   }
@@ -602,7 +602,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "UGC : forte · Influence : moyenne"
+                        "text": "UGC: عالية · تأثير: متوسطة"
                       }
                     ]
                   }
@@ -621,7 +621,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Fiabilité"
+                        "text": "الموثوقية"
                       }
                     ]
                   }
@@ -635,7 +635,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Réponses claires, questions sur le brief"
+                        "text": "إجابات واضحة، أسئلة عن الموجز"
                       }
                     ]
                   }
@@ -649,7 +649,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Premiers échanges"
+                        "text": "المراسلات الأولى"
                       }
                     ]
                   }
@@ -663,7 +663,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "UGC : forte · Influence : forte"
+                        "text": "UGC: عالية · تأثير: عالية"
                       }
                     ]
                   }
@@ -682,7 +682,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Audience"
+                        "text": "الجمهور"
                       }
                     ]
                   }
@@ -696,7 +696,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Composition et proximité avec vos clients"
+                        "text": "تركيبته وقربه من زبائنكم"
                       }
                     ]
                   }
@@ -710,7 +710,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Informations fournies par le Creator"
+                        "text": "معلومات يقدّمها صانع المحتوى"
                       }
                     ]
                   }
@@ -724,7 +724,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "UGC : faible · Influence : forte"
+                        "text": "UGC: منخفضة · تأثير: عالية"
                       }
                     ]
                   }
@@ -745,7 +745,7 @@
             "content": [
               {
                 "type": "text",
-                "text": "Exemple illustratif.",
+                "text": "مثال توضيحي.",
                 "marks": [
                   {
                     "type": "bold"
@@ -754,7 +754,7 @@
               },
               {
                 "type": "text",
-                "text": " Une marque de cosmétiques veut des vidéos pour ses publicités. Le Creator A a la plus grande audience mais ses vidéos produit sont des plans fixes sans démonstration. Le Creator B a une audience modeste, montre toujours le geste d’application et propose trois accroches. Le Creator C est proche du public visé mais son son est inaudible sans musique. Pour une commande UGC, la grille désigne B : l’audience de A ne sera pas utilisée, et le défaut de C touche un critère prioritaire."
+                "text": " علامة تجميل تريد فيديوهات لإعلاناتها. صانع المحتوى «أ» لديه أكبر جمهور، لكن فيديوهات المنتج عنده لقطات ثابتة بلا عرض للاستخدام. وصانعة المحتوى «ب» جمهورها متواضع، لكنها تُظهر دائمًا حركة التطبيق وتقترح ثلاث مقدمات. وصانع المحتوى «ج» قريب من الجمهور المستهدَف، لكن صوته غير مسموع بلا موسيقى. في طلب UGC يشير الجدول إلى «ب»: جمهور «أ» لن يُستعمل، وخلل «ج» يقع في معيار ذي أولوية."
               }
             ]
           }
@@ -764,12 +764,12 @@
         "type": "heading",
         "attrs": {
           "level": 2,
-          "id": "les-signaux-qui-doivent-vous-alerter"
+          "id": "warning-signals"
         },
         "content": [
           {
             "type": "text",
-            "text": "Les signaux qui doivent vous alerter"
+            "text": "الإشارات التي يجب أن تنبّهكم"
           }
         ]
       },
@@ -790,7 +790,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Un portfolio qui ne montre qu’un seul type de vidéo, sans démonstration de produit."
+                        "text": "معرض أعمال يعرض نوعًا واحدًا من الفيديو فقط، بلا عرض لمنتج."
                       }
                     ]
                   }
@@ -804,7 +804,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Des statistiques d’audience que le Creator ne peut ou ne veut pas expliquer."
+                        "text": "أرقام جمهور لا يستطيع صانع المحتوى أو لا يريد شرحها."
                       }
                     ]
                   }
@@ -818,7 +818,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Un refus de préciser par écrit les livrables, les délais ou les droits d’usage."
+                        "text": "رفض تحديد المخرجات أو المواعيد أو حقوق الاستخدام كتابةً."
                       }
                     ]
                   }
@@ -832,7 +832,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Aucune question sur votre brief, même lorsqu’il laisse des points ouverts."
+                        "text": "غياب أي سؤال عن موجزكم، حتى حين يترك نقاطًا مفتوحة."
                       }
                     ]
                   }
@@ -847,7 +847,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Aucun de ces signaux n’est à lui seul rédhibitoire. Ensemble, ils annoncent en général une collaboration difficile."
+            "text": "لا واحدة من هذه الإشارات مانعة بذاتها. لكنها مجتمعة تُنذر عادةً بتعاون صعب."
           }
         ]
       },
@@ -855,12 +855,12 @@
         "type": "heading",
         "attrs": {
           "level": 2,
-          "id": "dans-avyor"
+          "id": "inside-avyor"
         },
         "content": [
           {
             "type": "text",
-            "text": "Dans AVYOR"
+            "text": "داخل AVYOR"
           }
         ]
       },
@@ -869,7 +869,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Lorsqu’AVYOR suggère un profil pour votre campagne, il affiche les raisons de la compatibilité : spécialisation dans votre niche, présence sur vos plateformes cibles, taux d’engagement, localisation et langue, score de confiance, activité récente. Ces raisons complètent la lecture d’un portfolio, elles ne la remplacent pas. Vous pouvez ensuite constituer une présélection parmi les candidatures reçues avant de trancher ; la décision reste la vôtre."
+            "text": "حين تقترح AVYOR ملفًا شخصيًا لحملتكم، تعرض أسباب الملاءمة: التخصص في مجالكم، الحضور على منصات الاستهداف، معدّل التفاعل، الموقع واللغة، درجة الثقة، النشاط الأخير. هذه الأسباب تكمّل قراءة معرض الأعمال ولا تحلّ محلها. ثم يمكنكم تكوين قائمة مختصرة من الطلبات الواردة قبل الحسم؛ والقرار يبقى لكم."
           }
         ]
       }
@@ -877,32 +877,32 @@
   },
   "sources": [],
   "cta": {
-    "label": "Découvrir le parcours marque",
+    "label": "اكتشف مسار العلامة التجارية",
     "slug": "brands"
   },
   "related": [
-    "briefugc0001"
+    "briefugcar01"
   ],
   "translations": {
+    "fr": "choixcrea001",
     "en": "choixcreaen1",
     "es": "choixcreaes1",
-    "he": "choixcreahe1",
-    "ar": "choixcreaar1"
+    "he": "choixcreahe1"
   },
   "seo": {
-    "title": "Choisir un Creator au-delà du nombre d’abonnés | AVYOR",
-    "description": "Comment comparer des Creators selon l’objectif de votre campagne : façon d’expliquer un produit, adéquation au public, livrables, fiabilité. Grille à reprendre.",
+    "title": "اختيار صانع محتوى أبعد من عدد المتابعين | AVYOR",
+    "description": "كيف تقارنون بين صنّاع المحتوى بحسب هدف حملتكم: طريقة شرح المنتج، الملاءمة للجمهور، المخرجات، الموثوقية. جدول جاهز للاستعمال.",
     "image": {
-      "src": "/news/media/choisir-un-creator-au-dela-des-abonnes-partage-d51a83ef.jpg",
+      "src": "/news/media/ikhtiyar-creator-abad-min-almutabiin-partage-d51a83ef.jpg",
       "width": 1200,
       "height": 630,
-      "alt": "Illustration AVYOR : une boussole en volume, violette et bleue, sur fond bleu nuit."
+      "alt": "رسم توضيحي من AVYOR: بوصلة مجسّمة، بنفسجية وزرقاء، على خلفية زرقاء داكنة."
     },
     "noindex": false
   },
-  "revision": 4,
-  "createdAt": "2026-09-18T16:59:44.106Z",
-  "updatedAt": "2026-09-18T18:47:04.909Z",
-  "publishedAt": "2026-09-18T17:43:51.173Z",
+  "revision": 3,
+  "createdAt": "2026-09-18T18:45:19.685Z",
+  "updatedAt": "2026-09-18T18:47:04.911Z",
+  "publishedAt": "2026-09-18T18:47:04.911Z",
   "status": "published"
 }

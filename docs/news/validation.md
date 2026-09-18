@@ -12,10 +12,10 @@ bun run test:all
 | --- | --- |
 | `typecheck` (TypeScript strict) | aucune erreur |
 | `lint` (ESLint) | aucune erreur |
-| `test` — unitaires | **142 tests, 0 échec** |
-| `build` | 60 pages statiques + 5 pages News (4 articles publiés) + 404 |
-| `test:seo` — HTML construit | **114 tests, 0 échec** (dont 17 sur le site de test News) |
-| `test:e2e` — Playwright, desktop et mobile | **118 tests, 12 ignorés** (un seul passage nécessaire), 0 échec |
+| `test` — unitaires | **150 tests, 0 échec** |
+| `build` | 60 pages statiques + 25 pages News (20 articles publiés, 4 × 5 langues) + 404 |
+| `test:seo` — HTML construit | **115 tests, 0 échec** (dont 18 sur le site de test News) |
+| `test:e2e` — Playwright, desktop et mobile | **119 tests, 13 ignorés** (un seul passage nécessaire), 0 échec |
 
 Budget : `jsGzip` 138 648 octets (plafond 143 360) · `jsGzipPerLocale` 159 996 (168 960) · `cssGzip` 14 888 (25 600). Les vues de lecture News sont chargées à la demande : une page hors News ne les télécharge pas.
 
@@ -27,7 +27,7 @@ Budget : `jsGzip` 138 648 octets (plafond 143 360) · `jsGzipPerLocale` 159 996 
 
 **API d’administration** (`news-api.test.mjs`) : lecture et écriture refusées sans jeton, requête d’un autre site refusée, nom d’hôte détourné refusé, lien `javascript:` refusé avant toute écriture, conflit de révision, ancres posées à l’enregistrement, corps de requête démesuré refusé, fichier non-image refusé.
 
-**Articles livrés** (`news-articles.test.mjs`) : les quatre sont publiables en l’état, adresses et titres SEO uniques, sommaire et outil de décision présents, réponse centrale en gras dès l’introduction, aucune formule creuse, aucun chiffre inventé (le seul montant cité est le seuil légal, sourcé), faits produit conformes à l’application, source officielle datée dès qu’une règle est citée.
+**Articles livrés** (`news-articles.test.mjs`), sur les vingt articles des cinq langues : quatre articles par langue, traductions réciproques dans les deux sens, ancres partageables même sans alphabet latin, longueur mesurée en caractères (l’hébreu et l’arabe disent la même chose en moins de mots), formules creuses propres à chaque langue, et **une règle française annoncée comme française** dès qu’elle est citée hors du français. Puis, comme auparavant : les quatre sont publiables en l’état, adresses et titres SEO uniques, sommaire et outil de décision présents, réponse centrale en gras dès l’introduction, aucune formule creuse, aucun chiffre inventé (le seul montant cité est le seuil légal, sourcé), faits produit conformes à l’application, source officielle datée dès qu’une règle est citée.
 
 **HTML construit** (`tests/seo/news-html.test.mjs`) : brouillon absent de tout fichier servi, métadonnées conformes à l’affichage, données structurées cohérentes avec le visible, `hreflang` réciproques, ancres du sommaire menant à de vraies sections, HTML sémantique sans script ni attribut événementiel, données d’hydratation sans champ interne, pagination avec canonical propre, filtres limités à ce qui est alimenté, sitemap avec dates, flux par langue, index de recherche complet, absence de News dans les langues sans article, dernières publications sur l’accueil, redirection d’une adresse renommée.
 
@@ -56,7 +56,10 @@ Un test qui passe du premier coup ne prouve rien tant qu’on ne l’a pas vu é
 7. **Titres identiques répétés** en fin de document juridique (`Contact` / `Contact`) — corrigé dans les cinq langues.
 8. **Un test ancien s’appuyait sur un comportement impossible en production** : `/marques/` est une redirection déclarée, elle ne montre jamais la page 404. La prévisualisation locale applique désormais les redirections de `vercel.json`, ce qui a révélé l’écart.
 9. **L’intro rejouait à chaque changement de langue, en développement.** Le garde de session n’était posé que sur `/` : le serveur de développement comparait l’adresse demandée à une seule chaîne, alors que chaque langue a son accueil (`/en/`, `/es/`…). La règle est maintenant unique (`isHomeRoute` dans `src/i18n/locales.ts`), partagée par le pré-rendu et le serveur de développement, et vérifiée langue par langue.
-10. **Le bac à sable de l’admin héritait des News du vrai build** : il copie `dist`, où les articles publiés vivent désormais. Une page dépubliée dans le bac à sable restait servie par le fichier hérité. Les pages News copiées sont effacées avant la reconstruction — sans quoi le test aurait fini par valider une dépublication qui ne retire rien.
+10. **« todo » espagnol pris pour un marqueur « TODO ».** La détection des textes en chantier était insensible à la casse : aucun article espagnol contenant le mot « todo » — c’est-à-dire tous — n’aurait pu être publié. Les marqueurs de rédaction (`TODO`, `TBD`, `FIXME`) sont désormais cherchés en majuscules, les formules françaises restent insensibles à la casse.
+11. **Le site de test datait ses articles au-delà d’aujourd’hui.** Ses dates se déduisaient d’un compteur ; avec vingt articles au lieu de quatre, la série dépassait la date du jour et le build refusait — à juste titre — des dates de publication futures. Le site de test n’emprunte plus qu’une langue au corpus réel, et refuse toute date future en le disant.
+12. **Le site de test héritait lui aussi des News du vrai build** (il copie `dist`) : les langues « sans article » gardaient la section héritée. Même nettoyage que pour le bac à sable, médias remis en place ensuite.
+13. **Le bac à sable de l’admin héritait des News du vrai build** : il copie `dist`, où les articles publiés vivent désormais. Une page dépubliée dans le bac à sable restait servie par le fichier hérité. Les pages News copiées sont effacées avant la reconstruction — sans quoi le test aurait fini par valider une dépublication qui ne retire rien.
 
 ## Contrôles visuels
 
@@ -64,7 +67,7 @@ Captures dans [`captures/`](captures/) : liste, article, article avec sommaire, 
 
 ## Limites réelles
 
-- **Les quatre articles sont publiés** (français), donc présents dans le build : pages, liste, recherche, flux, sitemap, navigation et « Dernières publications » de l’accueil. **Ils ne sont pas encore en ligne** : la mise en ligne, c’est le déploiement.
+- **Les quatre articles sont publiés dans les cinq langues** (vingt articles), donc présents dans le build : pages, liste, recherche, flux, sitemap, navigation et « Dernières publications » de l’accueil. **Ils ne sont pas encore en ligne** : la mise en ligne, c’est le déploiement.
 - **Le site public n’a pas été déployé** dans le cadre de ce travail, et **aucune vérification Search Console n’a été faite** : elle demande l’accès au compte.
 - Les mesures de performance sont des mesures de laboratoire, sur un serveur local.
 - Les brouillons ne sont ni sauvegardés hors de ce poste, ni partagés entre machines — conséquence directe du dépôt public.
@@ -75,6 +78,6 @@ Captures dans [`captures/`](captures/) : liste, article, article avec sommaire, 
 ## Prochaines décisions utiles
 
 1. Pousser le dépôt : c’est ce qui met les quatre articles en ligne. Les relire une dernière fois avant, ou après sur l’URL de prévisualisation Vercel.
-2. Décider si les articles seront traduits : la mécanique `hreflang` est prête et n’attend que de vraies traductions.
+2. Faire relire les traductions par une personne de langue maternelle avant d’ouvrir la publicité sur ces pages : elles sont écrites avec soin, elles n’ont pas été relues par un tiers.
 3. Brancher — ou non — les trois événements éditoriaux à un outil de mesure, en tranchant la question du consentement.
 4. Après la mise en service du domaine : vérification Search Console, envoi du sitemap, inspection d’une URL d’article.

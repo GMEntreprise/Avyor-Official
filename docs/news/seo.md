@@ -37,9 +37,11 @@ Pas de `FAQPage` : la documentation Google consultée le 18 septembre 2026 indiq
 
 ## Langues
 
+Les quatre articles existent dans les cinq langues. Chacun déclare ses quatre traductions, et chacune le déclare en retour ; un test compare les vingt articles dans les deux sens, parce qu’une chaîne non réciproque est ignorée par Google. Les adresses sont propres à chaque langue (`/news/brief-ugc-quoi-preciser/`, `/en/news/ugc-brief-what-to-specify/`, `/he/news/brif-ugc-ma-lefaret/`…) : le slug suit la langue, jamais une traduction automatique de l’adresse française.
+
 Les `hreflang` d’un article ne sont écrits que pour des **traductions réelles, publiées et réciproques** : si l’article français désigne l’anglais et que l’anglais ne désigne pas le français en retour, aucun lien n’est déclaré. Un article sans traduction n’a aucun `hreflang`. La page de liste déclare ses langues seulement pour celles qui ont au moins un article.
 
-Une langue sans article publié n’a ni page News, ni lien dans la navigation, ni entrée de sitemap : pas de page vide en attente de contenu. À ce jour, seul le français a des articles publiés ; les quatre n’ont pas de traduction, donc aucun `hreflang` d’article n’est écrit.
+Une langue sans article publié n’a ni page News, ni lien dans la navigation, ni entrée de sitemap : pas de page vide en attente de contenu.
 
 ## Flux
 

@@ -9,7 +9,7 @@ bun run dev         bun run typecheck    bun run lint
 bun run test        bun run test:seo     bun run test:e2e
 bun run build       bun run budget       bun run measure
 bun run test:all    bun run assets:build
-bun run news:seed   bun run news:redirects   bun run news:fixture
+bun run news:seed   bun run news:publish   bun run news:redirects   bun run news:fixture
 ```
 
 N'inventez pas de script absent de `package.json`.
@@ -57,7 +57,10 @@ Espace éditorial pré-rendu comme le reste du site. Guide complet : `docs/news/
 - **Changer le slug d'un article publié** écrit une redirection permanente dans `vercel.json`. Si les redirections divergent des articles, **le build s'arrête** ; `bun run news:redirects` les réaligne.
 - **Une langue sans article publié n'a pas de section News** : ni page, ni lien de navigation, ni entrée de sitemap. Les filtres n'affichent que les thématiques alimentées.
 - **Les médias** vivent dans `public/news/media/`, nommés par l'empreinte de leur contenu (d'où le cache immuable), réencodés en WebP à l'envoi. Jamais de SVG téléversé : il peut porter du script.
-- **Aucun article n'est publié par un script.** `bun run news:seed` écrit des brouillons ; publier est une décision éditoriale, prise dans l'admin.
+- **Les articles livrés s'écrivent dans `scripts/news-articles/<langue>.mjs`**, un fichier par langue, la même liste de familles dans chacun. Les liens `translations` sont **déduits de la famille, dans les deux sens** — jamais écrits à la main : une chaîne non réciproque est ignorée par Google et le site ne la déclare pas. Un test compare les vingt articles dans les deux sens.
+- **Une traduction dit qu'une règle est française.** Le droit cité (loi n° 2023-451, décret n° 2025-1137) est français ; un lecteur espagnol, hébreu ou arabe n'a aucune raison de le deviner. Un test l'exige dans chaque langue non française qui cite une source.
+- **Hébreu et arabe écrivent leurs ancres de section en latin** (deuxième argument de `h2`/`h3`) : une ancre se dérive du texte du titre, ce qui ne donne rien de partageable dans ces alphabets, et toutes les sections finiraient sur `#section-2`. Un test refuse ces ancres génériques.
+- **Publier reste une décision éditoriale.** `bun run news:seed` n'écrit que des brouillons ; la publication se fait depuis l'admin ou avec `bun run news:publish <id>` (`--all`), qui passe par le même `publish()` du magasin — mêmes validations, mêmes redirections. Aucun script ne publie tout seul, et aucun brouillon n'est publié par le build.
 - **Une nouveauté AVYOR ne se publie que pour une fonctionnalité livrée et vérifiée** dans l'application ; un retour d'expérience, qu'à partir d'un cas réel. Les règles d'écriture sont dans `docs/news/ligne-editoriale.md` et vérifiées par `tests/unit/news-articles.test.mjs`.
 - **Les tests des pages publiées tournent sur un site de test** (`bun run news:fixture` → `.news-fixture/site`) : le vrai build, avec des articles fictifs publiés, plus un brouillon piège dont le marqueur ne doit apparaître dans aucun fichier servi. Ne publiez jamais un article réel pour faire passer un test.
 - **Lecture** : colonne d'environ 65 caractères, corps 18 px, interligne 1,7, contraste ≥ 12:1. Le corps d'un article ne dépend d'aucune animation : ni `Reveal`, ni vidéo de fond, ni parallaxe.
