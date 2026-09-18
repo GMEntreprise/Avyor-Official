@@ -1,6 +1,7 @@
 import { hydrateRoot, createRoot } from 'react-dom/client';
 import { App } from './App';
 import type { DeepContent } from './content/types';
+import type { NewsData } from './news/build';
 import { loadContent, loadDeep } from './content/index';
 import { DEFAULT_LOCALE, isLocale, localeMeta, splitPath } from './i18n/locales';
 import { startReveal } from './lib/reveal';
@@ -35,7 +36,35 @@ const [content, deep] = await Promise.all([
   slug ? loadDeep[locale]() : (undefined as DeepContent | undefined),
 ]);
 
-const app = <App locale={locale} content={content} path={path} deep={deep} />;
+/**
+ * The News data this page was rendered with, embedded by the build. Reading it
+ * back is what lets the page hydrate without a request; whether News exists is
+ * decided per language, so the not-found fallback stays right in any language.
+ */
+const payloadNode = document.getElementById('avyor-news');
+const payload = payloadNode
+  ? (JSON.parse(payloadNode.textContent || '{}') as Omit<NewsData, 'enabled'> & {
+      enabledLocales?: string[];
+    })
+  : {};
+const news: NewsData = {
+  ...(fallback ? {} : payload),
+  enabled: (payload.enabledLocales ?? []).includes(locale),
+};
+
+// The reading views travel only to News pages, and only when there is News.
+const newsViews = news.enabled && /^news(\/|$)/.test(slug) ? await import('./news/views') : null;
+
+const app = (
+  <App
+    locale={locale}
+    content={content}
+    path={path}
+    deep={deep}
+    news={news}
+    newsViews={newsViews}
+  />
+);
 if (fallback && locale !== served) {
   document.documentElement.lang = localeMeta[locale].tag;
   document.documentElement.dir = localeMeta[locale].dir;

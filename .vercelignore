@@ -14,3 +14,11 @@
 /test-results/
 /.github/
 /.ssr/
+# Brouillons News : jamais envoyés, même par un déploiement lancé depuis ce
+# poste avec la CLI Vercel (qui lit ce fichier, pas .gitignore).
+/content/news-drafts/
+# Admin local et bacs à sable de test : rien de tout cela n'est construit.
+/admin/
+/.news-fixture/
+/.news-e2e/
+/.news-sandbox/

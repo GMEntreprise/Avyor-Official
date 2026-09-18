@@ -1,14 +1,15 @@
 {
-  "measuredAt": "2026-09-18T14:20:33.420Z",
+  "measuredAt": "2026-09-18T17:22:43.317Z",
   "initial": [
-    "assets/index-CVZvfYsW.js",
-    "assets/motion-DDGmUNfW.js"
+    "assets/index-D93sxOZ9.js",
+    "assets/motion-DDGmUNfW.js",
+    "assets/NewsCard-BNvl13pr.js"
   ],
   "metrics": {
-    "jsGzip": 137077,
-    "jsGzipPerLocale": 157700,
-    "jsGzipAllLocales": 235586,
-    "cssGzip": 12898,
+    "jsGzip": 138648,
+    "jsGzipPerLocale": 159996,
+    "jsGzipAllLocales": 245765,
+    "cssGzip": 14888,
     "pageHeroVideo": 492408,
     "poster": 125272,
     "film": 1022871,

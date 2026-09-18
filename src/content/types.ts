@@ -189,6 +189,50 @@ export interface Ui {
     audience: string;
     top: string;
   };
+  news: {
+    /** Navigation label and page title of the section. */
+    label: string;
+    intro: string;
+    metaTitle: string;
+    metaDescription: string;
+    eyebrow: string;
+    featured: string;
+    latestEyebrow: string;
+    latestTitle: string;
+    latestLink: string;
+    searchLabel: string;
+    searchPlaceholder: string;
+    submit: string;
+    audienceLabel: string;
+    themeLabel: string;
+    all: string;
+    audiences: Record<'brands' | 'creators' | 'both', string>;
+    themes: Record<'prepare' | 'create' | 'choose' | 'measure', string>;
+    types: Record<'guide' | 'product' | 'case', string>;
+    results: (count: number) => string;
+    empty: string;
+    reset: string;
+    loading: string;
+    error: string;
+    retry: string;
+    pagination: string;
+    previous: string;
+    next: string;
+    page: (page: number, pages: number) => string;
+    readingTime: (minutes: number) => string;
+    published: string;
+    updated: string;
+    by: string;
+    toc: string;
+    sources: string;
+    accessed: string;
+    related: string;
+    sectionLink: string;
+    feed: string;
+    callouts: Record<'example' | 'checklist' | 'warning', string>;
+    /** BCP 47 locale used to write dates. */
+    dateLocale: string;
+  };
   /** The plain-text summary published at /llms.txt for machine readers. */
   llms: {
     stores: string;

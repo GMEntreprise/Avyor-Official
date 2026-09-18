@@ -2,8 +2,26 @@ import { createServer } from 'node:http';
 import { readFile, stat } from 'node:fs/promises';
 import { resolve, extname } from 'node:path';
 import { gzipSync } from 'node:zlib';
-const root = resolve('dist');
+const root = resolve(process.env.SERVE_DIR || 'dist');
 const port = Number(process.env.PORT || 4173);
+/**
+ * The redirects Vercel applies in production, applied here too so a changed
+ * article address can be checked end to end before it is deployed. Sources
+ * are literal paths in this project; nothing is interpreted as a pattern.
+ */
+const redirectsFor = async () => {
+  try {
+    const file = await readFile(process.env.REDIRECTS_FILE || 'vercel.json', 'utf8');
+    return new Map(
+      (JSON.parse(file).redirects ?? [])
+        .filter((rule) => !/[:(*]/.test(rule.source))
+        .map((rule) => [rule.source, rule]),
+    );
+  } catch {
+    // Aucune redirection déclarée : rien à appliquer.
+    return new Map();
+  }
+};
 const types = {
   '.html': 'text/html; charset=utf-8',
   '.css': 'text/css',
@@ -27,6 +45,15 @@ createServer(async (req, res) => {
       pathname = decodeURIComponent(url.pathname);
     } catch {
       res.writeHead(400);
+      res.end();
+      return;
+    }
+    // Re-read each time: a publication in progress may have just changed them.
+    const redirect = (await redirectsFor()).get(pathname);
+    if (redirect) {
+      res.writeHead(redirect.permanent ? 308 : 307, {
+        Location: redirect.destination + url.search,
+      });
       res.end();
       return;
     }

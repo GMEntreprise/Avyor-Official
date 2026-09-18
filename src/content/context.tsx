@@ -1,10 +1,13 @@
 import { createContext, useContext } from 'react';
 import { routeFor, type Locale } from '../i18n/locales';
+import type { NewsData } from '../news/build';
 import type { SiteContent } from './types';
 
 export interface Site {
   locale: Locale;
   content: SiteContent;
+  /** What this page knows about News: whether the section exists, and its data. */
+  news: NewsData;
 }
 
 const SiteContext = createContext<Site | null>(null);

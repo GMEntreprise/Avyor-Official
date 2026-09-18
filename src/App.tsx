@@ -33,6 +33,9 @@ import { config } from './config';
 import { SiteProvider, useHref, useSite, useUi } from './content/context';
 import type { DeepContent, Page, SiteContent } from './content/types';
 import { routeFor, splitPath, type Locale } from './i18n/locales';
+import { LatestNews } from './news/LatestNews';
+import { NewsViewsProvider, useNewsViews, type NewsViews } from './news/views-context';
+import type { NewsData } from './news/build';
 import { ordinal } from './lib/utils';
 
 export type { DeepContent };
@@ -189,9 +192,24 @@ function Home() {
           {ui.trust.link} <ArrowUpRight size={17} />
         </a>
       </section>
+      <LatestNews />
       <Faq />
     </>
   );
+}
+
+/**
+ * The News routes: /news/, /news/page/N/ and /news/<slug>/. A route the build
+ * did not produce data for — an unpublished or unknown article — is the
+ * not-found page, never an empty shell.
+ */
+function NewsRoute({ slug }: { slug: string }) {
+  const { news } = useSite();
+  const views = useNewsViews();
+  if (!views || !news.enabled) return <NotFound />;
+  if (/^news(\/page\/\d+)?$/.test(slug))
+    return news.index ? <views.NewsIndex data={news.index} /> : <NotFound />;
+  return news.article ? <views.NewsArticle data={news.article} /> : <NotFound />;
 }
 
 function InnerPage({ page, deep }: { page: Page; deep?: DeepContent }) {
@@ -282,6 +300,7 @@ function Shell({ path, deep }: { path: string; deep?: DeepContent }) {
   const { content, locale } = useSite();
   const { slug } = splitPath(path);
   const page = content.pages.find((p) => p.slug === slug);
+  const isNews = /^news(\/|$)/.test(slug);
   return (
     <LazyMotion features={domAnimation}>
       <a href="#main" className="skip-link">
@@ -290,7 +309,17 @@ function Shell({ path, deep }: { path: string; deep?: DeepContent }) {
       <div id="top" />
       <Navbar path={routeFor(locale, slug)} />
       <main id="main">
-        {page ? slug ? <InnerPage page={page} deep={deep} /> : <Home /> : <NotFound />}
+        {isNews ? (
+          <NewsRoute slug={slug} />
+        ) : page ? (
+          slug ? (
+            <InnerPage page={page} deep={deep} />
+          ) : (
+            <Home />
+          )
+        ) : (
+          <NotFound />
+        )}
       </main>
       <Footer />
       {!slug && page && <Intro />}
@@ -303,15 +332,21 @@ export function App({
   content,
   path,
   deep,
+  news = { enabled: false },
+  newsViews = null,
 }: {
   locale: Locale;
   content: SiteContent;
   path: string;
   deep?: DeepContent;
+  news?: NewsData;
+  newsViews?: NewsViews | null;
 }) {
   return (
-    <SiteProvider value={{ locale, content }}>
-      <Shell path={path} deep={deep} />
+    <SiteProvider value={{ locale, content, news }}>
+      <NewsViewsProvider value={newsViews}>
+        <Shell path={path} deep={deep} />
+      </NewsViewsProvider>
     </SiteProvider>
   );
 }

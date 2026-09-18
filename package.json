@@ -10,7 +10,7 @@
     "typecheck": "tsc -b",
     "lint": "eslint src tests scripts/*.mjs",
     "test": "node --test tests/unit/*.test.mjs",
-    "test:seo": "node --test tests/seo/*.test.mjs",
+    "test:seo": "node scripts/news-fixture-site.mjs && node --test tests/seo/*.test.mjs",
     "test:e2e": "playwright test",
     "test:all": "bun run typecheck && bun run lint && bun run test && bun run build && bun run test:seo && bun run test:e2e",
     "assets:build": "node scripts/build-assets.mjs",
@@ -21,7 +21,10 @@
     "measure": "node scripts/measure.mjs",
     "assets:video": "sh scripts/build-video.sh",
     "test:visual:update": "playwright test --grep \"capture\" --update-snapshots",
-    "icons:build": "bun scripts/build-icons.tsx"
+    "icons:build": "bun scripts/build-icons.tsx",
+    "news:seed": "node scripts/news-seed.mjs",
+    "news:redirects": "node scripts/news-redirects.mjs",
+    "news:fixture": "node scripts/news-fixture-site.mjs"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.15",
@@ -43,6 +46,11 @@
     "@fontsource-variable/manrope": "^5.2.6",
     "@playwright/test": "^1.55.0",
     "@tailwindcss/vite": "^4.1.12",
+    "@tiptap/extension-image": "3.31.3",
+    "@tiptap/extension-table": "3.31.3",
+    "@tiptap/pm": "3.31.3",
+    "@tiptap/react": "3.31.3",
+    "@tiptap/starter-kit": "3.31.3",
     "@types/node": "^22.18.0",
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.9",

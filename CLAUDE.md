@@ -9,6 +9,7 @@ bun run dev         bun run typecheck    bun run lint
 bun run test        bun run test:seo     bun run test:e2e
 bun run build       bun run budget       bun run measure
 bun run test:all    bun run assets:build
+bun run news:seed   bun run news:redirects   bun run news:fixture
 ```
 
 N'inventez pas de script absent de `package.json`.
@@ -37,6 +38,27 @@ Cinq langues : `fr` (référence), `en`, `es`, `he`, `ar`. Tout est déclaré da
 - **Écriture de droite à gauche** : `he` et `ar`. La feuille de style n'utilise **que des propriétés logiques** (`margin-inline-start`, `padding-inline`, `border-inline-start`, `text-align: start`) — un test refuse toute propriété physique. Ce qui est orienté à la main reste à corriger sous `[dir='rtl']` : dégradés de lisibilité (`90deg` → `270deg`), cadrage des arrière-plans, flèches de lien, filets décoratifs. Le nom « avyor. » porte `dir="ltr"`, sinon le point passe devant le mot.
 - **Ajouter une langue** : l'inscrire dans `LOCALES` et `localeMeta`, écrire les trois fichiers de contenu, l'ajouter aux chargeurs de `src/content/index.ts` et aux imports de `entry-server.tsx`, puis compléter les tables de vérification de `tests/unit/content.test.mjs` et `tests/unit/legal.test.mjs`. Le reste suit tout seul : pages, sitemap, hreflang, `llms.txt`.
 - **Le sélecteur de langue est une vraie navigation** (`src/components/LanguageSelector.tsx`), pas un changement d'état : il efface la page puis charge l'adresse de la langue demandée, avec un délai de sécurité pour que le fondu ne retienne jamais le visiteur. La transition entre documents du navigateur (`@view-transition`) a été essayée puis retirée : elle s'interrompt sur ce site en écrivant une erreur dans la console du visiteur.
+
+## News
+
+Espace éditorial pré-rendu comme le reste du site. Guide complet : `docs/news/README.md` ; choix techniques : `docs/news/modele-de-donnees.md`.
+
+- **Une seule source : des fichiers.** `content/news/<id>.json` porte la version **publiée** (commitée, déployée) ; `content/news-drafts/` porte les brouillons et les modifications en attente. Le build ne lit **que** `content/news/`.
+- **Le dépôt GitHub est public** : un brouillon commité serait lisible avant publication. `content/news-drafts/` est exclu par `.gitignore` **et** par `.vercelignore` (Vercel lit ce dernier lors d'un déploiement depuis la CLI). Un test vérifie les deux, et qu'aucun brouillon n'est suivi par git.
+- **Publier écrit un fichier ; déployer met en ligne.** Aucune base de données, aucun webhook. Le délai est celui du build Vercel.
+- **L'admin n'existe qu'en développement** (`vite.config.ts`, `apply: 'serve'`). Son API (`src/news/admin-api.server.ts`) exige un jeton de session, contrôle `Host` et `Origin`. Le site déployé n'a aucune route de mutation : un test refuse toute trace d'admin ou de Tiptap dans `dist/`.
+- **Le corps d'un article est du JSON ProseMirror**, le format de l'éditeur. Le sommaire, le rendu public et l'aperçu lisent la même structure : jamais d'extraction par expression régulière sur du HTML, jamais de `dangerouslySetInnerHTML`. `ArticleBody` liste les blocs autorisés ; tout le reste ne rend rien.
+- **Les ancres de section sont stockées** (`assignHeadingIds`) : libres tant que l'article n'a pas été publié, figées ensuite — un lien partagé doit survivre à une retouche de titre. Les calculer à l'affichage suffirait jusqu'au jour où quelqu'un renomme un titre.
+- **Rien de calculable n'est stocké** : sommaire et temps de lecture sont recalculés depuis le contenu.
+- **Ce que la validation refuse** (`src/news/model.ts`, appliquée à l'enregistrement, à la publication **et** au build) : bloc ou marque inconnus, titre dans un autre bloc, lien qui n'est pas `https:`/`mailto:`/interne/ancre, image hors du stockage ou sans texte alternatif, marqueur « à compléter », date de publication future, adresse déjà prise — y compris par l'ancienne adresse d'un autre article.
+- **Changer le slug d'un article publié** écrit une redirection permanente dans `vercel.json`. Si les redirections divergent des articles, **le build s'arrête** ; `bun run news:redirects` les réaligne.
+- **Une langue sans article publié n'a pas de section News** : ni page, ni lien de navigation, ni entrée de sitemap. Les filtres n'affichent que les thématiques alimentées.
+- **Les médias** vivent dans `public/news/media/`, nommés par l'empreinte de leur contenu (d'où le cache immuable), réencodés en WebP à l'envoi. Jamais de SVG téléversé : il peut porter du script.
+- **Aucun article n'est publié par un script.** `bun run news:seed` écrit des brouillons ; publier est une décision éditoriale, prise dans l'admin.
+- **Une nouveauté AVYOR ne se publie que pour une fonctionnalité livrée et vérifiée** dans l'application ; un retour d'expérience, qu'à partir d'un cas réel. Les règles d'écriture sont dans `docs/news/ligne-editoriale.md` et vérifiées par `tests/unit/news-articles.test.mjs`.
+- **Les tests des pages publiées tournent sur un site de test** (`bun run news:fixture` → `.news-fixture/site`) : le vrai build, avec des articles fictifs publiés, plus un brouillon piège dont le marqueur ne doit apparaître dans aucun fichier servi. Ne publiez jamais un article réel pour faire passer un test.
+- **Lecture** : colonne d'environ 65 caractères, corps 18 px, interligne 1,7, contraste ≥ 12:1. Le corps d'un article ne dépend d'aucune animation : ni `Reveal`, ni vidéo de fond, ni parallaxe.
+- `scripts/serve.mjs` applique les redirections de `vercel.json` : la prévisualisation locale se comporte comme la production.
 
 ## Contenu long et budget
 
@@ -119,6 +141,7 @@ Vercel, configuré par `vercel.json`. Runbook complet : `docs/site/deploiement-v
 
 - Les tests portent sur le **HTML construit** (`tests/seo/`), pas sur le source.
 - Chaque page indexable : `title` unique **dans sa langue**, `description` unique, un seul `h1`, `canonical`, OpenGraph avec `og:locale`, Twitter.
+- **News** : `BlogPosting` + `BreadcrumbList` dont les champs reprennent ce qui est visible (titre, auteur, dates, image) ; une équipe éditoriale est une `Organization`, jamais une personne inventée. Pas de `FAQPage` sur un article (les résultats enrichis FAQ ne sont plus affichés, documentation Google consultée le 18 septembre 2026). Chaque page de liste a sa propre canonical ; recherche et filtres restent dans la chaîne de requête et ne créent aucune URL indexable. Un flux RSS par langue, avec des `guid` stables.
 - **Référencement international** : chaque page indexable déclare `hreflang` pour les cinq langues **et** pour elle-même, plus un `x-default` vers le français ; le sitemap répète ces alternates en `xhtml:link`. Une chaîne non réciproque est ignorée par Google — un test la vérifie dans les deux sens.
 - Les pages `noindex` (juridique) ne déclarent **pas** d'alternates : on ne demande pas aux moteurs d'indexer des traductions de pages qu'on leur demande d'ignorer.
 - `dist/404.html` est servi pour toutes les langues : il porte `data-fallback="404"`, et le navigateur reprend la page dans la langue de l'adresse demandée.

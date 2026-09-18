@@ -1,0 +1,396 @@
+/* Admin News — outil local de rédaction. Sobre et lisible : c'est un poste de
+   travail, pas une vitrine. Seules les propriétés logiques sont utilisées. */
+
+.admin {
+  min-height: 100vh;
+  background: var(--navy);
+  color: #eef0f6;
+  font-size: 15px;
+}
+.admin button,
+.admin input,
+.admin select,
+.admin textarea {
+  font: inherit;
+}
+.admin-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 28px;
+  border-bottom: 1px solid var(--line);
+  background: #0b1020f2;
+}
+.admin-local {
+  font-size: 0.8rem;
+  color: #f2c178;
+}
+.admin-main {
+  max-width: 1180px;
+  margin-inline: auto;
+  padding: 28px;
+}
+.admin-list-head,
+.admin-edit-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: space-between;
+  align-items: center;
+}
+.admin h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+.admin h2 {
+  margin: 0 0 14px;
+  font-size: 1.1rem;
+}
+.admin h3 {
+  margin: 18px 0 8px;
+  font-size: 0.95rem;
+}
+.admin-create {
+  display: flex;
+  gap: 8px;
+}
+.admin select,
+.admin input:not([type='checkbox']):not([type='file']),
+.admin textarea {
+  width: 100%;
+  padding: 9px 11px;
+  border: 1px solid #9f90ff40;
+  border-radius: 9px;
+  background: #0f1528;
+  color: #f5f6f9;
+}
+.admin textarea {
+  resize: vertical;
+  line-height: 1.5;
+}
+.admin :focus-visible {
+  outline: 2px solid #8d71ff;
+  outline-offset: 2px;
+}
+.admin button {
+  padding: 8px 14px;
+  border: 1px solid #9f90ff40;
+  border-radius: 9px;
+  background: #151c33;
+  color: #eef0f6;
+  cursor: pointer;
+}
+.admin button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.admin .admin-primary {
+  border-color: transparent;
+  background: var(--violet);
+  font-weight: 650;
+}
+.admin .admin-publish {
+  border-color: transparent;
+  background: #1d8a49;
+  font-weight: 650;
+}
+.admin .admin-link {
+  border: 0;
+  background: none;
+  padding: 0;
+  color: #c9bcff;
+}
+.admin-table {
+  width: 100%;
+  margin-top: 22px;
+  border-collapse: collapse;
+}
+.admin-table th,
+.admin-table td {
+  padding: 12px 10px;
+  border-bottom: 1px solid var(--line);
+  text-align: start;
+  vertical-align: top;
+}
+.admin-table td a {
+  color: #fff;
+  font-weight: 650;
+}
+.admin-table td small {
+  display: block;
+  color: #8c95ab;
+}
+.admin-badge {
+  display: inline-block;
+  margin-inline-end: 6px;
+  padding: 2px 9px;
+  border-radius: 99px;
+  font-size: 0.78rem;
+  font-weight: 650;
+  background: #2a3150;
+}
+.admin-badge-published {
+  background: #1d8a4955;
+  color: #9ff0bf;
+}
+.admin-badge-archived {
+  background: #55555566;
+}
+.admin-badge-pending {
+  background: #e8a13a33;
+  color: #f7d49a;
+}
+.admin-state {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin: 0;
+}
+.admin-state small {
+  color: #8c95ab;
+}
+.admin-actions {
+  position: sticky;
+  top: 58px;
+  z-index: 9;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 12px 0;
+  background: var(--navy);
+}
+.admin-notice {
+  padding: 12px 14px;
+  border-radius: 10px;
+  line-height: 1.5;
+}
+.admin-notice-success {
+  background: #1d8a4926;
+  color: #b8f2cd;
+}
+.admin-notice-error {
+  background: #b0303026;
+  color: #ffc4c4;
+}
+.admin-notice-info {
+  background: #7c5cff26;
+}
+.admin-checks {
+  margin-block: 10px 18px;
+  padding: 12px 14px;
+  border: 1px dashed #e8a13a66;
+  border-radius: 10px;
+  color: #f7d49a;
+}
+.admin-checks ul {
+  margin: 10px 0 0;
+  padding-inline-start: 18px;
+  line-height: 1.6;
+}
+.admin-form section {
+  margin-top: 22px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #0f1528;
+}
+.admin-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+.admin-field > span,
+.admin-field > label {
+  font-size: 0.82rem;
+  font-weight: 650;
+  color: #c3cadb;
+}
+.admin-field small,
+.admin-hint {
+  font-size: 0.8rem;
+  color: #8c95ab;
+}
+.admin-field.has-error input,
+.admin-field.has-error textarea,
+.admin-field.has-error select,
+.admin-editor.has-error {
+  border-color: #ff7a7a;
+}
+.admin-error {
+  margin: 4px 0 0;
+  color: #ff9f9f;
+  font-size: 0.85rem;
+  font-style: normal;
+}
+.admin-warning {
+  padding: 10px 12px;
+  border-radius: 9px;
+  background: #e8a13a1f;
+  color: #f7d49a;
+  font-size: 0.88rem;
+}
+.admin-inline {
+  display: flex;
+  gap: 8px;
+}
+.admin-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0 14px;
+}
+.admin-check {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin: 6px 0;
+}
+.admin-source {
+  display: grid;
+  grid-template-columns: 1.2fr 1.4fr 1fr 150px auto;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.admin-source .admin-error {
+  grid-column: 1 / -1;
+}
+.admin-image {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 18px;
+}
+.admin-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+/* Pas d'overflow ici : il ferait de ce bloc un conteneur de défilement, et la
+   barre d'outils collerait à l'intérieur — décalée de 120 px sur le texte. */
+.admin-editor {
+  border: 1px solid #9f90ff40;
+  border-radius: 12px;
+}
+.admin-toolbar {
+  position: sticky;
+  top: 118px;
+  border-radius: 11px 11px 0 0;
+  z-index: 5;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 8px;
+  border-bottom: 1px solid var(--line);
+  background: #151c33;
+}
+.admin .admin-tool {
+  padding: 5px 9px;
+  border-color: transparent;
+  background: transparent;
+  font-size: 0.85rem;
+}
+.admin .admin-tool[aria-pressed='true'] {
+  background: #7c5cff55;
+  color: #fff;
+}
+.admin-tool-select select {
+  width: auto;
+  padding: 4px 8px;
+}
+.admin-tool-sep {
+  width: 1px;
+  margin-inline: 4px;
+  background: var(--line);
+}
+.admin-editor-surface {
+  min-height: 420px;
+  border-radius: 0 0 11px 11px;
+  padding: 20px 24px;
+  outline: none;
+  background: var(--navy);
+}
+.admin-editor-surface h2,
+.admin-editor-surface h3,
+.admin-editor-surface h4 {
+  color: #fff;
+}
+.admin-editor-surface table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.admin-editor-surface th,
+.admin-editor-surface td {
+  padding: 8px;
+  border: 1px solid var(--line);
+}
+.admin-editor-surface aside[data-callout] {
+  margin: 1em 0;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-inline-start: 3px solid #8d71ff;
+  border-radius: 10px;
+}
+.admin-editor-surface aside[data-variant='checklist'] {
+  border-inline-start-color: #34ad61;
+}
+.admin-editor-surface aside[data-variant='warning'] {
+  border-inline-start-color: #e8a13a;
+}
+.admin-editor-surface aside[data-callout]::before {
+  content: attr(data-variant);
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #c9bcff;
+}
+.admin-editor-surface blockquote[data-cite]::after {
+  content: '— ' attr(data-cite);
+  display: block;
+  margin-top: 6px;
+  font-size: 0.85rem;
+  font-style: normal;
+  color: #97a0b6;
+}
+.admin-editor-surface img {
+  max-width: 100%;
+  height: auto;
+}
+.admin-editor-surface img.ProseMirror-selectednode {
+  outline: 3px solid #8d71ff;
+}
+.admin-preview {
+  margin-top: 16px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+}
+.admin-preview-banner {
+  margin: 0;
+  padding: 10px 16px;
+  background: #e8a13a26;
+  color: #f7d49a;
+  font-weight: 650;
+}
+.admin-preview .news-article {
+  padding-top: 40px;
+}
+@media (max-width: 760px) {
+  .admin-main {
+    padding: 16px;
+  }
+  .admin-source,
+  .admin-image {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .admin-toolbar {
+    top: 0;
+  }
+  .admin-actions {
+    position: static;
+  }
+}

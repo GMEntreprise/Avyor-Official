@@ -23,9 +23,15 @@ export function Brand() {
   );
 }
 export function Navbar({ path }: { path: string }) {
-  const { content } = useSite();
+  const { content, news } = useSite();
   const ui = content.ui;
   const href = useHref();
+  // News joins the navigation only once the language has published articles.
+  const navigation: [string, string][] = news.enabled
+    ? [...content.navigation, [ui.news.label, 'news']]
+    : content.navigation;
+  const current = (slug: string) =>
+    path === href(slug) || (slug === 'news' && path.startsWith(href('news')));
   const [open, setOpen] = useState(false);
   const [languageOpen, setLanguageOpen] = useState(false);
   const [compact, setCompact] = useState(false);
@@ -43,8 +49,8 @@ export function Navbar({ path }: { path: string }) {
       <header className={`navbar ${compact ? 'compact' : ''}`}>
         <Brand />
         <nav aria-label={ui.nav.main} className="desktop-nav">
-          {content.navigation.map(([label, slug]) => (
-            <a key={slug} href={href(slug)} aria-current={path === href(slug) ? 'page' : undefined}>
+          {navigation.map(([label, slug]) => (
+            <a key={slug} href={href(slug)} aria-current={current(slug) ? 'page' : undefined}>
               {label}
             </a>
           ))}
@@ -76,7 +82,7 @@ export function Navbar({ path }: { path: string }) {
                 </Dialog.Close>
               </div>
               <nav aria-label={ui.nav.mobile}>
-                {content.navigation.map(([label, slug], i) => (
+                {navigation.map(([label, slug], i) => (
                   <a key={slug} href={href(slug)} onClick={() => setOpen(false)}>
                     <small>{ordinal(i)}</small>
                     {label}

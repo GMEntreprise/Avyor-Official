@@ -4,10 +4,17 @@ import { Brand } from './Navbar';
 import { StoreButtons } from './StoreButtons';
 import { Device } from './Device';
 import { Title } from './Lines';
-import { useHref, useUi } from '../content/context';
+import { useHref, useSite } from '../content/context';
 export function Footer() {
-  const ui = useUi().footer;
+  const { content, news } = useSite();
+  const ui = content.ui.footer;
   const href = useHref();
+  const columns = ui.columns.map(([heading, links], i) =>
+    // News sits with the other pages to explore, once it has something to read.
+    i === 0 && news.enabled
+      ? ([heading, [...links, [content.ui.news.label, 'news']]] as const)
+      : ([heading, links] as const),
+  );
   const word = useRef<SVGSVGElement>(null);
   return (
     <footer>
@@ -32,7 +39,7 @@ export function Footer() {
           <p>{ui.tagline}</p>
         </div>
         <nav aria-label={ui.navLabel}>
-          {ui.columns.map(([heading, links]) => (
+          {columns.map(([heading, links]) => (
             <div key={heading}>
               <span>{heading}</span>
               {links.map(([label, slug]) => (

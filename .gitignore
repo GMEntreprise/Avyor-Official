@@ -18,3 +18,13 @@ tools/avyor-video/public/footage/
 video/exports/masters/
 video/exports/posters/*.png
 video/exports/previews/
+
+# Brouillons News : le dépôt est public, un brouillon commité serait lisible
+# par tous avant sa publication. Seule la version publiée (content/news/) est
+# versionnée et déployée.
+content/news-drafts/
+
+# Sites et bacs à sable de test News : régénérés par les tests.
+.news-fixture/
+.news-e2e/
+.news-sandbox/

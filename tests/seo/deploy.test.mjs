@@ -58,14 +58,33 @@ test('aucun fichier au nom stable n’est mis en cache immuable', () => {
     .map((rule) => {
       const match = rule.source.match(/\.\(?([a-z0-9|]+)\)?$/);
       assert.ok(match, `règle immuable sans extension explicite : ${rule.source}`);
-      assert.match(rule.source, /^\/assets\//, 'l’immuable ne doit viser que /assets/');
+      assert.match(
+        rule.source,
+        /^\/(assets|news\/media)\//,
+        'l’immuable ne doit viser que /assets/ et les médias News',
+      );
       return match[1].split('|');
     })
     .flat();
 
+  // Les médias News sont nommés par l'empreinte de leur contenu à l'envoi :
+  // une nouvelle image reçoit une nouvelle adresse, jamais l'ancienne.
+  for (const file of readdirSync('public/news/media').filter((f) => !f.startsWith('.')))
+    assert.match(
+      file,
+      /^[a-z0-9-]+-[a-f0-9]{8}\.(webp|jpe?g|png)$/,
+      `public/news/media/${file} n’est pas nommé par son empreinte`,
+    );
+
+  // Une règle ne vaut que pour son chemin : celle des médias News ne touche
+  // pas /assets/.
+  const assetExtensions = immutable
+    .filter((rule) => rule.source.startsWith('/assets/'))
+    .flatMap((rule) => rule.source.match(/\.\(?([a-z0-9|]+)\)?$/)[1].split('|'));
+  assert.ok(extensions.length >= assetExtensions.length);
   for (const file of walk('dist/assets')) {
     const extension = file.split('.').pop();
-    if (!extensions.includes(extension)) continue;
+    if (!assetExtensions.includes(extension)) continue;
     assert.ok(
       fingerprinted(file.split('/').pop()),
       `/assets/${file} serait immuable un an alors que son nom ne change jamais`,
@@ -81,7 +100,7 @@ test('un média au nom stable est revérifié à chaque chargement', () => {
   // jamais réutilisée.
   const maxAge = (value) => Number((value.match(/max-age=(\d+)/) ?? [])[1] ?? NaN);
   const byExtension = new Map();
-  for (const rule of config.headers) {
+  for (const rule of config.headers.filter((r) => r.source.startsWith('/assets/'))) {
     const match = rule.source.match(/\.\(?([a-z0-9|]+)\)?$/);
     const header = rule.headers.find((h) => h.key === 'Cache-Control');
     if (match && header) for (const ext of match[1].split('|')) byExtension.set(ext, header.value);
@@ -256,4 +275,48 @@ test('la mesure d’audience ne part que depuis le déploiement de production', 
       readFileSync('dist/assets/' + file, 'utf8'),
       /_vercel\/insights|vercel-scripts/,
     );
+});
+
+test('l’admin News n’existe pas dans le site déployé', () => {
+  // Il n'est servi que par le serveur de développement (vite.config.ts) :
+  // le site déployé n'a ni page d'administration, ni point d'entrée d'API.
+  assert.equal(existsSync('dist/admin'), false);
+  assert.equal(existsSync('dist/admin.html'), false);
+  for (const file of walk('dist')) {
+    if (!/\.(html|js|css|json)$/.test(file)) continue;
+    const source = readFileSync(`dist/${file}`, 'utf8');
+    assert.doesNotMatch(source, /x-avyor-admin|__news\/api/, `${file} expose l’admin`);
+    assert.doesNotMatch(source, /@tiptap|ProseMirror/, `${file} embarque l’éditeur`);
+  }
+});
+
+test('les brouillons ne partent ni par git, ni par un déploiement depuis ce poste', () => {
+  // Le dépôt est public : un brouillon commité serait lisible avant publication.
+  // Vercel lit .vercelignore, pas .gitignore : les deux doivent l'exclure.
+  assert.match(readFileSync('.gitignore', 'utf8'), /^content\/news-drafts\/$/m);
+  assert.match(readFileSync('.vercelignore', 'utf8'), /^\/content\/news-drafts\/$/m);
+  assert.match(readFileSync('.vercelignore', 'utf8'), /^\/admin\/$/m);
+  assert.equal(
+    execFileSync('git', ['ls-files', 'content/news-drafts']).toString().trim(),
+    '',
+    'un brouillon est suivi par git',
+  );
+});
+
+test('les redirections d’articles renommés restent alignées sur le contenu publié', () => {
+  // Le build refuse de démarrer si elles divergent ; ce test le dit plus tôt.
+  const published = existsSync('content/news')
+    ? readdirSync('content/news')
+        .filter((f) => f.endsWith('.json'))
+        .map((f) => JSON.parse(readFileSync(`content/news/${f}`, 'utf8')))
+    : [];
+  const expected = published.flatMap((article) =>
+    article.slugHistory.map((old) => ({
+      source: `${article.locale === 'fr' ? '' : `/${article.locale}`}/news/${old}/`,
+      destination: `${article.locale === 'fr' ? '' : `/${article.locale}`}/news/${article.slug}/`,
+      permanent: true,
+    })),
+  );
+  const declared = config.redirects.filter((rule) => /^(\/[a-z]{2})?\/news\//.test(rule.source));
+  assert.deepEqual(declared, expected);
 });

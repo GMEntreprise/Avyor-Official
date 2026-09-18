@@ -231,7 +231,9 @@ test('404 : la page propose la page visée par une faute de frappe', async ({ pa
 });
 
 test('404 : le nom français d’une page suffit à la retrouver', async ({ page }) => {
-  await page.goto('/marques/');
+  // Une adresse qui n'est pas déjà redirigée par vercel.json : « /marques/ »
+  // répond 308 en production, la prévisualisation locale l'applique aussi.
+  await page.goto('/marque/');
   await expect(page.locator('.not-found-suggestion')).toHaveAttribute('href', '/brands/');
 });
 
