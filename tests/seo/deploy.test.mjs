@@ -169,3 +169,25 @@ test('chaque motif d’exclusion est ancré à la racine', () => {
       `« ${pattern} » n’est pas ancré : il viserait aussi des sous-dossiers`,
     );
 });
+
+test('les redirections françaises mènent à une vraie page et n’en masquent aucune', () => {
+  const redirects = config.redirects ?? [];
+  assert.ok(redirects.length > 0);
+  const sources = redirects.map((r) => r.source);
+  assert.equal(new Set(sources).size, sources.length, 'source de redirection en double');
+  for (const { source, destination, permanent } of redirects) {
+    assert.equal(
+      permanent,
+      true,
+      `${source} doit être permanente pour transmettre le référencement`,
+    );
+    assert.match(source, /^\/[a-z0-9-]+\/$/, `${source} : forme attendue /mot/`);
+    // Une redirection posée sur une vraie page la rendrait inaccessible.
+    assert.ok(!existsSync(`dist${source}index.html`), `${source} masquerait une page existante`);
+    assert.ok(
+      existsSync(`dist${destination}index.html`),
+      `${source} → ${destination} : destination absente`,
+    );
+    assert.ok(destination.endsWith('/'), `${destination} doit suivre la forme des canonicals`);
+  }
+});

@@ -184,6 +184,54 @@ test('reduced motion : aucun bloc n’est masqué en attendant une animation', a
   ).toBe(0);
 });
 
+test('404 : la page propose la page visée par une faute de frappe', async ({ page }) => {
+  // Servie pour une adresse inconnue, pré-rendue pour une autre : le chemin
+  // demandé ne doit apparaître qu'après montage, sans casser l'hydratation.
+  const errors: string[] = [];
+  page.on('pageerror', (e) => errors.push(e.message));
+  page.on('console', (e) => {
+    if (/hydrat|did not match/i.test(e.text())) errors.push(e.text());
+  });
+  const response = await page.goto('/creatrs/');
+  expect(response?.status()).toBe(404);
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('plus dans le cadre');
+  await expect(page.locator('.not-found-lead code')).toHaveText('/creatrs/');
+  const suggestion = page.locator('.not-found-suggestion');
+  await expect(suggestion).toContainText('Creators');
+  await expect(suggestion).toHaveAttribute('href', '/creators/');
+  await suggestion.click();
+  await expect(page).toHaveURL(/\/creators\/$/);
+  expect(errors).toEqual([]);
+});
+
+test('404 : le nom français d’une page suffit à la retrouver', async ({ page }) => {
+  await page.goto('/marques/');
+  await expect(page.locator('.not-found-suggestion')).toHaveAttribute('href', '/brands/');
+});
+
+test('404 : rien de proche, aucune devinette, mais des destinations utiles', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.goto('/wp-admin/');
+  await expect(page.locator('.not-found-suggestion')).toHaveCount(0);
+  const destinations = page
+    .getByRole('navigation', { name: 'Pages principales' })
+    .getByRole('link');
+  await expect(destinations).toHaveCount(6);
+  for (const link of await destinations.all())
+    expect(await link.getAttribute('href')).toMatch(/^\/[a-z-]+\/$/);
+  await expect(page.getByRole('link', { name: /Revenir à l’accueil/ })).toHaveAttribute(
+    'href',
+    '/',
+  );
+  const { violations } = await new AxeBuilder({ page })
+    .withTags(['wcag2a', 'wcag2aa', 'wcag21aa'])
+    .analyze();
+  expect(violations).toEqual([]);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(
+    true,
+  );
+});
+
 test('HTML sans JavaScript et vraie réponse 404', async ({ browser, request }) => {
   const context = await browser.newContext({ javaScriptEnabled: false });
   const page = await context.newPage();

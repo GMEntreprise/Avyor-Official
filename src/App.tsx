@@ -20,6 +20,7 @@ import { Story } from './components/Story';
 import { Workflow } from './components/Workflow';
 import { Gallery } from './components/Gallery';
 import { Faq } from './components/Faq';
+import { NotFound } from './components/NotFound';
 import { Device, DemoCaption } from './components/Device';
 import { StoreButtons } from './components/StoreButtons';
 import { LegalDocument, type LegalDoc } from './components/LegalDocument';
@@ -318,24 +319,7 @@ export function App({ path, deep }: { path: string; deep?: DeepContent }) {
       <div id="top" />
       <Navbar path={path} />
       <main id="main">
-        {page ? (
-          slug ? (
-            <InnerPage page={page} deep={deep} />
-          ) : (
-            <Home />
-          )
-        ) : (
-          <section className="not-found container">
-            <p className="eyebrow">404 — HORS CHAMP</p>
-            <h1>Cette page n’est plus dans le cadre.</h1>
-            <p>Retrouvez le produit et les parcours AVYOR depuis l’accueil.</p>
-            <Button asChild>
-              <a href="/">
-                Revenir à l’accueil <ArrowUpRight />
-              </a>
-            </Button>
-          </section>
-        )}
+        {page ? slug ? <InnerPage page={page} deep={deep} /> : <Home /> : <NotFound />}
       </main>
       <Footer />
       {!slug && <Intro />}
