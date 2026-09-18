@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, existsSync, readdirSync, statSync } from 'node:fs';
+import { execFileSync } from 'node:child_process';
 import { load } from 'cheerio';
 
 const config = JSON.parse(readFileSync('vercel.json', 'utf8'));
@@ -89,14 +90,82 @@ test('tout média livré est couvert par une règle de cache révalidable', () =
     );
 });
 
-test('le déploiement n’expédie pas ce dont le build n’a pas besoin', () => {
-  const ignored = readFileSync('.vercelignore', 'utf8')
+/**
+ * Files matched by .vercelignore, decided by git's own gitignore engine — the
+ * same syntax Vercel applies. Comparing pattern strings is not enough: a bare
+ * « brand/ » also matches public/assets/brand/, and that is how the logo was
+ * never served while a string-based check still passed.
+ */
+const excludedBy = (paths) =>
+  execFileSync(
+    'git',
+    [
+      'ls-files',
+      '--cached',
+      '--others',
+      '--ignored',
+      '--exclude-from=.vercelignore',
+      '--',
+      ...paths,
+    ],
+    // tools/ alone lists ~19 000 files: well past the default 1 MB buffer.
+    { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 },
+  )
+    .split('\n')
+    .filter(Boolean);
+
+test('aucun fichier nécessaire au build n’est écarté du déploiement', () => {
+  const inputs = [
+    'public',
+    'src',
+    'scripts',
+    'index.html',
+    'package.json',
+    'bun.lock',
+    'tsconfig.json',
+    'vite.config.ts',
+    'vercel.json',
+  ];
+  assert.deepEqual(
+    excludedBy(inputs),
+    [],
+    'ces fichiers seraient absents sur Vercel alors que le build en a besoin',
+  );
+});
+
+test('chaque fichier servi par une page existe bien dans ce qui est déployé', () => {
+  // Du point de vue du visiteur : tout ce qu’une page charge depuis /assets/
+  // doit provenir d’un fichier que .vercelignore laisse passer.
+  const referenced = new Set();
+  for (const page of [
+    'dist/index.html',
+    ...readdirSync('dist')
+      .filter((d) => existsSync(`dist/${d}/index.html`))
+      .map((d) => `dist/${d}/index.html`),
+  ]) {
+    const html = readFileSync(page, 'utf8');
+    for (const [, path] of html.matchAll(/(?:src|href|srcset|content)="(\/assets\/[^"\s,]+)/g))
+      if (existsSync(`public${path}`)) referenced.add(`public${path}`);
+  }
+  assert.ok(referenced.size > 5, 'les pages doivent référencer des médias publics');
+  const lost = excludedBy([...referenced]);
+  assert.deepEqual(lost, [], `servi par une page mais écarté du déploiement : ${lost.join(', ')}`);
+});
+
+test('les dossiers lourds restent hors du déploiement', () => {
+  for (const heavy of ['video', 'tools', 'brand', 'docs', 'SEO_BOOSTER'])
+    assert.ok(excludedBy([heavy]).length > 0, `${heavy}/ devrait rester hors du déploiement`);
+});
+
+test('chaque motif d’exclusion est ancré à la racine', () => {
+  // Un motif non ancré vise ce nom à toutes les profondeurs.
+  const patterns = readFileSync('.vercelignore', 'utf8')
     .split('\n')
     .map((line) => line.trim())
     .filter((line) => line && !line.startsWith('#'));
-  for (const heavy of ['video/', 'tools/', 'brand/', 'docs/'])
-    assert.ok(ignored.includes(heavy), `${heavy} devrait rester hors du déploiement`);
-  // Et ce qui est nécessaire ne doit surtout pas y être.
-  for (const needed of ['src/', 'public/', 'scripts/', 'index.html', 'package.json'])
-    assert.ok(!ignored.includes(needed), `${needed} est indispensable au build`);
+  for (const pattern of patterns)
+    assert.ok(
+      pattern.startsWith('/'),
+      `« ${pattern} » n’est pas ancré : il viserait aussi des sous-dossiers`,
+    );
 });

@@ -88,7 +88,11 @@ Ce fichier contient encore l'URL de l'ancienne prévisualisation. **Il est sans 
 
 ## 8. Ce qui n'est pas expédié
 
-`.vercelignore` écarte `video/`, `tools/`, `brand/`, `docs/`, `tests/`, `SEO_BOOSTER/` et les rapports. Vérifié : le build aboutit sans eux. Seuls `src/`, `public/`, `scripts/`, `index.html` et les fichiers de configuration partent.
+`.vercelignore` écarte `/video/`, `/tools/`, `/brand/`, `/docs/`, `/tests/`, `/SEO_BOOSTER/` et les rapports. Seuls `src/`, `public/`, `scripts/`, `index.html` et les fichiers de configuration partent.
+
+**Chaque motif commence par `/`, et c'est indispensable.** Vercel applique la syntaxe gitignore : un motif non ancré vise tout dossier de ce nom à n'importe quelle profondeur. La première version écrivait `brand/` pour le dossier racine des masters — le motif excluait aussi `public/assets/brand/`, et **le logo n'a jamais été servi en production**.
+
+Les tests appliquent désormais le moteur gitignore de git lui-même, et non une comparaison de chaînes : ils vérifient qu'aucun fichier dont le build ou une page a besoin n'est écarté.
 
 ## 9. Points non vérifiés
 

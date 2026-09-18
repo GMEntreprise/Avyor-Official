@@ -1,11 +1,16 @@
 # Rien de tout cela n'entre dans `bun run build` : autant ne pas l'expédier.
-video/
-tools/
-docs/
-brand/
-SEO_BOOSTER/
-tests/
-playwright-report/
-test-results/
-.github/
-.ssr/
+#
+# Chaque motif commence par « / » pour viser la racine du projet uniquement.
+# Sans lui, la syntaxe gitignore que Vercel applique vise tout dossier du même
+# nom à n'importe quelle profondeur : « brand/ » excluait aussi
+# public/assets/brand/, et le logo n'a jamais été servi.
+/video/
+/tools/
+/docs/
+/brand/
+/SEO_BOOSTER/
+/tests/
+/playwright-report/
+/test-results/
+/.github/
+/.ssr/
