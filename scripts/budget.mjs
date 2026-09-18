@@ -17,6 +17,13 @@ const metrics = {
   jsGzip: initial.reduce((s, f) => s + gzip(f.replace('assets/', '')), 0),
   jsGzipTotal: sum('.js'),
   cssGzip: sum('.css'),
+  // Arrière-plans des Heroes : chargés à la demande, mais rien ne les bornait.
+  pageHeroVideo: Math.max(
+    ...files
+      .filter((f) => /^(creators|brands|features)-(desktop|mobile)-.*\.mp4$/.test(f))
+      .map((f) => statSync('dist/assets/' + f).size),
+    0,
+  ),
   poster: statSync('dist/assets/hero-poster.webp').size,
   // The film is held to its own ceiling: shown at full size, it must never be
   // able to grow into the cost of opening the site. Its section is asleep for
@@ -37,6 +44,7 @@ const budgets = {
   jsGzip: 140 * 1024,
   jsGzipTotal: 165 * 1024,
   cssGzip: 25 * 1024,
+  pageHeroVideo: 600 * 1024,
   poster: 220 * 1024,
   film: 1.5 * 1024 * 1024,
   filmPoster: 120 * 1024,
