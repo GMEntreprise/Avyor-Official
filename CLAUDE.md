@@ -75,6 +75,15 @@ Les icônes du manifeste et de la section 06 sont **dessinées** dans `src/compo
 - **Taille** : 88-104 px sur ordinateur ; sur téléphone, liste avec l'icône à 64-68 px à gauche. Avant d'intégrer, chercher les règles responsives qui visent déjà les `svg` du conteneur : deux sections avaient une règle qui les aurait écrasées à 16 et 30 px.
 - **Relire en grand avant d'intégrer** : rendre chaque icône à 280 px sur le vrai fond et chercher les défauts connus — brillance en rectangle, ombre invisible, creux sans paroi, chevauchements, pièces qui dépassent.
 
+## Arrière-plans des Heroes
+
+`src/components/PageHero.tsx` affiche un poster immédiatement puis charge la vidéo ; `src/config/page-heroes.ts` impose les noms de fichiers. Pour refaire un arrière-plan, suivez `docs/design/heroes-arriere-plan-prompt.md`, qui contient les prompts de génération et les cibles mesurables.
+
+- **Aucun logo ni mot AVYOR incrusté dans l'image**, et **aucune interface d'application lisible** : le téléphone de la page porte les vrais écrans, et un texte généré se déforme d'une image à l'autre.
+- **Zones mesurées, sur ordinateur** : 0-46 % le titre (calme mais pas noir), 46-68 % le sujet, 68-100 % recouvert par le téléphone. Sur mobile l'arrière-plan est couvert à 90 % : visez l'ambiance, pas une scène.
+- **Le voile de `.page-hero-surface::after` a été calibré pour des images très sombres.** Toute image plus lisible demande de l'alléger, sinon elle s'éteint.
+- Le poster est **une image du film**, jamais un rendu séparé.
+
 ## Déploiement
 
 Vercel, configuré par `vercel.json`. Runbook complet : `docs/site/deploiement-vercel.md`.
