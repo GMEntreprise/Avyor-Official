@@ -72,22 +72,31 @@ test('aucun fichier au nom stable n’est mis en cache immuable', () => {
   }
 });
 
-test('tout média livré est couvert par une règle de cache révalidable', () => {
-  const revalidating = config.headers
-    .filter((rule) =>
-      rule.headers.some((h) => h.key === 'Cache-Control' && !h.value.includes('immutable')),
-    )
-    .flatMap((rule) => {
-      const match = rule.source.match(/\.\(?([a-z0-9|]+)\)?$/);
-      return match ? match[1].split('|') : [];
-    });
+test('un média au nom stable est revérifié à chaque chargement', () => {
+  // Vercel applique ces en-têtes à toutes les réponses d’une adresse, erreurs
+  // comprises. Avec un max-age positif, une 404 passagère reste figée dans le
+  // navigateur : c’est ce qui a gardé le logo introuvable une fois le fichier
+  // revenu. Un fichier empreinté ne court pas ce risque, son adresse n’étant
+  // jamais réutilisée.
+  const maxAge = (value) => Number((value.match(/max-age=(\d+)/) ?? [])[1] ?? NaN);
+  const byExtension = new Map();
+  for (const rule of config.headers) {
+    const match = rule.source.match(/\.\(?([a-z0-9|]+)\)?$/);
+    const header = rule.headers.find((h) => h.key === 'Cache-Control');
+    if (match && header) for (const ext of match[1].split('|')) byExtension.set(ext, header.value);
+  }
   const media = walk('dist/assets').filter((f) => !fingerprinted(f.split('/').pop()));
   assert.ok(media.length > 0, 'le build doit livrer des médias au nom stable');
-  for (const file of media)
-    assert.ok(
-      revalidating.includes(file.split('.').pop()),
-      `/assets/${file} n’a aucune règle de cache : il serait servi sans consigne`,
+  for (const file of media) {
+    const value = byExtension.get(file.split('.').pop());
+    assert.ok(value, `/assets/${file} n’a aucune règle de cache`);
+    assert.equal(
+      maxAge(value),
+      0,
+      `/assets/${file} : « ${value} » figerait une erreur passagère dans le navigateur`,
     );
+    assert.doesNotMatch(value, /immutable/);
+  }
 });
 
 /**

@@ -75,12 +75,16 @@ Sur toutes les réponses : `X-Content-Type-Options`, `X-Frame-Options`, `Referre
 
 Le cache distingue deux familles, et c'est important :
 
-| Fichiers | Cache | Pourquoi |
+| Fichiers | Cache navigateur | Pourquoi |
 | --- | --- | --- |
-| `.js`, `.css`, `.woff2` sous `/assets/` | un an, immuable | leur nom contient une empreinte : il change à chaque modification |
-| `.mp4`, `.webm`, `.webp`, `.png`, `.svg` | une semaine, révalidable | leur nom est stable ; un an d'immuable rendrait toute mise à jour invisible pour les visiteurs déjà venus |
+| `.js`, `.css`, `.woff2` sous `/assets/` | un an, immuable | leur nom contient une empreinte : il change à chaque modification, et une adresse n'est jamais réutilisée |
+| `.mp4`, `.webm`, `.webp`, `.png`, `.svg` | `max-age=0, must-revalidate` | leur nom est stable ; le navigateur revérifie à chaque chargement, ce qui coûte une simple requête conditionnelle (réponse 304) |
 
-Un test vérifie qu'aucun fichier au nom stable ne se retrouve en immuable.
+**Vercel applique ces en-têtes à toutes les réponses d'une adresse, y compris aux erreurs.** Une première version donnait une semaine de cache aux médias : quand le logo a manqué, les navigateurs ont reçu une 404 avec la consigne de la garder une semaine, et ont continué à l'afficher alors que le fichier était revenu. Avec `max-age=0`, une erreur passagère disparaît au chargement suivant.
+
+Le réseau de Vercel garde quand même ces fichiers en cache à la périphérie, et vide ce cache à chaque déploiement : les performances n'en souffrent pas.
+
+Un test échoue si un fichier au nom stable reçoit un `max-age` positif.
 
 ## 7. `.env.production`
 
@@ -106,4 +110,4 @@ curl -sI https://votre-domaine/assets/hero-poster.webp | grep -i cache
 curl -s  -o /dev/null -w "%{http_code}\n" https://votre-domaine/page-inexistante/
 ```
 
-Attendu : les quatre en-têtes présents, une redirection 308 vers l'adresse avec barre oblique, `immutable` sur le `.js` et `max-age=604800` sur l'image, et un vrai 404.
+Attendu : les quatre en-têtes présents, une redirection 308 vers l'adresse avec barre oblique, `immutable` sur le `.js`, `max-age=0, must-revalidate` sur l'image, et un vrai 404.
