@@ -36,9 +36,9 @@ Trois événements, sans donnée personnelle : consultation d’article, utilisa
 
 # Les dix sujets évalués
 
-Angles de départ, validés contre le contenu du site et le fonctionnement réel de l’application. Ce ne sont pas des mots-clés dont le volume aurait été mesuré. Les quatre P1 sont **rédigés et livrés en brouillon**.
+Angles de départ, validés contre le contenu du site et le fonctionnement réel de l’application. Ce ne sont pas des mots-clés dont le volume aurait été mesuré. Les quatre P1 sont **rédigés et publiés** (en français).
 
-## P1 — Brief UGC : quoi préciser pour éviter les allers-retours · rédigé
+## P1 — Brief UGC : quoi préciser pour éviter les allers-retours · publié
 
 - **Public** : marques · **Thématique** : préparer une collaboration
 - **Problème** : une vidéo soignée qui ne sert pas la campagne, et une semaine perdue en corrections.
@@ -53,7 +53,7 @@ Angles de départ, validés contre le contenu du site et le fonctionnement réel
 - **Liens internes** : `/brands/`, article « choisir un Creator ». **CTA** : Découvrir le parcours marque → `/brands/`.
 - **Illustration** : icône 3D « contexte » (fiche à cocher et bulle de message) sur le fond de marque.
 
-## P1 — Comment choisir un Creator au-delà du nombre d’abonnés · rédigé
+## P1 — Comment choisir un Creator au-delà du nombre d’abonnés · publié
 
 - **Public** : marques · **Thématique** : choisir un partenaire
 - **Problème** : trois propositions soignées, et aucun critère pour trancher.
@@ -65,7 +65,7 @@ Angles de départ, validés contre le contenu du site et le fonctionnement réel
 - **Liens internes** : `/brands/`, article « brief UGC ». **CTA** : Découvrir le parcours marque → `/brands/`.
 - **Illustration** : icône 3D « découvrir » (boussole).
 
-## P1 — Portfolio UGC : quoi montrer quand on débute · rédigé
+## P1 — Portfolio UGC : quoi montrer quand on débute · publié
 
 - **Public** : Creators · **Thématique** : créer du contenu
 - **Problème** : candidater sans aucun travail client à montrer.
@@ -76,7 +76,7 @@ Angles de départ, validés contre le contenu du site et le fonctionnement réel
 - **Liens internes** : `/creators/`, article « première collaboration ». **CTA** : Découvrir le parcours Creator → `/creators/`.
 - **Illustration** : icône 3D « créer » (clap de tournage).
 
-## P1 — Première collaboration avec une marque : les points à clarifier · rédigé
+## P1 — Première collaboration avec une marque : les points à clarifier · publié
 
 - **Public** : Creators · **Thématique** : préparer une collaboration
 - **Problème** : dire oui trop vite, et découvrir les conditions après.

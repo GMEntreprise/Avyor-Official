@@ -1,0 +1,903 @@
+{
+  "id": "choixcrea001",
+  "locale": "fr",
+  "title": "Comment choisir un Creator au-delà du nombre d’abonnés",
+  "slug": "choisir-un-creator-au-dela-des-abonnes",
+  "slugHistory": [],
+  "excerpt": "Trois propositions, trois vidéos soignées : laquelle convient à votre marque ? Une grille de comparaison reliée à l’objectif de votre campagne, et les signaux qui doivent vous alerter.",
+  "type": "guide",
+  "audience": "brands",
+  "theme": "choose",
+  "author": {
+    "kind": "organization",
+    "name": "Équipe éditoriale AVYOR"
+  },
+  "featured": false,
+  "cover": {
+    "src": "/news/media/choisir-un-creator-au-dela-des-abonnes-couverture-b1f58e7e.webp",
+    "width": 1600,
+    "height": 900,
+    "alt": "Illustration AVYOR : une boussole en volume, violette et bleue, sur fond bleu nuit."
+  },
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Vous avez reçu trois propositions de Creators. Les vidéos sont soignées, mais vous ne savez toujours pas laquelle convient à votre marque. "
+          },
+          {
+            "type": "text",
+            "text": "Commencez par comparer leur manière d’expliquer un produit, les livrables qu’ils proposent et les conditions de collaboration.",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " Le nombre d’abonnés ne répond pas, à lui seul, à ces questions — et selon votre objectif, il peut ne pas compter du tout."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cet article vous donne une méthode : partir de l’objectif de la campagne, comparer cinq critères observables, puis trancher avec une grille que vous pouvez reprendre telle quelle."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2,
+          "id": "d-abord-votre-objectif"
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "D’abord, votre objectif"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "La première question n’est pas « quel Creator choisir ? » mais « de quoi ai-je besoin ? »."
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Des contenus pour vos propres canaux",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "text": " (publicité, fiche produit, réseaux de la marque) : c’est une commande UGC. Ce qui compte, c’est la qualité et la justesse de la vidéo. L’audience du Creator ne sera pas utilisée."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Être vu par une audience précise",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "text": " : c’est de l’influence. L’audience du Creator devient un critère, mais sa composition compte davantage que sa taille."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Beaucoup de campagnes mélangent les deux. Écrivez simplement lequel pèse le plus : il décidera en cas d’hésitation."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2,
+          "id": "ce-que-le-nombre-d-abonnes-dit-et-ce-qu-il-ne-dit-pas"
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Ce que le nombre d’abonnés dit, et ce qu’il ne dit pas"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Un nombre d’abonnés indique une taille d’audience potentielle, à un moment donné. Il ne dit ni qui compose cette audience, ni si elle ressemble à vos clients, ni si le Creator sait présenter un produit qu’il n’a pas choisi. Pour une commande UGC, il ne dit presque rien d’utile : vous achetez une vidéo, pas une diffusion."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2,
+          "id": "cinq-criteres-a-comparer"
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cinq critères à comparer"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3,
+          "id": "sa-facon-d-expliquer-un-produit"
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Sa façon d’expliquer un produit"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Regardez deux ou trois vidéos où le Creator présente quelque chose. Comprend-on en quelques secondes à quoi sert le produit ? Montre-t-il un geste d’utilisation ou se contente-t-il de le tenir face caméra ? Ce que vous voyez là ressemble à ce que vous recevrez."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3,
+          "id": "l-adequation-avec-votre-public"
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "L’adéquation avec votre public"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Le ton, le décor, le rythme correspondent-ils aux personnes que vous visez ? Un excellent Creator peut être le mauvais choix si sa façon de parler ne ressemble pas à vos clients."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3,
+          "id": "la-qualite-d-execution"
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "La qualité d’exécution"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Son audible sans musique, lumière stable, cadrage lisible sur un téléphone, montage qui va à l’essentiel. Ces points se vérifient en une minute et évitent les déceptions techniques."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3,
+          "id": "les-livrables-qu-il-propose"
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Les livrables qu’il propose"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Un Creator qui propose des variantes d’accroche, des fichiers bruts ou plusieurs formats vous facilite la suite. Comparez ce qui est inclus, pas seulement le montant."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3,
+          "id": "la-fiabilite-de-la-collaboration"
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "La fiabilité de la collaboration"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Les réponses sont-elles claires ? Pose-t-il des questions sur le brief ? Accepte-t-il de préciser par écrit les délais, les retouches et les droits d’usage ? Une bonne question avant le tournage vaut mieux qu’une bonne excuse après."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2,
+          "id": "la-grille-de-comparaison"
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "La grille de comparaison"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Notez chaque critère de 1 à 3 pour chaque Creator. La dernière colonne indique quels critères comptent le plus selon votre objectif."
+          }
+        ]
+      },
+      {
+        "type": "table",
+        "content": [
+          {
+            "type": "tableRow",
+            "content": [
+              {
+                "type": "tableHeader",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Critère"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "tableHeader",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Ce que vous regardez"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "tableHeader",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Où le voir"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "tableHeader",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Priorité"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "tableRow",
+            "content": [
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Explication du produit"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "On comprend l’usage en quelques secondes"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Portfolio, vidéos de démonstration"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "UGC : forte · Influence : forte"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "tableRow",
+            "content": [
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Adéquation au public"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Ton, décor, rythme proches de vos clients"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Vidéos récentes, profil"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "UGC : moyenne · Influence : forte"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "tableRow",
+            "content": [
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Qualité d’exécution"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Son, lumière, cadrage, montage"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Deux ou trois vidéos au hasard"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "UGC : forte · Influence : moyenne"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "tableRow",
+            "content": [
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Livrables proposés"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Variantes, fichiers bruts, formats"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Proposition, échanges"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "UGC : forte · Influence : moyenne"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "tableRow",
+            "content": [
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Fiabilité"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Réponses claires, questions sur le brief"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Premiers échanges"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "UGC : forte · Influence : forte"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "tableRow",
+            "content": [
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Audience"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Composition et proximité avec vos clients"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Informations fournies par le Creator"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "UGC : faible · Influence : forte"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "callout",
+        "attrs": {
+          "variant": "example"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Exemple illustratif.",
+                "marks": [
+                  {
+                    "type": "bold"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "text": " Une marque de cosmétiques veut des vidéos pour ses publicités. Le Creator A a la plus grande audience mais ses vidéos produit sont des plans fixes sans démonstration. Le Creator B a une audience modeste, montre toujours le geste d’application et propose trois accroches. Le Creator C est proche du public visé mais son son est inaudible sans musique. Pour une commande UGC, la grille désigne B : l’audience de A ne sera pas utilisée, et le défaut de C touche un critère prioritaire."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2,
+          "id": "les-signaux-qui-doivent-vous-alerter"
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Les signaux qui doivent vous alerter"
+          }
+        ]
+      },
+      {
+        "type": "callout",
+        "attrs": {
+          "variant": "warning"
+        },
+        "content": [
+          {
+            "type": "bulletList",
+            "content": [
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Un portfolio qui ne montre qu’un seul type de vidéo, sans démonstration de produit."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Des statistiques d’audience que le Creator ne peut ou ne veut pas expliquer."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Un refus de préciser par écrit les livrables, les délais ou les droits d’usage."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Aucune question sur votre brief, même lorsqu’il laisse des points ouverts."
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Aucun de ces signaux n’est à lui seul rédhibitoire. Ensemble, ils annoncent en général une collaboration difficile."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2,
+          "id": "dans-avyor"
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Dans AVYOR"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Lorsqu’AVYOR suggère un profil pour votre campagne, il affiche les raisons de la compatibilité : spécialisation dans votre niche, présence sur vos plateformes cibles, taux d’engagement, localisation et langue, score de confiance, activité récente. Ces raisons complètent la lecture d’un portfolio, elles ne la remplacent pas. Vous pouvez ensuite constituer une présélection parmi les candidatures reçues avant de trancher ; la décision reste la vôtre."
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [],
+  "cta": {
+    "label": "Découvrir le parcours marque",
+    "slug": "brands"
+  },
+  "related": [
+    "briefugc0001"
+  ],
+  "translations": {},
+  "seo": {
+    "title": "Choisir un Creator au-delà du nombre d’abonnés | AVYOR",
+    "description": "Comment comparer des Creators selon l’objectif de votre campagne : façon d’expliquer un produit, adéquation au public, livrables, fiabilité. Grille à reprendre.",
+    "image": {
+      "src": "/news/media/choisir-un-creator-au-dela-des-abonnes-partage-d51a83ef.jpg",
+      "width": 1200,
+      "height": 630,
+      "alt": "Illustration AVYOR : une boussole en volume, violette et bleue, sur fond bleu nuit."
+    },
+    "noindex": false
+  },
+  "revision": 3,
+  "createdAt": "2026-09-18T16:59:44.106Z",
+  "updatedAt": "2026-09-18T17:43:51.173Z",
+  "publishedAt": "2026-09-18T17:43:51.173Z",
+  "status": "published"
+}

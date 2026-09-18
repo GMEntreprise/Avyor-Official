@@ -1,0 +1,533 @@
+{
+  "id": "premierecol1",
+  "locale": "fr",
+  "title": "Première collaboration avec une marque : les points à clarifier",
+  "slug": "premiere-collaboration-marque-points-a-clarifier",
+  "slugHistory": [],
+  "excerpt": "Une marque aime votre travail et vous propose une collaboration. Avant de dire oui, cinq points à obtenir par écrit, un modèle de message pour les demander, et ce que prévoit la loi en France.",
+  "type": "guide",
+  "audience": "creators",
+  "theme": "prepare",
+  "author": {
+    "kind": "organization",
+    "name": "Équipe éditoriale AVYOR"
+  },
+  "featured": false,
+  "cover": {
+    "src": "/news/media/premiere-collaboration-marque-points-a-clarifier-couverture-0a9621df.webp",
+    "width": 1600,
+    "height": 900,
+    "alt": "Illustration AVYOR : deux bulles de conversation en volume, bleue et violette, sur fond bleu nuit."
+  },
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Une marque a vu votre travail et vous propose une collaboration. C’est une bonne nouvelle, et l’envie de répondre « oui » tout de suite est naturelle. Pourtant, la plupart des difficultés d’une première collaboration viennent de ce qui n’a pas été dit au départ : une retouche de trop, un paiement plus tardif que prévu, une vidéo utilisée ailleurs qu’annoncé."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Avant d’accepter, obtenez par écrit cinq points : les livrables, le calendrier et les retouches, la rémunération et son moment, les droits d’usage, et vos obligations de transparence si vous publiez.",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " Poser ces questions ne vous fait pas passer pour quelqu’un de difficile : c’est ce que font les Creators avec qui les marques aiment retravailler."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2,
+          "id": "section-1-les-livrables-precisement"
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "1. Les livrables, précisément"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Nombre de vidéos, durée, format, variantes, fichiers bruts ou non : tout ce qui n’est pas écrit risque d’être attendu. Si le brief reste vague, reformulez-le vous-même et demandez une confirmation. Une phrase comme "
+          },
+          {
+            "type": "text",
+            "text": "« Je livre deux vidéos verticales de 20 secondes, montées, avec trois accroches différentes : c’est bien ça ? »",
+            "marks": [
+              {
+                "type": "italic"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " évite la plupart des malentendus."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2,
+          "id": "section-2-le-calendrier-et-les-retouches"
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "2. Le calendrier et les retouches"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Demandez la date de livraison, le délai de réponse de la marque et "
+          },
+          {
+            "type": "text",
+            "text": "le nombre de séries de retouches comprises",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ". Distinguez une retouche — ajuster un plan, raccourcir une phrase — d’une nouvelle demande, comme un autre angle ou un autre produit. La seconde se discute à part."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2,
+          "id": "section-3-la-remuneration-montant-forme-moment"
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "3. La rémunération : montant, forme, moment"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Le montant, bien sûr, mais aussi sa forme : somme fixe, commission, produits offerts, ou un mélange. Et surtout "
+          },
+          {
+            "type": "text",
+            "text": "le moment du paiement",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " : à la commande, à la livraison, après validation ? Un produit offert n’est pas une rémunération neutre : c’est un avantage en nature, et la loi française le compte comme tel."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2,
+          "id": "section-4-les-droits-d-usage"
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "4. Les droits d’usage"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Où la marque utilisera-t-elle votre vidéo, pendant combien de temps, dans quels pays ? Sur ses réseaux, en publicité payante, sur son site ? Ces droits ont une valeur. Un usage publicitaire de longue durée ne se négocie pas comme une publication unique sur le compte de la marque."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2,
+          "id": "section-5-si-vous-publiez-sur-votre-compte-la-transparence"
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "5. Si vous publiez sur votre compte : la transparence"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Lorsque vous faites la promotion d’un produit auprès de votre propre audience, il s’agit d’influence commerciale. En France, la loi impose alors la mention « Publicité » ou « Collaboration commerciale », "
+          },
+          {
+            "type": "text",
+            "text": "claire, lisible et identifiable",
+            "marks": [
+              {
+                "type": "italic"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " pendant toute la durée de la promotion ("
+          },
+          {
+            "type": "text",
+            "text": "loi n° 2023-451, article 5",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.legifrance.gouv.fr/jorf/article_jo/JORFARTI000047663211"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ")."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "La même loi impose un "
+          },
+          {
+            "type": "text",
+            "text": "contrat écrit",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ", avec des mentions précises — identité des parties, nature des missions, rémunération ou valeur des avantages en nature, droits et obligations de chacun — lorsque les rémunérations et avantages versés par un même annonceur sur une année, pour un même objectif promotionnel, atteignent "
+          },
+          {
+            "type": "text",
+            "text": "1 000 € hors taxes",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ". Ce seuil a été fixé par le "
+          },
+          {
+            "type": "text",
+            "text": "décret n° 2025-1137",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000052950561"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ", en vigueur depuis le 1er janvier 2026."
+          }
+        ]
+      },
+      {
+        "type": "callout",
+        "attrs": {
+          "variant": "warning"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Ces règles s’appliquent en France et évoluent : la loi a déjà été modifiée depuis son adoption, notamment par l’ordonnance n° 2024-978. Vérifiez la version en vigueur sur Légifrance au moment de signer. Cet article vous aide à poser les bonnes questions ; il ne remplace pas un conseil juridique pour votre situation."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Si vous livrez une vidéo que seule la marque publiera, sans la diffuser vous-même, la situation est différente : clarifiez avec elle qui publie, où, et sous quelle mention."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2,
+          "id": "un-message-pour-clarifier-pret-a-adapter"
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Un message pour clarifier, prêt à adapter"
+          }
+        ]
+      },
+      {
+        "type": "callout",
+        "attrs": {
+          "variant": "example"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "« Merci pour votre proposition, votre produit m’intéresse. Avant de confirmer, pouvez-vous me préciser : le nombre de vidéos, leur durée et leur format ; la date de livraison et le nombre de retouches comprises ; la rémunération et le moment du paiement ; où et pendant combien de temps vous utiliserez la vidéo ; et si vous attendez une publication sur mon compte ? Dès que j’ai ces éléments, je vous confirme. »",
+                "marks": [
+                  {
+                    "type": "italic"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2,
+          "id": "avant-d-accepter"
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Avant d’accepter"
+          }
+        ]
+      },
+      {
+        "type": "callout",
+        "attrs": {
+          "variant": "checklist"
+        },
+        "content": [
+          {
+            "type": "bulletList",
+            "content": [
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Les livrables sont écrits : nombre, durée, format, variantes."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "La date de livraison et le nombre de retouches comprises sont fixés."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Le montant, sa forme et le moment du paiement sont connus."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Les droits d’usage — supports, durée, pays — sont précisés."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Vous savez si vous publiez sur votre compte, et avec quelle mention."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Un contrat écrit existe si le seuil légal est atteint."
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2,
+          "id": "dans-avyor"
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Dans AVYOR"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Sur AVYOR, le montant se discute dans la conversation avec la marque, et chacun peut faire une contre-offre. La collaboration ne démarre qu’une fois la proposition acceptée ; la marque paie alors, et la somme est conservée par AVYOR jusqu’à ce qu’elle valide votre livrable. Un point à connaître avant de candidater : "
+          },
+          {
+            "type": "text",
+            "text": "une candidature envoyée ne peut pas être retirée depuis l’application",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ". Posez vos questions avant, dans la conversation."
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "title": "Loi n° 2023-451 du 9 juin 2023 visant à encadrer l’influence commerciale — article 5",
+      "url": "https://www.legifrance.gouv.fr/jorf/article_jo/JORFARTI000047663211",
+      "publisher": "Légifrance",
+      "accessed": "2026-09-18"
+    },
+    {
+      "title": "Loi n° 2023-451 du 9 juin 2023 — article 8 (contrat écrit)",
+      "url": "https://www.legifrance.gouv.fr/jorf/article_jo/JORFARTI000047663198",
+      "publisher": "Légifrance",
+      "accessed": "2026-09-18"
+    },
+    {
+      "title": "Décret n° 2025-1137 du 28 novembre 2025 portant application de l’article 8 de la loi n° 2023-451",
+      "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000052950561",
+      "publisher": "Légifrance",
+      "accessed": "2026-09-18"
+    }
+  ],
+  "cta": {
+    "label": "Voir le parcours étape par étape",
+    "slug": "how-it-works"
+  },
+  "related": [
+    "portfolio001"
+  ],
+  "translations": {},
+  "seo": {
+    "title": "Première collaboration avec une marque : quoi clarifier | AVYOR",
+    "description": "Livrables, calendrier, rémunération, droits d’usage, transparence : les points à obtenir par écrit avant d’accepter une première collaboration, et ce que dit la loi.",
+    "image": {
+      "src": "/news/media/premiere-collaboration-marque-points-a-clarifier-partage-e9dfd14c.jpg",
+      "width": 1200,
+      "height": 630,
+      "alt": "Illustration AVYOR : deux bulles de conversation en volume, bleue et violette, sur fond bleu nuit."
+    },
+    "noindex": false
+  },
+  "revision": 3,
+  "createdAt": "2026-09-18T16:59:44.241Z",
+  "updatedAt": "2026-09-18T17:43:51.180Z",
+  "publishedAt": "2026-09-18T17:43:51.180Z",
+  "status": "published"
+}

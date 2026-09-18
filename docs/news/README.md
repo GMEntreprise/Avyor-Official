@@ -27,7 +27,7 @@ Le dépôt GitHub est public : un brouillon commité serait lisible par tous ava
 
 ## Publier
 
-1. **Publier** écrit `content/news/<id>.json`. L’article n’est pas encore en ligne.
+1. **Publier** écrit `content/news/<id>.json`. L’article n’est pas encore en ligne. Depuis le terminal : `bun run news:publish` liste les brouillons, `bun run news:publish <id>` en publie un, `--all` les publie tous — même validation qu’en interface.
 2. Mettez-le en ligne :
 
 ```bash
@@ -63,6 +63,7 @@ git add -A content/news vercel.json && git commit -m "News : retrait de <titre>"
 
 ```bash
 bun run news:seed        # (re)crée les quatre brouillons de départ
+bun run news:publish     # liste les brouillons ; <id> ou --all pour publier
 bun run news:redirects   # réaligne vercel.json sur les articles publiés
 bun run news:fixture     # construit le site de test (articles fictifs publiés)
 bun run test             # modèle, stockage, API, articles

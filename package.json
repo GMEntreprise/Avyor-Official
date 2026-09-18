@@ -23,6 +23,7 @@
     "test:visual:update": "playwright test --grep \"capture\" --update-snapshots",
     "icons:build": "bun scripts/build-icons.tsx",
     "news:seed": "node scripts/news-seed.mjs",
+    "news:publish": "node scripts/news-publish.mjs",
     "news:redirects": "node scripts/news-redirects.mjs",
     "news:fixture": "node scripts/news-fixture-site.mjs"
   },

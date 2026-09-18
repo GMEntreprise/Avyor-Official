@@ -1,0 +1,1118 @@
+{
+  "id": "briefugc0001",
+  "locale": "fr",
+  "title": "Brief UGC : quoi préciser pour éviter les allers-retours",
+  "slug": "brief-ugc-quoi-preciser",
+  "slugHistory": [],
+  "excerpt": "Une vidéo soignée qui passe à côté du sujet vient souvent d’un brief flou. Les cinq décisions à prendre avant le tournage, un exemple annoté et une liste à vérifier.",
+  "type": "guide",
+  "audience": "brands",
+  "theme": "prepare",
+  "author": {
+    "kind": "organization",
+    "name": "Équipe éditoriale AVYOR"
+  },
+  "featured": true,
+  "cover": {
+    "src": "/news/media/brief-ugc-quoi-preciser-couverture-986271fc.webp",
+    "width": 1600,
+    "height": 900,
+    "alt": "Illustration AVYOR : une fiche de points à cocher et une bulle de message, en volume, sur fond bleu nuit."
+  },
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "La vidéo arrive. La lumière est belle, le produit bien filmé, le ton naturel. Et pourtant, elle ne sert pas votre campagne : elle parle de la mauvaise qualité du produit, elle dure une minute quand il en fallait quinze secondes, ou elle est tournée à l’horizontale. Vous demandez une nouvelle version, le Creator ne comprend pas ce qui n’allait pas, et une semaine passe."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Souvent, le problème n’est pas la vidéo mais le brief. "
+          },
+          {
+            "type": "text",
+            "text": "Un brief évite les allers-retours quand il fixe cinq choses avant le tournage : à qui parle la vidéo, le message unique, les livrables exacts, ce qui est imposé ou libre, et la façon dont la vidéo sera validée et utilisée.",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " Le reste de cet article détaille chacune de ces décisions, avec un exemple de brief annoté et une liste à vérifier avant l’envoi."
+          }
+        ]
+      },
+      {
+        "type": "callout",
+        "attrs": {
+          "variant": "example"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "UGC",
+                "marks": [
+                  {
+                    "type": "bold"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "text": " ("
+              },
+              {
+                "type": "text",
+                "text": "user-generated content",
+                "marks": [
+                  {
+                    "type": "italic"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "text": ") désigne ici un contenu créé par un Creator pour une marque, qui le publie en général sur ses propres canaux : publicité, fiche produit, réseaux de la marque. C’est différent d’une publication d’influence, diffusée par le Creator auprès de sa propre audience. Les deux se préparent avec un brief, mais pas avec les mêmes attentes."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2,
+          "id": "pourquoi-un-brief-flou-coute-des-allers-retours"
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Pourquoi un brief flou coûte des allers-retours"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Un Creator qui reçoit un brief incomplet ne s’arrête pas : il comble les vides avec ses propres hypothèses. Il choisit un angle, une durée, un format, un ton. Ces choix sont souvent bons en soi, mais ce ne sont pas les vôtres. Vous découvrez l’écart à la livraison, au moment où le corriger coûte le plus cher : un nouveau tournage plutôt qu’une phrase de plus dans le brief."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Les consignes les plus courantes sont aussi les plus trompeuses. "
+          },
+          {
+            "type": "text",
+            "text": "« Une vidéo authentique qui met en avant le produit »",
+            "marks": [
+              {
+                "type": "italic"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " ne dit ni pour qui, ni quel avantage, ni sous quelle forme. Chacun peut s’y reconnaître, et c’est précisément ce qui la rend inutile."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2,
+          "id": "les-cinq-decisions-a-prendre-avant-d-ecrire"
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Les cinq décisions à prendre avant d’écrire"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3,
+          "id": "section-1-a-qui-parle-la-video-et-de-quel-probleme"
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "1. À qui parle la vidéo, et de quel problème"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Décrivez une personne précise et la situation dans laquelle votre produit l’aide. "
+          },
+          {
+            "type": "text",
+            "text": "« Les femmes de 25 à 35 ans »",
+            "marks": [
+              {
+                "type": "italic"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " est une cible marketing ; "
+          },
+          {
+            "type": "text",
+            "text": "« quelqu’un qui court le matin et dont la gourde fuit dans le sac »",
+            "marks": [
+              {
+                "type": "italic"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " est une scène que le Creator peut jouer. Plus la situation est concrète, plus la vidéo sera juste sans que vous ayez à l’écrire à sa place."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3,
+          "id": "section-2-le-message-unique"
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "2. Le message unique"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Une vidéo courte porte "
+          },
+          {
+            "type": "text",
+            "text": "un seul message",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ". Si vous listez six avantages, le Creator en choisira un, ou les citera tous trop vite pour qu’un seul reste. Choisissez celui qui compte pour la personne décrite plus haut, et gardez les autres pour d’autres vidéos."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3,
+          "id": "section-3-les-livrables-au-format-pres"
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "3. Les livrables, au format près"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "C’est une partie souvent oubliée, et pourtant la plus simple à écrire. Précisez :"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "le nombre de vidéos, et leur durée cible ;"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "le format : vertical 9:16, carré, horizontal ;"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "ce que vous attendez exactement : vidéo montée, fichiers bruts, ou les deux ;"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "les variantes utiles : plusieurs accroches pour les trois premières secondes, plusieurs fins ;"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "les sous-titres, la musique, le texte à l’écran : qui s’en charge."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3,
+          "id": "section-4-ce-qui-est-impose-ce-qui-est-libre"
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "4. Ce qui est imposé, ce qui est libre"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Séparez en deux listes. D’un côté, "
+          },
+          {
+            "type": "text",
+            "text": "les points non négociables",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " : une mention à faire figurer, une allégation interdite, un geste d’utilisation à montrer, une marque concurrente à ne pas filmer. De l’autre, ce que vous laissez au Creator : le décor, les mots, le rythme. Imposer un script mot à mot retire souvent ce pour quoi vous l’avez choisi ; ne dictez que les phrases qui doivent l’être."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3,
+          "id": "section-5-la-validation-et-les-droits-d-usage"
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "5. La validation et les droits d’usage"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Dites qui valide, dans quel délai, et combien de tours de retouches sont compris. Précisez aussi "
+          },
+          {
+            "type": "text",
+            "text": "où, combien de temps et dans quels pays",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " vous utiliserez la vidéo : sur vos réseaux, en publicité payante, sur votre site. Ces droits d’usage font partie de l’accord ; les laisser implicites, c’est reporter la discussion au moment où elle est la plus délicate."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Si le Creator publie aussi la vidéo sur son propre compte, la collaboration relève de l’influence commerciale. En France, la loi impose alors d’indiquer clairement la mention « Publicité » ou « Collaboration commerciale » pendant toute la promotion ("
+          },
+          {
+            "type": "text",
+            "text": "loi n° 2023-451, article 5",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.legifrance.gouv.fr/jorf/article_jo/JORFARTI000047663211"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": "). Autant le prévoir dans le brief."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2,
+          "id": "exemple-de-brief-annote"
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Exemple de brief annoté"
+          }
+        ]
+      },
+      {
+        "type": "callout",
+        "attrs": {
+          "variant": "example"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Produit et marque fictifs, pour l’illustration. Chaque ligne montre une consigne floue, sa version utile et ce qu’elle change."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "table",
+        "content": [
+          {
+            "type": "tableRow",
+            "content": [
+              {
+                "type": "tableHeader",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Rubrique"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "tableHeader",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Brief flou"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "tableHeader",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Brief utile"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "tableHeader",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Ce que ça évite"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "tableRow",
+            "content": [
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Public"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "« Les sportifs »"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "« Quelqu’un qui court avant le travail et range sa gourde dans son sac. »"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Un angle « performance » quand le vrai sujet est le sac mouillé."
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "tableRow",
+            "content": [
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Message"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "« Montrer toutes les qualités de la gourde »"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "« Elle ne fuit pas, même renversée dans un sac. »"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Six avantages cités en quinze secondes, aucun retenu."
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "tableRow",
+            "content": [
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Livrables"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "« Une vidéo dynamique »"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "« Deux vidéos verticales 9:16 de 15 à 20 s, trois accroches différentes, fichiers bruts inclus. »"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Une vidéo horizontale d’une minute, impossible à utiliser en publicité."
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "tableRow",
+            "content": [
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Imposé / libre"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Rien de précisé"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "« Montrer la gourde retournée au-dessus d’un sac ouvert. Libre : lieu, tenue, mots. Interdit : parler de garde au froid. »"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Une allégation que la marque ne peut pas prouver."
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "tableRow",
+            "content": [
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Validation et usage"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Rien de précisé"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "« Retour sous 48 h, une série de retouches comprise. Usage : réseaux de la marque et publicité, 6 mois, France. »"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Une négociation sur les droits après la livraison."
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2,
+          "id": "ce-qu-il-vaut-mieux-ne-pas-ecrire"
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Ce qu’il vaut mieux ne pas écrire"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Des adjectifs à la place de décisions",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "text": " : « authentique », « dynamique », « impactant » ne se filment pas."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Une liste d’avantages sans hiérarchie",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "text": " : si tout est prioritaire, rien ne l’est."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Un script complet imposé",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "text": " quand seules deux phrases sont réellement obligatoires."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Des références que le Creator ne peut pas voir",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "text": " : « comme notre dernière campagne » sans lien vers celle-ci."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2,
+          "id": "la-liste-a-verifier-avant-d-envoyer"
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "La liste à vérifier avant d’envoyer"
+          }
+        ]
+      },
+      {
+        "type": "callout",
+        "attrs": {
+          "variant": "checklist"
+        },
+        "content": [
+          {
+            "type": "bulletList",
+            "content": [
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "La personne visée et sa situation sont décrites en une ou deux phrases."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Un seul message principal est écrit noir sur blanc."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Le nombre de vidéos, leur durée, leur format et les variantes sont précisés."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Les points imposés et interdits sont séparés de ce qui est libre."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Le délai de validation et le nombre de retouches comprises sont indiqués."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Les droits d’usage — supports, durée, pays — sont écrits."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "La mention de transparence est prévue si le Creator publie sur son compte."
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2,
+          "id": "dans-avyor"
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Dans AVYOR"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "L’assistant de campagne d’AVYOR procède en quatre étapes : informations, budget, ciblage, puis révision du brief complet avant publication. Le ciblage couvre les plateformes, l’audience et l’échéance ; la révision est le bon moment pour repasser la liste ci-dessus. Les droits d’usage accordés sur un livrable sont ceux définis dans les conditions de la campagne acceptée : ce que vous y écrivez fait référence pour les deux parties."
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "title": "Loi n° 2023-451 du 9 juin 2023 visant à encadrer l’influence commerciale — article 5",
+      "url": "https://www.legifrance.gouv.fr/jorf/article_jo/JORFARTI000047663211",
+      "publisher": "Légifrance",
+      "accessed": "2026-09-18"
+    }
+  ],
+  "cta": {
+    "label": "Découvrir le parcours marque",
+    "slug": "brands"
+  },
+  "related": [
+    "choixcrea001"
+  ],
+  "translations": {},
+  "seo": {
+    "title": "Brief UGC : les points à préciser avant le tournage | AVYOR",
+    "description": "Public, message, livrables, contraintes, validation et droits d’usage : ce qu’un brief UGC doit fixer pour éviter les allers-retours, avec un exemple annoté.",
+    "image": {
+      "src": "/news/media/brief-ugc-quoi-preciser-partage-03f50e88.jpg",
+      "width": 1200,
+      "height": 630,
+      "alt": "Illustration AVYOR : une fiche de points à cocher et une bulle de message, en volume, sur fond bleu nuit."
+    },
+    "noindex": false
+  },
+  "revision": 3,
+  "createdAt": "2026-09-18T16:59:44.036Z",
+  "updatedAt": "2026-09-18T17:43:51.168Z",
+  "publishedAt": "2026-09-18T17:43:51.168Z",
+  "status": "published"
+}
