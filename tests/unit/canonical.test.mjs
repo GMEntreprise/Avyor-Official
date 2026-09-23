@@ -3,6 +3,8 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 
+const vercel = JSON.parse(readFileSync('vercel.json', 'utf8'));
+
 /*
  * Le domaine canonique du site.
  *
@@ -78,4 +80,27 @@ test('le HTML construit ne porte aucun autre domaine', () => {
   assert.match(home, /<link rel="canonical" href="https:\/\/avyor\.app\/">/);
   assert.doesNotMatch(home, /vercel\.app|chatgpt\.site/);
   assert.match(readFileSync('dist/robots.txt', 'utf8'), /Sitemap: https:\/\/avyor\.app\/sitemap\.xml/);
+});
+
+test('un seul hôte sert le site : les miroirs redirigent vers lui', () => {
+  /*
+   * `www.avyor.app` et l'adresse de déploiement répondaient 200 : trois hôtes
+   * servaient les mêmes pages. Un moteur y voit des copies, et une propriété
+   * Search Console déclarée sur le mauvais hôte ne trouve jamais le sitemap de
+   * l'autre.
+   */
+  const miroirs = vercel.redirects.filter((rule) => rule.has?.some((c) => c.type === 'host'));
+  assert.ok(miroirs.length >= 2, 'www et l’adresse de déploiement doivent rediriger');
+  for (const rule of miroirs) {
+    const host = rule.has.find((c) => c.type === 'host').value;
+    assert.equal(rule.permanent, true, `${host} : la redirection doit être permanente`);
+    assert.equal(rule.destination, `${DOMAIN}/:path*`, host);
+    assert.equal(rule.source, '/:path*', host);
+    // Une boucle serait invisible ici et fatale en ligne.
+    assert.notEqual(`https://${host}`, DOMAIN, 'un hôte ne peut pas rediriger vers lui-même');
+  }
+  // Elles passent avant tout le reste : une redirection d'adresse interne ne
+  // doit pas s'appliquer avant que l'hôte soit le bon.
+  const premiers = vercel.redirects.slice(0, miroirs.length);
+  assert.deepEqual(premiers, miroirs, 'les miroirs sont déclarés en premier');
 });

@@ -8,6 +8,28 @@
   "cleanUrls": false,
   "redirects": [
     {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.avyor.app"
+        }
+      ],
+      "destination": "https://avyor.app/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "avyor-official.vercel.app"
+        }
+      ],
+      "destination": "https://avyor.app/:path*",
+      "permanent": true
+    },
+    {
       "source": "/marques/",
       "destination": "/brands/",
       "permanent": true

@@ -10,6 +10,7 @@
  * sans extension. Trois choses qui font échouer la vérification en silence :
  * iOS et Android n'écrivent rien nulle part quand elles ne sont pas tenues.
  */
+import { load } from 'cheerio';
 import { appleAppSiteAssociation, DEEP_LINK_ROUTES, AUTH_ROUTES } from '../src/config/deep-links.ts';
 
 const origin = (process.argv[2] ?? 'https://avyor.app').replace(/\/$/, '');
@@ -129,11 +130,60 @@ console.log('\nRéférencement du domaine');
   else ok('robots', robots || 'index par défaut');
   if (verification) ok('google-site-verification', 'présente sur l’accueil');
   else ko('google-site-verification', 'absente : la propriété Search Console retombera');
-  const sitemap = await fetchRaw('/sitemap.xml');
-  const declared = /<loc>([^<]+)<\/loc>/.exec(sitemap.body)?.[1] ?? '';
-  if (sitemap.status !== 200) ko('/sitemap.xml', String(sitemap.status));
-  else if (declared && !declared.startsWith(origin)) ko('/sitemap.xml', `pointe vers ${declared}`);
-  else ok('/sitemap.xml', `${(sitemap.body.match(/<loc>/g) ?? []).length} adresse(s)`);
+  const robotsFile = await fetchRaw('/robots.txt');
+  const declared = /Sitemap:\s*(\S+)/i.exec(robotsFile.body)?.[1] ?? '';
+  if (declared === `${origin}/sitemap.xml`) ok('robots.txt', `déclare ${declared}`);
+  else ko('robots.txt', `déclare ${declared || 'aucun sitemap'}`);
+}
+
+/* -------------------------------------------------------------- Sitemap */
+
+console.log('\nSitemap, tel que Google le demande');
+{
+  // Sans suivre les redirections et avec l'identité de Googlebot : une
+  // redirection ou une page HTML à la place du XML, et Search Console répond
+  // « impossible de récupérer » sans dire pourquoi.
+  const response = await fetch(`${origin}/sitemap.xml`, {
+    redirect: 'manual',
+    headers: { 'user-agent': 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)' },
+  });
+  const body = await response.text();
+  if (response.status !== 200)
+    ko('/sitemap.xml', `${response.status} ${response.headers.get('location') ?? ''}`);
+  else if (!/xml/.test(response.headers.get('content-type') ?? ''))
+    ko('/sitemap.xml', `content-type ${response.headers.get('content-type')}`);
+  else {
+    const xml = load(body, { xml: true });
+    const locs = xml('loc')
+      .map((_, node) => xml(node).text())
+      .get();
+    const etrangers = locs.filter((url) => !url.startsWith(`${origin}/`));
+    if (!locs.length) ko('/sitemap.xml', 'aucune adresse : rien à indexer');
+    else if (etrangers.length) ko('/sitemap.xml', `${etrangers.length} adresse(s) hors domaine`);
+    else ok('/sitemap.xml', `200, ${locs.length} adresses, toutes sur ${origin}`);
+
+    // Une adresse du sitemap qui redirige est signalée comme une erreur : le
+    // sitemap doit lister des adresses finales.
+    const echantillon = locs.filter((_, i) => i % Math.ceil(locs.length / 8) === 0).slice(0, 8);
+    const mauvaises = [];
+    for (const url of echantillon) {
+      const r = await fetch(url, { redirect: 'manual' });
+      if (r.status !== 200) mauvaises.push(`${url.replace(origin, '')} → ${r.status}`);
+    }
+    if (mauvaises.length) ko('adresses listées', mauvaises[0]);
+    else ok('adresses listées', `${echantillon.length} vérifiées, toutes en 200 sans redirection`);
+  }
+}
+
+/* ------------------------------------------------------- Hôtes en double */
+
+console.log('\nUn seul hôte sert le site');
+for (const host of [`www.${new URL(origin).hostname}`, 'avyor-official.vercel.app']) {
+  const r = await fetch(`https://${host}/`, { redirect: 'manual' }).catch(() => null);
+  if (!r) ok(host, 'ne répond pas : rien à dédoubler');
+  else if ([301, 308].includes(r.status) && (r.headers.get('location') ?? '').startsWith(origin))
+    ok(host, `${r.status} vers ${origin}`);
+  else ko(host, `${r.status} : un second hôte sert les mêmes pages`);
 }
 
 console.log(

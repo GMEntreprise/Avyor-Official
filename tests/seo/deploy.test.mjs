@@ -200,7 +200,10 @@ test('chaque motif d’exclusion est ancré à la racine', () => {
 });
 
 test('les redirections françaises mènent à une vraie page et n’en masquent aucune', () => {
-  const redirects = config.redirects ?? [];
+  // Les redirections d'hôte (www, adresse de déploiement) partagent la même
+  // source et ne se distinguent que par leur condition : elles ont leur propre
+  // test, dans tests/unit/canonical.test.mjs.
+  const redirects = (config.redirects ?? []).filter((rule) => !rule.has);
   assert.ok(redirects.length > 0);
   const sources = redirects.map((r) => r.source);
   assert.equal(new Set(sources).size, sources.length, 'source de redirection en double');
