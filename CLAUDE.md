@@ -10,6 +10,7 @@ bun run test        bun run test:seo     bun run test:e2e
 bun run build       bun run budget       bun run measure
 bun run test:all    bun run assets:build
 bun run news:seed   bun run news:publish   bun run news:redirects   bun run news:fixture
+bun run deeplinks:check
 ```
 
 N'inventez pas de script absent de `package.json`.
@@ -65,6 +66,22 @@ Espace éditorial pré-rendu comme le reste du site. Guide complet : `docs/news/
 - **Les tests des pages publiées tournent sur un site de test** (`bun run news:fixture` → `.news-fixture/site`) : le vrai build, avec des articles fictifs publiés, plus un brouillon piège dont le marqueur ne doit apparaître dans aucun fichier servi. Ne publiez jamais un article réel pour faire passer un test.
 - **Lecture** : colonne d'environ 65 caractères, corps 18 px, interligne 1,7, contraste ≥ 12:1. Le corps d'un article ne dépend d'aucune animation : ni `Reveal`, ni vidéo de fond, ni parallaxe.
 - `scripts/serve.mjs` applique les redirections de `vercel.json` : la prévisualisation locale se comporte comme la production.
+
+## Liens profonds
+
+Une adresse `https://avyor.app/video/<id>` ouvre l'application si elle est installée, et une vraie page web sinon. Guide complet : `docs/site/deep-links.md`.
+
+- **Une seule source** : `src/config/deep-links.ts` — identifiants d'application, chemins, visibilité, forme d'un identifiant. Les fichiers `.well-known`, les réécritures de `vercel.json`, les pages de repli et les tests en découlent tous.
+- **Ne devinez jamais un Team ID ni une empreinte SHA-256.** Un identifiant inventé fait échouer la vérification **sans aucun message**, ni sur le téléphone, ni dans les journaux. Ils viennent du dépôt de l'application et de Play Console.
+- **`assetlinks.json` n'est écrit que si `AVYOR_ANDROID_SHA256` est fournie** : un fichier présent avec une mauvaise empreinte échoue en silence, ce qui est pire que pas de fichier. C'est l'empreinte de **Google Play App Signing**, pas celle d'un build local.
+- **Les fichiers `.well-known` doivent répondre 200, `application/json`, sans redirection.** `trailingSlash: true` redirige toute adresse sans extension — mais pas celles dont un segment contient un point, donc pas `/.well-known/`. Vérifié sur le domaine réel ; `bun run deeplinks:check` le revérifie.
+- **Une ressource privée n'affiche rien d'elle** (`collaboration`, `messages`) : le site n'a pas accès aux données de l'application et ne doit pas y accéder. Connaître une adresse ne donne aucun droit.
+- **Aucun aperçu de lien sur une page privée ou `/auth/`** (`social: false` dans `scripts/prerender.mjs`) : un aperçu se déplie dans une conversation de groupe.
+- **Aucun effet sur un `GET`** : les robots d'aperçu ouvrent le lien avant son destinataire. Les pages d'authentification sont statiques, sans formulaire — un test le vérifie.
+- **Aucune mesure d'audience sur `/auth/`** : ces adresses portent des jetons, et une bibliothèque de mesure envoie l'adresse entière.
+- **Les pages de repli sont `noindex`, hors sitemap et hors `llms.txt`** : une même page servie sous une infinité d'adresses ne s'indexe pas.
+- **`/video/<id>/` est servi par la page `/video/`** : `deepLinkPageFor()` fait la même correspondance côté client, sinon l'hydratation remplace la page par une 404 juste après l'affichage.
+- **Un identifiant que l'application refuserait répond 404** : le site accepte exactement `[A-Za-z0-9][A-Za-z0-9._-]*`.
 
 ## Contenu long et budget
 
@@ -142,6 +159,8 @@ Vercel, configuré par `vercel.json`. Runbook complet : `docs/site/deploiement-v
 - **Aucune réécriture attrape-tout vers `/index.html`.** Chaque route est pré-rendue et l'accès direct fonctionne : cette règle, réflexe des projets React classiques, servirait l'accueil en 200 à la place de la page 404. Un test la refuse.
 - **Un outil de mesure installé doit être déclaré dans `src/content/legal/<lang>.json`, dans chaque langue**, et la mesure ne part que du déploiement de production (`VERCEL_ENV`), ses scripts venant d'un chemin que seul Vercel sert. Un test vérifie les deux.
 - L'URL canonique ne vient pas d'un fichier versionné : elle est déduite de `VERCEL_PROJECT_PRODUCTION_URL`, ou forcée par `VITE_SITE_URL`.
+- **Trois variables décident du référencement en production** : `VITE_SITE_URL` (le domaine canonique), `VITE_SITE_INDEXABLE=true` (sans elle, tout le site porte `noindex`) et `AVYOR_ANDROID_SHA256` (sans elle, pas de `assetlinks.json`). Elles vivent dans les variables d'environnement du projet Vercel, pas dans le dépôt. `bun run deeplinks:check` dit laquelle manque.
+- **La balise `google-site-verification`** est écrite sur l'accueil de chaque langue depuis `src/config/search-console.ts`. Elle n'est pas un secret, mais elle ne doit pas disparaître : Google revérifie la propriété, et sans elle Search Console se perd.
 
 ## Règles SEO
 

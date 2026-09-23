@@ -237,6 +237,102 @@ export const en: SiteContent = {
         'AVYOR is a mobile product operated by Shavod. The publishing information is gathered on this page.',
       noindex: true,
     },
+    {
+      slug: 'video',
+      label: 'AVYOR video',
+      title: 'Open a video in the AVYOR app',
+      description:
+        'This link leads to a video published on AVYOR. The app shows the video, who made it and the campaigns attached to it.',
+      eyebrow: 'AVYOR LINK',
+      heading: 'This video opens in the app.',
+      intro:
+        'AVYOR is a mobile app: Creators’ videos are watched there and offered to brands there. This site presents the product.',
+      noindex: true,
+    },
+    {
+      slug: 'creator',
+      label: 'Creator profile',
+      title: 'Open a Creator profile in the AVYOR app',
+      description:
+        'This link leads to a Creator’s profile on AVYOR: their portfolio, the formats they favour and their collaborations.',
+      eyebrow: 'AVYOR LINK',
+      heading: 'This profile opens in the app.',
+      intro:
+        'A Creator’s portfolio, their videos and the way they work are all in the AVYOR app.',
+      noindex: true,
+    },
+    {
+      slug: 'campaign',
+      label: 'Campaign',
+      title: 'Open a campaign in the AVYOR app',
+      description:
+        'This link leads to a campaign published by a brand on AVYOR: its brief, the expected deliverables and its terms.',
+      eyebrow: 'AVYOR LINK',
+      heading: 'This campaign opens in the app.',
+      intro:
+        'Campaigns are read and joined from the app, with their brief and their terms.',
+      noindex: true,
+    },
+    {
+      slug: 'collaboration',
+      label: 'Collaboration',
+      title: 'Open a collaboration in the AVYOR app',
+      description:
+        'This link leads to a private collaboration between a brand and a Creator. Its content is only available in the app.',
+      eyebrow: 'PRIVATE LINK',
+      heading: 'This collaboration stays in the app.',
+      intro:
+        'A collaboration holds a brief, deliverables and a payment. It concerns its two parties, and no one else.',
+      noindex: true,
+    },
+    {
+      slug: 'messages',
+      label: 'Conversation',
+      title: 'Open a conversation in the AVYOR app',
+      description:
+        'This link leads to a private conversation on AVYOR. It is only readable in the app, by the people in it.',
+      eyebrow: 'PRIVATE LINK',
+      heading: 'This conversation stays in the app.',
+      intro:
+        'Messages between a brand and a Creator are read in the app only, by the people concerned.',
+      noindex: true,
+    },
+    {
+      slug: 'auth/confirm',
+      label: 'Email confirmation',
+      title: 'Confirm your AVYOR email address',
+      description:
+        'This page accompanies the confirmation of an AVYOR account email. The confirmation itself finishes in the app.',
+      eyebrow: 'YOUR ACCOUNT',
+      heading: 'Finish the confirmation in the app.',
+      intro:
+        'Open this link on your phone, with AVYOR installed: the confirmation finishes there. This website validates nothing by itself.',
+      noindex: true,
+    },
+    {
+      slug: 'auth/reset-password',
+      label: 'New password',
+      title: 'Set a new AVYOR password',
+      description:
+        'This page accompanies an AVYOR password reset. The new password is entered in the app.',
+      eyebrow: 'YOUR ACCOUNT',
+      heading: 'Choose your password in the app.',
+      intro:
+        'Open this link on your phone, with AVYOR installed. If the link has expired or has already been used, ask for a new one from the sign-in screen.',
+      noindex: true,
+    },
+    {
+      slug: 'auth/callback',
+      label: 'Sign-in return',
+      title: 'AVYOR sign-in return',
+      description:
+        'This page is the return address of an AVYOR sign-in. It keeps nothing and validates nothing by itself.',
+      eyebrow: 'YOUR ACCOUNT',
+      heading: 'Pick up the sign-in in the app.',
+      intro:
+        'This address is a technical return after a sign-in. If you see this page, finish signing in inside the AVYOR app.',
+      noindex: true,
+    },
   ],
   related: {
     creators: {
@@ -592,6 +688,12 @@ export const en: SiteContent = {
       breadcrumb: 'Breadcrumb',
       home: 'Home',
       writeTo: 'Write to',
+    },
+    appLink: {
+      note: 'You are seeing this page because the link was opened without the AVYOR app, or from a computer.',
+      privateNote:
+        'This content is private. Nothing of it is shown here: knowing the address grants no access.',
+      install: 'Install the app, then open the link again: it will land straight on the right place.',
     },
     notFound: {
       metaLabel: 'Page not found',

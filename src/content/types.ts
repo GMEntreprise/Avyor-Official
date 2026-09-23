@@ -247,6 +247,20 @@ export interface Ui {
     home: string;
     writeTo: string;
   };
+  /**
+   * Les pages de repli d'un lien profond : ce que voit quelqu'un qui ouvre un
+   * lien AVYOR sans avoir l'application. Elles n'affichent jamais le contenu
+   * désigné — le site n'a pas accès aux données, et pour une conversation ou
+   * une collaboration, il ne doit surtout pas y accéder.
+   */
+  appLink: {
+    /** Sous le titre : pourquoi cette page s'affiche. */
+    note: string;
+    /** Uniquement sur une ressource privée. */
+    privateNote: string;
+    /** Au-dessus des deux boutons de téléchargement. */
+    install: string;
+  };
   notFound: {
     /** Page metadata for the single not-found document. */
     metaLabel: string;

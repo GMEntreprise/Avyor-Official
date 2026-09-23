@@ -25,7 +25,8 @@
     "news:seed": "node scripts/news-seed.mjs",
     "news:publish": "node scripts/news-publish.mjs",
     "news:redirects": "node scripts/news-redirects.mjs",
-    "news:fixture": "node scripts/news-fixture-site.mjs"
+    "news:fixture": "node scripts/news-fixture-site.mjs",
+    "deeplinks:check": "node scripts/deeplinks-check.mjs"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.15",

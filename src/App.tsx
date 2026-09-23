@@ -24,6 +24,7 @@ import { Faq } from './components/Faq';
 import { NotFound } from './components/NotFound';
 import { Device, DemoCaption } from './components/Device';
 import { StoreButtons } from './components/StoreButtons';
+import { deepLinkPageFor, isDeepLinkSlug, isPrivateResource } from './config/deep-links';
 import { LegalDocument } from './components/LegalDocument';
 import { Lines, Title } from './components/Lines';
 import { Reveal } from './components/motion/Reveal';
@@ -230,7 +231,22 @@ function InnerPage({ page, deep }: { page: Page; deep?: DeepContent }) {
           <p className="eyebrow">{page.eyebrow}</p>
           <h1>{page.heading}</h1>
           <p className="page-intro">{page.intro}</p>
-          {page.slug === 'download' ? (
+          {isDeepLinkSlug(page.slug) ? (
+            /*
+             * Page de repli d'un lien profond. Elle ne décrit pas la ressource
+             * demandée : le site n'a pas accès aux données de l'application,
+             * et pour une conversation ou une collaboration, il ne doit pas y
+             * accéder. Elle dit où va ce lien, et comment y arriver.
+             */
+            <div className="app-link">
+              <p className="app-link-note">{ui.appLink.note}</p>
+              {isPrivateResource(page.slug) && (
+                <p className="app-link-private">{ui.appLink.privateNote}</p>
+              )}
+              <p className="app-link-note">{ui.appLink.install}</p>
+              <StoreButtons />
+            </div>
+          ) : page.slug === 'download' ? (
             <StoreButtons />
           ) : page.slug === 'contact' ? (
             <Button asChild>
@@ -298,7 +314,9 @@ function InnerPage({ page, deep }: { page: Page; deep?: DeepContent }) {
 
 function Shell({ path, deep }: { path: string; deep?: DeepContent }) {
   const { content, locale } = useSite();
-  const { slug } = splitPath(path);
+  // `/video/<id>/` est servi par la page `/video/` : le rendu doit être le
+  // même des deux côtés, sinon l'hydratation remplace la page par une 404.
+  const slug = deepLinkPageFor(splitPath(path).slug);
   const page = content.pages.find((p) => p.slug === slug);
   const isNews = /^news(\/|$)/.test(slug);
   return (

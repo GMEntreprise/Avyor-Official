@@ -1,5 +1,12 @@
 import { readFile, writeFile, mkdir, readdir, access } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
+import { GOOGLE_SITE_VERIFICATION } from '../src/config/search-console.ts';
+import {
+  appleAppSiteAssociation,
+  assetLinks,
+  isAuthSlug,
+  isPrivateResource,
+} from '../src/config/deep-links.ts';
 import {
   render,
   contentFor,
@@ -117,6 +124,9 @@ function baseHead({
   image = defaultImage,
   graph,
   extra = '',
+  // Un aperçu de lien se déplie dans une conversation de groupe, devant des
+  // gens qui n'ont rien à voir avec elle : une page privée n'en a pas.
+  social = true,
 }) {
   const meta = localeMeta[locale];
   const hreflang = links
@@ -128,7 +138,7 @@ function baseHead({
   const imageAlt = image.alt
     ? `<meta property="og:image:alt" content="${escape(image.alt)}"><meta name="twitter:image:alt" content="${escape(image.alt)}">`
     : '';
-  return `<title>${escape(title)}</title><meta name="description" content="${escape(description)}"><meta name="robots" content="${indexable && !noindex ? 'index,follow' : 'noindex,follow'}"><link rel="canonical" href="${url}">${hreflang}<meta name="theme-color" content="#0B1020"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><meta property="og:type" content="${ogType}"><meta property="og:site_name" content="AVYOR"><meta property="og:locale" content="${meta.ogLocale}">${ogAlternates}<meta property="og:title" content="${escape(title)}"><meta property="og:description" content="${escape(description)}"><meta property="og:url" content="${url}"><meta property="og:image" content="${image.url}"><meta property="og:image:width" content="${image.width}"><meta property="og:image:height" content="${image.height}">${imageAlt}<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${escape(title)}"><meta name="twitter:description" content="${escape(description)}"><meta name="twitter:image" content="${image.url}">${extra}<script type="application/ld+json">${scriptJson({ '@context': 'https://schema.org', '@graph': graph })}</script>`;
+  return `<title>${escape(title)}</title><meta name="description" content="${escape(description)}"><meta name="robots" content="${indexable && !noindex ? 'index,follow' : 'noindex,follow'}"><link rel="canonical" href="${url}">${hreflang}<meta name="theme-color" content="#0B1020"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest">${social ? `<meta property="og:type" content="${ogType}"><meta property="og:site_name" content="AVYOR"><meta property="og:locale" content="${meta.ogLocale}">${ogAlternates}<meta property="og:title" content="${escape(title)}"><meta property="og:description" content="${escape(description)}"><meta property="og:url" content="${url}"><meta property="og:image" content="${image.url}"><meta property="og:image:width" content="${image.width}"><meta property="og:image:height" content="${image.height}">${imageAlt}<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${escape(title)}"><meta name="twitter:description" content="${escape(description)}"><meta name="twitter:image" content="${image.url}">` : ''}${extra}<script type="application/ld+json">${scriptJson({ '@context': 'https://schema.org', '@graph': graph })}</script>`;
 }
 
 function head(locale, page) {
@@ -184,6 +194,14 @@ function head(locale, page) {
     noindex: page.noindex,
     links: page.noindex ? [] : alternates(page.slug),
     graph,
+    // Une collaboration, une conversation, un retour d'authentification : rien
+    // de tout cela ne se déplie dans un aperçu de lien.
+    social: !isPrivateResource(page.slug) && !isAuthSlug(page.slug),
+    // La propriété du domaine se prouve sur l'accueil, et se reprouve : la
+    // balise reste après la validation, sinon l'accès à Search Console tombe.
+    extra: page.slug
+      ? ''
+      : `<meta name="google-site-verification" content="${GOOGLE_SITE_VERIFICATION}">`,
   });
 }
 
@@ -559,6 +577,39 @@ await writeFile(
   `${dist}/_headers`,
   `/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n  Permissions-Policy: camera=(), microphone=(), geolocation=()\n/assets/*\n  Cache-Control: public, max-age=31536000, immutable\n/news/media/*\n  Cache-Control: public, max-age=31536000, immutable\n`,
 );
+
+/* ================================================ Liens profonds (.well-known) */
+
+/*
+ * Les deux fichiers que le téléphone télécharge avant d'autoriser AVYOR à
+ * ouvrir une adresse du site. Ils sont écrits ici, depuis le contrat de
+ * `src/config/deep-links.ts`, pour qu'ils ne puissent pas dériver des
+ * réécritures ni des pages de repli.
+ *
+ * Contraintes qui les rendent muets quand elles ne sont pas tenues : 200 sans
+ * redirection, `application/json`, aucune authentification. La redirection de
+ * slash final de Vercel ne touche pas `/.well-known/` — le chemin contient un
+ * point —, ce qui a été vérifié sur le domaine réel avant d'écrire ceci.
+ */
+await mkdir(`${dist}/.well-known`, { recursive: true });
+await writeFile(
+  `${dist}/.well-known/apple-app-site-association`,
+  JSON.stringify(appleAppSiteAssociation(), null, 2),
+);
+
+const fingerprints = (process.env.AVYOR_ANDROID_SHA256 ?? '')
+  .split(',')
+  .map((value) => value.trim())
+  .filter(Boolean);
+const android = assetLinks(fingerprints);
+if (android)
+  await writeFile(`${dist}/.well-known/assetlinks.json`, JSON.stringify(android, null, 2));
+else
+  console.warn(
+    'Android : AVYOR_ANDROID_SHA256 absente, /.well-known/assetlinks.json n’est pas écrit.\n' +
+      '  Empreinte SHA-256 de Google Play App Signing (Play Console ▸ Intégrité de l’app).\n' +
+      '  Un fichier présent avec une mauvaise empreinte échoue en silence : mieux vaut aucun fichier.',
+  );
 
 await access(`${dist}/404.html`);
 console.log(

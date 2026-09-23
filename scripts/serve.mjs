@@ -22,6 +22,36 @@ const redirectsFor = async () => {
     return new Map();
   }
 };
+/**
+ * The rewrites Vercel applies, applied here too: `/video/<id>` has no file of
+ * its own and must serve the fallback page of its resource, with a 200 and the
+ * address unchanged. Only the syntax this project uses is understood —
+ * `:name(pattern)` and `:name` — and the trailing slash is optional, as it is
+ * in production once the slash redirect has run.
+ */
+const rewritesFor = async () => {
+  try {
+    const file = await readFile(process.env.REDIRECTS_FILE || 'vercel.json', 'utf8');
+    return (JSON.parse(file).rewrites ?? []).map((rule) => ({
+      pattern: new RegExp(
+        '^' +
+          rule.source
+            .split('/')
+            .map((segment) => {
+              const match = /^:([a-z]+)(?:\((.+)\))?$/i.exec(segment);
+              if (!match) return segment.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+              return `(?<${match[1]}>${match[2] ?? '[^/]+'})`;
+            })
+            .join('/') +
+          '/?$',
+      ),
+      destination: rule.destination,
+    }));
+  } catch {
+    return [];
+  }
+};
+
 const types = {
   '.html': 'text/html; charset=utf-8',
   '.css': 'text/css',
@@ -88,6 +118,31 @@ createServer(async (req, res) => {
       });
       res.end(req.method === 'HEAD' ? undefined : payload);
     } catch {
+      // Comme en production : le système de fichiers d'abord, les réécritures
+      // ensuite, la page 404 en dernier.
+      for (const rule of await rewritesFor()) {
+        const match = rule.pattern.exec(pathname);
+        if (!match) continue;
+        const target = rule.destination.replace(
+          /:([a-z]+)/gi,
+          (_, name) => match.groups?.[name] ?? '',
+        );
+        const rewritten = resolve(root, '.' + target, 'index.html');
+        if (!rewritten.startsWith(root + '/')) break;
+        try {
+          const page = await readFile(rewritten);
+          res.writeHead(200, {
+            'Content-Type': 'text/html; charset=utf-8',
+            'X-Content-Type-Options': 'nosniff',
+            'Cache-Control': 'no-cache',
+            'Content-Length': page.length,
+          });
+          res.end(req.method === 'HEAD' ? undefined : page);
+          return;
+        } catch {
+          break;
+        }
+      }
       res.writeHead(404, { 'Content-Type': 'text/html; charset=utf-8' });
       res.end(await readFile(resolve(root, '404.html')));
     }

@@ -4,6 +4,7 @@ import type { DeepContent } from './content/types';
 import type { NewsData } from './news/build';
 import { loadContent, loadDeep } from './content/index';
 import { DEFAULT_LOCALE, isLocale, localeMeta, splitPath } from './i18n/locales';
+import { isAuthSlug } from './config/deep-links';
 import { startReveal } from './lib/reveal';
 import './styles.css';
 
@@ -85,7 +86,12 @@ startReveal();
  * bandwidth or main thread from the page it measures. Web vitals are read from
  * buffered entries, so arriving late costs no measurement.
  */
-if (import.meta.env.VITE_VERCEL_INSIGHTS === 'true') {
+/*
+ * Jamais sur un retour d'authentification : ces adresses portent des jetons,
+ * et une bibliothèque de mesure envoie l'adresse complète. Rien ne doit lire
+ * ces pages, pas même nous.
+ */
+if (import.meta.env.VITE_VERCEL_INSIGHTS === 'true' && !isAuthSlug(slug)) {
   const start = () => {
     void import('@vercel/analytics').then(({ inject }) => inject({ framework: 'vite' }));
     void import('@vercel/speed-insights').then(({ injectSpeedInsights }) =>

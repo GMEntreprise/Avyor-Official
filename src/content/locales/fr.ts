@@ -238,6 +238,102 @@ export const fr: SiteContent = {
         'AVYOR est un produit mobile opéré par Shavod. Les informations de publication sont réunies sur cette page.',
       noindex: true,
     },
+    {
+      slug: 'video',
+      label: 'Vidéo AVYOR',
+      title: 'Ouvrir une vidéo dans l’application AVYOR',
+      description:
+        'Ce lien mène à une vidéo publiée sur AVYOR. L’application affiche la vidéo, son auteur et les campagnes qui s’y rattachent.',
+      eyebrow: 'LIEN AVYOR',
+      heading: 'Cette vidéo s’ouvre dans l’application.',
+      intro:
+        'AVYOR est une application mobile : les vidéos des Creators s’y regardent et s’y proposent aux marques. Ce site, lui, présente le produit.',
+      noindex: true,
+    },
+    {
+      slug: 'creator',
+      label: 'Profil Creator',
+      title: 'Ouvrir un profil Creator dans l’application AVYOR',
+      description:
+        'Ce lien mène au profil d’un Creator sur AVYOR : son portfolio, ses formats de prédilection et ses collaborations.',
+      eyebrow: 'LIEN AVYOR',
+      heading: 'Ce profil s’ouvre dans l’application.',
+      intro:
+        'Le portfolio d’un Creator, ses vidéos et sa façon de travailler se consultent dans l’application AVYOR.',
+      noindex: true,
+    },
+    {
+      slug: 'campaign',
+      label: 'Campagne',
+      title: 'Ouvrir une campagne dans l’application AVYOR',
+      description:
+        'Ce lien mène à une campagne publiée par une marque sur AVYOR : son brief, ses livrables attendus et ses conditions.',
+      eyebrow: 'LIEN AVYOR',
+      heading: 'Cette campagne s’ouvre dans l’application.',
+      intro:
+        'Les campagnes se lisent et se rejoignent depuis l’application, avec leur brief et leurs conditions.',
+      noindex: true,
+    },
+    {
+      slug: 'collaboration',
+      label: 'Collaboration',
+      title: 'Ouvrir une collaboration dans l’application AVYOR',
+      description:
+        'Ce lien mène à une collaboration privée entre une marque et un Creator. Son contenu ne se consulte que dans l’application.',
+      eyebrow: 'LIEN PRIVÉ',
+      heading: 'Cette collaboration reste dans l’application.',
+      intro:
+        'Une collaboration réunit un brief, des livrables et un paiement. Elle ne regarde que ses deux parties.',
+      noindex: true,
+    },
+    {
+      slug: 'messages',
+      label: 'Conversation',
+      title: 'Ouvrir une conversation dans l’application AVYOR',
+      description:
+        'Ce lien mène à une conversation privée sur AVYOR. Elle ne se lit que dans l’application, par ses participants.',
+      eyebrow: 'LIEN PRIVÉ',
+      heading: 'Cette conversation reste dans l’application.',
+      intro:
+        'Les échanges entre une marque et un Creator se lisent uniquement dans l’application, par les personnes concernées.',
+      noindex: true,
+    },
+    {
+      slug: 'auth/confirm',
+      label: 'Confirmation d’adresse',
+      title: 'Confirmer votre adresse e-mail AVYOR',
+      description:
+        'Cette page accompagne la confirmation d’adresse d’un compte AVYOR. La confirmation elle-même se termine dans l’application.',
+      eyebrow: 'VOTRE COMPTE',
+      heading: 'Terminez la confirmation dans l’application.',
+      intro:
+        'Ouvrez ce lien depuis votre téléphone, avec AVYOR installé : la confirmation s’y termine. Ce site ne valide rien de lui-même.',
+      noindex: true,
+    },
+    {
+      slug: 'auth/reset-password',
+      label: 'Nouveau mot de passe',
+      title: 'Définir un nouveau mot de passe AVYOR',
+      description:
+        'Cette page accompagne la réinitialisation d’un mot de passe AVYOR. Le nouveau mot de passe se saisit dans l’application.',
+      eyebrow: 'VOTRE COMPTE',
+      heading: 'Choisissez votre mot de passe dans l’application.',
+      intro:
+        'Ouvrez ce lien depuis votre téléphone, avec AVYOR installé. Si le lien a expiré ou a déjà servi, demandez-en un nouveau depuis l’écran de connexion.',
+      noindex: true,
+    },
+    {
+      slug: 'auth/callback',
+      label: 'Retour de connexion',
+      title: 'Retour de connexion AVYOR',
+      description:
+        'Cette page est l’adresse de retour d’une connexion AVYOR. Elle ne conserve rien et ne valide rien par elle-même.',
+      eyebrow: 'VOTRE COMPTE',
+      heading: 'Reprenez la connexion dans l’application.',
+      intro:
+        'Cette adresse sert de retour technique après une connexion. Si vous voyez cette page, terminez la connexion dans l’application AVYOR.',
+      noindex: true,
+    },
   ],
   related: {
     creators: {
@@ -601,6 +697,12 @@ export const fr: SiteContent = {
       breadcrumb: 'Fil d’Ariane',
       home: 'Accueil',
       writeTo: 'Écrire à',
+    },
+    appLink: {
+      note: 'Vous voyez cette page parce que le lien a été ouvert sans l’application AVYOR, ou depuis un ordinateur.',
+      privateNote:
+        'Ce contenu est privé. Rien n’en est affiché ici : connaître l’adresse ne donne aucun accès.',
+      install: 'Installez l’application, puis rouvrez le lien : il mènera directement au bon endroit.',
     },
     notFound: {
       metaLabel: 'Page introuvable',

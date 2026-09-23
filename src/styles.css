@@ -3851,3 +3851,29 @@ html.language-switching {
     transform: none;
   }
 }
+
+/* --------------------------------------------------------------- lien profond */
+
+/* Page de repli d'un lien AVYOR : elle dit où mène le lien, sans rien montrer
+   de la ressource. Le texte porte le sens ; aucune animation ne le retarde. */
+.app-link {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 54ch;
+  margin-block-start: 26px;
+}
+.app-link-note {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.app-link-private {
+  margin: 0;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-inline-start: 3px solid var(--violet);
+  border-radius: 12px;
+  background: var(--surface);
+  line-height: 1.7;
+}
