@@ -14,7 +14,7 @@ chaque ressource, forme d'un identifiant. En dépendent :
 
 | Ce qui en découle | Où |
 | --- | --- |
-| `/.well-known/apple-app-site-association` | écrit au build par `scripts/prerender.mjs` |
+| `/.well-known/apple-app-site-association.json` | écrit au build par `scripts/prerender.mjs`, servi **sans extension** par une réécriture |
 | `/.well-known/assetlinks.json` | idem, **seulement** si une empreinte est fournie |
 | Réécritures d'adresses | `vercel.json` (`rewrites`), vérifiées par un test |
 | Pages de repli | `src/content/locales/<lang>.ts`, une par ressource et par langue |
@@ -35,12 +35,25 @@ https://avyor.app/.well-known/assetlinks.json
 Contraintes, toutes obligatoires : **200**, `application/json`, **aucune redirection**, aucune
 authentification, HTTPS valide.
 
-**Le piège évité ici** : `vercel.json` déclare `trailingSlash: true`, donc toute adresse sans
-extension est redirigée en 308 (`/creators` → `/creators/`). Une redirection sur le fichier Apple
-suffirait à tout casser, puisque **Apple n'en suit aucune**. Vérifié sur le domaine réel avant
+**Premier piège, évité d'avance** : `vercel.json` déclare `trailingSlash: true`, donc toute adresse
+sans extension est redirigée en 308 (`/creators` → `/creators/`). Une redirection sur le fichier
+Apple suffirait à tout casser, puisque **Apple n'en suit aucune**. Vérifié sur le domaine réel avant
 d'écrire quoi que ce soit : `/.well-known/…` **n'est pas** concerné — le chemin contient un point,
-et la règle de Vercel ne vise que les segments qui n'en ont pas. `bun run deeplinks:check` le
-revérifie à chaque fois.
+et la règle de Vercel ne vise que les segments qui n'en ont pas.
+
+**Deuxième piège, découvert en production** : Vercel déduit le type d'un fichier statique de son
+extension et **ignore un `content-type` déclaré dans `headers`** — le `cache-control` de la même
+règle, lui, était bien appliqué. Le fichier, sans extension, partait donc en
+`application/octet-stream`, et iOS l'ignorait sans un mot. Il est désormais **stocké avec
+l'extension `.json`** et servi à l'adresse sans extension par une **réécriture**. Le fichier sans
+extension ne doit pas exister : le système de fichiers passe avant les réécritures et reprendrait la
+main avec le mauvais type. Un test le vérifie, `bun run deeplinks:check` le reconfirme sur le
+domaine réel.
+
+**Troisième piège, même origine** : `/video/abc` est d'abord redirigé en 308 vers `/video/abc/`,
+donc une réécriture qui ne connaît que la forme **sans** barre oblique n'est jamais atteinte — la
+page de repli répondait 404 en production alors qu'elle fonctionnait en local. Les deux formes sont
+déclarées, et la vérification teste les deux.
 
 ### Android : l'empreinte n'est pas dans le dépôt
 

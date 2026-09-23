@@ -70,32 +70,49 @@ test('le site accepte exactement les identifiants que l’application accepte', 
     assert.ok(!id.test(invalid), JSON.stringify(invalid.slice(0, 12)));
 });
 
-test('chaque ressource a sa réécriture, dans toutes les langues', () => {
-  const sources = vercel.rewrites.map((rule) => rule.source);
-  assert.equal(sources.length, 2, 'une règle pour la racine, une par langue préfixée');
-  const [root, prefixed] = vercel.rewrites;
-  for (const route of DEEP_LINK_ROUTES) {
-    assert.ok(root.source.includes(route.slug), `${route.slug} absent de la réécriture racine`);
-    assert.ok(prefixed.source.includes(route.slug), `${route.slug} absent des langues préfixées`);
-  }
-  assert.equal(root.destination, '/:kind/');
-  assert.equal(prefixed.destination, '/:locale/:kind/');
-  for (const locale of LOCALES.filter((l) => l !== 'fr'))
-    assert.ok(prefixed.source.includes(locale), locale);
+test('chaque ressource a sa réécriture, avec et sans barre oblique finale', () => {
+  const ressources = vercel.rewrites.filter((rule) => rule.destination.endsWith(':kind/'));
+  // `trailingSlash: true` redirige d'abord « /video/abc » vers « /video/abc/ ».
+  // Une règle qui ne connaîtrait que la forme sans barre ne serait jamais
+  // atteinte : c'est arrivé, et la page de repli répondait 404 en production.
+  const racine = ressources.filter((rule) => rule.destination === '/:kind/');
+  const prefixees = ressources.filter((rule) => rule.destination === '/:locale/:kind/');
+  assert.equal(racine.length, 2, 'racine : une forme avec barre finale, une sans');
+  assert.equal(prefixees.length, 2, 'langues préfixées : idem');
+  assert.equal(racine.filter((rule) => rule.source.endsWith('/')).length, 1);
+  assert.equal(prefixees.filter((rule) => rule.source.endsWith('/')).length, 1);
+
+  for (const rule of ressources)
+    for (const route of DEEP_LINK_ROUTES)
+      assert.ok(rule.source.includes(route.slug), `${route.slug} absent de ${rule.source}`);
+  for (const rule of prefixees)
+    for (const locale of LOCALES.filter((l) => l !== 'fr'))
+      assert.ok(rule.source.includes(locale), locale);
   // Une réécriture n'est pas une redirection : l'adresse partagée ne bouge pas.
   for (const rule of vercel.rewrites) assert.equal(rule.permanent, undefined);
   // Les retours d'authentification sont de vraies pages : rien à réécrire.
-  for (const source of sources) for (const auth of AUTH_ROUTES) assert.ok(!source.includes(auth));
+  for (const rule of ressources)
+    for (const auth of AUTH_ROUTES) assert.ok(!rule.source.includes(auth));
 });
 
-test('les deux fichiers de vérification sont servis en application/json', () => {
-  for (const file of ['/.well-known/apple-app-site-association', '/.well-known/assetlinks.json']) {
-    const rule = vercel.headers.find((h) => h.source === file);
-    assert.ok(rule, `${file} sans en-tête déclaré`);
+test('le fichier Apple est servi en application/json, sans extension ni redirection', () => {
+  /*
+   * Vercel déduit le type d'un fichier statique de son extension et **ignore**
+   * un « content-type » déclaré dans les en-têtes : servi tel quel, le fichier
+   * partait en application/octet-stream et iOS l'ignorait sans un mot. Il est
+   * donc stocké avec une extension, et servi sans elle par une réécriture.
+   */
+  const rewrite = vercel.rewrites.find(
+    (rule) => rule.source === '/.well-known/apple-app-site-association',
+  );
+  assert.ok(rewrite, 'aucune réécriture vers le fichier typé');
+  assert.equal(rewrite.destination, '/.well-known/apple-app-site-association.json');
+  assert.equal(rewrite.permanent, undefined, 'une réécriture, pas une redirection');
+  for (const rule of vercel.headers.filter((h) => h.source.startsWith('/.well-known'))) {
     const headers = Object.fromEntries(rule.headers.map((h) => [h.key, h.value]));
-    assert.equal(headers['content-type'], 'application/json', file);
     // Un cache long figerait une erreur passagère dans les téléphones.
-    assert.match(headers['cache-control'], /max-age=0/, file);
+    assert.match(headers['cache-control'], /max-age=0/, rule.source);
+    assert.equal(headers['content-type'], undefined, 'Vercel ignore cet en-tête : ne pas mentir');
   }
   // Aucune redirection ne doit croiser ces chemins : Apple n’en suit aucune.
   for (const rule of vercel.redirects ?? [])

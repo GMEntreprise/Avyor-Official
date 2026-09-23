@@ -170,10 +170,6 @@
       "source": "/.well-known/apple-app-site-association",
       "headers": [
         {
-          "key": "content-type",
-          "value": "application/json"
-        },
-        {
           "key": "cache-control",
           "value": "public, max-age=0, must-revalidate"
         }
@@ -183,10 +179,6 @@
       "source": "/.well-known/assetlinks.json",
       "headers": [
         {
-          "key": "content-type",
-          "value": "application/json"
-        },
-        {
           "key": "cache-control",
           "value": "public, max-age=0, must-revalidate"
         }
@@ -195,11 +187,23 @@
   ],
   "rewrites": [
     {
+      "source": "/.well-known/apple-app-site-association",
+      "destination": "/.well-known/apple-app-site-association.json"
+    },
+    {
       "source": "/:kind(video|creator|campaign|collaboration|messages)/:id([A-Za-z0-9][A-Za-z0-9._-]*)",
       "destination": "/:kind/"
     },
     {
+      "source": "/:kind(video|creator|campaign|collaboration|messages)/:id([A-Za-z0-9][A-Za-z0-9._-]*)/",
+      "destination": "/:kind/"
+    },
+    {
       "source": "/:locale(en|es|he|ar)/:kind(video|creator|campaign|collaboration|messages)/:id([A-Za-z0-9][A-Za-z0-9._-]*)",
+      "destination": "/:locale/:kind/"
+    },
+    {
+      "source": "/:locale(en|es|he|ar)/:kind(video|creator|campaign|collaboration|messages)/:id([A-Za-z0-9][A-Za-z0-9._-]*)/",
       "destination": "/:locale/:kind/"
     }
   ]

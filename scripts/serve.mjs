@@ -127,12 +127,19 @@ createServer(async (req, res) => {
           /:([a-z]+)/gi,
           (_, name) => match.groups?.[name] ?? '',
         );
-        const rewritten = resolve(root, '.' + target, 'index.html');
+        let rewritten = resolve(root, '.' + target);
         if (!rewritten.startsWith(root + '/')) break;
+        // Une réécriture mène à une page (un dossier) ou à un fichier précis,
+        // comme le fichier Apple servi sans son extension.
+        try {
+          if ((await stat(rewritten)).isDirectory()) rewritten = resolve(rewritten, 'index.html');
+        } catch {
+          break;
+        }
         try {
           const page = await readFile(rewritten);
           res.writeHead(200, {
-            'Content-Type': 'text/html; charset=utf-8',
+            'Content-Type': types[extname(rewritten)] || 'text/html; charset=utf-8',
             'X-Content-Type-Options': 'nosniff',
             'Cache-Control': 'no-cache',
             'Content-Length': page.length,

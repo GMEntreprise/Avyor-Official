@@ -592,8 +592,14 @@ await writeFile(
  * point —, ce qui a été vérifié sur le domaine réel avant d'écrire ceci.
  */
 await mkdir(`${dist}/.well-known`, { recursive: true });
+/*
+ * Avec une extension, et servi sans elle par une réécriture de `vercel.json` :
+ * Vercel déduit le type d'un fichier statique de son extension et ignore un
+ * « content-type » déclaré dans les en-têtes. Sans extension, le fichier
+ * partait en `application/octet-stream`, et iOS l'ignorait en silence.
+ */
 await writeFile(
-  `${dist}/.well-known/apple-app-site-association`,
+  `${dist}/.well-known/apple-app-site-association.json`,
   JSON.stringify(appleAppSiteAssociation(), null, 2),
 );
 

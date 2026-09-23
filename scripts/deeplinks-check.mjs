@@ -83,6 +83,12 @@ for (const route of DEEP_LINK_ROUTES) {
   else if (route.visibility === 'private' && /property="og:/.test(r.body))
     ko(path, 'aperçu de lien sur une ressource privée');
   else ok(path, route.visibility === 'private' ? '200, sans aperçu' : '200');
+
+  // Sans barre oblique finale : c'est la forme que partage l'application, et
+  // celle que l'hébergeur redirige d'abord. La chaîne entière doit aboutir.
+  const sans = `/${route.slug}/a1b2c3d4`;
+  const suivi = await fetch(origin + sans).then((res) => res.status).catch(() => 0);
+  if (suivi !== 200) ko(sans, `${suivi} après redirection : la réécriture n’est pas atteinte`);
 }
 for (const slug of AUTH_ROUTES) {
   const path = `/${slug}/`;

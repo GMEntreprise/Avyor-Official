@@ -20,10 +20,16 @@ const html = (route) => load(read(`${route}index.html`));
 const every = LOCALES.flatMap((locale) => DEEP_LINK_SLUGS.map((slug) => [locale, slug]));
 
 test('le fichier Apple est construit, et dit exactement ce que dit le contrat', () => {
-  const path = 'dist/.well-known/apple-app-site-association';
+  const path = 'dist/.well-known/apple-app-site-association.json';
   assert.ok(existsSync(path), 'fichier absent : iOS ouvrira le navigateur, sans rien signaler');
-  // Sans extension : c'est l'adresse exacte qu'iOS demande.
-  assert.ok(!existsSync(path + '.json'), 'aucune variante avec extension ne doit traîner');
+  // Il porte une extension pour être servi en application/json, et une
+  // réécriture le sert à l'adresse sans extension qu'iOS demande. Le fichier
+  // sans extension ne doit pas exister : le système de fichiers passant avant
+  // les réécritures, il reprendrait la main avec le mauvais type.
+  assert.ok(
+    !existsSync('dist/.well-known/apple-app-site-association'),
+    'le fichier sans extension masquerait la réécriture',
+  );
   const written = readFileSync(path, 'utf8');
   assert.deepEqual(JSON.parse(written), appleAppSiteAssociation());
   assert.doesNotMatch(written, /[^\x20-\x7E\s]/, 'ASCII uniquement');
