@@ -3,22 +3,29 @@ import { spawn } from 'node:child_process';
 /**
  * Build entry point for Vercel.
  *
- * The canonical URL is decided here rather than in a committed .env file, so a
- * deployment can never publish canonicals pointing at someone else's domain.
- * Order: an explicit VITE_SITE_URL wins; otherwise Vercel's own production URL
- * is used, which becomes the real domain by itself once one is attached.
+ * The canonical domain is declared here, in code, and a production build is
+ * indexable because it is the real site. It used to depend on two environment
+ * variables that nobody had set: the live site published
+ * `canonical=avyor-official.vercel.app` and `noindex` on every page, so the
+ * real domain was never going to be indexed and pointed at a copy of itself.
+ *
+ * Order: an explicit VITE_SITE_URL still wins — it is how a fork or a rehearsal
+ * publishes under its own domain — then the declared domain.
  */
+const PRODUCTION_ORIGIN = 'https://avyor.app';
+
 const explicit = process.env.VITE_SITE_URL?.trim();
 const fromVercel = process.env.VERCEL_PROJECT_PRODUCTION_URL?.trim();
-const origin = explicit || (fromVercel ? `https://${fromVercel}` : '');
+const origin = explicit || PRODUCTION_ORIGIN;
 
-if (!origin) {
-  console.error(
-    'No canonical URL. Set VITE_SITE_URL in the Vercel project, or deploy from\n' +
-      'Vercel so VERCEL_PROJECT_PRODUCTION_URL is provided.',
+// Not an error: Vercel reports its own deployment domain until the custom one
+// is the project's production domain. But a lasting divergence means the
+// constant above is stale, and nothing else would ever say so.
+if (fromVercel && !explicit && `https://${fromVercel}` !== PRODUCTION_ORIGIN)
+  console.warn(
+    `Note : Vercel annonce ${fromVercel}, le site publie ${PRODUCTION_ORIGIN}.\n` +
+      '  Si le domaine a changé, mettez à jour PRODUCTION_ORIGIN et .env.production.',
   );
-  process.exit(1);
-}
 
 let hostname;
 try {
@@ -30,9 +37,17 @@ try {
   process.exit(1);
 }
 
+/*
+ * Un build de production sur le vrai domaine est indexable : c'est le site.
+ * La variable reste prioritaire quand elle est posée, pour une répétition ou
+ * une mise en ligne différée.
+ */
+const production = process.env.VERCEL_ENV === 'production';
+const declared = process.env.VITE_SITE_INDEXABLE?.trim();
+const indexable = declared ? declared === 'true' : production && origin === PRODUCTION_ORIGIN;
+
 // A deployment URL must never be the one search engines are told to index:
 // the real domain would then compete with a vercel.app copy of the same pages.
-const indexable = process.env.VITE_SITE_INDEXABLE === 'true';
 if (indexable && /(^|\.)vercel\.app$/.test(hostname)) {
   console.error(
     `Refusing to publish an indexable site on ${hostname}.\n` +
@@ -52,9 +67,18 @@ console.log(`Canonical origin : ${origin}`);
 console.log(`Indexable        : ${indexable ? 'yes' : 'no (pages carry noindex)'}`);
 console.log(`Insights         : ${insights ? 'analytics and speed insights' : 'off'}`);
 
+// `--dry-run` : montrer la décision sans construire. C'est ce que vérifient
+// les tests, et ce qu'on lance pour comprendre un déploiement douteux.
+if (process.argv.includes('--dry-run')) process.exit(0);
+
 const build = spawn('bun', ['run', 'build'], {
   stdio: 'inherit',
-  env: { ...process.env, VITE_SITE_URL: origin, VITE_VERCEL_INSIGHTS: String(insights) },
+  env: {
+    ...process.env,
+    VITE_SITE_URL: origin,
+    VITE_SITE_INDEXABLE: String(indexable),
+    VITE_VERCEL_INSIGHTS: String(insights),
+  },
 });
 build.on('exit', (code) => process.exit(code ?? 1));
 build.on('error', (error) => {

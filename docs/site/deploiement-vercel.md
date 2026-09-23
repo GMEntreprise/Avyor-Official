@@ -24,7 +24,9 @@ Laissez tout par défaut. Vercel applique `vercel.json` :
 | Sortie | `dist` |
 | Barre oblique finale | conservée, comme les canonicals |
 
-**Aucune variable d'environnement n'est à créer pour le premier déploiement.** Le script déduit l'URL canonique de `VERCEL_PROJECT_PRODUCTION_URL`, fournie par Vercel.
+**Aucune variable d'environnement n'est à créer.** Le domaine canonique est déclaré dans `scripts/vercel-build.mjs` (`PRODUCTION_ORIGIN = 'https://avyor.app'`) et repris dans `.env.production`. Un déploiement de production publie donc ce domaine, et rien d'autre.
+
+Cela n'a pas toujours été le cas : l'URL se déduisait de `VERCEL_PROJECT_PRODUCTION_URL`, et le site en ligne a publié pendant des semaines `canonical=avyor-official.vercel.app` avec `noindex` sur chaque page. Un site qui ne sera jamais indexé a exactement la même apparence qu'un site qui va l'être : seule une vérification le dit (`bun run deeplinks:check`).
 
 ## 3. Ce que donne le premier déploiement
 
@@ -34,26 +36,21 @@ C'est voulu. Sans cela, Google indexerait l'adresse `vercel.app`, qui ferait ens
 
 Le script **refuse de construire** un site indexable sur un domaine `vercel.app`. Ce n'est pas une option à contourner.
 
-## 4. Quand le domaine est acheté
+## 4. Quand le domaine change
 
 1. Vercel → **Settings → Domains → Add**, puis suivez les enregistrements DNS indiqués.
 2. Attendez que le domaine soit marqué comme production.
-3. Vercel → **Settings → Environment Variables**, ajoutez pour *Production* :
+3. Mettez à jour **les deux endroits** : `PRODUCTION_ORIGIN` dans `scripts/vercel-build.mjs` et `VITE_SITE_URL` dans `.env.production`. Un test échoue s'ils divergent.
+4. Redéployez, puis `bun run deeplinks:check` pour lire ce que le domaine répond vraiment.
 
-   ```
-   VITE_SITE_INDEXABLE = true
-   ```
+Si Vercel annonce un autre domaine de production que celui déclaré, le build le signale sans échouer : c'est le signe que la constante est périmée.
 
-4. Redéployez.
-
-Les canonicals suivent tout seuls : `VERCEL_PROJECT_PRODUCTION_URL` devient votre domaine dès qu'il est attaché. Rien à changer dans le code.
-
-Pour forcer une URL différente de celle de Vercel, ajoutez `VITE_SITE_URL` ; elle prend le pas.
+Deux variables restent prioritaires quand elles sont posées : `VITE_SITE_URL` (publier sous un autre domaine) et `VITE_SITE_INDEXABLE` (`false` pour retarder l'indexation, `true` pour une répétition). Sans elles, un déploiement de production est indexable et une préproduction ne l'est pas.
 
 ### Après la bascule
 
 - Les pages passent en `index,follow`, sauf `/privacy/`, `/terms/` et `/legal/` qui restent `noindex` tant que les informations d'éditeur manquent.
-- Le sitemap contient **9 URL**.
+- Le sitemap contient les pages du site dans les cinq langues, plus les pages News publiées (70 URL au dernier build).
 - Vérifiez `https://votre-domaine/robots.txt` et `/sitemap.xml`, puis déclarez le sitemap dans la Search Console.
 
 ## 5. Quand les applications sortent

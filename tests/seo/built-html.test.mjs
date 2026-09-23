@@ -393,7 +393,17 @@ test('sitemap et robots cohérents avec les routes de toutes les langues', () =>
   const meta = JSON.parse(readFileSync('dist/build-meta.json', 'utf8'));
   assert.deepEqual(meta.locales, [...LOCALES]);
   assert.equal(meta.defaultLocale, DEFAULT_LOCALE);
-  assert.equal(locs.length, meta.indexable ? indexableRoutes.length * LOCALES.length : 0);
+  // Le sitemap porte les pages du site **et** les pages News : une liste par
+  // langue qui a des articles, plus un article. Ne compter que les premières
+  // rendait ce test muet tant que rien n'était publié.
+  const newsUrls = meta.news.articles.length + meta.news.locales.length;
+  assert.equal(
+    locs.length,
+    meta.indexable ? indexableRoutes.length * LOCALES.length + newsUrls : 0,
+  );
+  // Les pages de repli d'un lien profond n'y sont jamais : elles sont noindex.
+  for (const loc of locs)
+    assert.doesNotMatch(loc, /\/(video|creator|campaign|collaboration|messages|auth)\//, loc);
   if (!meta.indexable)
     for (const [locale, route] of every)
       assert.match(load(read(locale, route))('meta[name="robots"]').attr('content'), /noindex/);
